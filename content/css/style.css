@@ -115,9 +115,12 @@ li.menuDx{
     text-decoration: none;
     display: block;
     text-align: left;
+    overflow: auto;
 }
 		
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #5a9697;
+
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -240,21 +243,36 @@ li.menuDx{
     display:table-cell;
     /* padding-left:10%;
     padding-right:10%; */
-    vertical-align: middle;
+    /* vertical-align: middle; */
     margin-left: auto;
     margin-right: auto;
     
   }
 
   .inner2 h4{
-    font-size: 2em;
+    font-size: 1.3em;
     text-align: center;
     color:black;
-    font-family:"title"
+    font-family:"title";
+    margin: 20px 5px 5px 5px;
+
   }
   .inner2 p{
-    font-size: 1em;
+    font-size: 0.9em;
     text-align: center;
     color:black;
-    font-family:"title"
+    font-family:"title";
+    margin: 8% 20%;
+}
+
+inner2.imgProdotto{
+    /* position:relative;
+    width: 300px;
+    height: 300px; */
+}
+
+.imgProdotto img{
+    position: relative;
+    width: 90%px;
+    height: 150px;
 }

@@ -131,16 +131,13 @@ li.menuDx{
 \*------------------------------------*/
 
 /* IMMAGINE HOME */
-/* .blocco1{
-    clear:both;
-} */
+
 #outer {
-    /* clear:both; */
     display: table;
-    /* position: absolute; */
      height: 90vh;
     width: 100%;
     margin-top: 0px;
+    margin-bottom:30px;
     background-image: url("../../img/headphones/headphones3.jpg");
     background-position: center;
     background-repeat: no-repeat; 
@@ -198,58 +195,69 @@ li.menuDx{
     font-family:"title"
 }
 
+
+
+
+/* ___PIU VENDUTI___ */
+
 .content{
-    clear:both;
-        display: table;
-        position: relative;
-         height: 90%;
-        width: 100%;
-        margin-top: 0px;
-        background-color: white;
-        background-position: center;
-        background-repeat: no-repeat; 
-        background-size: cover; 
+    position: relative;
+    height: 90%;
+    width: 100%;
+    margin-top: 0px;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
         
 }
 
-/* ___PIU VENDUTI___ */
-.piuVenduti h2{
+.data-template{
+    /* margin: 20vh 0vh 20vh 0vh; */
+    position:relative;
+    width:100%;
+    /* height:700px; */
+}
+
+.data-template h2{
+    margin: 0px auto;
+    padding: 42px 0px;
     text-align: center; 
     font-size: 45px;
     color:#01404f;; 
     font-family:"title"
 }
 
-.piuVenduti{
-    margin:20vh 20vh;
-}
-
-.piuVenduti .outer{
-     /* clear:both; */
-     display: table;
-     /* position: absolute; */
-      /* height: 90vh; */
-     width: 100%;
-     margin-top: 0px;
+.outer{
+    align-items:center;
+    position:relative;
+     width: 90%;
+     margin-left:5%;
+     margin-right:5%;
+     margin-top: 0 auto;
+     margin-bottom:80px;
+     background-color:white;
+     overflow:hidden;
      
 }
 
-.inner2 img{
-    width:100%;
-    margin: 20px;
+.data-template {
+    width: 100%;
+     /* height: 500px; */
+     margin-top: 0px;
 }
 
-.inner2 {
-    display:table-cell;
-    /* padding-left:10%;
-    padding-right:10%; */
-    /* vertical-align: middle; */
-    margin-left: auto;
-    margin-right: auto;
-    
+.product-box {
+    position:relative;
+    width:25%;
+    /* height:500px; */
+    float:left;
+    /* background-color: white; */
+    /* padding:0px;
+    margin:0px auto; */
   }
 
-  .inner2 h4{
+  .product-box h4{
     font-size: 1.3em;
     text-align: center;
     color:black;
@@ -257,22 +265,28 @@ li.menuDx{
     margin: 20px 5px 5px 5px;
 
   }
-  .inner2 p{
-    font-size: 0.9em;
+  .product-box p{
+      max-width:200px;
+    font-size: 0.8em;
     text-align: center;
     color:black;
     font-family:"title";
-    margin: 8% 20%;
+    margin: 8% 15%;
 }
 
-inner2.imgProdotto{
-    /* position:relative;
-    width: 300px;
-    height: 300px; */
+.product-box img{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display:block;
+    padding:0px;
+    /* border-radius: 50%; RENDE L' IMMAGINE TONDA */
 }
 
-.imgProdotto img{
-    position: relative;
-    width: 90%px;
-    height: 150px;
+/* ___ICON___ */
+.icon-wrapper{
+    width:100%;
+    height:400px;
+    background-color:#8ed8cc;
 }

@@ -232,9 +232,9 @@ li.menuDx{
     display:table;
     align-items:center;
     position:relative;
-     width: 90%;
-     margin-left:5%;
-     margin-right:5%;
+     width: 80%;
+     margin-left:10%;
+     margin-right:10%;
      margin: 0 auto;
      margin-bottom:80px;
      background-color:white;
@@ -296,7 +296,44 @@ li.menuDx{
 
 /* ___ICON___ */
 .icon-wrapper{
-    width:100%;
+    position:relative;
+    display:table;
+    width:80%;
     height:400px;
     background-color:#8ed8cc;
+    padding: 5% 10%;
 }
+
+.icon-row{
+    position:relative;
+    display:table-row;
+}
+
+.icon-col{
+    position:relative;
+    display:table-cell;
+    padding:20px;
+    font-size: 1em;
+    /* background-color: red; */
+    /* width:20%; */
+    height:100%;
+
+}
+
+.icon{
+    display: block;
+    margin:0 auto;
+    width: 100px;
+    position:relative;
+    height: 30%;
+    width:100%;
+    /* margin:70%; */
+    /* border-radius:50%; */
+    background-size: 100px 82px;
+    background-repeat:no-repeat;
+
+
+   
+}
+
+#shipping-icon{ background-image: url("../../img/icon/svgIcon/shipping.svg")}

@@ -2,12 +2,27 @@
 <html>
 
 <head>
+    <meta charset="UTF-8"> <!--HTML5: codifica utf-8  dei caratteri in uso nel documento. Scriver eni primi 512byte del documento -->
+    <title>DreamSound shop</title> <!--vale 80% dell' indicizzazione -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="DreamSound" />
     <meta name="keywords" content="audio, cuffie, casse, wireless" />
     <link rel="shortcut icon" href="ico/ico.png" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
 </head>
+
+
+<!-- TAG BODY E' SBAGLIATO PER IL MENU, BISOGNA USARE IL TAG HEADER? 
+    DENTRO AL TAG HEADER DEVE ESSERVI TITLE DESCRIZIONE E UN TAG NAV DOVE ANDRA INSERITO IL MENU
+    e' BUONA PRATICA SEGUIRE QUESTO MODELLO CON QUESTI NOMI DELLE CLASSI
+    <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+	<div class="menu-main-menu-container">
+		<ul id="menu-main-menu" class="nav-menu">
+			<li id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-79">
+				<a href=" ... ">CMS</a>
+				<ul class="sub-menu"> ... </ul>
+			</li>
+-->
 
 <body>
     <div class="navbar-container">
@@ -131,16 +146,30 @@
             <div class="icon-row">
                 <div class="icon-col">
                     <div class="icon" id="shipping-icon"></div>
+                    <p> Lorem ipsum dolor sit amet, consectetur 
+                            adipiscing elit. Suspendisse tincidunt 
+                            vel risus quis euismod. Aenean id tellus 
+                            ut risus luctus mattis a nec mauris.
+
+                    </p>
                 </div>
                 <div class="icon-col">
-                    <div class>
-                        <div class="icon" id="shipping"></div>
-                    </div>
+                    <div class="icon" id="color-personalizer"></div>
+                    <p> Lorem ipsum dolor sit amet, consectetur 
+                            adipiscing elit. Suspendisse tincidunt 
+                            vel risus quis euismod. Aenean id tellus 
+                            ut risus luctus mattis a nec mauris.
+
+                    </p>
                 </div>
                 <div class="icon-col">
-                    <div>
-                        <div class="icon" id="shipping"></div>
-                    </div>
+                    <div class="icon" id="supervisioned"></div>
+                    <p> Lorem ipsum dolor sit amet, consectetur 
+                            adipiscing elit. Suspendisse tincidunt 
+                            vel risus quis euismod. Aenean id tellus 
+                            ut risus luctus mattis a nec mauris.
+
+                    </p>
                 </div>
             </div>
         </div>
@@ -170,4 +199,31 @@
 
 </body>
 
+
+<!-- ANCHE IL FOOTER HA IL NAV: ( header footer elementi di blocco? display:block;)
+    <footer>
+        <nav>
+            <ul>
+            <li><a href="/chisiamo.html">Chi siamo</a></li>
+            <li><a href="/contatti.html">Come contattarci</a></li>
+            <li><a href="/mappa-sito.html">Mappa del sito</a></li>
+        </nav>
+    <p>Copyright &copy; 2010 Acme S.p.A.</p>
+    </footer>
+-->
+
 </html>
+
+
+<!-- Alberto utili in futuro: 
+    -Le versioni di Internet Explorer precedenti alla 9 non sono in grado di applicare uno stile
+a elementi sconosciuti.Un disastro nella visualizzazione del documento. Sembra che il solo
+modo per ovviare a questo sfacelo sia di creare in memoria questi elementi, via
+JavaScript, ricorrendo al metodo createElement dell’oggetto document.
+<script>
+document.createElement("article");
+document.createElement("header");
+document.createElement("aside");
+document.createElement("footer");
+</script>
+-->

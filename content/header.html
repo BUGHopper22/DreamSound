@@ -9,6 +9,7 @@
     <meta name="keywords" content="audio, cuffie, casse, wireless" />
     <link rel="shortcut icon" href="ico/ico.png" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/style-mobile.css" /> 
 </head>
 
 
@@ -25,19 +26,10 @@
 -->
 
 <body>
-
-
-
-
-    
-
-
-
-
-    <div class="navbar-container">
+    <nav id="navbar-container">
         <ul>
             <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Cuffie</a>
+                <a href="cuffie.html" class="dropbtn">Cuffie</a>
                 <!-- <div class="arrow-down icon"></div> -->
                 <div class="dropdown-content">
                     <a href="#">Cuffie in-ear</a>
@@ -62,51 +54,32 @@
                 </div>
             </li>
             <li>
-                    <a href="javascript:void(0)" class="dropbtn">About us</a>
+                <a href="javascript:void(0)" class="dropbtn">About us</a>
             </li>
             <li class="menuDx">
-                    <a href="javascript:void(0)" class="dropbtn">login</a>
+                <a href="javascript:void(0)" class="dropbtn">login</a>
             </li>
             <li class="menuDx">
-                    <a href="javascript:void(0)" class="dropbtn">carrello</a>
+                <a href="javascript:void(0)" class="dropbtn">carrello</a>
             </li>
         </ul>
-    </div>
-    <!-- IMMAGINE HOME -->
-    <!-- <div class="blocco1"> -->
-        <div id="outer">
-            <div class="middle">
-                <div class="inner">
-                    <h2 class="lore">Music is awesome</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Suspendisse tincidunt 
-                        vel risus quis euismod. Aenean id tellus 
-                        ut risus luctus mattis a nec mauris. .
-                    </p>
-                    <button class="button">Acquista marshall</button>
-                </div>
-                <div class="inner"> </div>
-            </div>
-        </div>
-    <!-- </div> -->
-
-
-
-
+    </nav>
     
-
-
-
-
-
-
-
-
-
+    <!-- CONTENITORE PRODOTTI CON IMMAGINE HOME -->
+    <div id="outer" class="outer-home"> <!-- La classe outer gestisce l'immagine di sfondo -->
+        <div class="inner">
+            <h2>Music is awesome</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur 
+                adipiscing elit. Suspendisse tincidunt 
+                vel risus quis euismod. Aenean id tellus 
+                ut risus luctus mattis a nec mauris. .
+            </p>
+            <button class="button">Acquista marshall</button>
+        </div>
+    </div>
+    
     <!-- DIV PRINCIPALE -->
     <div class="content">
-
-        
         <div class="data-template">
             <h2>I più venduti</h2>
             <div class="outer">
@@ -164,6 +137,7 @@
             </div>
         </div>
 
+<!--         
         <div class="icon-wrapper">
             <div class="icon-row">
                 <div class="icon-col">
@@ -194,7 +168,7 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         
     </div>

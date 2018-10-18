@@ -88,23 +88,17 @@ function PrepareMenu($title) {
             $menuInternalEntry=InsertInternalMenu($index);//riempie $menuInternalEntry con le pagine del sottomenu cosrrispondente
             $menu=$menu.
             '<li class="'.$isActive.' '.$element->getClasse().'><a class="dropbtn">'.$index.'</a><div class="dropdown-content">';
-            foreach()
-                <a href="#">Cuffie in-ear</a>
-                <a href="#">Cuffie on-ear</a>
-                <a href="#">Cuffie wireless</a>
-            </div>
-            </li>;
+            $menu=$menu.'<div>';
+            foreach($menuInternalEntry as $indexI=>$elementI){//non trattato isActive per il menu interno
+                $menu=$menu.'<a href="'.$elementI'">'.$indexI.'</a>';
+            }
+            $menu=$menu.'</div></li>';
         }
         else{//<li> senza dropdown   
             $menu=$menu.
             '<li class="'.$isActive.' '.$element->getClasse().'><a class="dropbtn">'.$index.'</a></li>';
         }
-
-
-        
-    
     }
-
     $menu=$menu.'</ul>';
     return $menu;
 }

@@ -133,47 +133,63 @@ li.menuDx{
     display: block;
 }
 
+
+/*------------------------------------*\
+Contenitore prodotti e Contenitore home
+\*------------------------------------*/
+
+#outer {
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+.inner {
+    padding: 10% 10% 10% 10%;
+    vertical-align: middle;
+    width: 30%;
+}
+
+.dx{
+    float: right;
+}
+
+.inner p {
+    font-size: 25px;
+    text-align: center;
+    color:white;
+    font-family:"title";
+}
+
+/* Immagine home */
+.outer-home{
+    background-image: url("../../img/headphones/headphones3.jpg");
+}
+
+/* Immagine cuffie in-ear */
+.outer-cuffieInEar{
+    background-image: url("../../img/prodotti/cuffieInear/presentation.png");
+}
+
+/* Immagine cuffie on-ear */
+.outer-cuffieOnEar{
+    background-image: url("../../img/prodotti/cuffieOnear/presentation.png");
+}
+
+/* immagine cuffie wireless */
+.outer-cuffieWireless{
+    background-image: url("../../img/prodotti/cuffieWireless/presentation.png");
+}
+
+
 /*------------------------------------*\
                Home
 \*------------------------------------*/
 
-/* IMMAGINE HOME */
-
-#outer {
-    display: table;
-     height: 90vh;
-    width: 100%;
-    margin-top: 0px;
-    margin-bottom:30px;
-    background-image: url("../../img/headphones/headphones3.jpg");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover; 
-  }
-  
-  .middle {
-    display: table-row; 
-    
-  }
-  
-  .inner {
-    display:table-cell;
-    padding-left:10%;
-    padding-right:10%;
-    vertical-align: middle;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-  }
-
-  .inner p{
-      font-size: 25px;
-      text-align: center;
-      color:white;
-      font-family:"title"
-  }
-
-  .button {
+.button {
     display: block;
     margin-left: auto;
     margin-right: auto;

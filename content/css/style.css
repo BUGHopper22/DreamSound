@@ -39,12 +39,12 @@ h1 {
 
 h2 {
     font-family: 'title';
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold; 
 }
 
@@ -391,7 +391,7 @@ Contenitore prodotti e Contenitore home
 }
 
 /*------------------------------------*\
-                Prodotti
+               Prodotti
 \*------------------------------------*/
 
 #productContainer{
@@ -427,11 +427,10 @@ Contenitore prodotti e Contenitore home
     height: 5vh;
     position: relative;
     display: inline-block;
-    
 }
 
 .product p{
-    font-size: 25px;
+    font-size: 20px;
     color:black;
     
 }
@@ -441,4 +440,12 @@ Contenitore prodotti e Contenitore home
     position: relative;
     float: right;
     margin-right: 80px;
+    padding: 0 20px 0 20px;
+    background-color: #01404f;
+    border: none;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
 }

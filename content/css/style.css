@@ -413,10 +413,6 @@ Contenitore prodotti e Contenitore home
     float: left;
 }
 
-.productImg :hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
-
 .product {
     width: 75%;
     height: 20vh;
@@ -432,6 +428,8 @@ Contenitore prodotti e Contenitore home
 .product p{
     font-size: 20px;
     color:black;
+    text-align: justify;
+    margin-right: 20px;
     
 }
 
@@ -439,7 +437,7 @@ Contenitore prodotti e Contenitore home
     height: 5vh;
     position: relative;
     float: right;
-    margin-right: 80px;
+    margin-right: 40px;
     padding: 0 20px 0 20px;
     background-color: #01404f;
     border: none;

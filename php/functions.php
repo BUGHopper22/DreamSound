@@ -40,19 +40,19 @@ function insertPages(){
     $menuPages=array(
                     //  NAME                    URL                     TYPE                OTHERCLASS
         new menuElement('Home',                 'index.php',            'noDropDown',        ''),
-        new menuElement('Cuffie',               'content/cuffie.html',          'dropDown',          ''),
-        new menuElement('Cuffie in-ear',        'content/cuffieInEar.php',      'dropdown-content',  ''),
-        new menuElement('Cuffie on-ear',        'content/cuffieOnEar.php',      'dropdown-content',  ''),
-        new menuElement('Cuffie wireless',      'content/cuffieWireless.php',   'dropdown-content',  ''),
-        new menuElement('Casse',                'content/casse.php',            'dropDown',          ''),
-        new menuElement('Casse altoparlanti',   'content/casseAltoparlanti',    'dropdown-content',  ''),
-        new menuElement('Casse bluetooth',      'content/casseBluetooth',       'dropdown-content',  ''),
-        new menuElement('Accessori',            'content/accessori.php',        'dropDown',          ''),
-        new menuElement('Accessori per cuffie', 'content/accessoriPerCuffie',   'dropdown-content',  ''),
-        new menuElement('Accessori per casse',  'content/accessoriPerCasse',    'dropdown-content',  ''),
-        new menuElement('About us',             'content/aboutUs.php',          'noDropDown',        ''),
-        new menuElement('Carrello',             'content/carrello.php',         'noDropDown',        'menuDx'),
-        new menuElement('Login',                'content/slogin.php',            'noDropDown',        'menuDx'),
+        new menuElement('Cuffie',               'cuffie.php',          'dropDown',          ''),
+        new menuElement('Cuffie in-ear',        'cuffieInEar.php',      'dropdown-content',  ''),
+        new menuElement('Cuffie on-ear',        'cuffieOnEar.php',      'dropdown-content',  ''),
+        new menuElement('Cuffie wireless',      'cuffieWireless.php',   'dropdown-content',  ''),
+        new menuElement('Casse',                'casse.php',            'dropDown',          ''),
+        new menuElement('Casse altoparlanti',   'casseAltoparlanti.php',    'dropdown-content',  ''),
+        new menuElement('Casse bluetooth',      'casseBluetooth.php',       'dropdown-content',  ''),
+        new menuElement('Accessori',            'accessori.php',        'dropDown',          ''),
+        new menuElement('Accessori per cuffie', 'accessoriCuffie.php',   'dropdown-content',  ''),
+        new menuElement('Accessori per casse',  'accessoriCasse.php',    'dropdown-content',  ''),
+        new menuElement('About us',             'aboutUs.php',          'noDropDown',        ''),
+        new menuElement('Carrello',             'carrello.php',         'noDropDown',        'menuDx'),
+        new menuElement('Login',                'login.php',            'noDropDown',        'menuDx'),
     );
     return $menuPages;
 }
@@ -92,7 +92,7 @@ function prepareMenu($title){
                         $menu=$menu.'<a>'.$menuPages[$i]->getName().'</a>';
                 }
                 else{
-                        $menu=$menu.'<a href='.$menuPages[$i]->getUrl().'">'.$menuPages[$i]->getName().'</a>';
+                        $menu=$menu.'<a href='.$menuPages[$i]->getUrl().'>'.$menuPages[$i]->getName().'</a>';
                 }
                 $numInternalPages--;
             }

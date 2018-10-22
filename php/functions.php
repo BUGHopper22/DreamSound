@@ -1,95 +1,113 @@
 <?php
 
+    
+//______________________________________________//
+//                  HEADER
+//______________________________________________//
 
 class menuElement{
-    //proprietà (sono i campi dati della classe)
+    //proprietà (o campi dati)
+    var $name;
     var $url;
-    var $classe;
+    var $buttonType;
+    var $otherClass;
     //costruttore
-    function __construct($url,$classe){
-        echo("Costruisce\n");
+    function __construct($name,$url,$buttonType,$otherClass){
+        $this->name=$name;
         $this->url=$url;
-        $this->classe=$classe;
+        $this->buttonType=$buttonType;
+        $this->otherClass=$otherClass;
     }
-    //metodi
+    //metodi:
+    function getName(){
+        return $this->name;
+    }
     function getUrl(){
         return $this->url;
     }
-    function getClasse(){
-        // echo("entra in getClasse\n");
-        
-        $prova=$this->classe;
-        var_dump($prova);
-        return $prova;
+    function getType(){
+        return $this->buttonType;
     }
-    // public function toStringClass(){
-    //     return "$this->classe";
-    // }
-    // public function __toStringUrl(){
-    //     return "$this->classe";
-    // }
-}
+    function getClasse(){
+        return $this->otherClass;
+    }
     
-
-
-//___Per aggiungere pagine ai sottomenu:
-function InsertInternalMenu($namePage){
-    if($namePage=='Cuffie')
-        return array(
-            'Cuffie in-ear'=>'cuffieInEar.php',
-            'Cuffie on-ear'=>'cuffieOnEar.php',
-            'Cuffie wireless'=>'cuffieWireless.php',
-        );
-    if($namePage=='Casse')
-        return array(
-            'Casse altoparlanti'=>'casseAltoparlanti',
-            'Casse bluetooth'=>'casseBluetooth',
-        );
-    if($namePage=='Accessori')
-        return array(
-            'Accessori per cuffie'=>'accessoriPerCuffie',
-            'Accessori per casse'=>'accessoriPerCasse'
-        );
 }
 
-function PrepareMenu($title) {
-    $menuEntry=array(
-        'Home'      =>new menuElement('index.php',' '),
-        'Cuffie'    =>new menuElement('cuffie.php','dropDown'),
-        'Casse'     =>new menuElement('casse.php','dropDown'),
-        'Accessori' =>new menuElement('accessori.php','dropDown'),
-        'About us'  =>new menuElement('aboutUs.php',''),
-        'Carrello'  =>new menuElement('carrello.php','menuDx'),
-        'Login'     =>new menuElement('login.php','menuDx'),
+function insertPages(){
+    //ATTENZIONE LE PAGINE DEL SOTTOMENU DEVONO ESSERE SCRITTE IMMEDIATAMENTE DOPO IL DROPDOWN CHE LE CONTIENE
+    echo("costruisce gli oggetti");
+    $menuPages=array(
+                    //  NAME                    URL                     TYPE                OTHERCLASS
+        new menuElement('Home',                 'index.php',            'noDropDown',        ''),
+        new menuElement('Cuffie',               'content/cuffie.html',          'dropDown',          ''),
+        new menuElement('Cuffie in-ear',        'content/cuffieInEar.php',      'dropdown-content',  ''),
+        new menuElement('Cuffie on-ear',        'content/cuffieOnEar.php',      'dropdown-content',  ''),
+        new menuElement('Cuffie wireless',      'content/cuffieWireless.php',   'dropdown-content',  ''),
+        new menuElement('Casse',                'content/casse.php',            'dropDown',          ''),
+        new menuElement('Casse altoparlanti',   'content/casseAltoparlanti',    'dropdown-content',  ''),
+        new menuElement('Casse bluetooth',      'content/casseBluetooth',       'dropdown-content',  ''),
+        new menuElement('Accessori',            'content/accessori.php',        'dropDown',          ''),
+        new menuElement('Accessori per cuffie', 'content/accessoriPerCuffie',   'dropdown-content',  ''),
+        new menuElement('Accessori per casse',  'content/accessoriPerCasse',    'dropdown-content',  ''),
+        new menuElement('About us',             'content/aboutUs.php',          'noDropDown',        ''),
+        new menuElement('Carrello',             'content/carrello.php',         'noDropDown',        'menuDx'),
+        new menuElement('Login',                'content/slogin.php',            'noDropDown',        'menuDx'),
     );
+    return $menuPages;
+}
+
+
+
+//PRE: $i sarà l' indice della prima pagina del sottomenu, potenzialmente potrebbero non esserci pagine di sottomenu
+function internalPagesCount($i,$menuPages,$size){
+    $numInternalPages=0;
+    while($i<=$size and $menuPages[$i]->getType()=="dropdown-content"){
+        $numInternalPages +=1;
+        $i++;
+    }
+    return $numInternalPages;
+}
+//POST: ritorna il numero di voci del sottomenu 
+
+function prepareMenu($title){
     $menu='<ul>';
-    //  per ogni elemento del mio array menuentry associo la variabile $element agli indici del mio array,
-    
-    foreach($menuEntry as $index=>$element) {
-        if($index==$title){//active
-            $menu=$menu.'<li class="active '.$element->getClasse().'"><a class="dropbtn">'.$index.'</a>';
+    $menuPages=insertPages();
+    $size=count($menuPages);
+    $i=0;
+    while($i<$size){
+        if($menuPages[$i]->getName()==$title){//active
+            $menu=$menu.'<li class="active '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().' "><a class="dropbtn">'.$menuPages[$i]->getName().'</a>';
         }
         else{//notActive
-            $menu=$menu.'<li class="notActive '.$element->getClasse().'"><a class="dropbtn" href="'.$element->getUrl().'">'.$index.'</a>';
+            $menu=$menu.'<li class="notActive '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().'">
+                        <a class="dropbtn" href="'.$menuPages[$i]->getUrl().'">'.$menuPages[$i]->getName().'</a>';
         }
-        if($element->getClasse()=='dropDown'){//sse dropdown
-            // echo("stampa");
-            // echo($element->getClasse());
-            $menuInternalEntry=InsertInternalMenu($index);//riempie $menuInternalEntry con le pagine del sottomenu cosrrispondente
+        if($menuPages[$i]->getType()=='dropDown'){//sse dropdown
             $menu=$menu.'<div class="dropdown-content">';
-            foreach($menuInternalEntry as $indexI=>$elementI){
-                if($indexI==$title)
-                    $menu=$menu.'<a>'.$indexI.'</a>';
-                else
-                    $menu=$menu.'<a href='.$elementI.'">'.$indexI.'</a>';
+            $numInternalPages=internalPagesCount($i+1,$menuPages,$size);//ritorna il numero delle sottopagine
+            while($numInternalPages!=0){
+                $i++;
+                if($menuPages[$i]->getName()==$title){
+                        $menu=$menu.'<a>'.$menuPages[$i]->getName().'</a>';
+                }
+                else{
+                        $menu=$menu.'<a href='.$menuPages[$i]->getUrl().'">'.$menuPages[$i]->getName().'</a>';
+                }
+                $numInternalPages--;
             }
             $menu=$menu.'</div>';
         }
         $menu=$menu.'</li>';
+        $i++;
     }
     $menu=$menu.'</ul>';
     return $menu;
 }
+
+//______________________________________________//
+//                 BUILD PAGE
+//______________________________________________//
 
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$content,$array=0) {

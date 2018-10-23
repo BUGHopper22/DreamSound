@@ -106,16 +106,16 @@ function prepareMenu($title,$menuPages){
 //                 BUILD PAGE
 //______________________________________________//
 
-function findActualUrl($title,$menuPages){
-    $esci=false;
-    $size=count($menuPages);
-    $scorri=0;
-    while($scorri<$size and !$esci){
-        if($menuPages[$scorri]->getName()==$title)
-            $esci=true;
-    }
-    return $menuPages[$scorri]->getUrl();
-}
+// function findActualUrl($title,$menuPages){
+//     $esci=false;
+//     $size=count($menuPages);
+//     $scorri=0;
+//     while($scorri<$size and !$esci){
+//         if($menuPages[$scorri]->getName()==$title)
+//             $esci=true;
+//     }
+//     return $menuPages[$scorri]->getUrl();
+// }
 
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$content,$array=0) {
@@ -126,29 +126,9 @@ function BuildPage($title,$content,$array=0) {
     //Crea il menu con l'array di pagine
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
-
-    // $actualPageUrl='content/'.findActualUrl($title,$menuPages).'.html';
-    // echo($actualPages);
     $contentActualPage=file_get_contents($content);
     $page=str_replace('{content}',$contentActualPage,$page);
-
-    // $header=file_get_contents("contents/header.html");
-    // $page=str_replace('{header}',$header,$page);
-    // $navbar=PrepareMenu($title);
-    // $page=str_replace('{navbar}',$navbar,$page);
-    // $breadcrumb=PrepareBreadcrumb($title);
-    // $page=str_replace('{breadcrumb}',$breadcrumb,$page);
-    // if($array==1)
-    //     $body=$content;
-    // else
-    //     $body=file_get_contents($content);
-    // $page=str_replace('{content}',$body,$page);
-    // $mobilenavbar=PrepareMobileMenu($title);
-    // $page=str_replace('{mobilenavbar}',$mobilenavbar,$page);
-    // $footer=PrepareFooter($title);
-    // $page=str_replace('{footer}',$footer,$page);
     echo $page;
-
 }
 
 ?>

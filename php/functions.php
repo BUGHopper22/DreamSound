@@ -32,9 +32,8 @@ class menuElement{
     
 }
 
-function insertPages(){
+function createNavArray(){
     //ATTENZIONE LE PAGINE DEL SOTTOMENU DEVONO ESSERE SCRITTE IMMEDIATAMENTE DOPO IL DROPDOWN CHE LE CONTIENE
-    echo("costruisce gli oggetti");
     $menuPages=array(
                     //  NAME                    URL                     TYPE                OTHERCLASS
         new menuElement('Home',                 'index',            '',                 ''),
@@ -69,7 +68,8 @@ function internalPagesCount($i,$menuPages,$size){
 //POST: ritorna il numero di voci del sottomenu 
 
 function prepareMenu($title,$menuPages){
-    $menu='<ul>';
+    $menu='<nav class="navbar-container">';
+    $menu=$menu.'<ul>';
     $size=count($menuPages);
     $i=0;
     while($i<$size){
@@ -99,6 +99,7 @@ function prepareMenu($title,$menuPages){
         $i++;
     }
     $menu=$menu.'</ul>';
+    $menu=$menu.'</nav>';
     return $menu;
 }
 
@@ -118,11 +119,11 @@ function prepareMenu($title,$menuPages){
 // }
 
 // ____SERVE PER COSTRUIRE LA PAGINA
-function BuildPage($title,$content,$array=0) {
-    $page=file_get_contents('content/structure.html');
+function BuildPage($title,$content) {
+    $page=file_get_contents('content/structure.html');//carica la struttura con head e body
     $page=str_replace('{title}',$title,$page);
     //crea array con le pagine
-    $menuPages=insertPages();
+    $menuPages=createNavArray();
     //Crea il menu con l'array di pagine
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);

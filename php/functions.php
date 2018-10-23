@@ -1,6 +1,4 @@
-<?php
-
-    
+<?php 
 //______________________________________________//
 //                  HEADER
 //______________________________________________//
@@ -39,20 +37,20 @@ function insertPages(){
     echo("costruisce gli oggetti");
     $menuPages=array(
                     //  NAME                    URL                     TYPE                OTHERCLASS
-        new menuElement('Home',                 'index.php',            'noDropDown',        ''),
-        new menuElement('Cuffie',               'cuffie.php',          'dropDown',          ''),
-        new menuElement('Cuffie in-ear',        'cuffieInEar.php',      'dropdown-content',  ''),
-        new menuElement('Cuffie on-ear',        'cuffieOnEar.php',      'dropdown-content',  ''),
-        new menuElement('Cuffie wireless',      'cuffieWireless.php',   'dropdown-content',  ''),
-        new menuElement('Casse',                'casse.php',            'dropDown',          ''),
-        new menuElement('Casse altoparlanti',   'casseAltoparlanti.php',    'dropdown-content',  ''),
-        new menuElement('Casse bluetooth',      'casseBluetooth.php',       'dropdown-content',  ''),
-        new menuElement('Accessori',            'accessori.php',        'dropDown',          ''),
-        new menuElement('Accessori per cuffie', 'accessoriCuffie.php',   'dropdown-content',  ''),
-        new menuElement('Accessori per casse',  'accessoriCasse.php',    'dropdown-content',  ''),
-        new menuElement('About us',             'aboutUs.php',          'noDropDown',        ''),
-        new menuElement('Carrello',             'carrello.php',         'noDropDown',        'menuDx'),
-        new menuElement('Login',                'login.php',            'noDropDown',        'menuDx'),
+        new menuElement('Home',                 'index',            '',                 ''),
+        new menuElement('Cuffie',               'cuffie',           'dropDown',         ''),
+        new menuElement('Cuffie in-ear',        'cuffieInEar',      'dropdown-content', ''),
+        new menuElement('Cuffie on-ear',        'cuffieOnEar',      'dropdown-content', ''),
+        new menuElement('Cuffie wireless',      'cuffieWireless',   'dropdown-content', ''),
+        new menuElement('Casse',                'casse',            'dropDown',         ''),
+        new menuElement('Casse altoparlanti',   'casseAltoparlanti','dropdown-content', ''),
+        new menuElement('Casse bluetooth',      'casseBluetooth',   'dropdown-content', ''),
+        new menuElement('Accessori',            'accessori',        'dropDown',         ''),
+        new menuElement('Accessori per cuffie', 'accessoriCuffie',  'dropdown-content', ''),
+        new menuElement('Accessori per casse',  'accessoriCasse',   'dropdown-content', ''),
+        new menuElement('About us',             'aboutUs',          '',                 ''),
+        new menuElement('Carrello',             'carrello',         '',                 'menuDx'),
+        new menuElement('Login',                'login',            '',                 'menuDx'),
     );
     return $menuPages;
 }
@@ -70,30 +68,29 @@ function internalPagesCount($i,$menuPages,$size){
 }
 //POST: ritorna il numero di voci del sottomenu 
 
-function prepareMenu($title){
+function prepareMenu($title,$menuPages){
     $menu='<ul>';
-    $menuPages=insertPages();
     $size=count($menuPages);
     $i=0;
     while($i<$size){
+        //si potrebbe fare con find actual page
         if($menuPages[$i]->getName()==$title){//active
             $menu=$menu.'<li class="active '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().' "><a class="dropbtn">'.$menuPages[$i]->getName().'</a>';
         }
         else{//notActive
             $menu=$menu.'<li class="notActive '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().'">
-                        <a class="dropbtn" href="'.$menuPages[$i]->getUrl().'">'.$menuPages[$i]->getName().'</a>';
+                        <a class="dropbtn" href="'.$menuPages[$i]->getUrl().'.php">'.$menuPages[$i]->getName().'</a>';
         }
         if($menuPages[$i]->getType()=='dropDown'){//sse dropdown
             $menu=$menu.'<div class="dropdown-content">';
             $numInternalPages=internalPagesCount($i+1,$menuPages,$size);//ritorna il numero delle sottopagine
             while($numInternalPages!=0){
                 $i++;
-                if($menuPages[$i]->getName()==$title){
-                        $menu=$menu.'<a>'.$menuPages[$i]->getName().'</a>';
+                $menu=$menu.'<a ';
+                if($menuPages[$i]->getName()!=$title){
+                    $menu=$menu.' href='.$menuPages[$i]->getUrl().'.php';
                 }
-                else{
-                        $menu=$menu.'<a href='.$menuPages[$i]->getUrl().'>'.$menuPages[$i]->getName().'</a>';
-                }
+                $menu=$menu.'>'.$menuPages[$i]->getName().'</a>';
                 $numInternalPages--;
             }
             $menu=$menu.'</div>';
@@ -109,12 +106,32 @@ function prepareMenu($title){
 //                 BUILD PAGE
 //______________________________________________//
 
+function findActualUrl($title,$menuPages){
+    $esci=false;
+    $size=count($menuPages);
+    $scorri=0;
+    while($scorri<$size and !$esci){
+        if($menuPages[$scorri]->getName()==$title)
+            $esci=true;
+    }
+    return $menuPages[$scorri]->getUrl();
+}
+
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$content,$array=0) {
     $page=file_get_contents('content/structure.html');
     $page=str_replace('{title}',$title,$page);
-    $header=PrepareMenu($title);// costruisce header con menu
+    //crea array con le pagine
+    $menuPages=insertPages();
+    //Crea il menu con l'array di pagine
+    $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
+
+    // $actualPageUrl='content/'.findActualUrl($title,$menuPages).'.html';
+    // echo($actualPages);
+    $contentActualPage=file_get_contents($content);
+    $page=str_replace('{content}',$contentActualPage,$page);
+
     // $header=file_get_contents("contents/header.html");
     // $page=str_replace('{header}',$header,$page);
     // $navbar=PrepareMenu($title);

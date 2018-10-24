@@ -203,7 +203,14 @@ Contenitore prodotti e Contenitore home
 .outer-cuffieWireless{
     background-image: url("../../img/prodotti/cuffieWireless/presentation.png");
 }
-
+/*Immagine altoparlanti*/
+.outer-altoparlanti{
+    background-image: url("../../img/prodotti/casse/inizio.jpg");
+}
+/*Immagine casse bluetooth*/
+.outer-casseBluetooth{
+    background-image: url("../../img/prodotti/casseb/inizio.png");
+}
 
 /*------------------------------------*\
                Home

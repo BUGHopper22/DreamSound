@@ -1,4 +1,5 @@
-﻿DROP TABLE IF EXISTS Accessori;
+﻿
+DROP TABLE IF EXISTS Accessori;
 DROP TABLE IF EXISTS Casse;
 DROP TABLE IF EXISTS Cuffie;
 DROP TABLE IF EXISTS Id_prodotti;
@@ -90,6 +91,6 @@ INSERT INTO Accessori (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, De
 ('16','Per Cuffie','15,40','Kwmobile','..','..','I cuscinetti per cuffie Bose Soundlink Around-Ear Wireless II sono realizzati in ecopelle resistente, e grazie alla morbida imbottitura in schiuma offrono il massimo comfort di ascolto.'),
 ('17','Per Cuffie','7,99','Avantree','ADAD-TR302', '..', 'Divertitevi a condividere canzoni e film con i vostri amici, senza disturbare altri, utilizzando questo duplicatore a Y da 3.5mm con il vostro telefono o tablet o MP3 con due paia di cuffie.'),
 ('18','Per Cuffie','15,90','Moretek','..','..', 'Custodia Portatile Case per Airpods, protettiva in silicone dalle linee moderne con inclusi diversi ganci utili per vivere ogni momento della tua vita.'),
-('19','Per Casse','7,50','deleyCON','MK3331','..','Cavo deleyCON 2x 1,5mm² - 48x0,20mm (treccia) in alluminio rivestito in rame compatibile con altoparlanti e casse. Marcatura della polarità (nero/rosso).');
-('20','Per Casse','34,99','Duronic','SPS1022','..','Due piedistalli per casse acustiche, base di appoggio 12*12. Il prodotto ha una altezza di 40cm per permettervi di posizionare le vostre casse ad un altezza ottimale.');
+('19','Per Casse','7,50','deleyCON','MK3331','..','Cavo deleyCON 2x 1,5mm² - 48x0,20mm (treccia) in alluminio rivestito in rame compatibile con altoparlanti e casse. Marcatura della polarità (nero/rosso).'),
+('20','Per Casse','34,99','Duronic','SPS1022','..','Due piedistalli per casse acustiche, base di appoggio 12*12. Il prodotto ha una altezza di 40cm per permettervi di posizionare le vostre casse ad un altezza ottimale.'),
 ('21','Per Casse','10,99','Khanka','UK-T-JBL-02','..','Custodia per casse bluetooth JBL, pratica e imbottita per mantenere la propria cassa e gli accessori sicuri, protetti e organizzati');

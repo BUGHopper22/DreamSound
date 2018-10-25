@@ -1,3 +1,22 @@
+/*------------------------------------*\
+          Mobile navbar
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+    #navbar-container {
+         
+    }
+
+    #navbar-container a{
+        
+    }
+
+    ul a{
+
+    }
+}
+
+
 @media only screen and (max-width: 767px) {
     #outer{
         height: 70vh;
@@ -34,7 +53,7 @@
 
     .productsImg {
         width: 45%;
-        height: 60vh;
+        height: 40vh;
     }
     .products {
         width: 55%;
@@ -47,15 +66,18 @@
 
     .detailsContainer {
         width: 55%;
-        height: 15vh;
+        height: auto;
         float: right;
+        margin-top: 2em;
     }  
 
+    .productPrice {
+        margin-left: 1em;
+    }
+
     .details {
-        height: 4vh;
-        float: none;
-        margin: 0 10px 0 0px;
-        float:right;
+        float: right;
+        margin: 0 1em 0 0;
     }
 }
 
@@ -81,7 +103,7 @@
 
     .product p { 
         font-size: 20px;
-        margin-left: 20px;
+        margin-left: 1em;
     }
 
     .buyContainer {
@@ -91,7 +113,7 @@
 
     .productPrice {
         float: left;
-        margin-left: 20px;
+        margin-left: 1em;
     }
 
     .productPrice h3 {
@@ -99,9 +121,7 @@
     }
 
     .compra {
-        height: 4vh;
         float: right;
-        margin: 0 20px 0 20px;
-        margin-right: 20px;
+        margin: 0 1em 0 1em;
     }
 }

@@ -32,6 +32,7 @@ body {
 }
 
 h1 {
+    margin-top: 3em;
     font-family: 'title';
     font-size: 40px;
     text-align: center;
@@ -47,11 +48,6 @@ h3 {
     margin: 0;
     font-size: 20px;
     font-style: normal;
-}
-
-p {
-    font-family: 'title';
-    font-size: 100px;
 }
 
 /*------------------------------------*\
@@ -471,7 +467,8 @@ Contenitore prodotti e Contenitore home
                Prodotto
 \*------------------------------------*/
 
-#productContainer{
+#productContainer {
+    margin-top: 2em;
     width: 100%;
     height: 80vh;
     box-shadow: 0px 4px 2px #8080807A;

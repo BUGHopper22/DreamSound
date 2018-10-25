@@ -23,54 +23,85 @@
 }
 
 /*------------------------------------*\
-               PRODOTTI
+          Tutti i prodotti
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+    #productsContainer{
+        height: auto;
+        overflow: hidden;
+    }
+
+    .productsImg {
+        width: 45%;
+        height: 60vh;
+    }
+    .products {
+        width: 55%;
+        height: auto;
+    }
+
+    .products p { 
+        font-size: 16px;
+    }
+
+    .detailsContainer {
+        width: 55%;
+        height: 15vh;
+        float: right;
+    }  
+
+    .details {
+        height: 4vh;
+        float: none;
+        margin: 0 10px 0 0px;
+        float:right;
+    }
+}
+
+/*------------------------------------*\
+               Prodotto
 \*------------------------------------*/
 
 @media only screen and (max-width: 767px) {
     #productContainer{
-        width: 100%;
-        height: 40vh;
-        box-shadow: 0px 4px 2px #8080807A;
-        margin-bottom: 5px;
+        height: auto;
         overflow: hidden;
     }
 
-    .productImg{
-        margin: 0px 0 4px 0;
-        height: 100%;
-        width: 45%;
-        vertical-align: middle;
-        float: left;
+    .productImg {
+        width: 100%;
+        height: 50vh;
     }
+
     .product {
-        width: 55%;
-        height: 25vh;
-  
-        /* margin-right: 20px; */
+        width: 100%;
+        height: auto;
     }
 
-    .productPrice{
+    .product p { 
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .buyContainer {
+        width: 100%;
         height: 8vh;
-        display: inline-block;
     }
 
-    .product p{
-        font-size: 14px;
+    .productPrice {
+        float: left;
+        margin-left: 20px;
     }
 
-    .compra{
+    .productPrice h3 {
+        font-size: 18px;
+    }
+
+    .compra {
         height: 4vh;
-        position: relative;
-        display: inline-block;
-        float: center;
+        float: right;
+        margin: 0 20px 0 20px;
         margin-right: 20px;
-        padding: 0 20px 0 20px;
-        background-color: #01404f;
-        border: none;
-        color:white;
-        text-align: center;
-        text-decoration: none;
-        font-size: 13px;
-        cursor: pointer;
     }
 }

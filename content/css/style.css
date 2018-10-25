@@ -209,7 +209,15 @@ Contenitore prodotti e Contenitore home
 }
 /*Immagine casse bluetooth*/
 .outer-casseBluetooth{
-    background-image: url("../../img/prodotti/casseb/inizio.png");
+    background-image: url("../../img/prodotti/casseb/inizio.jpg");
+}
+/*Immagine accessori cuffie*/
+.outer-accessoricuffie{
+    background-image: url("../../img/prodotti/acuffie/inizio.jpg");
+}
+/*Immagine accessori casse*/
+.outer-accessoricasse{
+    background-image: url("../../img/prodotti/acasse/inizio.jpg");
 }
 
 /*------------------------------------*\

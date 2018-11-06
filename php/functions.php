@@ -68,7 +68,7 @@ function internalPagesCount($i,$menuPages,$size){
 //POST: ritorna il numero di voci del sottomenu 
 
 function prepareMenu($title,$menuPages){
-    $menu='<nav class="navbar-container">';
+    $menu='<nav id="navbar-container">';
     $menu=$menu.'<ul>';
     $size=count($menuPages);
     $i=0;

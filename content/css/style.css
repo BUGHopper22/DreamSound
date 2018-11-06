@@ -32,6 +32,7 @@ body {
 }
 
 h1 {
+    margin-top: 3em;
     font-family: 'title';
     font-size: 40px;
     text-align: center;
@@ -44,19 +45,40 @@ h2 {
 }
 
 h3 {
+    margin: 0;
     font-size: 20px;
-    font-weight: bold; 
-}
-
-p {
-    font-family: 'title';
-    font-size: 100px;
+    font-style: normal;
 }
 
 /*------------------------------------*\
                NAVBAR
 \*------------------------------------*/
 
+<<<<<<< HEAD
+=======
+#navbar-container{
+    position: fixed;
+    width:100%;
+    top:0px;
+    left:0px;
+    z-index: 999;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color:#01404f;;
+}
+
+li {
+    float: left;
+}
+
+
+>>>>>>> 94237360d3d31813a1324777ecd3dbc2c08cbbb6
 /*___arrowMenu___*/
 
 /* .arrow-down.icon {
@@ -212,7 +234,22 @@ Contenitore prodotti e Contenitore home
 .outer-cuffieWireless{
     background-image: url("../../img/prodotti/cuffieWireless/presentation.png");
 }
-
+/*Immagine altoparlanti*/
+.outer-altoparlanti{
+    background-image: url("../../img/prodotti/casse/inizio.jpg");
+}
+/*Immagine casse bluetooth*/
+.outer-casseBluetooth{
+    background-image: url("../../img/prodotti/casseb/inizio.jpg");
+}
+/*Immagine accessori cuffie*/
+.outer-accessoricuffie{
+    background-image: url("../../img/prodotti/acuffie/inizio.jpg");
+}
+/*Immagine accessori casse*/
+.outer-accessoricasse{
+    background-image: url("../../img/prodotti/acasse/inizio.jpg");
+}
 
 /*------------------------------------*\
                Home
@@ -243,9 +280,6 @@ Contenitore prodotti e Contenitore home
     font-size: 45px;
     color:white; 
 }
-
-
-
 
 /* ___PIU VENDUTI___ */
 
@@ -400,59 +434,142 @@ Contenitore prodotti e Contenitore home
 }
 
 /*------------------------------------*\
-               Prodotti
+            Tutti i Prodotti
 \*------------------------------------*/
 
-#productContainer{
+#productsContainer{
     width: 100%;
-    height: 30vh;
+    height: 35vh;
     box-shadow: 0px 4px 2px #8080807A;
-    margin-bottom: 5px;
+    margin-bottom: 1em;
 }
 
-.productImg{
+.productsImg{
     background-image: url("../../img/prodotti/cuffieInear/inear1.png");
     background-position: center;
     background-repeat: no-repeat; 
     background-size: contain; 
-    margin: 0px 0 4px 0;
+    margin: 0px 0 1em 0;
     height: 100%;
     width: 25%;
     vertical-align: middle;
     float: left;
 }
 
-.product {
+.products {
     width: 75%;
     height: 20vh;
     float: right;
 }
 
-.productPrice{
+.products p {
+    font-size: 20px;
+    color:black;
+    text-align: justify;
+    margin: 0 2em 0 0;
+    padding: 0;
+    
+}
+.detailsContainer{
+    height: 10vh;
+    width: 75%;
+    display: inline-block;
+    position: relative;
+}
+
+.productsPrice {
+    height: 5vh;
+    position: relative;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.details {
+    height: auto;
+    position: relative;
+    float: right;
+    margin: 1em 3em 0 0;
+    padding: 0 1em 0 1em;
+    background-color: #01404f;
+    border: none;
+    color:white;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    vertical-align: center;
+}
+
+/*------------------------------------*\
+               Prodotto
+\*------------------------------------*/
+
+#productContainer {
+    margin-top: 2em;
+    width: 100%;
+    height: 80vh;
+    box-shadow: 0px 4px 2px #8080807A;
+    margin-bottom: 1em;
+    /* overflow: hidden; */
+}
+
+.productImg{
+    background-image: url("../../img/prodotti/cuffieInear/inear1.png");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: 400px 400px;
+    margin: 0px 0 1em 0;
+    height: 100%;
+    width: 40%;
+    vertical-align: middle;
+    float: left;
+}
+
+.product {
+    width: 60%;
+    height: 60vh;
+    float: right;
+}
+
+.product h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.product p {
+    font-size: 20px;
+    color:black;
+    text-align: justify;
+    margin-right: 2em;
+}
+
+.buyContainer {
+    width: 60%;
+    height: 10vh;
+    display: inline-block;
+    position: relative;
+    padding-top: 2em;
+}
+
+.productPrice {
     height: 5vh;
     position: relative;
     display: inline-block;
 }
 
-.product p{
-    font-size: 20px;
-    color:black;
-    text-align: justify;
-    margin-right: 20px;
-    
-}
-
-.compra{
-    height: 5vh;
+.compra {
+    height: auto;
     position: relative;
     float: right;
-    margin-right: 40px;
-    padding: 0 20px 0 20px;
+    margin-right: 3em;
+    padding: 0 1em 0 1em;
     background-color: #01404f;
     border: none;
     color:white;
     text-align: center;
+    font-size: 16px;
     text-decoration: none;
+<<<<<<< HEAD
     font-size: 13px;
     cursor: pointer;
 }
@@ -634,3 +751,6 @@ Contenitore prodotti e Contenitore home
   :-ms-input-placeholder {  
      color: white;  
   }
+=======
+}
+>>>>>>> 94237360d3d31813a1324777ecd3dbc2c08cbbb6

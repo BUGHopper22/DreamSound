@@ -75,7 +75,8 @@ function prepareMenu($title,$menuPages){
     while($i<$size){
         //si potrebbe fare con find actual page
         if($menuPages[$i]->getName()==$title){//active
-            $menu=$menu.'<li class="active '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().' "><a class="dropbtn">'.$menuPages[$i]->getName().'</a>';
+            $menu=$menu.'<li class="active '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().' ">
+                                                            <a class="dropbtn">'.$menuPages[$i]->getName().'</a>';
         }
         else{//notActive
             $menu=$menu.'<li class="notActive '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().'">
@@ -127,6 +128,7 @@ function BuildPage($title,$content) {
     //Crea il menu con l'array di pagine
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
+    
     $contentActualPage=file_get_contents($content);
     $page=str_replace('{content}',$contentActualPage,$page);
     echo $page;

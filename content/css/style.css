@@ -57,28 +57,6 @@ p {
                NAVBAR
 \*------------------------------------*/
 
-.navbar-container{
-    position: fixed;
-    width:100%;
-    top:0px;
-    left:0px;
-    z-index: 999;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow: hidden;
-    background-color:#01404f;;
-}
-
-li {
-    float: left;
-}
-
-
 /*___arrowMenu___*/
 
 /* .arrow-down.icon {
@@ -107,20 +85,50 @@ li {
   } */
   /*___end_arrow___*/
 
+
+ .navbar-container{
+    position: fixed;
+    width:100%;
+    top:0px;
+    left:0px;
+    z-index: 999;
+    background-color:#01404f;
+}
+
+ul {
+    display:block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* overflow: hidden; */
+    
+}
+
+li {
+    float: left;
+}
+
+
+
+
 li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 19px 27px;
     text-decoration: none;
+    cursor: pointer;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+li a:hover, li.dropDown:hover .dropbtn {
     background-color:#5a9697; 
     color:white;
+    
 }
 
-li.dropdown {
+li.dropDown {
+    position:relative;
     display: inline-block;
 }
 
@@ -131,14 +139,14 @@ li.menuDx{
 .dropdown-content {
     display: none;
     position:absolute;
-    background-color: #f9f9f9;
+    background-color:#01404f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 999;
 }
 
 .dropdown-content a {
-    color: black;
+    color:white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -146,13 +154,14 @@ li.menuDx{
     overflow: auto;
 }
 		
-.dropdown-content a:hover {
+/* .dropdown-content a:hover {
     background-color: #5a9697;
-}
+} */
 
-.dropdown:hover .dropdown-content {
+li.dropDown:hover .dropdown-content {
     display: block;
-}
+    
+} 
 
 
 /*------------------------------------*\
@@ -291,10 +300,10 @@ Contenitore prodotti e Contenitore home
     float:left;
     /* ___non sono sicuro sia il modo giusto di farlo
         serve per rendere i box tutti della stessa altezza */
-    margin-top: -9999px;
+    /* margin-top: -9999px;
 	margin-bottom: -9999px;
 	padding-top: 9999px;
-	padding-bottom: 9999px;
+	padding-bottom: 9999px; */
   }
 
   .product-box:hover{
@@ -447,3 +456,181 @@ Contenitore prodotti e Contenitore home
     font-size: 13px;
     cursor: pointer;
 }
+
+/*------------------------------------*\
+               Login
+\*------------------------------------*/
+.outer{
+    padding-top:60px;
+    margin:0px;
+    border:0px;
+    width:100%;
+}
+
+.middle{
+    width:40%;
+    /* background-color:red; */
+    background-color: #FDA37E;
+    float: left;
+    position:relative;
+    padding: 60px 5%;
+}
+
+/* html {
+    margin: 15px auto;
+    width: 940px;
+    background-color: #FDA37E;
+    color: white;
+  }
+  
+  * {
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+  } */
+  
+  h2:before {
+  content: "";
+  width: 100%;
+  margin: 12px;
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+  }
+  
+  h2 {
+    margin-bottom: 5px;
+  }
+  /* CSS BUTTON */
+  /* .button {
+    border: none;
+    color: white;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 50px;
+    border-radius: 3px;
+    margin:5px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .button:active {
+    position: relative;
+    top: 1px;
+    border-bottom-width: 2px;
+  }
+  
+  .button:hover {
+    text-shadow: 2px 2px 0px rgba(0,0,0,.3)
+  }
+  
+  .red {
+    background-color: salmon;
+    border-color: rgb(150,120,120);
+  }
+  
+  
+  .green {
+    background-color: #4CDF78;
+    border-color: #53A574;
+  }
+  
+  .blue {
+    background-color: #19698C;
+    border-color: #384B64;
+  }
+   */
+  .form {
+    display: block;
+    width: 300px;
+    background-color: #F3EDD3;
+    padding:  0;
+    text-align: center;
+  }
+  
+  .form .form-title {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  
+  .form label {
+    color: black;
+  }
+  
+  .form input[type=text], .form input[type=password] {
+    display: block;
+  }
+  
+  input[type=text], input[type=password] {
+    display: inline-block;
+    color: black;
+    padding: 10px;
+    width: 250px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 2px;
+    margin: 10px auto;
+    transition:background-color 0.5s ease;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: rgba(0,0,0,0.45);
+  }
+  
+  input[type=submit], input[type=button] {
+    color: white;
+    display: block;
+    width:100%;
+    margin-top:15px;
+    border: none;
+    padding: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"], input[type="radio"]{
+      background: rgba(191,185,169,.2);
+      height: 16px;
+      cursor: pointer;
+      border-radius: 3px;
+      width:16px;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+      box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
+      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
+    vertical-align: middle;
+  }
+  
+  input[type="radio"] {
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+  }
+  
+  input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background: #5E5D58;
+    box-shadow: 0 1px 2px rgba(0,0,0,.44);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.44);
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.44);
+    }
+  
+  ::-webkit-input-placeholder {
+     color: white;
+  }
+  
+  :-moz-placeholder { /* Firefox 18- */
+     color: white;  
+  }
+  
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: white;  
+  }
+  
+  :-ms-input-placeholder {  
+     color: white;  
+  }

@@ -10,15 +10,14 @@
 	// password dell'utente
 	$password = "";
 	// nome del database
-	$db = "SITOBACCO";
+	$db = "dreamsound";
 	# stringa di connessione al DBMS
 	// istanza dell'oggetto della classe MySQLi
 	$conn = new mysqli($host, $user, $password, $db);
 	// verifica su eventuali errori di connessione
-	/*if ($conn->connect_errno) {
-		echo " nessuna connessione";
+	if ($conn->connect_errno) {
+		echo "non c'è la conn";
 		}else{
-		echo "connessione";
 		}
-		exit();*/
+		//exit();
 ?>

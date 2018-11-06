@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS Accessori;
 DROP TABLE IF EXISTS Casse;
 DROP TABLE IF EXISTS Cuffie;
+DROP TABLE IF EXISTS Carrello;
 DROP TABLE IF EXISTS Id_prodotti;
 DROP TABLE IF EXISTS Utente;
 
@@ -63,8 +64,19 @@ ON DELETE CASCADE
 ON UPDATE NO ACTION
 ) ENGINE=InnoDB;
 
+CREATE TABLE Carrello
+(
+Id_p int,
+Id_utente int,
+Quantita int,
+FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto),
+FOREIGN KEY (Id_utente) REFERENCES Utente(Id_utente)
+ON DELETE CASCADE
+) ENGINE=InnoDB;
+
 INSERT INTO Id_prodotti (Id_prodotto)
-VALUES ('1');
+VALUES ('1'),('2');
 
 INSERT INTO Accessori (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione)
-VALUES ('1','Cuffie','200','Sony','Culo','provaasd','Sono molto brutto');
+VALUES ('1','Cuffie','200','Sony','Culo','provaasd','Sono molto brutto'),
+       ('2','Cuffie','100','Sony','Culo','provaasdasdasd','Sono molto brutto');

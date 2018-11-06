@@ -54,14 +54,14 @@ h3 {
                NAVBAR
 \*------------------------------------*/
 
-<<<<<<< HEAD
-=======
+
 #navbar-container{
     position: fixed;
     width:100%;
     top:0px;
     left:0px;
     z-index: 999;
+    background-color:#01404f;
 }
 
 ul {
@@ -69,8 +69,8 @@ ul {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow: hidden;
-    background-color:#01404f;;
+    /* overflow: hidden; */
+    
 }
 
 li {
@@ -78,7 +78,6 @@ li {
 }
 
 
->>>>>>> 94237360d3d31813a1324777ecd3dbc2c08cbbb6
 /*___arrowMenu___*/
 
 /* .arrow-down.icon {
@@ -176,9 +175,9 @@ li.menuDx{
     overflow: auto;
 }
 		
-/* .dropdown-content a:hover {
+.dropdown-content a:hover {
     background-color: #5a9697;
-} */
+} 
 
 li.dropDown:hover .dropdown-content {
     display: block;

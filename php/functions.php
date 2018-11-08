@@ -50,6 +50,11 @@ function createNavArray(){
         new menuElement('About us',             'aboutUs',          '',                 ''),
         new menuElement('Carrello',             'carrello',         '',                 'menuDx'),
         new menuElement('Login',                'login',            '',                 'menuDx'),
+        //1)manca una pagina dinamica per la struttura unica di ogni singlo prodotto.
+        //per quel che riguarda le pagine con la lista dei prodotti(stile amazon) basta semplicemente
+        //2)creare un unica pagina dinamica che creerà la stessa struttura per tutti ma con idfferenti prodotti in base al nome della pagina
+        //richiesta, prendendo questi dati dal database
+        //3)paigna di admin da aggngere
     );
     return $menuPages;
 }
@@ -105,6 +110,31 @@ function prepareMenu($title,$menuPages){
 }
 
 //______________________________________________//
+//               PAGINE PRODOTTI
+//______________________________________________//
+/*L' idea si basa sul fatto che se una pagina ha l ' attributo type==dropDown-content
+    allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
+    Ritorna true sse sono su una pagina prodotti*/ 
+function isProductPage($title,$menuPages){
+    $esci=false;
+    $size=count($menuPages);
+    $scorri=0;
+    while($scorri<$size and !$esci){
+        if($menuPages[$scorri]->getName()==$title)
+            $esci=true;
+    }
+    if($esci){
+        return true;
+    else{
+        //messaggio d' errore: non è stata trovata la pagina
+    }
+}
+
+function buildProductPage(){
+
+}
+
+//______________________________________________//
 //                 BUILD PAGE
 //______________________________________________//
 
@@ -125,10 +155,15 @@ function BuildPage($title,$content) {
     $page=str_replace('{title}',$title,$page);
     //crea array con le pagine
     $menuPages=createNavArray();
+
     //Crea il menu con l'array di pagine
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
     
+    //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
+    if(isProductPage($title,$menuPages))
+        //buildProductPage();
+
     $contentActualPage=file_get_contents($content);
     $page=str_replace('{content}',$contentActualPage,$page);
     echo $page;

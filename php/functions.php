@@ -33,7 +33,7 @@ class menuElement{
 }
 
 function createNavArray(){
-    //ATTENZIONE LE PAGINE DEL SOTTOMENU DEVONO ESSERE SCRITTE IMMEDIATAMENTE DOPO IL DROPDOWN CHE LE CONTIENE
+    //ATTENZIONE: LE PAGINE DEL SOTTOMENU DEVONO ESSERE SCRITTE IMMEDIATAMENTE DOPO IL DROPDOWN CHE LE CONTIENE
     $menuPages=array(
                     //  NAME                    URL                     TYPE                OTHERCLASS
         new menuElement('Home',                 'index',            '',                 ''),
@@ -126,12 +126,21 @@ function isProductPage($title,$menuPages){
     if($esci){
         return true;
     else{
-        //messaggio d' errore: non è stata trovata la pagina
+        echo("messaggio d' errore: non è stata trovata la pagina");
     }
 }
 
-function buildProductPage(){
+/*ritorna un array associato con tutti i prodotti da inserire nella pagina titlePage*/
+function productList($titlePage){
+    require "connessione.php";
+    $sql = "SELECT * FROM MyGuests WHERE categoria='$titlePage'";
+    $result = $conn->query($sql);    
+    return $result;   
+}
 
+/* */
+function buildProductPage($titlePage){
+    //  crea il codice html della pagina dei prodotti
 }
 
 //______________________________________________//
@@ -162,9 +171,10 @@ function BuildPage($title,$content) {
     
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
     if(isProductPage($title,$menuPages))
-        //buildProductPage();
+        buildProductPage($title);
+    else//altrimenti vado a prendere il contenuto da file.html
+        $contentActualPage=file_get_contents($content);
 
-    $contentActualPage=file_get_contents($content);
     $page=str_replace('{content}',$contentActualPage,$page);
     echo $page;
 }

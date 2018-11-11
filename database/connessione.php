@@ -17,7 +17,6 @@
 	// verifica su eventuali errori di connessione
 	if ($conn->connect_errno) {
 		echo "non c'è la conn";
-		}else{
-		}
-		//exit();
+	}
+	//exit();
 ?>

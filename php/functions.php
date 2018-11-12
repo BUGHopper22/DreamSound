@@ -38,7 +38,7 @@ function createNavArray(){
                     //  NAME                    URL                     TYPE                OTHERCLASS
         new menuElement('Home',                 'index',            '',                 ''),
         new menuElement('Cuffie',               'cuffie',           'dropDown',         ''),
-        new menuElement('Cuffie in-ear',        'cuffieInEar',      'dropdown-content', ''),
+        new menuElement('Cuffie in ear',        'cuffieInEar',      'dropdown-content', ''),
         new menuElement('Cuffie on-ear',        'cuffieOnEar',      'dropdown-content', ''),
         new menuElement('Cuffie wireless',      'cuffieWireless',   'dropdown-content', ''),
         new menuElement('Casse',                'casse',            'dropDown',         ''),
@@ -118,33 +118,68 @@ function prepareMenu($title,$menuPages){
     allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
     Ritorna true sse sono su una pagina prodotti*/ 
 function isProductPage($title,$menuPages){
-    $esci=false;
+    $esci=FALSE;
     $size=count($menuPages);
     $scorri=0;
-    while($scorri<$size and !$esci){
-        if($menuPages[$scorri]->getName()==$title)
-            $esci=true;
+    // echo ($esci==FALSE); 
+    while($scorri<$size and $esci==FALSE){
+        if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()=='dropdown-content'){
+            $esci=TRUE;
+        }
+        $scorri++;
     }
-    if($esci)
-        return true;
-    else{
-        echo("messaggio d' errore: non è stata trovata la pagina");
-    }
+    return $esci;
 }
 
 /*ritorna un array associato con tutti i prodotti da inserire nella pagina titlePage*/
-function productList($titlePage,$category){
+function productList($titleTable,$category){
     require "./database/connessione.php";
-    $sql = "SELECT * FROM `{$titlePage}` WHERE categoria='$category'";
+    $sql = "SELECT * FROM `{$titleTable}` WHERE categoria='$category'";
     $result = $conn->query($sql);    
+    
+    
+    // if ($result->num_rows > 0) {
+    //     // output data of each row
+    //     while($row = $result->fetch_assoc()) {
+    //         echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    //     }
+    // } else {
+    //     echo "0 results";
+    // }
+    
+    
+    
+    
     return $result;   
 }
 
 /* */
 function buildProductPage($list){
     //  crea il codice html della pagina dei prodotti
-    $content;
-    foreach($list as $list){
+    // $content=$content." ";
+     foreach($list as $list){
+    //     $content=$content.'
+    //     <h1>Cuffie IN-EAR</h1>
+    //     <div id="productsContainer">
+    //         <div class="productsImg"></div>
+    //         <div class="products">
+    //             <h2>Auricolari Apple EarPodss</h2>
+    //             <p>Tipo connettore:Auricolare ( jack 3.5 mm 4 poli ), Controllo del volume sul cavo: Sì, Fattore di forma
+    //                 cuffie:In-ear, Impedenza:23 Ohm, Risposta frequenza:5 - 21000 Hz,<!-- Sensibilità:109 dB/mW, Modalità uscita audio:Stereo,
+    //                 Tecnologia di connessione:Cablato, Tipo prodotto:Cuffie con microfono, Peso:10.2-->
+    //             </p>
+    //         </div>
+    //         <div class="detailsContainer">
+    //             <div class="productsPrice">
+    //                 <h3>Pezzo: 50$</h3>
+    //             </div>
+    //                 // <button class="details"><a href="product.html">Piú dettagli</a></button> -->
+    //             <a class="details" href="productDetails.php">
+    //                 <p>Piu dettagli</p>
+    //             </a>
+    //             //secondfo carlotta e testando il codice su w3s il bottone deve essere semplicemente un link 
+    //         </div>
+    //     </div>'
         $content=$content.'<div class="singleProductList">
         <img class="productImg" src="'.$list["Url_immagine"].'" alt="prodotto1" height="300" width="300">
         <div class="productDescription">
@@ -155,7 +190,7 @@ function buildProductPage($list){
             <button class="productButton">vedi dettagli</button>
         </div>
         </div>';
-    }
+     }
     return $content;
 
 }
@@ -182,17 +217,23 @@ function BuildPage($title,$content) {
     //crea array con le pagine
     $menuPages=createNavArray();
 
-    //Crea html header
+    //Crea html menu
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
     
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
-    if(isProductPage($title,$menuPages)){
-        // if(isset($_REQUEST["ntab"])){
-            $titleTable=$_REQUEST["ntab"]; 
-            // trim ($ntab);
-        // }
+    $isProductPage=isProductPage($title,$menuPages);
+    if($isProductPage){
+        echo("isProductPage è true");
+        if(isset($_REQUEST["ntab"])){
+            $titleTable=$_REQUEST["ntab"];
+            echo(",entra nell' isset");
+            // trim ($ntab); per gli spazi vuoti
+        }
+        echo(",titleTable= ");
+        echo $titleTable;
         $list=productList($titleTable,$title);
+        
         $contentActualPage=buildProductPage($list);
     }
     else//altrimenti vado a prendere il contenuto da file.html

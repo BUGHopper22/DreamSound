@@ -86,9 +86,9 @@ VALUES ('1','Cuffie','200','Sony','Culo','provaasd','Sono molto brutto'),
 VALUES ('1'),('2'),('3'),('4'),('5'),('6'),('7'),('8'),('9'), ('10'), ('11'), ('12'), ('13'), ('14'), ('15'), ('16'), ('17'), ('18'), ('19'), ('20'), ('21');
 
 INSERT INTO Cuffie (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione) VALUES 
-('1','Cuffie in-ear','20','BlitzWolf','BW-ES2','..','Design accattivante e suono penetrante sono gli elementi che distinguono le BlitzWolf BW-ES2 da tutte le altre cuffie in-ear nel mercato.'),
-('2','Cuffie in-ear','30','Apple','EarPodss','..','Il design confortevole di Apple offre una qualità del suono ad alte prestazionicon bassi profondi estremamente dinamici.'),
-('3','Cuffie in-ear','19','KLIM','Fusion','..','Gli auricolari KLIM Fusion sono dotati di cuscinetti in schiuma Memory che assumono la forma perfetta per addattarsi alle orecchie. KLIM Fusion inoltre ti offre in assoluto la miglior qualità del suono nella sua fascia di prezzo.'),
+('1','Cuffie in ear','20','BlitzWolf','BW-ES2','..','Design accattivante e suono penetrante sono gli elementi che distinguono le BlitzWolf BW-ES2 da tutte le altre cuffie in-ear nel mercato.'),
+('2','Cuffie in ear','30','Apple','EarPodss','..','Il design confortevole di Apple offre una qualità del suono ad alte prestazionicon bassi profondi estremamente dinamici.'),
+('3','Cuffie in ear','19','KLIM','Fusion','..','Gli auricolari KLIM Fusion sono dotati di cuscinetti in schiuma Memory che assumono la forma perfetta per addattarsi alle orecchie. KLIM Fusion inoltre ti offre in assoluto la miglior qualità del suono nella sua fascia di prezzo.'),
 ('4','Cuffie on-ear','49','JBL','T450','..','Ecco le cuffie supra-aurali JBL T450. Sono leggere, comode e compatte. una coppia di driver da 32mm riprodurrà bassi super potenti, con il mitico suono JBL Pure Bass che hai ascoltato in sale da concerto ben più grandi.'),
 ('5','Cuffie on-ear','110','Sony','MDR-XB950AP','..','Ascolta tutti i bassi e i battiti più vigorosi. I driver da 40 mm, racchiusi in un design che aderisce all’ orecchio, offrono un suono profondo e bilanciato anche ad alto volume.'),
 ('6','Cuffie on-ear','89','Marshall','Major II','..','Suoni, look e durata aggiornati, oltre ad una migliore ergonomia cedono il passo ad un nuovo livello di ascolto. Le funzioni audio avanzate includono driver custom per offrire bassi più profondi e alti dettagliati.'),

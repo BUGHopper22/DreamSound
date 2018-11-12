@@ -88,13 +88,15 @@ function prepareMenu($title,$menuPages){
                         <a class="dropbtn" href="'.$menuPages[$i]->getUrl().'.php">'.$menuPages[$i]->getName().'</a>';
         }
         if($menuPages[$i]->getType()=='dropDown'){//sse dropdown
+            $name=$menuPages[$i]->getName();
             $menu=$menu.'<div class="dropdown-content">';
             $numInternalPages=internalPagesCount($i+1,$menuPages,$size);//ritorna il numero delle sottopagine
             while($numInternalPages!=0){
                 $i++;
                 $menu=$menu.'<a ';
                 if($menuPages[$i]->getName()!=$title){
-                    $menu=$menu.' href='.$menuPages[$i]->getUrl().'.php';
+                    
+                    $menu=$menu.' href='.$menuPages[$i]->getUrl().'.php?ntab='.$name;
                 }
                 $menu=$menu.'>'.$menuPages[$i]->getName().'</a>';
                 $numInternalPages--;
@@ -123,7 +125,7 @@ function isProductPage($title,$menuPages){
         if($menuPages[$scorri]->getName()==$title)
             $esci=true;
     }
-    if($esci){
+    if($esci)
         return true;
     else{
         echo("messaggio d' errore: non è stata trovata la pagina");
@@ -131,16 +133,31 @@ function isProductPage($title,$menuPages){
 }
 
 /*ritorna un array associato con tutti i prodotti da inserire nella pagina titlePage*/
-function productList($titlePage){
-    require "connessione.php";
-    $sql = "SELECT * FROM MyGuests WHERE categoria='$titlePage'";
+function productList($titlePage,$category){
+    require "./database/connessione.php";
+    $sql = "SELECT * FROM `{$titlePage}` WHERE categoria='$category'";
     $result = $conn->query($sql);    
     return $result;   
 }
 
 /* */
-function buildProductPage($titlePage){
+function buildProductPage($list){
     //  crea il codice html della pagina dei prodotti
+    $content;
+    foreach($list as $list){
+        $content=$content.'<div class="singleProductList">
+        <img class="productImg" src="'.$list["Url_immagine"].'" alt="prodotto1" height="300" width="300">
+        <div class="productDescription">
+            <h3> '.$list["Modello"].'</h3>
+            <h4> '.$list["Marca"].'</h4>
+            <p>  '.$list["Descrizione"].'</p>
+            <h3>Euro'.$list["Prezzo"].'</h3>
+            <button class="productButton">vedi dettagli</button>
+        </div>
+        </div>';
+    }
+    return $content;
+
 }
 
 //______________________________________________//
@@ -165,13 +182,19 @@ function BuildPage($title,$content) {
     //crea array con le pagine
     $menuPages=createNavArray();
 
-    //Crea il menu con l'array di pagine
+    //Crea html header
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
     
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
-    if(isProductPage($title,$menuPages))
-        buildProductPage($title);
+    if(isProductPage($title,$menuPages)){
+        // if(isset($_REQUEST["ntab"])){
+            $titleTable=$_REQUEST["ntab"]; 
+            // trim ($ntab);
+        // }
+        $list=productList($titleTable,$title);
+        $contentActualPage=buildProductPage($list);
+    }
     else//altrimenti vado a prendere il contenuto da file.html
         $contentActualPage=file_get_contents($content);
 

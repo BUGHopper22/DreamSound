@@ -86,15 +86,15 @@ VALUES ('1','Cuffie','200','Sony','Culo','provaasd','Sono molto brutto'),
 VALUES ('1'),('2'),('3'),('4'),('5'),('6'),('7'),('8'),('9'), ('10'), ('11'), ('12'), ('13'), ('14'), ('15'), ('16'), ('17'), ('18'), ('19'), ('20'), ('21');
 
 INSERT INTO Cuffie (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione) VALUES 
-('1','In-Ear','20','BlitzWolf','BW-ES2','..','Design accattivante e suono penetrante sono gli elementi che distinguono le BlitzWolf BW-ES2 da tutte le altre cuffie in-ear nel mercato.'),
-('2','In-Ear','30','Apple','EarPodss','..','Il design confortevole di Apple offre una qualità del suono ad alte prestazionicon bassi profondi estremamente dinamici.'),
-('3','In-Ear','19','KLIM','Fusion','..','Gli auricolari KLIM Fusion sono dotati di cuscinetti in schiuma Memory che assumono la forma perfetta per addattarsi alle orecchie. KLIM Fusion inoltre ti offre in assoluto la miglior qualità del suono nella sua fascia di prezzo.'),
-('4','On-Ear','49','JBL','T450','..','Ecco le cuffie supra-aurali JBL T450. Sono leggere, comode e compatte. una coppia di driver da 32mm riprodurrà bassi super potenti, con il mitico suono JBL Pure Bass che hai ascoltato in sale da concerto ben più grandi.'),
-('5','On-Ear','110','Sony','MDR-XB950AP','..','Ascolta tutti i bassi e i battiti più vigorosi. I driver da 40 mm, racchiusi in un design che aderisce all’ orecchio, offrono un suono profondo e bilanciato anche ad alto volume.'),
-('6','On-Ear','89','Marshall','Major II','..','Suoni, look e durata aggiornati, oltre ad una migliore ergonomia cedono il passo ad un nuovo livello di ascolto. Le funzioni audio avanzate includono driver custom per offrire bassi più profondi e alti dettagliati.'),
-('7','Wireless','145','Apple','A1523 Airpods','..','Gli AirPods cambieranno per sempre il modo in cui usi gli auricolari. Quando li estrai dalla custodia di ricarica, si accendono all’istante collegandosi al tuo iPhone. L’audio si attiva non appena li indossi e va in pausa quando li togli.'),
-('8','Wireless','17','Mpow','Swift','..','Disegno classico ed ergonomico con tecnologia bluetooth adatto a tutte le persone che vogliono allenarsi senza pensare ai fili di troppo.'),
-('9','Wireless','50','Muzili','X9-lan','..','Cuffie bluetooth sportive con touch control. Questo auricolare Muzili è dotato di una scatola di ricarica intelligente, facile da caricare');
+('1','Cuffie in-ear','20','BlitzWolf','BW-ES2','..','Design accattivante e suono penetrante sono gli elementi che distinguono le BlitzWolf BW-ES2 da tutte le altre cuffie in-ear nel mercato.'),
+('2','Cuffie in-ear','30','Apple','EarPodss','..','Il design confortevole di Apple offre una qualità del suono ad alte prestazionicon bassi profondi estremamente dinamici.'),
+('3','Cuffie in-ear','19','KLIM','Fusion','..','Gli auricolari KLIM Fusion sono dotati di cuscinetti in schiuma Memory che assumono la forma perfetta per addattarsi alle orecchie. KLIM Fusion inoltre ti offre in assoluto la miglior qualità del suono nella sua fascia di prezzo.'),
+('4','Cuffie on-ear','49','JBL','T450','..','Ecco le cuffie supra-aurali JBL T450. Sono leggere, comode e compatte. una coppia di driver da 32mm riprodurrà bassi super potenti, con il mitico suono JBL Pure Bass che hai ascoltato in sale da concerto ben più grandi.'),
+('5','Cuffie on-ear','110','Sony','MDR-XB950AP','..','Ascolta tutti i bassi e i battiti più vigorosi. I driver da 40 mm, racchiusi in un design che aderisce all’ orecchio, offrono un suono profondo e bilanciato anche ad alto volume.'),
+('6','Cuffie on-ear','89','Marshall','Major II','..','Suoni, look e durata aggiornati, oltre ad una migliore ergonomia cedono il passo ad un nuovo livello di ascolto. Le funzioni audio avanzate includono driver custom per offrire bassi più profondi e alti dettagliati.'),
+('7','Cuffie wireless','145','Apple','A1523 Airpods','..','Gli AirPods cambieranno per sempre il modo in cui usi gli auricolari. Quando li estrai dalla custodia di ricarica, si accendono all’istante collegandosi al tuo iPhone. L’audio si attiva non appena li indossi e va in pausa quando li togli.'),
+('8','Cuffie wireless','17','Mpow','Swift','..','Disegno classico ed ergonomico con tecnologia bluetooth adatto a tutte le persone che vogliono allenarsi senza pensare ai fili di troppo.'),
+('9','Cuffie wireless','50','Muzili','X9-lan','..','Cuffie bluetooth sportive con touch control. Questo auricolare Muzili è dotato di una scatola di ricarica intelligente, facile da caricare');
 
 
 INSERT INTO Casse (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione) VALUES 

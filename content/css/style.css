@@ -572,52 +572,156 @@ Contenitore prodotti e Contenitore home
     text-align: center;
     font-size: 16px;
     text-decoration: none;
-    font-size: 13px;
-    /* cursor: pointer; */
 }
 
 /*------------------------------------*\
                Login
 \*------------------------------------*/
-.outer{
-    padding-top:60px;
+
+#formContainer{
+    margin-top:3em;
     margin:0px;
     border:0px;
     width:100%;
+    height: auto;
 }
 
-.middle{
-    width:40%;
-    /* background-color:red; */
-    background-color: #FDA37E;
+#formContainer h2{
+    margin: 2em 0 1em 0;
+    text-align: center;
+}
+
+#formContainer p{
+    margin: 0.5em 0 0.5em 0;
+    text-align: center;
+}
+
+.loginContainer{
+    margin-top: 3em;
+    width:50%;
     float: left;
-    position:relative;
-    padding: 60px 5%;
 }
 
-/* html {
-    margin: 15px auto;
-    width: 940px;
-    background-color: #FDA37E;
+.registerContainer{
+    margin-top: 3em;
+    width:50%;
+    float: left;
+}
+
+.formCenter{
+    text-align: center;
+}
+  
+.formBtn {
+    height: 2em;
+    position: relative;
+    padding: 0 1em 0 1em;
+    margin-top: 1em;
+    background-color: #01404f;
+    border: none;
+    color:white;
+    font-family: 'title';
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+.form {
+    display: block;
+    width: 300px;
+    background-color: #F3EDD3;
+    padding:  0;
+    text-align: center;
+}
+  
+.form .form-title {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+  
+.form label {
+    color: black;
+}
+  
+.form input[type=text], .form input[type=password] {
+    display: block;
+}
+  
+input[type=text], input[type=password] {
+    display: inline-block;
+    color: black;
+    padding: 1em;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 0.5em;
+    margin: 1em auto;
+    transition:background-color 0.5s ease;
+}
+  
+input[type=text]:focus, input[type=password]:focus {
+    background-color: rgba(0,0,0,0.45);
+}
+  
+input[type=submit], input[type=button] {
     color: white;
+    display: block;
+    width:100%;
+    margin-top:15px;
+    border: none;
+    padding: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+  
+  /* input[type="checkbox"], input[type="radio"]{
+      background: rgba(191,185,169,.2);
+      height: 16px;
+      cursor: pointer;
+      border-radius: 3px;
+      width:16px;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+      box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
+      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
+    vertical-align: middle;
   }
   
-  * {
-    font-weight: 700;
-    font-family: 'Josefin Sans', sans-serif;
-  } */
-  
-  h2:before {
-  content: "";
-  width: 100%;
-  margin: 12px;
-  display: block;
-  text-align: left;
-  border-bottom: 1px solid #ffffff;
+  input[type="radio"] {
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
   }
   
-  h2 {
-    margin-bottom: 5px;
+  input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background: #5E5D58;
+    box-shadow: 0 1px 2px rgba(0,0,0,.44);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.44);
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.44);
+    } */
+  
+  ::-webkit-input-placeholder {
+     color: white;
+  }
+  
+  :-moz-placeholder { /* Firefox 18- */
+     color: white;  
+  }
+  
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: white;  
+  }
+  
+  :-ms-input-placeholder {  
+     color: white;  
   }
   /* CSS BUTTON */
   /* .button {
@@ -660,99 +764,7 @@ Contenitore prodotti e Contenitore home
     border-color: #384B64;
   }
    */
-  .form {
-    display: block;
-    width: 300px;
-    background-color: #F3EDD3;
-    padding:  0;
-    text-align: center;
-  }
   
-  .form .form-title {
-    text-align: center;
-    padding: 5px;
-    margin: 0;
-    margin-bottom: 15px;
-  }
-  
-  .form label {
-    color: black;
-  }
-  
-  .form input[type=text], .form input[type=password] {
-    display: block;
-  }
-  
-  input[type=text], input[type=password] {
-    display: inline-block;
-    color: black;
-    padding: 10px;
-    width: 250px;
-    box-sizing: border-box;
-    background-color: rgba(0,0,0,0.25);
-    border: none;
-    border-radius: 2px;
-    margin: 10px auto;
-    transition:background-color 0.5s ease;
-  }
-  
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: rgba(0,0,0,0.45);
-  }
-  
-  input[type=submit], input[type=button] {
-    color: white;
-    display: block;
-    width:100%;
-    margin-top:15px;
-    border: none;
-    padding: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-  }
-  
-  input[type="checkbox"], input[type="radio"]{
-      background: rgba(191,185,169,.2);
-      height: 16px;
-      cursor: pointer;
-      border-radius: 3px;
-      width:16px;
-      -moz-appearance:none;
-      -webkit-appearance:none;
-      box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
-      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
-      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.44) inset;
-    vertical-align: middle;
-  }
-  
-  input[type="radio"] {
-      border-radius: 50%;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-  }
-  
-  input[type="checkbox"]:checked, input[type="radio"]:checked {
-    background: #5E5D58;
-    box-shadow: 0 1px 2px rgba(0,0,0,.44);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.44);
-      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.44);
-    }
-  
-  ::-webkit-input-placeholder {
-     color: white;
-  }
-  
-  :-moz-placeholder { /* Firefox 18- */
-     color: white;  
-  }
-  
-  ::-moz-placeholder {  /* Firefox 19+ */
-     color: white;  
-  }
-  
-  :-ms-input-placeholder {  
-     color: white;  
-  }
 
 /*------------------------------------*\
     Lista prodotti Hopper per php

@@ -125,3 +125,34 @@
         margin: 0 1em 0 1em;
     }
 }
+
+/*------------------------------------*\
+            Login Register
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+
+    .formContainer h2 {
+        margin: 4em 0 2em 0;
+        font-size: 23px;
+    }
+
+    .loginContainer {
+        width:100%;
+        float: none;
+    }
+
+    .registerContainer {
+        width:100%;
+        float: none;
+    }
+
+    .formCenter {
+        text-align: center;
+    }
+
+    input[type=text], input[type=password] {
+    width: 300px;
+    }
+
+}

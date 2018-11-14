@@ -1,15 +1,26 @@
-<div class="outer">
-    <div class="middle">
+<div id="formContainer">
+    <div class="loginContainer">
         <h2>Accedi</h2>
-        <form action="">
-            User name:<br>
+        <form  class="formCenter" action="">
+            <p>Username:</p>
             <input type="text" name="userid">
-            <br>password:<br>
+            <p>Password:</p>
             <input type="password" name="psw">
         </form>
-        <button type="button" class="button" onclick="alert('Hello World!')">login</button>
+        <button type="button" class="formBtn" onclick="alert('Hello World!')">Login</button>
     </div>
-    <div class="middle">
-        <button type="button" onclick="alert('Hello World!')">Click Me!</button>
-    </div>
+
+    <div class="registerContainer">
+        <h2>Registrati</h2>
+        <form class="formCenter" action="">
+            <p>Inserisci un username:</p>
+            <input type="text" name="userid">
+            <p>Scegli la tua password:</p>
+            <input type="password" name="psw">
+            <p>Conferma la password:</p>
+            <input type="password" name="psw">
+        </form>
+        <button type="button" class="formBtn" onclick="alert('Hello World!')">Registrati</button>
+        </div>
+        
 </div>

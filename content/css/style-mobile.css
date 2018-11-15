@@ -3,17 +3,143 @@
 \*------------------------------------*/
 
 @media only screen and (max-width: 767px) {
+
     #navbar-container {
-         
+        display: block;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;  
+        background-color:#01404f;
+        padding: 1em 1em 1em 1em;
     }
 
-    #navbar-container a{
+
+    #navbar-container input {
+        display: block;
+        width: 3em;
+        height: 2em;
+       
+        position: absolute;
+        padding: 1em 1em 1em 1em;
         
+        cursor: pointer;
+        
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+        
+        -webkit-touch-callout: none;
     }
 
-    ul a{
-
+    /*
+    * Just a quick hamburger
+    */
+    #navbar-container span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        
+        background: white;
+        border-radius: 3px;
+        
+        z-index: 1;
+        
+        transform-origin: 4px 0px;
+        
+        /* transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease; 
+                    tolta animazione da hamburger a X */
     }
+
+    #navbar-container span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #navbar-container span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    /* 
+    * Transform all the slices of hamburger
+    * into a crossmark.
+    */
+    #navbar-container input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+    /*
+    * But let's hide the middle one.
+    */
+    #navbar-container input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    /*
+    * Ohyeah and the last one should go the other direction
+    */
+    #navbar-container input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    /*
+    * Make this absolute positioned
+    * at the top left of the screen
+    */
+
+
+
+    /*
+    * And let's slide it in from the left
+    */
+    #navbar-container input:checked ~ ul {
+        transform: none;
+    }
+
+    #mobile {
+        position: absolute;
+        width: auto;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        
+        background: #ededed;
+        transform: translate(-100%, 0);
+        /* list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0); 
+        tolta animazione tendina ul*/
+    }
+
+    #mobile li {
+        padding: 10px 0;
+        font-size: 22px;
+        width: 100%;
+    }
+    li {
+        float: none;
+        width: 100%;
+    }
+
+    li a, .dropbtn {
+        padding: 0 1em 0 1em;
+        display: inline;
+        color: black;
+    }
+
+    li .menuDx {
+        float: none;
+        width: 100%;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }  
 }
 
 
@@ -51,10 +177,18 @@
         overflow: hidden;
     }
 
-    .productsImg {
+    .imgsContainer {
         width: 45%;
         height: 40vh;
     }
+
+    .productsImg{
+      width: 90%;
+      height: auto;
+      float: left;
+      margin: 0 1em 0 0;
+    }   
+
     .products {
         width: 55%;
         height: auto;
@@ -62,6 +196,7 @@
 
     .products p { 
         font-size: 16px;
+        margin: 0 1em 0 0;
     }
 
     .detailsContainer {
@@ -91,10 +226,14 @@
         overflow: hidden;
     }
 
-    .productImg {
+    .imgContainer {
         width: 100%;
-        height: 50vh;
+        height: auto;
     }
+
+    .productImg{
+      width: 100%;
+    }  
 
     .product {
         width: 100%;
@@ -103,26 +242,22 @@
 
     .product p { 
         font-size: 20px;
-        margin-left: 1em;
+        margin: 1em 2em 0 1em;
     }
 
     .buyContainer {
         width: 100%;
         height: 8vh;
+        margin: 0 1em 1em 1em;
     }
 
-    .productPrice {
-        float: left;
-        margin-left: 1em;
-    }
 
     .productPrice h3 {
         font-size: 18px;
     }
 
     .compra {
-        float: right;
-        margin: 0 1em 0 1em;
+        margin: 0 2em 0 0;
     }
 }
 

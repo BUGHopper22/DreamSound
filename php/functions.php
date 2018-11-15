@@ -73,8 +73,12 @@ function internalPagesCount($i,$menuPages,$size){
 //POST: ritorna il numero di voci del sottomenu 
 
 function prepareMenu($title,$menuPages){
-    $menu='<nav id="navbar-container">';
-    $menu=$menu.'<ul>';
+    $menu='<nav id="navbar-container" role="navigation">
+    <input type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>';
+    $menu=$menu.'<ul id="mobile">';
     $size=count($menuPages);
     $i=0;
     while($i<$size){
@@ -141,7 +145,10 @@ function insertProductList($titleTable,$category){
     $htmlProduct=" ";
     foreach($result as $listProduct){
         $htmlProduct=$htmlProduct.'<div id="productsContainer">
-        <img class="productsImg" src="./img/prodotti'.$listProduct["Url_immagine"].'" alt="prodotto1" >
+        <div class="imgsContainer">
+            <img class="productsImg" src="./img/prodotti'.$listProduct["Url_immagine"].'" alt="prodotto1" >
+        </div>
+    
         
         <div class="products">
             <h2>'.$listProduct['Modello'].'</h2>
@@ -193,10 +200,10 @@ function BuildPage($title,$content) {
     $page=str_replace('{header}',$header,$page);
     
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
-    echo("stampa prima di entrare in product Page");
+   
     $isProductPage=isProductPage($title,$menuPages);
     if($isProductPage){
-        echo("******isProductPage è true*******");
+    
         if(isset($_REQUEST["ntab"])){
             $titleTable=$_REQUEST["ntab"];
         }

@@ -45,43 +45,69 @@
 -->
 
 <body>
-    <nav id="navbar-container">
-        <ul>
-            <li class="dropdown">
-                <a href="cuffie.html" class="dropbtn">Cuffie</a>
-                <!-- <div class="arrow-down icon"></div> -->
-                <div class="dropdown-content">
-                    <a href="#">Cuffie in-ear</a>
-                    <a href="#">Cuffie on-ear</a>
-                    <a href="#">Cuffie wireless</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <!-- <div class="arrow-down icon"></div> -->
-                <a href="javascript:void(0)" class="dropbtn">Casse</a>
-                <div class="dropdown-content">
-                    <a href="#">Casse altoparlanti</a>
-                    <a href="#">Casse bluetooth</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <!-- <div class="arrow-down icon"></div> -->
-                <a href="javascript:void(0)" class="dropbtn">Accessori</a>
-                <div class="dropdown-content">
-                    <a href="#">Accessori per cuffie</a>
-                    <a href="#">Accessori per casse</a>
-                </div>
-            </li>
-            <li>
-                <a href="javascript:void(0)" class="dropbtn">About us</a>
-            </li>
-            <li class="menuDx">
-                <a href="javascript:void(0)" class="dropbtn">login</a>
-            </li>
-            <li class="menuDx">
-                <a href="javascript:void(0)" class="dropbtn">carrello</a>
-            </li>
-        </ul>
+    <nav id="navbar-container" role="navigation">
+    <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+    <input type="checkbox">
+    
+    <!--
+        Some spans to act as a hamburger.
+        
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+    <ul id="mobile">
+        <li class="dropdown">
+            <a href="cuffie.html" class="dropbtn">Cuffie</a>
+            <!-- <div class="arrow-down icon"></div> -->
+            <div class="dropdown-content" tabindex="0">
+                <a href="#" tabindex="1">Cuffie in-ear</a>
+                <a href="#" tabindex="2">Cuffie on-ear</a>
+                <a href="#" tabindex="3">Cuffie wireless</a>
+            </div>
+        </li>
+    
+        <li class="dropdown" tabindex="-1">
+            <!-- <div class="arrow-down icon"></div> -->
+            <a href="javascript:void(0)" class="dropbtn" tabindex="-1">Casse</a>
+            <div class="dropdown-content">
+                <a href="#">Casse altoparlanti</a>
+                <a href="#">Casse bluetooth</a>
+            </div>
+        </li>
+    
+    
+        <li class="dropdown">
+            <!-- <div class="arrow-down icon"></div> -->
+            <a href="javascript:void(0)" class="dropbtn">Accessori</a>
+            <div class="dropdown-content">
+                <a href="#">Accessori per cuffie</a>
+                <a href="#">Accessori per casse</a>
+            </div>
+        </li>
+    
+    
+        <li>
+            <a href="javascript:void(0)" class="dropbtn">About us</a>
+        </li>
+        <li class="menuDx">
+            <a href="javascript:void(0)" class="dropbtn">Login</a>
+        </li>
+        <li class="menuDx">
+            <a href="javascript:void(0)" class="dropbtn">Carrello</a>
+        </li>
+    </ul>
+    </div>
     </nav>
     
     <!-- CONTENITORE PRODOTTI CON IMMAGINE HOME -->

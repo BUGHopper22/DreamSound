@@ -118,35 +118,21 @@ function prepareMenu($title,$menuPages){
     allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
     Ritorna true sse sono su una pagina prodotti*/ 
 function isProductPage($title,$menuPages){
-    echo("Entraaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-    echo $title;
-    echo(" finetitle ");
     $esci=FALSE;
     $size=count($menuPages);
     $scorri=0;
     // echo ($esci==FALSE); 
     while($scorri<$size and $esci==FALSE){
-        echo $menuPages[$scorri]->getName();
-        echo ("=");
-        echo $title;
-        echo("\n");
-        echo $menuPages[$scorri]->getType();
-        echo("\n");
         if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()=='dropdown-content'){
             $esci=TRUE;
         }
         $scorri++;
     }
-    echo("esci è");echo $esci;
     return $esci;
 }
 
 /*ritorna un array associato con tutti i prodotti da inserire nella pagina titlePage*/
 function insertProductList($titleTable,$category){
-    echo("\n");
-    echo $titleTable;
-    echo $category;
-    echo ("DDDDDDDDDDDDDDDDDDDDDDD");
     require "./database/connessione.php";
     $result = $conn->query("SELECT * FROM `{$titleTable}` WHERE categoria='$category'");
     // $resultSql = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -154,9 +140,9 @@ function insertProductList($titleTable,$category){
     echo $count;
     $htmlProduct=" ";
     foreach($result as $listProduct){
-        echo("ciclo");
         $htmlProduct=$htmlProduct.'<div id="productsContainer">
-        <div class="productsImg"></div>
+        <img class="productsImg" src="./img/prodotti'.$listProduct["Url_immagine"].'" alt="prodotto1" >
+        
         <div class="products">
             <h2>'.$listProduct['Modello'].'</h2>
             <p>'.$listProduct['Descrizione'].
@@ -173,8 +159,8 @@ function insertProductList($titleTable,$category){
         </div>
         </div>';
     }
-
-
+    // <div class="productsImg"></div>
+    // height="300" width="300"
      return $htmlProduct;   
 }
 
@@ -213,8 +199,6 @@ function BuildPage($title,$content) {
         echo("******isProductPage è true*******");
         if(isset($_REQUEST["ntab"])){
             $titleTable=$_REQUEST["ntab"];
-            echo(",entra nell' isset");
-            // trim ($ntab); per gli spazi vuoti
         }
         $contentActualPage=insertProductList($titleTable,$title);
         echo($contentActualPage);

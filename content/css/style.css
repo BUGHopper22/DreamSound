@@ -238,19 +238,19 @@ Contenitore prodotti e Contenitore home
 }
 /*Immagine altoparlanti*/
 .outer-altoparlanti{
-    background-image: url("../../img/prodotti/casse/inizio.jpg");
+    background-image: url("../../img/prodotti/casseAltoparlanti/inizio.jpg");
 }
 /*Immagine casse bluetooth*/
 .outer-casseBluetooth{
-    background-image: url("../../img/prodotti/casseb/inizio.jpg");
+    background-image: url("../../img/prodotti/casseBluetooth/inizio.jpg");
 }
 /*Immagine accessori cuffie*/
 .outer-accessoricuffie{
-    background-image: url("../../img/prodotti/acuffie/inizio.jpg");
+    background-image: url("../../img/prodotti/accessoriCuffie/inizio.jpg");
 }
 /*Immagine accessori casse*/
 .outer-accessoricasse{
-    background-image: url("../../img/prodotti/acasse/inizio.jpg");
+    background-image: url("../../img/prodotti/accessoriCasse/inizio.jpg");
 }
 
 /*------------------------------------*\

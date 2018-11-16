@@ -712,3 +712,21 @@ input[type=submit], input[type=button] {
     border-color: #384B64;
   }
    */
+
+
+/*------------------------------------*\
+               Footer
+\*------------------------------------*/
+
+#wrapper {
+    background-color: #01404f;
+    padding: 1em 3em 0 3em;
+    position: relative;
+}
+#wrapper li {
+    float: left;
+}
+
+#wrapper a {
+    float: none;
+}

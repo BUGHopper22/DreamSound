@@ -1,6 +1,12 @@
 
 <?php
     require "connessione.php";
+    session_start();
+
+    $cane=$_SESSION["erroreContaResultUserId"];
+    echo $cane;
+    echo $cane;
+    echo $cane;
     
 	// $ntab = "Cuffie";//per provare abbiamo daoto il nome alla tabella con ntab. 
 	// 					// `{$ntab}` nella query metodo per dargli nome variabile altrimenti non va

@@ -395,20 +395,22 @@ Contenitore prodotti e Contenitore home
     background-size: contain; /*/
     margin: 0px 0 1em 0;
     height: 100%;
-    width: 25%;
+    width: 35%;
     vertical-align: middle;
     float: left;
     overflow: hidden;
 }
 
 .productsImg{
-      height: 95%;
-      float: right;
-      margin: 0 3em 0 0;
+    max-height: 80%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .products {
-    width: 75%;
+    width: 65%;
     height: 20vh;
     float: right;
 }
@@ -423,7 +425,7 @@ Contenitore prodotti e Contenitore home
 }
 .detailsContainer{
     height: 10vh;
-    width: 75%;
+    width: 65%;
     display: inline-block;
     position: relative;
 }

@@ -123,7 +123,7 @@ li.menuDx{
     background-color: #5a9697;
 }
 
-.dropdown:hover .dropdown-content {
+.dropDown:hover .dropdown-content {
     display: block;
 }
 

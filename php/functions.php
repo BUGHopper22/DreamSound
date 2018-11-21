@@ -1,5 +1,4 @@
 <?php 
-include "insertUser.php";
 
 //______________________________________________//
 //                  HEADER
@@ -181,7 +180,11 @@ function insertProductList($titleTable,$category){
 
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$content) {
+    // if(getcwd()==='C:\xampp\htdocs\tecnologieWeb'){
     $page=file_get_contents('content/structure.html');//carica la struttura con head e body
+    // }else{
+    // //     echo("non sei su getcwd");}
+    // $page=file_get_contents('../content/structure.html');//carica la struttura con head e body
     $page=str_replace('{title}',$title,$page);
     //crea array con le pagine
     $menuPages=createNavArray();
@@ -198,16 +201,8 @@ function BuildPage($title,$content) {
             $titleTable=$_REQUEST["ntab"];
         }
         $contentActualPage=insertProductList($titleTable,$title);
-    }
-    else{//altrimenti vado a prendere il contenuto da file.html
-        echo("******isProductPage è false(ELSE)*******");
-        if($title=="Login"){
-            echo("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-            $contentActualPage=loginContent();//per ora dentro al file loginUser.php meglio cambiare i nomi
-        }
-        else{
-            $contentActualPage=file_get_contents($content);
-        }
+    }else{
+        $contentActualPage=file_get_contents($content);
     }
     $page=str_replace('{content}',$contentActualPage,$page);
     echo $page;

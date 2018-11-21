@@ -1,7 +1,7 @@
 <?php
+function registerPageReload(){
 
-registerPageReload(){
-    $name=$_POST['name'];
+        $name=$_POST['name'];
         $surname=$_POST['surname'];
         $userId=$_POST['userId'];
         $email=$_POST['email'];
@@ -39,9 +39,12 @@ registerPageReload(){
         else{//ce stà un errore
             $page=file_get_contents('registerPageReloaded.html');
             $numError=0;//errore==0 => nessun errore
+
+            //voglio vedere gli errori uno alla volta
             if($contaResultUserId>0 && $numError==0){
                 $echoError="username non disponibile,";
                 $numError=1;
+                // substitution
             }
             if($contaResultEmail>0 && $numError==0){
                 $echoError="email già presente utilizzane un altra,";
@@ -64,33 +67,36 @@ registerPageReload(){
                 $echoError="devi inserire una password,";
                 $numError=6;
             }
-
             
-
+            //esempio di sostituzione value="{nomeReload}"
             $page=str_replace('{nomeReload}',$name,$page);
             $page=str_replace('{surnameReload}',$surname,$page);
             $page=str_replace('{userIdReload}',$userId,$page);
             $page=str_replace('{emailReload}',$email,$page);
-            $page=$page.$echoError;
-            echo $page;    
+            $page=str_replace('{registerError}',$echoError,$page);
         }
+        return $page;
 }
 
-loginPageReload(){
-
-}
-
-emptyLoginPage(){
+function loginPageReload(){
 
 }
 
-loginContent(){
+function emptyLoginPage(){
+
+}
+
+function loginContent(){
     //manca controllo numeri sulla password
     
-    require "../database/connessione.php";
+    require "./database/connessione.php";
     session_start();//serve per aprire una sessione->mi serve per forse dichiarare delle variabili globali per tornare indietro nella pagina con gli elementi corretti già inseriti.
     //RICORDATI CHE SEI ARRIVATO FINO A QUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    $tasto=$_POST['tasto'];
+    if(isset($_POST['tasto'])){
+        $tasto=$_POST['tasto'];
+    }else{
+        $tasto=NULL;
+    }
     // echo $tasto;
 
     if($tasto=="registerTasto"){
@@ -100,9 +106,11 @@ loginContent(){
         $page=loginPageReload();
     }
     else{
-        $page=emptyLoginPage();
+        $page=file_get_contents("./content/login.html");
+        // emptyLoginPage();
     }
 
     return $page;
 }
+
 ?>

@@ -10,10 +10,10 @@
             <input  class="formBtn" type="submit" value="Accedi">
         </form>
     </div>
-
     <div class="registerContainer">
         <h2>Registrati</h2>
-        <form class="formCenter" method="post" action="php/insertUser.php">
+        <form class="formCenter" method="post" action="login.php">
+        <form class="formCenter" method="post" action="<?php echo "oioioioioi"?>">
             <p>Inserisci un nome:</p>
             <input type="text" name="name" placeholder="inserisci il nome">
             <p>Inserisci un cognome:</p>

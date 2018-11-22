@@ -11,6 +11,7 @@
         user-select: none;  
         background-color:#01404f;
         padding: 1em 1em 1em 1em;
+        height: auto;
     }
 
 
@@ -18,15 +19,11 @@
         display: block;
         width: 3em;
         height: 2em;
-       
         position: absolute;
         padding: 1em 1em 1em 1em;
-        
         cursor: pointer;
-        
         opacity: 0; /* hide this */
         z-index: 2; /* and place it over the hamburger */
-        
         -webkit-touch-callout: none;
     }
 
@@ -102,8 +99,10 @@
 
     .logo {
         float: right;
-        display: inline-block;
-        position: relative;
+        display: inline;
+        position: absolute;
+        right: 4em;
+        top: 0;
     }
 
     #mobile {
@@ -112,7 +111,6 @@
         margin: -100px 0 0 -50px;
         padding: 50px;
         padding-top: 125px;
-        
         background: #ededed;
         transform: translate(-100%, 0);
         /* list-style-type: none;

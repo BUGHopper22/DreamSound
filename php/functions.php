@@ -78,8 +78,10 @@ function prepareMenu($title,$menuPages){
     <input type="checkbox">
         <span></span>
         <span></span>
-        <span></span>';
-    $menu=$menu.'<ul id="mobile"><img src=./img/icon/logo.png class="logo">';
+        <span></span>
+        <img src=./img/icon/logo.png class="logo">';
+        
+    $menu=$menu.'<ul id="mobile">';
     $size=count($menuPages);
     $i=0;
     while($i<$size){
@@ -179,9 +181,9 @@ function insertProductList($titleTable,$category){
 //______________________________________________//
 
 // ____SERVE PER COSTRUIRE LA PAGINA
-function BuildPage($title,$content) {
+function BuildPage($title,$contentActualPage) {
     // if(getcwd()==='C:\xampp\htdocs\tecnologieWeb'){
-    $page=file_get_contents('content/structure.html');//carica la struttura con head e body
+    $page=file_get_contents('./content/structure.html');//carica la struttura con head e body
     // }else{
     // //     echo("non sei su getcwd");}
     // $page=file_get_contents('../content/structure.html');//carica la struttura con head e body
@@ -201,8 +203,6 @@ function BuildPage($title,$content) {
             $titleTable=$_REQUEST["ntab"];
         }
         $contentActualPage=insertProductList($titleTable,$title);
-    }else{
-        $contentActualPage=file_get_contents($content);
     }
     $page=str_replace('{content}',$contentActualPage,$page);
     //Aggiunta footer alla pagina

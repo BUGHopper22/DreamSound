@@ -57,6 +57,7 @@ h3 {
 #navbar-container{
     position: fixed;
     width:100%;
+    height: 4em;
     top:0px;
     left:0px;
     z-index: 999;
@@ -70,17 +71,22 @@ h3 {
     width: 3.5em;
     height: 3.5em;
     float: left;
-    padding-left: 2em;
+    padding-left: 1em;
+    display: inline-block;
+    position: absolute;
 }
+
 
 header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 100%;
     overflow: hidden;
     background-color:#01404f;
+    padding-left: 5em;
+    padding-right: 0.5em;
 }
+
 
 header li {
     float: left;
@@ -91,7 +97,7 @@ header li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 19px 27px;
+    padding: 1.2em 1.4em;
     text-decoration: none;
 }
 
@@ -663,7 +669,7 @@ input[type=submit], input[type=button] {
 }
 
 footer {
-    padding: 1em 1.5em 1em 1.5em;
+    padding: 1em 0.5em 1em 0.5em;
     float:right;
     position:relative;
     left:-50%;
@@ -685,7 +691,7 @@ footer a {
     display: block;
     color: white;
     text-align: left;
-    padding: 0.5em 1.5em 0 0;
+    padding: 1em 0.5em 0 0.5em;
     text-decoration: none;
 }
 

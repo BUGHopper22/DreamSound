@@ -79,7 +79,7 @@ function prepareMenu($title,$menuPages){
         <span></span>
         <span></span>
         <span></span>';
-    $menu=$menu.'<ul id="mobile">';
+    $menu=$menu.'<ul id="mobile"><img src=./img/icon/logo.png class="logo">';
     $size=count($menuPages);
     $i=0;
     while($i<$size){
@@ -205,6 +205,9 @@ function BuildPage($title,$content) {
         $contentActualPage=file_get_contents($content);
     }
     $page=str_replace('{content}',$contentActualPage,$page);
+    //Aggiunta footer alla pagina
+    $footer=file_get_contents('content/footer.html');
+    $page=str_replace('{footer}',$footer,$page);
     echo $page;
 }
 

@@ -100,6 +100,12 @@
         transform: none;
     }
 
+    .logo {
+        float: right;
+        display: inline-block;
+        position: relative;
+    }
+
     #mobile {
         position: absolute;
         width: auto;
@@ -121,18 +127,19 @@
         font-size: 22px;
         width: 100%;
     }
-    li {
+
+    header li {
         float: none;
         width: 100%;
     }
 
-    li a, .dropbtn {
+    header li a, .dropbtn {
         padding: 0 1em 0 1em;
         display: inline;
         color: black;
     }
 
-    li .menuDx {
+    header li .menuDx {
         float: none;
         width: 100%;
     }
@@ -292,4 +299,35 @@
     width: 300px;
     }
 
+}
+
+
+/*------------------------------------*\
+               Footer
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+    #wrapper {
+        height: 7em;
+    }
+
+    footer {
+        padding: 1em 0em 1em 0em;
+    }
+
+    footer li {
+        font-size: 0.8em;
+    }
+
+    footer a {
+        padding: 0.5em 0.3em 0 0.3em;
+    }
+
+    footer ul {
+        padding: 0;
+    }
+
+    .sublist {
+        display: none;
+    }
 }

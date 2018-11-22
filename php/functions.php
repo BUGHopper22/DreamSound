@@ -1,4 +1,5 @@
 <?php 
+
 //______________________________________________//
 //                  HEADER
 //______________________________________________//
@@ -177,20 +178,13 @@ function insertProductList($titleTable,$category){
 //                 BUILD PAGE
 //______________________________________________//
 
-// function findActualUrl($title,$menuPages){
-//     $esci=false;
-//     $size=count($menuPages);
-//     $scorri=0;
-//     while($scorri<$size and !$esci){
-//         if($menuPages[$scorri]->getName()==$title)
-//             $esci=true;
-//     }
-//     return $menuPages[$scorri]->getUrl();
-// }
-
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$content) {
+    // if(getcwd()==='C:\xampp\htdocs\tecnologieWeb'){
     $page=file_get_contents('content/structure.html');//carica la struttura con head e body
+    // }else{
+    // //     echo("non sei su getcwd");}
+    // $page=file_get_contents('../content/structure.html');//carica la struttura con head e body
     $page=str_replace('{title}',$title,$page);
     //crea array con le pagine
     $menuPages=createNavArray();
@@ -199,25 +193,18 @@ function BuildPage($title,$content) {
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
     
-    //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
-   
+    //$isProductPage determina se è una pagina prodotti o no
     $isProductPage=isProductPage($title,$menuPages);
+    //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
     if($isProductPage){
-    
         if(isset($_REQUEST["ntab"])){
             $titleTable=$_REQUEST["ntab"];
         }
         $contentActualPage=insertProductList($titleTable,$title);
-        echo($contentActualPage);
-        // $page=$page.$contentActualPage;
-    }
-    else{//altrimenti vado a prendere il contenuto da file.html
-        echo("******isProductPage è fale(ELSE)*******");
+    }else{
         $contentActualPage=file_get_contents($content);
-
-        $page=str_replace('{content}',$contentActualPage,$page);
     }
-    
+    $page=str_replace('{content}',$contentActualPage,$page);
     echo $page;
 }
 

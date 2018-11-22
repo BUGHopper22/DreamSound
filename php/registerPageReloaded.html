@@ -7,8 +7,9 @@
             <input type="text" name="userid">
             <p>Password:</p>
             <input type="password" name="psw">
+            <input type="hidden" name="tasto" value="loginTasto">
+            <input  class="formBtn" type="submit" value="Accedi">
         </form>
-        <button type="button" class="formBtn" onclick="alert('Hello World!')">Login</button>
     </div>
 
     <div class="registerContainer">
@@ -26,7 +27,9 @@
             <input type="password" name="psw1" placeholder="inserisci password">
             <p>Conferma la password:</p>
             <input type="password" name="psw2" placeholder="inserisci password">
+            <input type="hidden" name="tasto" value="registerTasto">
             <!-- <button type="button" type="submit" class="formBtn">Registrati</button> -->
+            {registerError}
             <input  class="formBtn" type="submit" value="Registrati">
 
         </form>

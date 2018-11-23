@@ -3,12 +3,8 @@
     <!-- CONTENITORE PRODOTTI CON IMMAGINE HOME -->
     <div id="outer" class="outer-home">
         <div class="inner">
-            <h2>Music is awesome</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur 
-                adipiscing elit. Suspendisse tincidunt 
-                vel risus quis euismod. Aenean id tellus 
-                ut risus luctus mattis a nec mauris. .
-            </p>
+            <h2>Without music, life would be a mistake.</h2>
+            <p>La musica esprime ciò che non può essere espresso a parole e ciò che non può rimanere in silenzio.</p>
             <button class="button">Acquista marshall</button>
         </div>
     </div>

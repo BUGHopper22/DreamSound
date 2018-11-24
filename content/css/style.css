@@ -714,3 +714,58 @@ footer li a:hover, .dropdown:hover .dropbtn {
     color:white;
 }
 
+/*------------------------------------*\
+               About us
+\*------------------------------------*/
+#aboutusouter {
+    height: 50vh;
+    width: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+#productsContainer{
+    width: 100%;
+    height: 60vh;
+    min-height: 245px;
+    box-shadow: 0px 4px 2px #8080807A;
+    margin-bottom: 1em;
+}
+
+.imgsContainer{
+    margin: 0 0 1em 0;
+    height: 100%;
+    width: 35%;
+    vertical-align: middle;
+    float: left;
+    overflow: hidden;
+}
+
+
+.productsImg{
+    max-height: 80%;
+    max-width: 80%;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.products {
+    width: 65%;
+    float: right;
+}
+
+
+.products p {
+    font-size: 20px;
+    color:black;
+    text-align: justify;
+    margin: 4em 4em 0 0;
+    padding: 0;
+}
+.aboutusouter-aboutus{
+    background-image: url("../../img/aboutus/inizio.jpg");
+}

@@ -4,19 +4,21 @@
     <div id="formContainer">
         <div class="loginContainer">
             <h2>Accedi</h2>
-            <form  class="formCenter" method="post" <!--<action="php/insertUser.php"--> >
+            <br></br>
+            {loginError}
+            <form  class="formCenter" method="post">
                 <p>Username:</p>
                 <input type="text" name="loginUsername">
                 <p>Password:</p>
                 <input type="password" name="loginPassword">
-                <!--<input type="hidden" name="tasto" value="loginTasto">-->
-                {loginError}
                 <input  class="formBtn" type="submit" value="Accedi">
             </form>
         </div>
         <div class="registerContainer">
             <h2>Registrati</h2>
-            <form class="formCenter" method="post" <!--action="php/insertUser.php"--> >
+            <br></br>
+            {registerError}
+            <form class="formCenter" method="post">
                 <p>Inserisci un nome:</p>
                 <input type="text" name="name" placeholder="inserisci il nome" value="{nomeReload}">
                 <p>Inserisci un cognome:</p>
@@ -29,9 +31,6 @@
                 <input type="password" name="psw1" placeholder="inserisci password">
                 <p>Conferma la password:</p>
                 <input type="password" name="psw2" placeholder="inserisci password" >
-                <!--<input type="hidden" name="tasto" value="registerTasto">-->
-                <!-- <button type="button" type="submit" class="formBtn">Registrati</button> -->
-                {registerError}
                 <input  class="formBtn" type="submit" value="Registrati">
 
             </form>

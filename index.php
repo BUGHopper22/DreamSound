@@ -1,4 +1,11 @@
 <?php
+    if(isset($_REQUEST["logout"])){
+        $logout=$_REQUEST["logout"];
+        if( $logout == 1){
+            session_start();
+            session_destroy();
+        }
+    }
     $contentActualPage='
     <!-- CONTENITORE PRODOTTI CON IMMAGINE HOME -->
     <div id="outer" class="outer-home">

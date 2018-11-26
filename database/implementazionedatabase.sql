@@ -13,9 +13,7 @@ Username char(16) NOT NULL,
 Email varchar(50) NOT NULL,
 Password varchar(100) NOT NULL,
 Nome varchar(50) NOT NULL,
-Cognome varchar(50) NOT NULL,
-Sesso enum('M','F') NOT NULL,
-Data_Nascita date NOT NULL
+Cognome varchar(50) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Id_prodotti
@@ -106,3 +104,5 @@ INSERT INTO Accessori (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, De
 ('20','Accessori Casse','34','Duronic','SPS1022','/accessoriCasse/accessoriCasse2.png','Due piedistalli per casse acustiche, base di appoggio 12*12. Il prodotto ha una altezza di 40cm per permettervi di posizionare le vostre casse ad un altezza ottimale.'),
 ('21','Accessori Casse','10','Khanka','UK-T-JBL-02','/accessoriCasse/accessoriCasse3.png','Custodia per casse bluetooth JBL, pratica e imbottita per mantenere la propria cassa e gli accessori sicuri, protetti e organizzati');
 
+INSERT INTO Utente (Username, Email, Password, Nome, Cognome) VALUES
+('alberto', 'alberto@alberto.alberto','177dacb14b34103960ec27ba29bd686b','Alberto','Alberto');

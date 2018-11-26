@@ -316,6 +316,8 @@ function BuildPage($title,$contentActualPage) {
     $isProductPage=isProductPage($title,$menuPages);
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
     if($isProductPage){
+        echo("porcodio");
+        //ntab -> vedi creazione menu url.
         if(isset($_REQUEST["ntab"])){
             $titleTable=$_REQUEST["ntab"];
         }

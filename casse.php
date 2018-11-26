@@ -9,7 +9,9 @@
                 vel risus quis euismod. Aenean id tellus
                 ut risus luctus mattis a nec mauris. .
             </p>
-            <button class="button" type="submit" formaction="prodotti.html">Tutti i prodotti</button>
+            <a href="./casseAltoparlanti.php?ntab=Casse">
+                <button class="button" type="submit">Tutti i prodotti</button>
+            </a>
         </div>
     </div>
 
@@ -22,7 +24,9 @@
                 vel risus quis euismod. Aenean id tellus
                 ut risus luctus mattis a nec mauris. .
             </p>
-            <button class="button">Tutti i prodotti</button>
+            <a href="./casseBluetooth.php?ntab=Casse">
+                <button class="button" type="submit">Tutti i prodotti</button>
+            </a>
         </div>
     </div>';
     require_once('php/functions.php');	//è un include di function

@@ -10,7 +10,9 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <button class="button" type="submit" formaction="prodotti.html">Tutti i prodotti</button>
+                <a href="./accessoriCuffie.php?ntab=Accessori">
+                    <button class="button" type="submit">Tutti i prodotti</button>
+                </a>
             </div>
         </div>
 
@@ -23,7 +25,9 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <button class="button">Tutti i prodotti</button>
+                <a href="./accessoriCasse.php?ntab=Accessori">
+                    <button class="button" type="submit">Tutti i prodotti</button>
+                </a>
             </div>
         </div>
     </body>';

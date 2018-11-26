@@ -9,7 +9,7 @@
                 vel risus quis euismod. Aenean id tellus
                 ut risus luctus mattis a nec mauris. .
             </p>
-            <a href="productsList.php">
+            <a href="./cuffieInEar.php?ntab=Cuffie">
                 <button class="button" type="submit">Tutti i prodotti</button>
             </a>
         </div>
@@ -24,7 +24,7 @@
                 vel risus quis euismod. Aenean id tellus
                 ut risus luctus mattis a nec mauris. .
             </p>
-            <a href="productsList.php">
+            <a href="./cuffieOnEar.php?ntab=Cuffie">
                 <button class="button" type="submit">Tutti i prodotti</button>
             </a>
         </div>
@@ -39,7 +39,7 @@
                 vel risus quis euismod. Aenean id tellus
                 ut risus luctus mattis a nec mauris. .
             </p>
-            <a href="productsList.php">
+            <a href="./cuffieWireless.php?ntab=Cuffie">
                 <button class="button" type="submit">Tutti i prodotti</button>
             </a>
         </div>

@@ -1,4 +1,16 @@
 /*------------------------------------*\
+                General
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+
+    body {
+        padding-top: 3.5em;
+    }
+}    
+
+
+/*------------------------------------*\
           Mobile navbar
 \*------------------------------------*/
 
@@ -107,7 +119,7 @@
 
     #mobile {
         position: absolute;
-        width: auto;
+        width: 3em;
         margin: -100px 0 0 -50px;
         padding: 50px;
         padding-top: 125px;
@@ -171,6 +183,18 @@
         font-size: 15px;
     }
 }
+
+
+/*------------------------------------*\
+               Breadcrumb
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+    .showWelcome {
+        display: none;
+    }
+}
+
 
 /*------------------------------------*\
           Tutti i prodotti

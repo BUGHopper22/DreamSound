@@ -298,7 +298,7 @@ function createContetnLogin($contentActualPage){
 
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$contentActualPage) {
-    echo("INIZIO PAGINA");
+    // echo("INIZIO PAGINA");
     // if(getcwd()==='C:\xampp\htdocs\tecnologieWeb'){
     $page=file_get_contents('./content/structure.html');//carica la struttura con head e body
     // }else{
@@ -327,6 +327,9 @@ function BuildPage($title,$contentActualPage) {
 
         }
     }
+    //Breadcrumb
+    $breadcrumb=file_get_contents('content/breadcrumb.html');
+    $page=str_replace('{breadcrumb}',$breadcrumb,$page);
     $page=str_replace('{content}',$contentActualPage,$page);
     //Aggiunta footer alla pagina
     $footer=file_get_contents('content/footer.html');

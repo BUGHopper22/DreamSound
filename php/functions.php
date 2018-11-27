@@ -123,14 +123,14 @@ function prepareMenu($title,$menuPages){
 function prepareBreadcrumb($title,$isProductPage){
     $breadcrumb='<div id="breadcrumb">';
     if($title=="Home"){
-        $breadcrumb=$breadcrumb.'home >';
+        $breadcrumb=$breadcrumb.'Home >';
     }
     else if($isProductPage){//pagina prodotti
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home </a> >
-                    <a href="./'.$_REQUEST["ntab"].'.php"> '.$_REQUEST["ntab"].'  </a> >'
+                    <a href="./'.$_REQUEST["ntab"].'.php"> '.$_REQUEST["ntab"].'  </a> > '
                     .$title;
     }else{//pagina categorie
-        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home </a> >'.$title;
+        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home </a> > '.$title;
     }
     //se l' utente è connesso
     if(isset( $_SESSION["sessionUserId"])){

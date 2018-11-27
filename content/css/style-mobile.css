@@ -323,6 +323,83 @@
 
 }
 
+/*------------------------------------*\
+                Carrello
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+
+    #carrello {
+    margin-top: 5em;
+    width: 100%;
+    height: 18vh;
+}
+
+.carrelloImgContainer {
+    width: 25%;
+    display: inline-block;
+}
+
+.carrelloImg {
+    max-height: 40%;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.carrelloDescriptionContainer {
+    width: 75%;
+    float: right;
+    font-size: 1.3em;
+}
+.carrelloDescription {
+    width: auto;
+    display: inline-block;  
+}
+
+.quantity {
+    margin: 1em;
+    display: inline-block;
+    right: 8em;
+    position: absolute;
+}
+
+.quantity p{
+    display: inline-block;
+    margin: 0 0.2em;
+}
+
+.quantityBotton {
+    padding: 0;
+    background-color: #01404f;
+    border: none;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#carrello .productPrice {
+    float: right;
+    display: inline-block;
+    margin: 1em 2em 0 0;
+    position: relative;
+}
+
+.totalPriceContainer {
+    width: 100%;
+    height: 8vh;
+}
+
+.totalPrice {
+    float: right;
+    margin: 0 1.6em;
+    font-size: 1.5em;
+}
+
+}
+
 
 /*------------------------------------*\
                Footer

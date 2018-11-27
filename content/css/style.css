@@ -158,6 +158,10 @@ header li.menuDx{
     z-index: 900;
 }
 
+#breadcrumb a, a:visited {
+    color: white;
+}
+
 .welcomeUser{
     float: right;
     margin-right: 3em;

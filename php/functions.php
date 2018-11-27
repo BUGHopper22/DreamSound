@@ -125,12 +125,18 @@ function prepareBreadcrumb($title,$isProductPage){
     if($title=="Home"){
         $breadcrumb=$breadcrumb.'Home >';
     }
-    else if($isProductPage){//pagina prodotti
+    else if($isProductPage){//pagina prodotti(pagina con la lista dei prodotti per categoria)
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> >
                     <a href="./'.$_REQUEST["ntab"].'.php"> '.$_REQUEST["ntab"].'</a> > '
                     .$title;
-    }else{//pagina categorie
+    }
+    //controllo possibili  errori sull if
+    else if($title=='$_REQUEST["ntab"]' ){//pagina categorie(CUFFIE,CASSE,ECC)
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> > '.$title;
+    }
+    else{//sono sul singolo product detail DA FINIRE BREADCRUMB PER PAGINE DETTAGLIO
+        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> >
+                    '.$title;
     }
     //se l' utente è connesso
     if(isset( $_SESSION["sessionUserId"])){
@@ -187,8 +193,12 @@ function insertProductList($titleTable,$category){
             <div class="productsPrice">
                 <h3>Pezzo: '.$listProduct['Prezzo'].'</h3>
             </div>
-                <!-- <button class="details"><a href="product.html">Piú dettagli</a></button> -->
-                <a class="details" href="productDetails.php">
+                <a class="details" href="productDetails.php?modello='.$listProduct['Modello'].'
+                                                            &marca='.$listProduct['Marca'].'
+                                                            &descrizione='.$listProduct['Descrizione'].'
+                                                            &prezzo='.$listProduct['Prezzo'].'
+                                                            &img='.$listProduct['Url_immagine'].'
+                                                            ">
                     <p>Piu\' dettagli</p>
                 </a>
         </div>

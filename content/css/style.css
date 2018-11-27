@@ -166,8 +166,6 @@ header li.menuDx{
     margin-right: 3em;
 }
 
-
-
 /*------------------------------------*\
 Contenitore prodotti e Contenitore home
 \*------------------------------------*/
@@ -802,7 +800,9 @@ footer li a:hover, .dropdown:hover .dropbtn {
 #carrello {
     margin: 1em 0;
     width: 100%;
-    height: 18vh;
+    height: 20vh; /**/
+    min-height: 180px; /**/
+    border-bottom: 1px solid gray;
 }
 
 .carrelloImgContainer {
@@ -811,8 +811,8 @@ footer li a:hover, .dropdown:hover .dropbtn {
 }
 
 .carrelloImg {
-    max-height: 40%;
-    max-width: 40%;
+    max-height: 45%;
+    max-width: 45%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -825,11 +825,12 @@ footer li a:hover, .dropdown:hover .dropbtn {
 }
 .carrelloDescription {
     width: auto;
-    display: inline-block;  
+    display: block;  
+    margin-right: 2em;
 }
 
 .quantity {
-    margin: 1em;
+    margin: 0 2em 0 0;
     display: inline-block;
     right: 8em;
     position: absolute;
@@ -850,10 +851,26 @@ footer li a:hover, .dropdown:hover .dropbtn {
     display: inline-block;
 }
 
+.removeBotton {
+    background-color: #01404f;
+    border: none;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 4.5em;
+    bottom: 0;
+    left: 0;
+}
+
+.removeBotton p {
+    margin: 0.1em;
+}
+
 #carrello .productPrice {
     float: right;
     display: inline-block;
-    margin: 1em 2em 0 0;
+    margin: 0 2em 0 0;
     position: relative;
 }
 

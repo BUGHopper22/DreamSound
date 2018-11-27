@@ -5,7 +5,7 @@
 @media only screen and (max-width: 767px) {
 
     body {
-        padding-top: 3.5em;
+        margin-top: 2em;
     }
 }    
 
@@ -328,78 +328,88 @@
 \*------------------------------------*/
 
 @media only screen and (max-width: 767px) {
-
     #carrello {
-    margin-top: 5em;
-    width: 100%;
-    height: 18vh;
-}
+        height: 50vh; /**/
+        min-height: 400px;/**/
+    }
 
-.carrelloImgContainer {
-    width: 25%;
-    display: inline-block;
-}
+    #carrello h3 {
+        font-size: 1.1em;
+    }
 
-.carrelloImg {
-    max-height: 40%;
-    max-width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
+    .carrelloImgContainer {
+        width: 50%; /**/
+    }
 
-.carrelloDescriptionContainer {
-    width: 75%;
-    float: right;
-    font-size: 1.3em;
-}
-.carrelloDescription {
-    width: auto;
-    display: inline-block;  
-}
+    .carrelloImg {
+        max-height: 90%;
+        max-width: 90%;
+    }
 
-.quantity {
-    margin: 1em;
-    display: inline-block;
-    right: 8em;
-    position: absolute;
-}
+    .carrelloDescriptionContainer {
+        width: 50%; /**/
+    }
+    .carrelloDescription {
+        display: block; /**/ 
+        margin-right: 1em; /**/ 
+    }
 
-.quantity p{
-    display: inline-block;
-    margin: 0 0.2em;
-}
+    .quantity {
+        margin: 0;/**/
+        display: block;/**/
+        left: 0;/**/
+        position: relative;
+    }
 
-.quantityBotton {
-    padding: 0;
-    background-color: #01404f;
-    border: none;
-    color:white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
+    .quantity p{
+        display: inline-block;
+        margin: 0;
+    }
 
-#carrello .productPrice {
-    float: right;
-    display: inline-block;
-    margin: 1em 2em 0 0;
-    position: relative;
-}
+    .quantityBotton {
+        padding: 0 0.2em;;
+        background-color: #01404f;
+        border: none;
+        color:white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
 
-.totalPriceContainer {
-    width: 100%;
-    height: 8vh;
-}
+    .removeBotton {
+        background-color: #01404f;
+        border: none;
+        color:white;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        width: 4.5em;
+        bottom: 0;
+        left: 0;
+    }
 
-.totalPrice {
-    float: right;
-    margin: 0 1.6em;
-    font-size: 1.5em;
-}
+    .removeBotton p {
+        margin: 0 0 1em 0;
+    }
 
-}
+    #carrello .productPrice {
+        float: none/**/;
+        display: block;/**/
+        margin: 1em 2em 0 0;
+        position: relative;
+    }
 
+    .totalPriceContainer {
+        width: 100%;
+        height: 8vh;
+    }
+
+    .totalPrice {
+        float: none;
+        text-align: center;
+    }
+}
 
 /*------------------------------------*\
                Footer

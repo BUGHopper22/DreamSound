@@ -158,7 +158,7 @@ header li.menuDx{
     z-index: 900;
 }
 
-#breadcrumb a, a:visited {
+#breadcrumb a, #breadcrumb a:visited {
     color: white;
 }
 

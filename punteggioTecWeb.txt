@@ -1,0 +1,9 @@
+4 html
+4 css
+3 accessib
+3 php
+2 javascript
+1 mobile/stampa
+6 progettazione / tipologia utente directory php ad aoggetti
+9 relazione
+bonus malus -4 +2

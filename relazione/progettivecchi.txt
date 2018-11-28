@@ -1,0 +1,35 @@
+http://tecweb2016.studenti.math.unipd.it/marizzo/Sito/		27
+http://tecweb2016.studenti.math.unipd.it/dciagola/TW/		21
+http://tecweb2016.studenti.math.unipd.it/mvianell/html/home.html	26
+http://tecweb2016.studenti.math.unipd.it/cmattei/index.php		18
+
+HTMTL	CSS	ACCESS.	PHP	JAVASCRIPT	MOBILE/STAMPA	PROGETTAZIONE	RELAZIONE	BUNUS/MALUS (-4..2)
+
+3	3.5	2	2	1.5		0.5		5.5		9		0
+1.5	3.5	1.5	1.5	1		0.5		4.5		7		0
+3.5	4	1	2.5	0		1		6		8		0
+1	2	1.5	1.5	0		0		5		7		0
+
+
+Attenzione ai controlli di php
+Se non si presenta nessuna parte di javascript si perde il punteggio in quella categoria, non serve che sia molto basta che sia bene
+Cambiare colore pagine visitate nel background
+contatti
+//Logo
+//totalvalidator 
+//controllare validazione di tutte le pagine
+//errore 404 gestione 
+
+
+Relazione: indice, 
+requisiti e target d'utenza
+organizzazione delle informazioni->introduzione,parte pubblica, parte privata
+usabilità -->introduzione, grafica e layout (focus sul target,gestione dello scroll verticalr, animazioni) favicon, gestione dell'errore 404, ottimizzazione per dispositivi mobili, minificazioni, menù laterale, media queries
+accessibilità ->introduzione,accorgimenti adottati
+Note sullo sviluppo-> tecnologie impegate, fogli di stile form, struttura pannello controllo, struttura database, gestione e utilizzo delle classi, menu, ECT.
+browser supportati DEVE ESSERCI
+compatibilità e dipendenze
+
+suddivisione dei ruoli
+progettazione e sviluppo della parte pubblica, con particolare attenzione all'accessibilità ed usabilità, creazione del CSS per la stampa e gestione dellea responsiveness. scrittura delle funzioni javascript per la validazione dei form e scrittura dei vincoli referenziali nel database
+

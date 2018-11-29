@@ -206,40 +206,54 @@ header li .menuDx {
     overflow: hidden;
 }
 
+#productsContainer h2 {
+    font-size: 1.3em;
+}
+
+#productsContainer h4 {
+    font-size: 1.1em;
+}
+
+#productsContainer p {
+    font-size: 0.9em;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+#productsContainer .button {
+    
+    display: inline;
+    float: left;
+}
+
 .imgsContainer {
     width: 45%;
-    height: 40vh;
 }
 
 .productsImg {
-    width: 90%;
+    margin: 0 auto;
+    margin-top:3em;
+    width: 100%;
     height: auto;
-    float: left;
-    margin: 0 1em 0 0;
+    
 }   
 
-.products {
-    width: 55%;
-    height: auto;
+.descriptionsContainer {
+    width: 50%;
+    padding-right: 0.5em;
 }
 
-.products p { 
-    font-size: 16px;
-    margin: 0 1em 0 0;
-}
 
-.detailsContainer {
-    width: 55%;
+.details {
     height: auto;
-    float: right;
-    margin: 2em 0 2em 0;
+    float: left;
+    margin: 0;
 }  
 
 .productPrice {
     margin-left: 1em;
 }
-
-
 
 
 /*------------------------------------*\
@@ -333,6 +347,7 @@ input[type=text], input[type=password] {
 #carrello h3 {
     font-size: 1.1em;
 }
+
 
 .carrelloImgContainer {
     width: 50%;

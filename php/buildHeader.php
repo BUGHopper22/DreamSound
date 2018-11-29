@@ -44,7 +44,9 @@ function createNavArray(){
         new menuElement('Accessori Cuffie',     'accessoriCuffie',  'dropdown-content', ''),
         new menuElement('Accessori Casse',      'accessoriCasse',   'dropdown-content', ''),
         new menuElement('About us',             'aboutUs',          '',                 ''),
-        new menuElement('Carrello',             'carrello',         '',                 'menuDx'),
+        new menuElement('Profilo',              'profilo',          'dropDown',         'menuDx'),
+        new menuElement('Carrello',             'carrello',         'dropdown-content',  ''),
+        new menuElement('Storico ordini',       'storicoOrdini',    'dropdown-content',  ''),
         // new menuElement('Login',                'login',            '',                 'menuDx'),
         //1)manca una pagina dinamica per la struttura unica di ogni singlo prodotto.
         //per quel che riguarda le pagine con la lista dei prodotti(stile amazon) basta semplicemente
@@ -60,7 +62,7 @@ function createNavArray(){
 //PRE: $i sarà l' indice della prima pagina del sottomenu, potenzialmente potrebbero non esserci pagine di sottomenu
 function internalPagesCount($i,$menuPages,$size){
     $numInternalPages=0;
-    while($i<=$size and $menuPages[$i]->getType()=="dropdown-content"){
+    while($i<$size and $menuPages[$i]->getType()=="dropdown-content"){
         $numInternalPages +=1;
         $i++;
     }
@@ -82,6 +84,7 @@ function prepareMenu($title,$menuPages){
     while($i<$size){
         //si potrebbe fare con find actual page
         if($menuPages[$i]->getName()==$title){//active
+            
             $menu=$menu.'<li class="active '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().' ">
                                                             <a class="dropbtn">'.$menuPages[$i]->getName().'</a>';
         }

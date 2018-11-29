@@ -7,13 +7,15 @@
         $img=$_REQUEST["img"];
         $descrizione=$_REQUEST["descrizione"];
         $prezzo=$_REQUEST["prezzo"];
-        $categoria=$_REQUEST["categoria"];
-        $ntab=$_REQUEST["ntab"];
+        // $categoria=$_REQUEST["categoria"];
+        // $ntab=$_REQUEST["ntab"];
         
     // }
     // else
     //     echo("modello non è definito");
 
+
+    
 
 
     $contentActualPage='

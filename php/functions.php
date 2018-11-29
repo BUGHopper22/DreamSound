@@ -37,6 +37,22 @@ function isCategoryPage($title,$menuPages){
     return $esci;
 }
 
+function isSinglePage($title,$menuPages){
+    $esci=FALSE;
+    $size=count($menuPages);
+    $scorri=0;
+    // echo ($esci==FALSE); 
+    while($scorri<$size and $esci==FALSE){
+        if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()!='dropDown' and $menuPages[$scorri]->getType()!='dropdown-content'){
+            $esci=TRUE;
+        }
+        $scorri++;
+    }
+    return $esci;
+}
+
+
+
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$contentActualPage) {
     // echo("INIZIO PAGINA");
@@ -56,6 +72,7 @@ function BuildPage($title,$contentActualPage) {
     //$isProductPage determina se è una pagina prodotti o no
     $isProductPage=isProductPage($title,$menuPages);
     $isCategoryPage=isCategoryPage($title,$menuPages);
+    $isSinglePage=isSinglePage($title,$menuPages);
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
     if($isProductPage){
         //ntab -> vedi creazione menu url.
@@ -80,7 +97,7 @@ function BuildPage($title,$contentActualPage) {
     // }
 
     //Breadcrumb
-    $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage);
+    $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage);
     $page=str_replace('{breadcrumb}',$breadcrumb,$page);
     
     echo $page;

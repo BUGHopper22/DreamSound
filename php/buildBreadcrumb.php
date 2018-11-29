@@ -1,6 +1,6 @@
 <?php
 //ATTENZIONE MANCA IL CASO DEL SINGOLO PRODOTTO!!!!!!!!!!!!!!!! RICORDATI
-function prepareBreadcrumb($title,$isProductPage,$isCategoryPage){
+function prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage){
     $breadcrumb='<div id="breadcrumb">';
     if($title=="Home"){
         $breadcrumb=$breadcrumb.'Home ';
@@ -14,10 +14,51 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage){
     else if($isCategoryPage){//pagina categorie(CUFFIE,CASSE,ECC)
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> > '.$title;
     }
+    else if($isSinglePage){
+        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> > '.$title;
+    }
     else{//sono sul singolo product detail DA FINIRE BREADCRUMB PER PAGINE DETTAGLIO
-        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> >
-                                
-                                '.$title;
+        $categoria=$_REQUEST["categoria"];
+        switch ($categoria) {
+            case "Cuffie in ear":
+                $ntab="Cuffie";
+                $primaryCategory="cuffie";
+                $urlSecondaryCategory="./cuffieInEar";
+                break;
+            case "Cuffie on ear":
+            $ntab="Cuffie";
+                $primaryCategory="cuffie";
+                $urlSecondaryCategory="./cuffieOnEar";
+                break;
+            case "Cuffie wireless":
+                $ntab="Cuffie";
+                $primaryCategory="cuffie";
+                $urlSecondaryCategory="./cuffieWireless";
+                break;
+            case "Casse Altoparlanti":
+                $ntab="Casse";
+                $primaryCategory="casse";
+                $urlSecondaryCategory="./casseAltoparlanti";
+                break;
+            case "Casse Bluetooth":
+                $ntab="Casse";
+                $primaryCategory="casse";
+                $urlSecondaryCategory="./casseBluetooth";
+                break;
+            case "Accessori Cuffie":
+                $ntab="Accessori";
+                $primaryCategory="accessori";
+                $urlSecondaryCategory="./accessoriCuffie";
+                break;
+            case "Accessori Casse":
+                $ntab="Accessori";
+                $primaryCategory="accessori";
+                $urlSecondaryCategory="./accessoriCasse";
+                break;
+            default:
+                echo "Your favorite color is neither red, blue, nor green!";
+        }
+        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> ><a href="./'.$primaryCategory.'.php"> '.$categoria.'</a> > <a href="./'.$urlSecondaryCategory.'.php?ntab='.$ntab.'"> '.$categoria.'</a> '.$title;
     }
     //se l' utente è connesso
     if(isset( $_SESSION["sessionUserId"])){

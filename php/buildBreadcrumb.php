@@ -5,6 +5,10 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage){
     if($title=="Home"){
         $breadcrumb=$breadcrumb.'Home ';
     }
+    elseif($title=="Storico ordini" || $title=="Carrello" ){
+        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> > <a href="./profilo.php"> Profilo</a> > '
+                    .$title;
+    }
     else if($isProductPage){//pagina prodotti(pagina con la lista dei prodotti per categoria)
         $breadcrumb=$breadcrumb.
                     '<a href="./index.php"> Home</a> >

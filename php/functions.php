@@ -14,7 +14,7 @@ function isProductPage($title,$menuPages){
     $scorri=0;
     // echo ($esci==FALSE); 
     while($scorri<$size and $esci==FALSE){
-        if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()=='dropdown-content'){
+        if($title==$menuPages[$scorri]->getName() && $menuPages[$scorri]->getType()=='dropdown-content' && $title!="Carrello" && $title!="Storico ordini"){
             $esci=TRUE;
         }
         $scorri++;

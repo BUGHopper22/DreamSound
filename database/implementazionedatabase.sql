@@ -3,8 +3,13 @@ DROP TABLE IF EXISTS Accessori;
 DROP TABLE IF EXISTS Casse;
 DROP TABLE IF EXISTS Cuffie;
 DROP TABLE IF EXISTS Carrello;
+DROP TABLE IF EXISTS Storico;
 DROP TABLE IF EXISTS Id_prodotti;
 DROP TABLE IF EXISTS Utente;
+
+
+
+
 
 CREATE TABLE Utente
 (
@@ -64,6 +69,16 @@ ON UPDATE NO ACTION
 ) ENGINE=InnoDB;
 
 CREATE TABLE Carrello
+(
+Id_p int,
+Id_utente int,
+Quantita int,
+FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto),
+FOREIGN KEY (Id_utente) REFERENCES Utente(Id_utente)
+ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE Storico
 (
 Id_p int,
 Id_utente int,

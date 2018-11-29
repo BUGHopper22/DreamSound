@@ -22,21 +22,18 @@
                 <h2>I più venduti</h2>
                 <div class="outer">
                     <a href="">
-                        <div class="product-box first-prod">
+                        <div class="product-box">
                             <img src="./img/prodotti/Marshall1.jpg" alt="marshall">
-                            <div class="tit-desc-box">
                                 <h4>Marshall</h4>
                                 <p> Lorem ipsum dolor sit amet, consectetur 
                                     adipiscing elit. Suspendisse tincidunt 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>  
                         </div>
                     </a>
                     <a href="">
-                        <div class="product-box central-prod">
+                        <div class="product-box">
                             <img src="./img/prodotti/bred1.jpg" alt="marshall">
-                            <div class="tit-desc-box">    
                                 <h4>Bred</h4>
                                 <p> 
                                     Lorem ipsum dolor sit amet, consectetur 
@@ -44,32 +41,27 @@
                                     vel risus quis euismod. Aenean id tellus 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>
                         </div>
                     </a>
                     <a href="">
-                        <div class="product-box central-prod">
+                        <div class="product-box">
                             <img src="./img/prodotti/Marshall2.jpg" alt="marshall">
-                            <div class="tit-desc-box">
                                 <h4>Beats</h4>
                                 <p> adipiscing elit. Suspendisse tincidunt 
                                     vel risus quis euismod. Aenean id tellus 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>
                         </div>
                     </a>
                     <a href="">
-                        <div class="product-box central-prod">
+                        <div class="product-box">
                             <img src="./img/prodotti/maxell.jpg" alt="marshall">
-                            <div class="tit-desc-box">
                                 <h4>Maxell</h4>
                                 <p> Lorem ipsum dolor sit amet, consectetur 
                                     adipiscing elit. Suspendisse tincidunt 
                                     vel risus quis euismod. Aenean id tellus 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>
                         </div>
                     </a>
                 </div>

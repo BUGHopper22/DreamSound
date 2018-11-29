@@ -1,6 +1,8 @@
 <?php
     $contentActualPage='
-    <!-- IMMAGINE  CUFFIE IN-EAR -->
+    <div class="titlePage">
+        <h1>Casse</h1>
+    </div>
     <div id="outer" class="outer-altoparlanti"> <!-- La classe outer gestisce l immagine di sfondo -->
         <div class="inner">
             <h2>Casse Altoparlanti</h2>

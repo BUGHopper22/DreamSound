@@ -1,6 +1,9 @@
 <?php
     // session_start();
     $contentActualPage='
+    <div class="titlePage">
+        <h1>Accedi o registrati</h1>
+    </div>
     <div id="formContainer">
         <div class="loginContainer">
             <h2>Accedi</h2>

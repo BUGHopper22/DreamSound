@@ -1,6 +1,8 @@
 <?php
     $contentActualPage='
-    <h1>Carrello</h1>
+    <div class="titlePage">
+        <h1>Carrello</h1>
+    </div>
     <div id="carrello">
         <div class="carrelloImgContainer">
             <img class="carrelloImg" src="./img/prodotti/cuffieInear/inear1.png" alt="prodotto1">

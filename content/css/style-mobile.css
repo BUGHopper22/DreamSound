@@ -1,197 +1,199 @@
+@media only screen and (max-width: 767px) {
+
 /*------------------------------------*\
                 General
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
+body {
+    padding: 6em 0 0 0;
+}
 
-    body {
-        padding: 4.5em 0 0 0;
-    }
-}    
+h1 {
+    font-size: 1.5em;
+}
 
+h2 {
+    font-size: 1.3em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+p {
+    font-size: 1.1em;    
+}
+
+.titlePage h1{
+    margin: 0px auto;
+    padding: 0.5em 0;
+    text-align: center; 
+    background-color: #011722;
+    color: white;
+}
+
+.button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+}
+
+.button:hover{
+    background-color:#5a9697; 
+    color:white;
+}
+    
 
 /*------------------------------------*\
-          Mobile navbar
+            Mobile navbar
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-
-    #navbar-container {
-        display: block;
-        z-index: 10;
-        -webkit-user-select: none;
-        user-select: none;  
-        background-color:#01404f;
-        padding: 1em 1em 1em 1em;
-        height: auto;
-    }
-
-
-    #navbar-container input {
-        display: block;
-        width: 3em;
-        height: 2em;
-        position: absolute;
-        padding: 1em 1em 1em 1em;
-        cursor: pointer;
-        opacity: 0; /* hide this */
-        z-index: 2; /* and place it over the hamburger */
-        -webkit-touch-callout: none;
-    }
-
-    /*
-    * Just a quick hamburger
-    */
-    #navbar-container span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        
-        background: white;
-        border-radius: 3px;
-        
-        z-index: 1;
-        
-        transform-origin: 4px 0px;
-        
-        /* transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    opacity 0.55s ease; 
-                    tolta animazione da hamburger a X */
-    }
-
-    #navbar-container span:first-child {
-        transform-origin: 0% 0%;
-    }
-
-    #navbar-container span:nth-child(2) {
-        transform-origin: 0% 100%;
-    }
-
-    /* 
-    * Transform all the slices of hamburger
-    * into a crossmark.
-    */
-    #navbar-container input:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg)translate(-6px, -14px);
-        background: #232323;
-    }
-
-    /*
-    * But let's hide the middle one.
-    */
-    #navbar-container input:checked ~ span:nth-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-
-    /*
-    * Ohyeah and the last one should go the other direction
-    */
-    #navbar-container input:checked ~ span:nth-child(2) {
-        transform: rotate(-45deg)translate(-12px, 21px);
-    }
-
-    /*
-    * Make this absolute positioned
-    * at the top left of the screen
-    */
-
-
-
-    /*
-    * And let's slide it in from the left
-    */
-    #navbar-container input:checked ~ ul {
-        transform: none;
-    }
-
-    .logo {
-        float: right;
-        /* display: inline; */
-        position: absolute;
-        right: 4em;
-        top: 0;
-    }
-
-    #mobile {
-        position: absolute;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 125px;
-        background: #ededed;
-        transform: translate(-100%, 0);
-        /* list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-        transform-origin: 0% 0%;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0); 
-        tolta animazione tendina ul*/
-    }
-
-    #mobile li {
-        padding: 10px 0;
-        font-size: 22px;
-        width: 100%;
-    }
-
-    header li {
-        float: none;
-        width: 100%;
-    }
-
-    header li a, .dropbtn {
-        padding: 0 1em 0 1em;
-        display: inline;
-        color: black;
-    }
-
-    header li .menuDx {
-        float: none;
-        width: 100%;
-    }
-    
-    .dropDown:hover .dropdown-content {
-        display: none;
-    }  
+#navbar-container {
+    display: block;
+    z-index: 10;
+    -webkit-user-select: none;
+    user-select: none;  
+    background-color:#01404f;
+    padding: 1em 1em 1em 1em;
+    height: auto;
 }
 
-
-@media only screen and (max-width: 767px) {
-    #outer{
-        height: 70vh;
-    }
-    .inner p{
-        font-size: 20px;
-    }
-    .inner{
-        width: 90%;
-        margin: 0 auto;
-        padding: 0;
-        padding-top: 10%;
-    }
-    h1{
-        font-size: 30px;
-    }
-    h2{
-        font-size: 18px;
-    }
-    h3{
-        font-size: 15px;
-    }
+#navbar-container input {
+    display: block;
+    width: 3em;
+    height: 2em;
+    position: absolute;
+    padding: 1em 1em 1em 1em;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
 }
+
+#navbar-container span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: white;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+}
+
+#navbar-container span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#navbar-container span:nth-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#navbar-container input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg)translate(-6px, -14px);
+    background: #232323;
+}
+
+#navbar-container input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#navbar-container input:checked ~ span:nth-child(2) {
+    transform: rotate(-45deg)translate(-12px, 21px);
+}
+
+#navbar-container input:checked ~ ul {
+    transform: none;
+}
+
+.logo {
+    float: right;
+    position: absolute;
+    right: 4em;
+    top: 0;
+}
+
+#mobile {
+    position: absolute;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: #ededed;
+    transform: translate(-100%, 0);
+}
+
+#mobile li {
+    padding: 10px 0;
+    font-size: 22px;
+    width: 100%;
+}
+
+header li {
+    float: none;
+    width: 100%;
+}
+
+header li a, .dropbtn {
+    padding: 0 1em 0 1em;
+    display: inline;
+    color: black;
+}
+
+header li .menuDx {
+    float: none;
+    width: 100%;
+}
+
+.dropDown:hover .dropdown-content {
+    display: none;
+}  
+
 
 
 /*------------------------------------*\
                Breadcrumb
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-    .welcomeUser {
-        display: none;
-    }
+#breadcrumb {
+    top: 4.5em;
+    font-size: 0.8em;
+}
+
+.welcomeUser {
+    display: none;
+}
+
+
+/*------------------------------------*\
+ Contenitori prodotti e Contenitore home
+\*------------------------------------*/
+
+#outer {
+    height: 30em;
+}
+
+.inner {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em 1em;
+}
+
+/*------------------------------------*\
+                Home
+\*------------------------------------*/
+
+.outer {
+    width: 100%;
+}
+
+.product-box {
+    width:50%;
 }
 
 
@@ -199,224 +201,212 @@
           Tutti i prodotti
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-    #productsContainer{
-        height: auto;
-        overflow: hidden;
-    }
-
-    .imgsContainer {
-        width: 45%;
-        height: 40vh;
-    }
-
-    .productsImg{
-      width: 90%;
-      height: auto;
-      float: left;
-      margin: 0 1em 0 0;
-    }   
-
-    .products {
-        width: 55%;
-        height: auto;
-    }
-
-    .products p { 
-        font-size: 16px;
-        margin: 0 1em 0 0;
-    }
-
-    .detailsContainer {
-        width: 55%;
-        height: auto;
-        float: right;
-        margin: 2em 0 2em 0;
-    }  
-
-    .productPrice {
-        margin-left: 1em;
-    }
-
-    .details {
-        float: right;
-        margin: 0 1em 0 0;
-        padding: 0 0.5em 0 0.5em;
-        font-size: 14px;
-    }
+#productsContainer {
+    height: auto;
+    overflow: hidden;
 }
+
+.imgsContainer {
+    width: 45%;
+    height: 40vh;
+}
+
+.productsImg {
+    width: 90%;
+    height: auto;
+    float: left;
+    margin: 0 1em 0 0;
+}   
+
+.products {
+    width: 55%;
+    height: auto;
+}
+
+.products p { 
+    font-size: 16px;
+    margin: 0 1em 0 0;
+}
+
+.detailsContainer {
+    width: 55%;
+    height: auto;
+    float: right;
+    margin: 2em 0 2em 0;
+}  
+
+.productPrice {
+    margin-left: 1em;
+}
+
+
+
 
 /*------------------------------------*\
                Prodotto
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-    #productContainer{
-        height: auto;
-        overflow: hidden;
-    }
-
-    .imgContainer {
-        width: 100%;
-        height: auto;
-    }
-
-    .productImg{
-      width: 100%;
-    }  
-
-    .product {
-        width: 100%;
-        height: auto;
-    }
-
-    .product p { 
-        font-size: 20px;
-        margin: 1em 2em 0 1em;
-    }
-
-    .buyContainer {
-        width: 100%;
-        height: 8vh;
-        margin: 0 1em 1em 1em;
-    }
-
-
-    .productPrice h3 {
-        font-size: 18px;
-    }
-
-    .compra {
-        margin: 0 2em 0 0;
-    }
+#productContainer {
+    height: auto;
+    overflow: hidden;
 }
+
+.imgContainer {
+    width: 100%;
+    height: auto;
+}
+
+.productImg {
+    width: 100%;
+}  
+
+.product {
+    width: 100%;
+    height: auto;
+}
+
+.product p { 
+    font-size: 20px;
+    margin: 1em 2em 0 1em;
+}
+
+.buyContainer {
+    width: 100%;
+    height: 8vh;
+    margin: 0 1em 1em 1em;
+}
+
+
+.productPrice h3 {
+    font-size: 18px;
+}
+
+.compra {
+    margin: 0 2em 0 0;
+}
+
 
 /*------------------------------------*\
             Login Register
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-
-    #formContainer {
-        margin-top:2em;
-        height: 62em;
-        /* min-height: 950px; */
-    }
-
-    .formContainer h2 {
-        margin: 4em 0 2em 0;
-        font-size: 23px;
-    }
-
-    .loginContainer {
-        padding-top: 0.5em;
-        width:100%;
-        float: none;
-    }
-
-    .registerContainer {
-        padding-top: 0.5em;
-        width:100%;
-        float: none;
-    }
-
-    .formCenter {
-        text-align: center;
-    }
-
-    input[type=text], input[type=password] {
-    width: 300px;
-    }
-
+#formContainer {
+    margin-top:2em;
+    height: 62em;
 }
+
+.formContainer h2 {
+    margin: 4em 0 2em 0;
+    font-size: 23px;
+}
+
+.loginContainer {
+    padding-top: 0.5em;
+    width:100%;
+    float: none;
+}
+
+.registerContainer {
+    padding-top: 0.5em;
+    width:100%;
+    float: none;
+}
+
+.formCenter {
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    width: 300px;
+}
+
 
 /*------------------------------------*\
-                Carrello
+            Carrello
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-    #carrello {
-        height: 50vh;
-        min-height: 400px;
-    }
-
-    #carrello h3 {
-        font-size: 1.1em;
-    }
-
-    .carrelloImgContainer {
-        width: 50%;
-    }
-
-    .carrelloImg {
-        max-height: 90%;
-        max-width: 90%;
-    }
-
-    .carrelloDescriptionContainer {
-        width: 50%;
-    }
-    .carrelloDescription {
-        margin-right: 1em; 
-    }
-
-    .quantity {
-        margin: 0;
-        display: block;
-        left: 0;
-        position: relative;
-    }
-
-    .quantity p{
-        margin: 0;
-    }
-
-    .quantityBotton {
-        padding: 0 0.2em;;
-    }
-
-    .removeBotton p {
-        margin: 0 0 1em 0;
-    }
-
-    #carrello .productPrice {
-        float: none;
-        display: block;
-        margin: 1em 2em 0 0;
-    }
-
-    .totalPrice {
-        float: none;
-        text-align: center;
-    }
+#carrello {
+    height: 50vh;
+    min-height: 400px;
 }
+
+#carrello h3 {
+    font-size: 1.1em;
+}
+
+.carrelloImgContainer {
+    width: 50%;
+}
+
+.carrelloImg {
+    max-height: 90%;
+    max-width: 90%;
+}
+
+.carrelloDescriptionContainer {
+    width: 50%;
+}
+.carrelloDescription {
+    margin-right: 1em; 
+}
+
+.quantity {
+    margin: 0;
+    display: block;
+    left: 0;
+    position: relative;
+}
+
+.quantity p{
+    margin: 0;
+}
+
+.quantityBotton {
+    padding: 0 0.2em;;
+}
+
+.removeBotton p {
+    margin: 0 0 1em 0;
+}
+
+#carrello .productPrice {
+    float: none;
+    display: block;
+    margin: 1em 2em 0 0;
+}
+
+.totalPrice {
+    float: none;
+    text-align: center;
+}
+
 
 /*------------------------------------*\
                Footer
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-    #wrapper {
-        height: 7em;
-    }
+#wrapper {
+    height: 7em;
+}
 
-    footer {
-        padding: 1em 0em 1em 0em;
-    }
+footer {
+    padding: 1em 0em 1em 0em;
+}
 
-    footer li {
-        font-size: 0.8em;
-    }
+footer li {
+    font-size: 0.8em;
+}
 
-    footer a {
-        padding: 0.5em 0.3em 0 0.3em;
-    }
+footer a {
+    padding: 0.5em 0.3em 0 0.3em;
+}
 
-    footer ul {
-        padding: 0;
-    }
+footer ul {
+    padding: 0;
+}
 
-    .sublist {
-        display: none;
-    }
+.sublist {
+    display: none;
+}
+
 }

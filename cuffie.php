@@ -1,6 +1,8 @@
 <?php
     $contentActualPage='
-    <!-- IMMAGINE  CUFFIE IN-EAR -->
+    <div class="titlePage">
+        <h1>Cuffie</h1>
+    </div>
     <div id="outer" class="outer-cuffieInEar">
         <div class="inner">
             <h2>Cuffie IN-EAR</h2>

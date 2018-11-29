@@ -14,7 +14,7 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage){
     else if($isCategoryPage){//pagina categorie(CUFFIE,CASSE,ECC)
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> > '.$title;
     }
-    else if($isSinglePage){
+    else if($isSinglePage || $title=="Login"){
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> > '.$title;
     }
     else{//sono sul singolo product detail DA FINIRE BREADCRUMB PER PAGINE DETTAGLIO

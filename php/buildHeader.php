@@ -45,7 +45,7 @@ function createNavArray(){
         new menuElement('Accessori Casse',      'accessoriCasse',   'dropdown-content', ''),
         new menuElement('About us',             'aboutUs',          '',                 ''),
         new menuElement('Carrello',             'carrello',         '',                 'menuDx'),
-        new menuElement('Login',                'login',            '',                 'menuDx'),
+        // new menuElement('Login',                'login',            '',                 'menuDx'),
         //1)manca una pagina dinamica per la struttura unica di ogni singlo prodotto.
         //per quel che riguarda le pagine con la lista dei prodotti(stile amazon) basta semplicemente
         //2)creare un unica pagina dinamica che creerà la stessa struttura per tutti ma con idfferenti prodotti in base al nome della pagina

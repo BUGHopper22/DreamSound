@@ -8,6 +8,7 @@
         $descrizione=$_REQUEST["descrizione"];
         $prezzo=$_REQUEST["prezzo"];
         $categoria=$_REQUEST["categoria"];
+        $ntab=$_REQUEST["ntab"];
         
     // }
     // else

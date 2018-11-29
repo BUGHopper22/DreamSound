@@ -136,7 +136,7 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage){
     }
     else{//sono sul singolo product detail DA FINIRE BREADCRUMB PER PAGINE DETTAGLIO
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> >
-                                <a href="./index.php"> Home</a> >
+                                <a href="./'.$_REQUEST["ntab"].'.php">'.$_REQUEST["ntab"].'</a> >
                                 '.$title;
     }
     //se l' utente è connesso
@@ -213,6 +213,7 @@ function insertProductList($titleTable,$category){
                                                             &prezzo='.$listProduct['Prezzo'].'
                                                             &img='.$listProduct['Url_immagine'].'
                                                             &categoria='.$listProduct['Categoria'].'
+                                                            
                                                             ">
                     <p>Piu\' dettagli</p>
                 </a>
@@ -347,11 +348,6 @@ function BuildPage($title,$contentActualPage) {
     //$isProductPage determina se è una pagina prodotti o no
     $isProductPage=isProductPage($title,$menuPages);
     $isCategoryPage=isCategoryPage($title,$menuPages);
-
-    
-    
-
-    
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
     if($isProductPage){
         //ntab -> vedi creazione menu url.

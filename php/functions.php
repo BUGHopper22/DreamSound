@@ -120,23 +120,24 @@ function prepareMenu($title,$menuPages){
 }
 
 //ATTENZIONE MANCA IL CASO DEL SINGOLO PRODOTTO!!!!!!!!!!!!!!!! RICORDATI
-function prepareBreadcrumb($title,$isProductPage){
+function prepareBreadcrumb($title,$isProductPage,$isCategoryPage){
     $breadcrumb='<div id="breadcrumb">';
     if($title=="Home"){
-        $breadcrumb=$breadcrumb.'Home >';
+        $breadcrumb=$breadcrumb.'Home ';
     }
     else if($isProductPage){//pagina prodotti(pagina con la lista dei prodotti per categoria)
-        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> >
+        $breadcrumb=$breadcrumb.
+                    '<a href="./index.php"> Home</a> >
                     <a href="./'.$_REQUEST["ntab"].'.php"> '.$_REQUEST["ntab"].'</a> > '
                     .$title;
     }
-    //controllo possibili  errori sull if
-    else if($title=='$_REQUEST["ntab"]' ){//pagina categorie(CUFFIE,CASSE,ECC)
+    else if($isCategoryPage){//pagina categorie(CUFFIE,CASSE,ECC)
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> > '.$title;
     }
     else{//sono sul singolo product detail DA FINIRE BREADCRUMB PER PAGINE DETTAGLIO
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> >
-                    '.$title;
+                                <a href="./index.php"> Home</a> >
+                                '.$title;
     }
     //se l' utente è connesso
     if(isset( $_SESSION["sessionUserId"])){
@@ -163,6 +164,19 @@ function isProductPage($title,$menuPages){
     // echo ($esci==FALSE); 
     while($scorri<$size and $esci==FALSE){
         if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()=='dropdown-content'){
+            $esci=TRUE;
+        }
+        $scorri++;
+    }
+    return $esci;
+}
+function isCategoryPage($title,$menuPages){
+    $esci=FALSE;
+    $size=count($menuPages);
+    $scorri=0;
+    // echo ($esci==FALSE); 
+    while($scorri<$size and $esci==FALSE){
+        if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()=='dropDown'){
             $esci=TRUE;
         }
         $scorri++;
@@ -198,6 +212,7 @@ function insertProductList($titleTable,$category){
                                                             &descrizione='.$listProduct['Descrizione'].'
                                                             &prezzo='.$listProduct['Prezzo'].'
                                                             &img='.$listProduct['Url_immagine'].'
+                                                            &categoria='.$listProduct['Categoria'].'
                                                             ">
                     <p>Piu\' dettagli</p>
                 </a>
@@ -331,6 +346,7 @@ function BuildPage($title,$contentActualPage) {
     
     //$isProductPage determina se è una pagina prodotti o no
     $isProductPage=isProductPage($title,$menuPages);
+    $isCategoryPage=isCategoryPage($title,$menuPages);
 
     
     
@@ -352,15 +368,15 @@ function BuildPage($title,$contentActualPage) {
     }
     $page=str_replace('{content}',$contentActualPage,$page);
     //Aggiunta footer alla pagina
-    $footer=file_get_contents('content/footer.html');
-    $page=str_replace('{footer}',$footer,$page);
+    // $footer=file_get_contents('content/footer.html');
+    // $page=str_replace('{footer}',$footer,$page);
     // if(isset( $_SESSION["sessionUserId"])){
     //     echo("PECASDVAERBYRETTJETUYWHTAEGRFRAGSTRBH");
     //     $page=$page."ciao ".$_SESSION["sessionUserId"];
     // }
 
     //Breadcrumb
-    $breadcrumb=prepareBreadcrumb($title,$isProductPage);
+    $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage);
     $page=str_replace('{breadcrumb}',$breadcrumb,$page);
     
     echo $page;

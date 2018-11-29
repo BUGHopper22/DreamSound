@@ -321,7 +321,7 @@ Contenitore prodotti e Contenitore home
 	padding-bottom: 9999px; */
   }
 
-  /* .product-box:hover{
+   /* .product-box:hover{
     background-color: #8ed8cc;
   } */
 
@@ -756,12 +756,20 @@ footer li a:hover, .dropdown:hover .dropbtn {
     background-size: cover; 
 }
 
-#productsContainer{
+#aboutusContainer{
     width: 100%;
-    height: 60vh;
+    height: 55vh;
     min-height: 245px;
     box-shadow: 0px 4px 2px #8080807A;
-    margin-bottom: 1em;
+   
+}
+.data-template2 h2{
+    margin: 0px auto;
+    padding: 20px 0px;
+    text-align: center; 
+    font-size: 45px;
+    background-color: #01404f;
+    color: white;
 }
 
 .imgsContainer{
@@ -774,32 +782,61 @@ footer li a:hover, .dropdown:hover .dropbtn {
 }
 
 
-.productsImg{
+.storysImg{
     max-height: 80%;
     max-width: 80%;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-.products {
+.storys {
     width: 65%;
     float: right;
 }
 
 
-.products p {
+.storys p {
     font-size: 20px;
     color:black;
-    text-align: justify;
-    margin: 4em 4em 0 0;
+    text-align: right;
+    margin: 3em 4em 0 4em;
     padding: 0;
 }
 .aboutusouter-aboutus{
     background-image: url("../../img/aboutus/inizio.jpg");
 }
 
+.imgs2Container{
+    margin: 0 0 1em 0;
+    height: 100%;
+    width: 35%;
+    vertical-align: middle;
+    float: right;
+    overflow: hidden;
+}
+
+
+.storys2Img{
+    max-height: 90%;
+    max-width: 90%;
+    margin: 2em 0 3em 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.storys2 {
+    width: 65%;
+    float: left;
+}
+.storys2 p {
+    font-size: 20px;
+    color:black;
+    text-align: left;
+    margin: 2em 4em 4em 4em;
+    padding: 0;
+}
 
 /*------------------------------------*\
                Carrello

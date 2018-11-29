@@ -16,7 +16,7 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage){
     }
     else{//sono sul singolo product detail DA FINIRE BREADCRUMB PER PAGINE DETTAGLIO
         $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> >
-                                <a href="./'.$_REQUEST["ntab"].'.php">'.$_REQUEST["ntab"].'</a> >
+                                
                                 '.$title;
     }
     //se l' utente è connesso
@@ -25,6 +25,13 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage){
         <div class="welcomeUser">
             <div class="showWelcome">
             benvenuto '.$_SESSION["sessionUserId"].', <a href="./index.php?logout=1"> logout</a>
+            </div>
+        </div>';
+    }else{
+        $breadcrumb=$breadcrumb.'
+        <div class="welcomeUser">
+            <div class="showWelcome">
+            <a href="./login.php"> login</a>
             </div>
         </div>';
     }

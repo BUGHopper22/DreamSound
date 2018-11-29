@@ -5,7 +5,7 @@
 @media only screen and (max-width: 767px) {
 
     body {
-        margin-top: 2em;
+        padding: 4.5em 0 0 0;
     }
 }    
 
@@ -18,7 +18,7 @@
 
     #navbar-container {
         display: block;
-        z-index: 1;
+        z-index: 10;
         -webkit-user-select: none;
         user-select: none;  
         background-color:#01404f;
@@ -66,7 +66,7 @@
         transform-origin: 0% 0%;
     }
 
-    #navbar-container span:nth-last-child(2) {
+    #navbar-container span:nth-child(2) {
         transform-origin: 0% 100%;
     }
 
@@ -76,14 +76,14 @@
     */
     #navbar-container input:checked ~ span {
         opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
+        transform: rotate(45deg)translate(-6px, -14px);
         background: #232323;
     }
 
     /*
     * But let's hide the middle one.
     */
-    #navbar-container input:checked ~ span:nth-last-child(3) {
+    #navbar-container input:checked ~ span:nth-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
     }
@@ -91,8 +91,8 @@
     /*
     * Ohyeah and the last one should go the other direction
     */
-    #navbar-container input:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
+    #navbar-container input:checked ~ span:nth-child(2) {
+        transform: rotate(-45deg)translate(-12px, 21px);
     }
 
     /*
@@ -111,7 +111,7 @@
 
     .logo {
         float: right;
-        display: inline;
+        /* display: inline; */
         position: absolute;
         right: 4em;
         top: 0;
@@ -119,7 +119,6 @@
 
     #mobile {
         position: absolute;
-        width: 3em;
         margin: -100px 0 0 -50px;
         padding: 50px;
         padding-top: 125px;
@@ -154,7 +153,7 @@
         width: 100%;
     }
     
-    .dropdown:hover .dropdown-content {
+    .dropDown:hover .dropdown-content {
         display: none;
     }  
 }
@@ -298,17 +297,25 @@
 
 @media only screen and (max-width: 767px) {
 
+    #formContainer {
+        margin-top:2em;
+        height: 62em;
+        /* min-height: 950px; */
+    }
+
     .formContainer h2 {
         margin: 4em 0 2em 0;
         font-size: 23px;
     }
 
     .loginContainer {
+        padding-top: 0.5em;
         width:100%;
         float: none;
     }
 
     .registerContainer {
+        padding-top: 0.5em;
         width:100%;
         float: none;
     }
@@ -329,8 +336,8 @@
 
 @media only screen and (max-width: 767px) {
     #carrello {
-        height: 50vh; /**/
-        min-height: 400px;/**/
+        height: 50vh;
+        min-height: 400px;
     }
 
     #carrello h3 {
@@ -338,7 +345,7 @@
     }
 
     .carrelloImgContainer {
-        width: 50%; /**/
+        width: 50%;
     }
 
     .carrelloImg {
@@ -347,46 +354,25 @@
     }
 
     .carrelloDescriptionContainer {
-        width: 50%; /**/
+        width: 50%;
     }
     .carrelloDescription {
-        display: block; /**/ 
-        margin-right: 1em; /**/ 
+        margin-right: 1em; 
     }
 
     .quantity {
-        margin: 0;/**/
-        display: block;/**/
-        left: 0;/**/
+        margin: 0;
+        display: block;
+        left: 0;
         position: relative;
     }
 
     .quantity p{
-        display: inline-block;
         margin: 0;
     }
 
     .quantityBotton {
         padding: 0 0.2em;;
-        background-color: #01404f;
-        border: none;
-        color:white;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .removeBotton {
-        background-color: #01404f;
-        border: none;
-        color:white;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        position: relative;
-        width: 4.5em;
-        bottom: 0;
-        left: 0;
     }
 
     .removeBotton p {
@@ -394,15 +380,9 @@
     }
 
     #carrello .productPrice {
-        float: none/**/;
-        display: block;/**/
+        float: none;
+        display: block;
         margin: 1em 2em 0 0;
-        position: relative;
-    }
-
-    .totalPriceContainer {
-        width: 100%;
-        height: 8vh;
     }
 
     .totalPrice {

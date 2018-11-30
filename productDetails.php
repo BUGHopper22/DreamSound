@@ -34,7 +34,7 @@
             <div class="productPrice">
                 <h3>Pezzo: '.$prezzo.'</h3>
             </div>
-            <a class="compra" href="">
+            <a class="button" href="">
                 <p>Aggiungi al carrello</p>
             </a>
         </div>

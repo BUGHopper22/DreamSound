@@ -4,6 +4,7 @@
  require_once "buildBreadcrumb.php";
  require_once "buildDropdownPages.php";
  require_once "buildLoginContent.php";
+//  require_once "./productDetailsContent.php";
 
 /*L' idea si basa sul fatto che se una pagina ha l ' attributo type==dropDown-content
     allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
@@ -73,7 +74,8 @@ function BuildPage($title,$contentActualPage) {
     $isProductPage=isProductPage($title,$menuPages);
     $isCategoryPage=isCategoryPage($title,$menuPages);
     $isSinglePage=isSinglePage($title,$menuPages);
-    //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti
+
+    //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti dal DB
     if($isProductPage){
         //ntab -> vedi creazione menu url.
         if(isset($_REQUEST["ntab"])){

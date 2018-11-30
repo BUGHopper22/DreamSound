@@ -1,5 +1,5 @@
 <?php
-
+    require_once('php/functions.php');	//è un include di function
     // if(isset($_REQUEST["modello"])){
     //     echo ("modello è definito");
         $modello=$_REQUEST["modello"];
@@ -33,12 +33,18 @@
         <div class="buyContainer">
             <div class="productPrice">
                 <h3>Pezzo: '.$prezzo.'</h3>
-            </div>
-            <a class="compra" href="">
-                <p>Aggiungi al carrello</p>
-            </a>
-        </div>
-    </div>';
-    require_once('php/functions.php');	//è un include di function
+            </div>';
+            
+            if(isset($_SESSION["sessionUserId"] )){
+                $contentActualPage=$contentActualPage.'<a class="compra" href=""><p>aggiungi al carrello</p></a>';
+                
+            }else{//non sono loggato
+                $contentActualPage=$contentActualPage.'<a class="compra" href="./login.php"><p>logga per acquistare</p></a>';
+            }
+            
+            
+            
+    $contentActualPage=$contentActualPage.'</div></div>';
+
     BuildPage($modello,$contentActualPage);	//funzione di buildpage dentro al file function
 ?>

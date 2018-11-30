@@ -19,24 +19,26 @@
 
 
     $contentActualPage='
-    <div id="productContainer">
     <h1>'.$modello.'</h1>
+    <div id="productContainer">
         <div class="imgContainer">
             <img class="productImg" src="./img/prodotti/'.$img.'" alt="'.$modello.'" >
         </div>
-        <div class="product">
-            <p>
-                Marca: '.$marca.'<br>
-                Descrizione: '.$descrizione.'<br>
-            </p>
-        </div>
-        <div class="buyContainer">
-            <div class="productPrice">
-                <h3>Pezzo: '.$prezzo.'</h3>
+        <div class="descriptionContainer">
+            <div class="product">
+                <p>
+                    Marca: '.$marca.'<br>
+                    Descrizione: '.$descrizione.'<br>
+                </p>
             </div>
-            <a class="button" href="">
-                <p>Aggiungi al carrello</p>
-            </a>
+            <div class="buyContainer">
+                <div class="productPrice">
+                    <h3>Pezzo: '.$prezzo.'</h3>
+                </div>
+                <a class="button" href="">
+                    <p>Aggiungi al carrello</p>
+                </a>
+            </div>
         </div>
     </div>';
     require_once('php/functions.php');	//è un include di function

@@ -264,7 +264,7 @@ header li .menuDx {
 
 #productContainer {
     height: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -277,17 +277,24 @@ header li .menuDx {
     width: 100%;
 }  
 
+.descriptionContainer {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    float: none;
+    padding: 2em 1em;
+    overflow: hidden;
+}
+
 .product {
     width: 100%;
     height: auto;
-    margin: 0 2em 0 1em;
-    float: none;
 }
 
 .buyContainer {
     width: 100%;
     height: auto;
-    margin: 0 1em 1em 1em;
+    /* margin: 0 1em 1em 1em; */
 }
 
 

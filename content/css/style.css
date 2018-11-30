@@ -485,12 +485,13 @@ header li.menuDx{
 \*------------------------------------*/
 
 #productContainer {
+    margin-top: 2em;
     width: 100%;
     height: 25em;
 }
 
 #productContainer .button {
-    right: 2em;
+    right: 0;
     bottom: 0;
     padding: 0 0.5em;
     width: auto;
@@ -513,13 +514,19 @@ header li.menuDx{
     display: block;
 }
 
-.product {
-    width: 60%;
+.descriptionContainer {
+    width: 55%;
+    height: 25em;
     float: right;
+    padding-right: 2em;
+}
+
+.product {
+    width: 100%;
 }
 
 .buyContainer {
-    width: 60%;
+    width: 100%;
     display: inline-block;
     position: relative;
     padding-top: 2em;

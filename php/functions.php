@@ -3,8 +3,6 @@
  require_once "buildHeader.php";
  require_once "buildBreadcrumb.php";
  require_once "buildDropdownPages.php";
- require_once "buildLoginContent.php";
-//  require_once "./productDetailsContent.php";
 
 /*L' idea si basa sul fatto che se una pagina ha l ' attributo type==dropDown-content
     allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
@@ -56,15 +54,10 @@ function isSinglePage($title,$menuPages){
 
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$contentActualPage) {
-    // echo("INIZIO PAGINA");
-    // if(getcwd()==='C:\xampp\htdocs\tecnologieWeb'){
     $page=file_get_contents('./content/structure.html');//carica la struttura con head e body
-    // }else{
-    // //     echo("non sei su getcwd");}
-    // $page=file_get_contents('../content/structure.html');//carica la struttura con head e body
     $page=str_replace('{title}',$title,$page);
-    //crea array con le pagine
-    $menuPages=createNavArray();
+    
+    $menuPages=createNavArray();//crea array con le pagine
 
     //Crea html menu
     $header=PrepareMenu($title,$menuPages);
@@ -82,21 +75,11 @@ function BuildPage($title,$contentActualPage) {
             $titleTable=$_REQUEST["ntab"];
         }
         $contentActualPage=insertProductList($titleTable,$title);
-    }else{
-        if($title=="Login"){
-                $contentActualPage=createContetnLogin($contentActualPage);
-        }else{
-
-        }
     }
     $page=str_replace('{content}',$contentActualPage,$page);
     //Aggiunta footer alla pagina
-    // $footer=file_get_contents('content/footer.html');
-    // $page=str_replace('{footer}',$footer,$page);
-    // if(isset( $_SESSION["sessionUserId"])){
-    //     echo("PECASDVAERBYRETTJETUYWHTAEGRFRAGSTRBH");
-    //     $page=$page."ciao ".$_SESSION["sessionUserId"];
-    // }
+    $footer=file_get_contents('content/footer.html');
+    $page=str_replace('{footer}',$footer,$page);
 
     //Breadcrumb
     $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage);

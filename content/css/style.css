@@ -21,7 +21,7 @@ body {
     width:100%;
     margin: 0;
     padding: 6.5em 0 0 0;
-    min-height:100%;
+    /* min-height:100%; */
     font-family: 'title';
 }
 
@@ -278,6 +278,7 @@ header li.menuDx{
     background-image: url("../../img/prodotti/accessoriCasse/inizio.jpg");
 }
 
+
 /*------------------------------------*\
                Home
 \*------------------------------------*/
@@ -426,7 +427,7 @@ header li.menuDx{
     width: 100%;
     height: 20em;
     box-shadow: 0px 4px 2px #8080807A;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 #productsContainer p {
@@ -487,7 +488,7 @@ header li.menuDx{
 #productContainer {
     margin-top: 2em;
     width: 100%;
-    height: 25em;
+    height: 28em;
 }
 
 #productContainer .button {
@@ -501,14 +502,15 @@ header li.menuDx{
 }
 
 .imgContainer {
-    height: 100%;
+    /* height: 100%; */
     width: 40%;
     float: left;
+    height: 28em;
 }
 
 .productImg {
-    max-height: 70%;
-    max-width: 70%;
+    max-height: 80%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -516,7 +518,7 @@ header li.menuDx{
 
 .descriptionContainer {
     width: 55%;
-    height: 25em;
+    height: 28em;
     float: right;
     padding-right: 2em;
 }
@@ -529,6 +531,7 @@ header li.menuDx{
     width: 100%;
     display: inline-block;
     position: relative;
+
     padding-top: 2em;
 }
 
@@ -676,7 +679,7 @@ input[type=submit], input[type=button] {
     width: 100%;
     background-color: #01404f;
     height: 13em;
-    /* margin-top: 1em; */
+    padding-top: 1em;
 }
 
 footer {

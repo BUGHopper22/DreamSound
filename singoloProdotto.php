@@ -35,11 +35,12 @@ require "./database/connessione.php";
 
 
     $contentActualPage='
-    <div id="productContainer">
     <h1>'.$modello.'</h1>
+    <div id="productContainer">
         <div class="imgContainer">
             <img class="productImg" src="./img/prodotti/'.$img.'" alt="'.$modello.'" >
         </div>
+        <div class="descriptionContainer">
         <div class="product">
             <p>
                 Marca: '.$marca.'<br>
@@ -48,7 +49,7 @@ require "./database/connessione.php";
         </div>
         <div class="buyContainer">
             <div class="productPrice">
-                <h3>Pezzo: '.$prezzo.'</h3>
+                <h3>Pezzo: '.$prezzo.'€</h3>
             </div>';
 
             //CODICE SPARTANO NON TOCCARE

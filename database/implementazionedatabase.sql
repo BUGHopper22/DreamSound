@@ -8,13 +8,9 @@ DROP TABLE IF EXISTS Id_prodotti;
 DROP TABLE IF EXISTS Utente;
 
 
-
-
-
 CREATE TABLE Utente
 (
-Id_utente int AUTO_INCREMENT primary key,
-Username char(16) NOT NULL,
+Username char(16) NOT NULL primary key,
 Email varchar(50) NOT NULL,
 Password varchar(100) NOT NULL,
 Nome varchar(50) NOT NULL,
@@ -71,20 +67,20 @@ ON UPDATE NO ACTION
 CREATE TABLE Carrello
 (
 Id_p int,
-Id_utente int,
+Username char(16),
 Quantita int,
 FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto),
-FOREIGN KEY (Id_utente) REFERENCES Utente(Id_utente)
+FOREIGN KEY (Username) REFERENCES Utente(Username)
 ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE Storico
 (
 Id_p int,
-Id_utente int,
+Username char(16),
 Quantita int,
 FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto),
-FOREIGN KEY (Id_utente) REFERENCES Utente(Id_utente)
+FOREIGN KEY (Username) REFERENCES Utente(Username)
 ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
@@ -112,12 +108,13 @@ INSERT INTO Casse (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descri
 ('15','Casse Bluetooth','35','JBL','GO2','/casseBluetooth/bluetooth3.png','JBL Go 2 è un piccolo altoparlante Bluetooth accattivante. Waterproof e con una diffusione del suono ottima per le sue piccole dimensioni. Ha un autonomia di 5 ore');
 
 INSERT INTO Accessori (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione) VALUES 
-('16','Accessori Cuffie','15','Kwmobile','..','/accessoriCuffie/accessoriCuffie1.png','I cuscinetti per cuffie Bose Soundlink Around-Ear Wireless II sono realizzati in ecopelle resistente, e grazie alla morbida imbottitura in schiuma offrono il massimo comfort di ascolto.'),
+('16','Accessori Cuffie','15','Kwmobile','BO-7899','/accessoriCuffie/accessoriCuffie1.png','I cuscinetti per cuffie Bose Soundlink Around-Ear Wireless II sono realizzati in ecopelle resistente, e grazie alla morbida imbottitura in schiuma offrono il massimo comfort di ascolto.'),
 ('17','Accessori Cuffie','7','Avantree','ADAD-TR302', '/accessoriCuffie/accessoriCuffie2.png', 'Divertitevi a condividere canzoni e film con i vostri amici, senza disturbare altri, utilizzando questo duplicatore a Y da 3.5mm con il vostro telefono o tablet o MP3 con due paia di cuffie.'),
-('18','Accessori Cuffie','15','Moretek','..','/accessoriCuffie/accessoriCuffie3.png', 'Custodia Portatile Case per Airpods, protettiva in silicone dalle linee moderne con inclusi diversi ganci utili per vivere ogni momento della tua vita.'),
+('18','Accessori Cuffie','15','Moretek','BC-92','/accessoriCuffie/accessoriCuffie3.png', 'Custodia Portatile Case per Airpods, protettiva in silicone dalle linee moderne con inclusi diversi ganci utili per vivere ogni momento della tua vita.'),
 ('19','Accessori Casse','7','deleyCON','MK3331','/accessoriCasse/accessoriCasse1.png','Cavo deleyCON 2x 1,5mm² - 48x0,20mm (treccia) in alluminio rivestito in rame compatibile con altoparlanti e casse. Marcatura della polarità (nero/rosso).'),
 ('20','Accessori Casse','34','Duronic','SPS1022','/accessoriCasse/accessoriCasse2.png','Due piedistalli per casse acustiche, base di appoggio 12*12. Il prodotto ha una altezza di 40cm per permettervi di posizionare le vostre casse ad un altezza ottimale.'),
 ('21','Accessori Casse','10','Khanka','UK-T-JBL-02','/accessoriCasse/accessoriCasse3.png','Custodia per casse bluetooth JBL, pratica e imbottita per mantenere la propria cassa e gli accessori sicuri, protetti e organizzati');
 
 INSERT INTO Utente (Username, Email, Password, Nome, Cognome) VALUES
-('alberto', 'alberto@alberto.alberto','177dacb14b34103960ec27ba29bd686b','Alberto','Alberto');
+('alberto', 'alberto@alberto.alberto','177dacb14b34103960ec27ba29bd686b','Alberto','Alberto'),
+('alessio', 'alessio@alessio.alessio','d2462e55381a20059ed811cefd42493e','Alessio','Alessio');

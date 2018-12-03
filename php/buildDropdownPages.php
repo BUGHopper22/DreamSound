@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 /*ritorna un array associato con tutti i prodotti da inserire nella pagina titlePage*/
 function insertProductList($titleTable,$category){
     require "./database/connessione.php";
@@ -27,7 +23,7 @@ function insertProductList($titleTable,$category){
                     <div class="productsPrice">
                         <h4>Pezzo: '.$listProduct['Prezzo'].'</h4>
                     </div>
-                    <a class="button" href="productDetails.php?modello='.$listProduct['Modello'].'&marca='.$listProduct['Marca'].'&descrizione='.$listProduct['Descrizione'].'&prezzo='.$listProduct['Prezzo'].'&img='.$listProduct['Url_immagine'].'&categoria='.$listProduct['Categoria'].'">
+                    <a class="button" href="./singoloProdotto.php?idProdotto='.$listProduct['Id_p'].'&titleTable='.$titleTable.'&categoria='.$category.'">
                         <p>Piu\' dettagli</p>
                     </a>
                 </div>

@@ -4,6 +4,9 @@
  require_once "buildBreadcrumb.php";
  require_once "buildDropdownPages.php";
 
+
+
+
 /*L' idea si basa sul fatto che se una pagina ha l ' attributo type==dropDown-content
     allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
     Ritorna true sse sono su una pagina prodotti*/ 
@@ -78,8 +81,8 @@ function BuildPage($title,$contentActualPage) {
     }
     $page=str_replace('{content}',$contentActualPage,$page);
     //Aggiunta footer alla pagina
-    $footer=file_get_contents('content/footer.html');
-    $page=str_replace('{footer}',$footer,$page);
+    // $footer=file_get_contents('content/footer.html');
+    // $page=str_replace('{footer}',$footer,$page);
     // if(isset( $_SESSION["sessionUserId"])){
     //     echo("PECASDVAERBYRETTJETUYWHTAEGRFRAGSTRBH");
     //     $page=$page."ciao ".$_SESSION["sessionUserId"];

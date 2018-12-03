@@ -80,6 +80,10 @@ function BuildPage($title,$contentActualPage) {
     //Aggiunta footer alla pagina
     $footer=file_get_contents('content/footer.html');
     $page=str_replace('{footer}',$footer,$page);
+    // if(isset( $_SESSION["sessionUserId"])){
+    //     echo("PECASDVAERBYRETTJETUYWHTAEGRFRAGSTRBH");
+    //     $page=$page."ciao ".$_SESSION["sessionUserId"];
+    // }
 
     //Breadcrumb
     $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage);

@@ -59,10 +59,10 @@ require "./database/connessione.php";
             
             if(isset($_SESSION["sessionUserId"] )){
 
-                $contentActualPage=$contentActualPage.'<a class="compra" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'"><p>aggiungi al carrello</p></a>';
+                $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'"><p>aggiungi al carrello</p></a>';
                 
             }else{//non sono loggato
-                $contentActualPage=$contentActualPage.'<a class="compra" href="./login.php"><p>logga per acquistare</p></a>';
+                $contentActualPage=$contentActualPage.'<a class="button" href="./login.php"><p>logga per acquistare</p></a>';
             }
             
             

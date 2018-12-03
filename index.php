@@ -12,7 +12,7 @@
         <div class="inner">
             <h1>Without music, life would be a mistake.</h1>
             <p>La musica esprime ciò che non può essere espresso a parole e ciò che non può rimanere in silenzio.</p>
-            <button class="button">Acquista marshall</button>
+            <a class="button">Acquista marshall</a>
         </div>
     </div>
 

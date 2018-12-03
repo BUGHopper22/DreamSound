@@ -11,9 +11,7 @@
                 vel risus quis euismod. Aenean id tellus
                 ut risus luctus mattis a nec mauris. .
             </p>
-            <a href="./accessoriCuffie.php?ntab=Accessori">
-                <button class="button" type="submit">Tutti i prodotti</button>
-            </a>
+            <a class="button" href="./accessoriCuffie.php?ntab=Accessori">Tutti i prodotti</a>
         </div>
     </div>
 
@@ -26,9 +24,7 @@
                 vel risus quis euismod. Aenean id tellus
                 ut risus luctus mattis a nec mauris. .
             </p>
-            <a href="./accessoriCasse.php?ntab=Accessori">
-                <button class="button" type="submit">Tutti i prodotti</button>
-            </a>
+            <a class="button" href="./accessoriCasse.php?ntab=Accessori">Tutti i prodotti</a>
         </div>
     </div>';
     require_once('php/functions.php');	//è un include di function

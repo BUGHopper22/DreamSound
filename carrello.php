@@ -79,11 +79,12 @@ if(!isset($_SESSION["sessionUserId"])){
     $userName=$_SESSION["sessionUserId"];
     $userHasProducts =  mysqli_query($conn,"SELECT Id_p From Carrello WHERE Username='".$userName."' ");
     $countProductsUser=mysqli_num_rows($userHasProducts);
-    $chartProducts= mysqli_query($conn,"SELECT * FROM Accessori a,Carrello c WHERE c.Username='".$userName."' and a.Id_p=c.Id_p
-                                        UNION
-                                        SELECT * FROM Cuffie cu,Carrello c WHERE c.Username='".$userName."' and cu.Id_p=c.Id_p
-                                        UNION
-                                        SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
+    $chartProducts= mysqli_query($conn,
+    "SELECT * FROM Accessori a,Carrello c WHERE c.Username='".$userName."' and a.Id_p=c.Id_p
+    UNION
+    SELECT * FROM Cuffie cu,Carrello c WHERE c.Username='".$userName."' and cu.Id_p=c.Id_p
+    UNION
+    SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
     
     $contentActualPage=buildChartContent($chartProducts,$countProductsUser);
    

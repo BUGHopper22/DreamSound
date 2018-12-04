@@ -1,9 +1,6 @@
 COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
 //scritto da Alberto
 -pagina amministratore
--sistemare breadcrumb per pagina details
--menu mobile
--pagina about us
 -sistemare home page
 -footer pagina login
 -logo
@@ -16,6 +13,8 @@ COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
 -pagina di stampa.
 - aggiungere alt a TUTTE le immagini.
 - sistemare ill carrello in caso ci sia il carrello vuoto.
+-isset su storico vuoto da errore!!!!!!!
+-rendere accessibile carrello e storico prodotti dal profilo utente in quanto non accessibile da dropdown.
 
 //scritto da Nicole
 -gestione erroe 404

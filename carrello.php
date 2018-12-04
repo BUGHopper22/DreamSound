@@ -1,6 +1,6 @@
 <?php
 require_once('php/functions.php');
-require_once ('./database/connessione.php');
+require_once ('./database/connessione.php');       
 
 function sumPriceChart($chartProducts){
     $tot=0;
@@ -24,14 +24,12 @@ function withoutAjax($contentActualPage,$lista){
     return $contentActualPage;
 }
 
-function buildChartContent($chartProducts,$countProductsUser){
+function buildChartContent($chartProducts,$countProductsUser,$contentActualPage){
+     
     if($countProductsUser==0){
-        $contentActualPage="Il carrello è  vuoto";
+        $contentActualPage=$contentActualPage."Il carrello è  vuoto";
     }else{
-        $contentActualPage='
-        <div class="titlePage">
-            <h1>Carrello</h1>
-        </div>';
+        
         //CODICE SPARTANO NON TOCCARE
         //--------------------------------------------
         $paginadaricordare=$_SERVER["REQUEST_URI"];//-
@@ -39,43 +37,50 @@ function buildChartContent($chartProducts,$countProductsUser){
         //----
         foreach($chartProducts as $lista){
             $contentActualPage=$contentActualPage.'
-            <div id="carrello">
-            <div class="carrelloImgContainer">
-                <img class="carrelloImg" src="./img/prodotti'.$lista["Url_immagine"].'" alt="prodotto1">
-            </div>
-            <div class="carrelloDescriptionContainer">
-                <h3>'.$lista["Modello"].'</h3>
-                <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
-                <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p>';
-                
-                $contentActualPage=$contentActualPage.'<script>';
-                $contentActualPage=$contentActualPage.withAjax($contentActualPage,$lista);
-                $contentActualPage=$contentActualPage.'</script>';
+            <div class="carrelloContainer">
+                <div class="carrelloImgContainer">
+                    <img class="carrelloImg" src="./img/prodotti'.$lista["Url_immagine"].'" alt="prodotto1">
+                </div>
+                <div class="carrelloDescriptionContainer">
+                    <h3>'.$lista["Modello"].'</h3>
+                    <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
+                    <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p>';
+                    
+                    $contentActualPage=$contentActualPage.'<script>';
+                    $contentActualPage=$contentActualPage.withAjax($contentActualPage,$lista);
+                    $contentActualPage=$contentActualPage.'</script>';
 
-                $contentActualPage=$contentActualPage.'<noscript>';
-                $contentActualPage=withoutAjax($contentActualPage,$lista);
-                $contentActualPage=$contentActualPage.'</noscript>';
+                    $contentActualPage=$contentActualPage.'<noscript>';
+                    $contentActualPage=$contentActualPage.withoutAjax($contentActualPage,$lista);
+                    $contentActualPage=$contentActualPage.'</noscript>';
 
 
-                $contentActualPage=$contentActualPage.
-                '</div>
-                <div class="productPrice">'.$lista["Prezzo"].' euro</div>
-                <a class="removeBotton" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'"><p>Rimuovi</p></a>
+                    $contentActualPage=$contentActualPage.
+                    '</div>
+                    <div class="productPrice">'.$lista["Prezzo"].'€</div>
+                    <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'"><p>Rimuovi</p></a>
+                </div>
             </div>';
         }
         $contentActualPage=$contentActualPage.'
         <div class="totalPriceContainer">
-            <h3 class="totalPrice">Totale: '.sumPriceChart($chartProducts).'</h3>
-            <a class="removeBotton" href="php/carrello/buyProducts.php"><p>acquista</p></a>
-        </div></div>';
+            <h3>Totale: '.sumPriceChart($chartProducts).'</h3>
+            <a class="button" href="php/carrello/buyProducts.php"><p>Acquista</p></a>
+        </div>';
     } 
     return $contentActualPage;
 }
+ $contentActualPage='
+    <div id="carrello">
+        <div class="titlePage">
+            <h1>Carrello</h1>
+        </div>';
 
+        
 if(!isset($_SESSION["sessionUserId"])){
-    echo("devi loggare per accedere al tuo carrello mona");
-    $contentActualPage=null;
-}else{
+    $contentActualPage=$contentActualPage.'devi loggare per accedere al tuo carrello mona';
+}
+else{
     $userName=$_SESSION["sessionUserId"];
     $userHasProducts =  mysqli_query($conn,"SELECT Id_p From Carrello WHERE Username='".$userName."' ");
     $countProductsUser=mysqli_num_rows($userHasProducts);
@@ -86,9 +91,11 @@ if(!isset($_SESSION["sessionUserId"])){
     UNION
     SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
     
-    $contentActualPage=buildChartContent($chartProducts,$countProductsUser);
+    $contentActualPage=buildChartContent($chartProducts,$countProductsUser,$contentActualPage);
    
 }
+$contentActualPage=$contentActualPage.'
+    </div>';
 BuildPage("Carrello",$contentActualPage);	//funzione di buildpage dentro al file function  
 
 

@@ -32,7 +32,8 @@ function buildHistoryContent($historyProducts,$countProductsUser){
         $contentActualPage='
         <div class="titlePage">
             <h1>Storico</h1>
-        </div>';
+        </div>
+        <div id="carrello">';
         //CODICE SPARTANO NON TOCCARE
         //--------------------------------------------
         $paginadaricordare=$_SERVER["REQUEST_URI"];//-
@@ -40,7 +41,7 @@ function buildHistoryContent($historyProducts,$countProductsUser){
         //----
         foreach($historyProducts as $lista){
             $contentActualPage=$contentActualPage.'
-            <div id="carrello">
+            <div class="carrelloContainer">
                 <div class="carrelloImgContainer">
                     <img class="carrelloImg" src="./img/prodotti'.$lista["Url_immagine"].'" alt="prodotto1">
                 </div>

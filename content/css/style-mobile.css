@@ -339,8 +339,11 @@ input[type=text], input[type=password] {
 \*------------------------------------*/
 
 #carrello {
-    height: 50vh;
-    min-height: 400px;
+}
+
+.carrelloContainer {
+    height: auto;
+    min-height: 25em;
 }
 
 #carrello h3 {

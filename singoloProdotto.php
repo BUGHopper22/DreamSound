@@ -47,9 +47,10 @@ require "./database/connessione.php";
             $paginadaricordare=$_SERVER["REQUEST_URI"];//-
             $_SESSION["PAGINA"]=$paginadaricordare;    //-
             //--------------------------------------------
-            $checkIfYetInChart=mysqli_query($conn,"SELECT * FROM Carrello WHERE Username = '".$_SESSION["sessionUserId"]."' and Id_p = '".$idProdotto."' ");
-            $countCheck=mysqli_num_rows($checkIfYetInChart);
             if(isset($_SESSION["sessionUserId"] )){
+                $checkIfYetInChart=mysqli_query($conn,"SELECT * FROM Carrello WHERE Username = '".$_SESSION["sessionUserId"]."' and Id_p = '".$idProdotto."' ");
+                $countCheck=mysqli_num_rows($checkIfYetInChart);
+            
                 if($countCheck>0){
                     $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php"><p>già nel carrello</p></a>';
                 }else{

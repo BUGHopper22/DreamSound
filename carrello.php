@@ -2,22 +2,6 @@
 require_once('php/functions.php');
 require_once ('./database/connessione.php');
 
-$userName=$_SESSION["sessionUserId"];
-$userHasProducts =  mysqli_query($conn,"SELECT Id_p From Carrello WHERE Username='".$userName."' ");
-    $countProductsUser=mysqli_num_rows($userHasProducts);
-    // echo $countProductsUser;
-// $sql = "SELECT * FROM id_prodotti JOIN casse JOIN cuffie JOIN acessori JOIN carrello
-//  		WHERE '".$userName."' = Username AND Id_prodotto = Id_p;
-
-
-$chartProducts= mysqli_query($conn,"SELECT * FROM Accessori a,Carrello c WHERE c.Username='".$userName."' and a.Id_p=c.Id_p
-                                    UNION
-                                    SELECT * FROM Cuffie cu,Carrello c WHERE c.Username='".$userName."' and cu.Id_p=c.Id_p
-                                    UNION
-                                    SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
-
-buildChartContent($chartProducts,$countProductsUser);
-
 function sumPriceChart($chartProducts){
     $tot=0;
     foreach($chartProducts as $lista){
@@ -27,10 +11,8 @@ function sumPriceChart($chartProducts){
 }
 
 function buildChartContent($chartProducts,$countProductsUser){
-    
     if($countProductsUser==0){
         $contentActualPage="Il carrello è  vuoto";
-        BuildPage("Carrello",$contentActualPage);
     }else{
         $contentActualPage='
         <div class="titlePage">
@@ -63,11 +45,7 @@ function buildChartContent($chartProducts,$countProductsUser){
                         <p>+</p>
                     </a>
                 </div>
-                
-                
                 <div class="productPrice">'.$lista["Prezzo"].' euro</div>
-                
-                
                 <a class="removeBotton" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'"><p>Rimuovi</p></a>
             </div>';
         }
@@ -76,11 +54,27 @@ function buildChartContent($chartProducts,$countProductsUser){
             <h3 class="totalPrice">Totale: '.sumPriceChart($chartProducts).'</h3>
             <a class="removeBotton" href="php/carrello/buyProducts.php"><p>acquista</p></a>
         </div></div>';
-            
-        BuildPage("Carrello",$contentActualPage);	//funzione di buildpage dentro al file function
-    }
-
+    } 
+    return $contentActualPage;
 }
+
+if(!isset($_SESSION["sessionUserId"])){
+    echo("devi loggare per accedere al tuo carrello mona");
+    $contentActualPage=null;
+}else{
+    $userName=$_SESSION["sessionUserId"];
+    $userHasProducts =  mysqli_query($conn,"SELECT Id_p From Carrello WHERE Username='".$userName."' ");
+    $countProductsUser=mysqli_num_rows($userHasProducts);
+    $chartProducts= mysqli_query($conn,"SELECT * FROM Accessori a,Carrello c WHERE c.Username='".$userName."' and a.Id_p=c.Id_p
+                                        UNION
+                                        SELECT * FROM Cuffie cu,Carrello c WHERE c.Username='".$userName."' and cu.Id_p=c.Id_p
+                                        UNION
+                                        SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
+    
+    $contentActualPage=buildChartContent($chartProducts,$countProductsUser);
+   
+}
+BuildPage("Carrello",$contentActualPage);	//funzione di buildpage dentro al file function  
 
 
 

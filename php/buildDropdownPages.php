@@ -6,22 +6,21 @@ function insertProductList($titleTable,$category){
     // $resultSql = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
     $htmlProduct=" ";
+    $htmlProduct=$htmlProduct.'
+    <div id="productsListContainer">';
     foreach($result as $listProduct){
         $htmlProduct=$htmlProduct.'
-        <div id="productsContainer">
+        <div class="productsContainer">
             <div class="imgsContainer">
                 <img class="productsImg" src="./img/prodotti'.$listProduct["Url_immagine"].'" alt="prodotto1" >
             </div>
         
-            
             <div class="descriptionsContainer">
                 <h2>'.$listProduct['Modello'].'</h2>
-                <p>'.$listProduct['Descrizione'].
-                '</p>
-            
+                <p>'.$listProduct['Descrizione'].'</p>
                 <div class="details">
                     <div class="productsPrice">
-                        <h4>Pezzo: '.$listProduct['Prezzo'].'</h4>
+                        <h4>Pezzo: '.$listProduct['Prezzo'].'€</h4>
                     </div>
                     <a class="button" href="./singoloProdotto.php?idProdotto='.$listProduct['Id_p'].'&titleTable='.$titleTable.'&categoria='.$category.'">
                         <p>Piu\' dettagli</p>
@@ -30,8 +29,9 @@ function insertProductList($titleTable,$category){
             </div>
         </div>';
     }
+    $htmlProduct=$htmlProduct.'</div>';
     // <div class="productsImg"></div>
     // height="300" width="300"
-     return $htmlProduct;   
+    return $htmlProduct;   
 }
 ?>

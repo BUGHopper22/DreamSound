@@ -174,30 +174,32 @@ header li .menuDx {
  Contenitori prodotti e Contenitore home
 \*------------------------------------*/
 
-#outer {
-    height: 30em;
+.outer {
+    padding: 8em 0;
 }
 
 .inner {
     width: 90%;
-    margin: 0 auto;
-    padding: 6em 1em;
+    padding: 1em 0;
+    margin: 0 5%;
     float: none;
 }
 
 .inner p {
     font-size: 1.1em;
+    padding: 0 2em;
 }
 .dx {
     float: none;
 }
 
+
 /*------------------------------------*\
                 Home
 \*------------------------------------*/
 
-.outer {
-    width: 100%;
+#home .outer {
+    padding:12em 0;
 }
 
 .product-box {
@@ -209,25 +211,25 @@ header li .menuDx {
           Tutti i prodotti
 \*------------------------------------*/
 
-#productsContainer {
-    height: auto;
-    overflow: hidden;
-}
-
-#productsContainer p {
+#productsListContainer p {
     font-size: 0.9em;
 }
 
-#productsContainer h2 {
-    margin-top: 0;
+#productsListContainer h2 {
+    margin-top: 2em;
 }
 
-#productsContainer .button {
+#productsListContainer .button {
     position: relative;
     float: none;
     display: block;
     margin-top: 1em;
     width: 5em;
+}
+
+.productsContainer {
+    height: auto;
+    overflow: hidden;
 }
 
 .imgsContainer {

@@ -21,6 +21,7 @@ body {
     width:100%;
     margin: 0;
     padding: 6.5em 0 0 0;
+    overflow-x: hidden;
     /* min-height:100%; */
     font-family: 'title';
 }
@@ -78,7 +79,7 @@ a p {
     margin: 0 auto;
     display: block;
     text-align: center;
-    text-decoration: none;
+    /* text-decoration: none; */
     padding: 0.5em 0.5em;
     font-size: 1.2em;
     cursor: pointer;
@@ -140,7 +141,7 @@ header li a, .dropbtn {
     color: white;
     text-align: center;
     padding: 1.2em 1.4em;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 header li a:hover, .dropdown:hover .dropbtn {
@@ -167,8 +168,8 @@ header li.menuDx{
 
 .dropdown-content a {
     color: black;
-    padding: 0.5em 1em;
-    text-decoration: none;
+    padding: 1em 1em;
+    /* text-decoration: none; */
     display: block;
     text-align: left;
     overflow: auto;
@@ -218,26 +219,33 @@ header li.menuDx{
  Contenitore prodotti e Contenitore home
 \*------------------------------------*/
 
-#outer {
-    height: 45em;
-    width: 100%;
+#category {
+    padding: 0;
     margin: 0;
+}
+
+.outer {
+    padding: 10em 5%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; 
+    
 }
 
 .inner {
-    padding: 10% 10% 10% 10%;
-    vertical-align: middle;
-    width: 30%;
+    width: 40%;
+    background-color: rgba(0,0,0,0.6);
+    padding: 2%;
+    
 }
 
 .dx{
-    float: right;
+    margin-left:46%;
 }
 
 .inner p, .inner h1, .inner h2{
+    margin-top:0;
     text-align: center;
     color:white;
 }
@@ -283,6 +291,12 @@ header li.menuDx{
                Home
 \*------------------------------------*/
 
+#home {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .content {
     position: relative;
     height: 90%;
@@ -307,7 +321,7 @@ header li.menuDx{
     color:#01404f;; 
 }
 
-.outer {
+.vetrina {
     align-items:center;
     position:relative;
     width: 80%;
@@ -423,25 +437,31 @@ header li.menuDx{
             Tutti i Prodotti
 \*------------------------------------*/
 
-#productsContainer{
-    width: 100%;
-    height: 20em;
-    box-shadow: 0px 4px 2px #8080807A;
-    padding-bottom: 1em;
+#productsListContainer {
+    margin:0;
+    padding:0;
 }
 
-#productsContainer p {
+#productsListContainer p {
     margin: 0;
     padding: 0;
 }
 
-#productsContainer .button {
+#productsListContainer .button {
     right: 0;
     bottom: 0;
     display: inline-block;
     position: absolute;
     font-size: 1em;
 }
+
+.productsContainer{
+    width: 100%;
+    height: 20em;
+    box-shadow: 0px 4px 2px #8080807A;
+    padding-bottom: 1em;
+}
+
 
 .imgsContainer {
     height: 100%;
@@ -550,9 +570,9 @@ header li.menuDx{
     margin: 0;
     border: 0;
     width:100%;
-    height: 42em;
+    height: 46em;
     /* min-height: 681px; */
-    background-image: url("../../img/headphones/headphones5.jpg");
+    background-image: url("../../img/headphones/headphones7.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -571,12 +591,13 @@ header li.menuDx{
 .loginContainer {
     width: 50%;
     float: left;
+    /* background-color: rgba(255,255,255,0.5); */
 }
 
 .registerContainer {
     color: white;
     width: 50%;
-    height: 42em;
+    height: 46em;
     float: left;
     background-color: rgba(0,0,0,0.6);
 }
@@ -607,7 +628,7 @@ header li.menuDx{
 
 .form {
     display: block;
-    width: 300px;
+    width: 25em;
     background-color: #F3EDD3;
     padding:  0;
     text-align: center;
@@ -615,9 +636,9 @@ header li.menuDx{
   
 .form .form-title {
     text-align: center;
-    padding: 5px;
+    padding: 0.5em;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 1em;
 }
   
 .form label {
@@ -632,9 +653,9 @@ input[type=text], input[type=password], input[type=email] {
     display: inline-block;
     color: black;
     padding: 1em;
-    width: 300px;
+    width: 25em;
     box-sizing: border-box;
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.3);
     border: none;
     border-radius: 0.5em;
     transition:background-color 0.5s ease;
@@ -647,9 +668,9 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
 input[type=submit], input[type=button] {
     color: white;
     display: block;
-    margin-top:15px;
+    margin-top:1em;
     border: none;
-    padding: 5px;
+    padding: 0.5em;
     font-size: 1.1em;
     cursor: pointer;
 }

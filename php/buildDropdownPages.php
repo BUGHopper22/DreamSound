@@ -5,7 +5,10 @@ function insertProductList($titleTable,$category){
     $result = $conn->query("SELECT * FROM `{$titleTable}` WHERE categoria='$category'");
     // $resultSql = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
-    $htmlProduct=" ";
+    $htmlProduct='
+    <div class="titlePage">
+        <h1>'.$category.'</h1>
+    </div>';
     foreach($result as $listProduct){
         $htmlProduct=$htmlProduct.'
         <div id="productsContainer">

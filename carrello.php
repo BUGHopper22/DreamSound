@@ -10,6 +10,20 @@ function sumPriceChart($chartProducts){
     return $tot;
 }
 
+function withAjax($contentActualPage){
+    
+}
+
+function withoutAjax($contentActualPage,$lista){
+    if($lista["Quantita"]>1){
+        $contentActualPage=$contentActualPage.'
+        <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
+    }
+    $contentActualPage=$contentActualPage.'
+    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1"> <p>+</p> </a>';
+    return $contentActualPage;
+}
+
 function buildChartContent($chartProducts,$countProductsUser){
     if($countProductsUser==0){
         $contentActualPage="Il carrello è  vuoto";
@@ -32,19 +46,19 @@ function buildChartContent($chartProducts,$countProductsUser){
             <div class="carrelloDescriptionContainer">
                 <h3>'.$lista["Modello"].'</h3>
                 <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
-                <div class="quantity">
-                    <p>Quantita: '.$lista["Quantita"].'</p>';
-                    if($lista["Quantita"]>1){
-                        $contentActualPage=$contentActualPage.'
-                        <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1">
-                            <p>-</p>
-                        </a>';
-                    }
-                    $contentActualPage=$contentActualPage.'
-                    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1">
-                        <p>+</p>
-                    </a>
-                </div>
+                <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p>';
+                
+                $contentActualPage=$contentActualPage.'<script>';
+                $contentActualPage=$contentActualPage.withAjax($contentActualPage,$lista);
+                $contentActualPage=$contentActualPage.'</script>';
+
+                $contentActualPage=$contentActualPage.'<noscript>';
+                $contentActualPage=withoutAjax($contentActualPage,$lista);
+                $contentActualPage=$contentActualPage.'</noscript>';
+
+
+                $contentActualPage=$contentActualPage.
+                '</div>
                 <div class="productPrice">'.$lista["Prezzo"].' euro</div>
                 <a class="removeBotton" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'"><p>Rimuovi</p></a>
             </div>';

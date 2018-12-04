@@ -83,8 +83,8 @@ function BuildPage($title,$contentActualPage) {
     }
     $page=str_replace('{content}',$contentActualPage,$page);
     //Aggiunta footer alla pagina
-    $footer=file_get_contents('content/footer.html');
-    $page=str_replace('{footer}',$footer,$page);
+    // $footer=file_get_contents('content/footer.html');
+    // $page=str_replace('{footer}',$footer,$page);
     // if(isset( $_SESSION["sessionUserId"])){
     //     echo("PECASDVAERBYRETTJETUYWHTAEGRFRAGSTRBH");
     //     $page=$page."ciao ".$_SESSION["sessionUserId"];

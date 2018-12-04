@@ -25,7 +25,9 @@ require "./database/connessione.php";
 
 
     $contentActualPage='
-    <h1>'.$modello.'</h1>
+    <div class="titlePage">
+        <h1>'.$modello.'</h1>
+    </div>
     <div id="productContainer">
         <div class="imgContainer">
             <img class="productImg" src="./img/prodotti/'.$img.'" alt="'.$modello.'" >

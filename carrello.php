@@ -1,12 +1,8 @@
 <?php
-require_once('php/functions.php');	//è un include di function
+require_once('php/functions.php');
 require_once ('./database/connessione.php');
 
 $userName=$_SESSION["sessionUserId"];
-// echo $userNa me;
-//1)
-
-//2)
 $userHasProducts =  mysqli_query($conn,"SELECT Id_p From Carrello WHERE Username='".$userName."' ");
     $countProductsUser=mysqli_num_rows($userHasProducts);
     // echo $countProductsUser;
@@ -15,12 +11,20 @@ $userHasProducts =  mysqli_query($conn,"SELECT Id_p From Carrello WHERE Username
 
 
 $chartProducts= mysqli_query($conn,"SELECT * FROM Accessori a,Carrello c WHERE c.Username='".$userName."' and a.Id_p=c.Id_p
-                                        UNION
-                                        SELECT * FROM Cuffie cu,Carrello c WHERE c.Username='".$userName."' and cu.Id_p=c.Id_p
-                                        UNION
-                                        SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
+                                    UNION
+                                    SELECT * FROM Cuffie cu,Carrello c WHERE c.Username='".$userName."' and cu.Id_p=c.Id_p
+                                    UNION
+                                    SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
 
 buildChartContent($chartProducts,$countProductsUser);
+
+function sumPriceChart($chartProducts){
+    $tot=0;
+    foreach($chartProducts as $lista){
+        $tot=$tot+($lista["Prezzo"]*$lista["Quantita"]);
+    }
+    return $tot;
+}
 
 function buildChartContent($chartProducts,$countProductsUser){
     
@@ -32,7 +36,6 @@ function buildChartContent($chartProducts,$countProductsUser){
         <div class="titlePage">
             <h1>Carrello</h1>
         </div>';
-        echo("sei su carrello e tutto va bene");
         //CODICE SPARTANO NON TOCCARE
         //--------------------------------------------
         $paginadaricordare=$_SERVER["REQUEST_URI"];//-
@@ -50,13 +53,13 @@ function buildChartContent($chartProducts,$countProductsUser){
                 <div class="quantity">
                     <p>Quantita: '.$lista["Quantita"].'</p>';
                     if($lista["Quantita"]>1){
-                        echo("quantita >1");
                         $contentActualPage=$contentActualPage.'
                         <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1">
-                        <p>-</p>
-                    </a>';
+                            <p>-</p>
+                        </a>';
                     }
-                    $contentActualPage=$contentActualPage.'<a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1">
+                    $contentActualPage=$contentActualPage.'
+                    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1">
                         <p>+</p>
                     </a>
                 </div>
@@ -70,11 +73,11 @@ function buildChartContent($chartProducts,$countProductsUser){
         }
         $contentActualPage=$contentActualPage.'
         <div class="totalPriceContainer">
-            <h3 class="totalPrice">Totale: 12312$</h3>
+            <h3 class="totalPrice">Totale: '.sumPriceChart($chartProducts).'</h3>
+            <a class="removeBotton" href="php/carrello/buyProducts.php"><p>acquista</p></a>
         </div></div>';
             
-            BuildPage("Carrello",$contentActualPage);	//funzione di buildpage dentro al file function
-
+        BuildPage("Carrello",$contentActualPage);	//funzione di buildpage dentro al file function
     }
 
 }

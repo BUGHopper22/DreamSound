@@ -79,6 +79,7 @@ CREATE TABLE Storico
 Id_p int,
 Username char(16),
 Quantita int,
+Data_acquisto date,
 FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto),
 FOREIGN KEY (Username) REFERENCES Utente(Username)
 ON DELETE CASCADE

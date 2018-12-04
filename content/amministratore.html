@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <!--HTML5: codifica utf-8  dei caratteri in uso nel documento. Scrivere nei primi 512byte del documento -->
+    <title>{title} | DreamSound </title>
+    <!--vale 80% dell' indicizzazione -->
+    <meta name="description" content="DreamSound" />
+    <meta name="author" content="Bacco Alberto, Vidotto Giovanni, Davanzo Nicole" />
+    <meta name="keywords" content="audio, cuffie, casse, wireless" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" /> PER ICONA DA MODIFICARE-->
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="content/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="content/css/style-mobile.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="contents/css/style.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 992px)" href="contents/css/style-tablet.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="contents/css/style-mobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="contents/css/printS.css"/> -->
+</head>
+
+<body>
+    <div id="administratorPage">
+        <div class="modifyProductsList">
+        <h1>Aggiungi un prodotto</h1>
+        <form class="formAdmin" method="post">
+            <p>prezzo:</p>
+            <input type="text" name="prezzo" placeholder="inserisci il prezzo" value="'.$nomeReload.'">
+            <p>marca:</p>
+            <input type="text" name="marca" placeholder="inserisci la marca" value="'.$surnameReload.'">
+            <p>modello:</p>
+            <input type="text" name="modello" placeholder="inserisci il modello" value="'.$userIdReload.'">
+            <p>url immagine:</p>
+            <input type="text" name="urlImg" placeholder="inserisci url immagine" value="'.$emailReload.'">
+            <p>Descrizione:</p>
+            <input type="text" name="descrizione" placeholder="inserisci una descrizione" value="'.$emailReload.'">
+            
+            <input class="formBtn" type="submit" value="Aggiungi">
+        </form>
+
+        <h1>Elimina un prodotto</h1>
+
+        categoria
+        <form action="/action_page.php">
+        <select name="Categoria">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="cerca">
+        </form>
+
+        nome
+        <form action="/action_page.php">
+        <select name="Nome">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br><br>
+        <input type="submit" value="elimina">
+        </form>
+
+        <h1>Modifica un prodotto</h1>
+
+        categoria
+        <form action="/action_page.php">
+            <select name="Categoria">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="cerca">
+        </form>
+        
+        nome
+        <form action="/action_page.php">
+            <select name="Nome">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="cerca">
+        </form>
+
+        <div class="modifyProductsList">
+            <form class="formAdmin" method="post">
+                <p>prezzo:</p>
+                <input type="text" name="prezzo" placeholder="inserisci il prezzo" value="'.$nomeReload.'">
+                <p>marca:</p>
+                <input type="text" name="marca" placeholder="inserisci la marca" value="'.$surnameReload.'">
+                <p>modello:</p>
+                <input type="text" name="modello" placeholder="inserisci il modello" value="'.$userIdReload.'">
+                <p>url immagine:</p>
+                <input type="text" name="urlImg" placeholder="inserisci url immagine" value="'.$emailReload.'">
+                <p>Descrizione:</p>
+                <input type="text" name="descrizione" placeholder="inserisci una descrizione" value="'.$emailReload.'">
+        
+                <input class="formBtn" type="submit" value="modifica">
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

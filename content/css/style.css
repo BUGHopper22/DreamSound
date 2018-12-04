@@ -22,7 +22,7 @@ body {
     margin: 0;
     padding: 6.5em 0 0 0;
     overflow-x: hidden;
-    /* min-height:100%; */
+    min-height:50em;
     font-family: 'title';
 }
 
@@ -79,6 +79,7 @@ a p {
     margin: 0 auto;
     display: block;
     text-align: center;
+    border-radius: 3px;
     /* text-decoration: none; */
     padding: 0.5em 0.5em;
     font-size: 1.2em;

@@ -1,18 +1,8 @@
 <?php
 require "./database/connessione.php";
-    require_once('php/functions.php');	//è un include di function
-    // if(isset($_REQUEST["modello"])){
-    //     echo ("modello è definito");
-        // $modello=$_REQUEST["modello"];
-        // $marca=$_REQUEST["marca"];
-        // $img=$_REQUEST["img"];
-        // $descrizione=$_REQUEST["descrizione"];
-        // $prezzo=$_REQUEST["prezzo"];
-        // $idProdotto=$_REQUEST["Id_p"];
-        // $categoria=$_REQUEST["categoria"];
-        // $ntab=$_REQUEST["ntab"];
-    echo $_REQUEST["idProdotto"];
-    echo $_REQUEST["titleTable"];
+    require_once('php/functions.php');
+    // echo $_REQUEST["idProdotto"];
+    // echo $_REQUEST["titleTable"];
     if(isset($_REQUEST["idProdotto"]) && isset($_REQUEST["titleTable"])){
         $idProdotto=$_REQUEST["idProdotto"];
         $titleTable=$_REQUEST["titleTable"];
@@ -20,10 +10,10 @@ require "./database/connessione.php";
     }
     // echo var_dump($result);
     
-    echo $idProdotto;
-    echo $titleTable;
+    // echo $idProdotto;
+    // echo $titleTable;
     $count = mysqli_num_rows($result);
-    echo $count;
+    // echo $count;
 
     $array=mysqli_fetch_array($result);
         $modello=$array["Modello"];
@@ -57,11 +47,15 @@ require "./database/connessione.php";
             $paginadaricordare=$_SERVER["REQUEST_URI"];//-
             $_SESSION["PAGINA"]=$paginadaricordare;    //-
             //--------------------------------------------
-            
             if(isset($_SESSION["sessionUserId"] )){
-
-                $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'"><p>aggiungi al carrello</p></a>';
-                
+                $checkIfYetInChart=mysqli_query($conn,"SELECT * FROM Carrello WHERE Username = '".$_SESSION["sessionUserId"]."' and Id_p = '".$idProdotto."' ");
+                $countCheck=mysqli_num_rows($checkIfYetInChart);
+            
+                if($countCheck>0){
+                    $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php"><p>già nel carrello</p></a>';
+                }else{
+                    $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'"><p>aggiungi al carrello</p></a>';
+                }
             }else{//non sono loggato
                 $contentActualPage=$contentActualPage.'<a class="button" href="./login.php"><p>logga per acquistare</p></a>';
             }

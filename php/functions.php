@@ -4,6 +4,11 @@
  require_once "buildBreadcrumb.php";
  require_once "buildDropdownPages.php";
 
+
+// function sumTotChart($chartProducts){
+
+// }
+
 /*L' idea si basa sul fatto che se una pagina ha l ' attributo type==dropDown-content
     allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
     Ritorna true sse sono su una pagina prodotti*/ 

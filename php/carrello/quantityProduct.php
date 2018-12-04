@@ -1,24 +1,32 @@
 <?php
 session_start();
 require_once "../../database/connessione.php";
+
 if(isset($_REQUEST["idProdotto"]))
     $idProdotto=$_REQUEST["idProdotto"];
-
-$checkExistProduct="SELECT * FROM Carrello WHERE Username = '".$_SESSION["sessionUserId"]."' and Id_p = '".$idProdotto."' ";
-$result = $conn->query($checkExistProduct);
-$count= mysqli_num_rows($result);
-
-
-if($count==0){//non ha trovato prodotti devo inserire nel db
-    $insert="INSERT INTO Carrello (Id_p,Username,Quantita) VALUES ('".$idProdotto."','".$_SESSION["sessionUserId"]."','1') ";
-    $conn->query($insert);
-}else{//ha trovato prodotti devo aggiornare la quantità
-    $array=mysqli_fetch_array($result);
+$u=mysqli_query($conn,"SELECT Quantita FROM Carrello WHERE Username = '".$_SESSION["sessionUserId"]."' and Id_p = '".$idProdotto."' ");
+if(isset($_REQUEST["type"]) ){
+    $type=$_REQUEST["type"];
+    echo ("entra");
+    $array=mysqli_fetch_array($u);
     $Quantita=$array["Quantita"];
-    $Quantita=$Quantita+1;
+    if($type==1){
+        $Quantita=$Quantita+1;
+    }else if($type==-1){
+        $Quantita=$Quantita-1;
+    }
     $aggiornaQuantita="UPDATE Carrello SET Quantita = '".$Quantita."' WHERE Username = '".$_SESSION["sessionUserId"]."' and  Id_p = '".$idProdotto."' " ;
     $conn->query($aggiornaQuantita);
 }
+
+// $count= mysqli_num_rows($result);
+
+
+
+
+    
+
+
 
 //CODICE SPARTANO NON TOCCARE
 //----------------------------------------

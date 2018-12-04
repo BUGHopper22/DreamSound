@@ -62,7 +62,7 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage){
             default:
                 echo "Your favorite color is neither red, blue, nor green!";
         }
-        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> ><a href="./'.$primaryCategory.'.php"> '.$categoria.'</a> > <a href="./'.$urlSecondaryCategory.'.php?ntab='.$ntab.'"> '.$categoria.'</a> > '.$title;
+        $breadcrumb=$breadcrumb.'<a href="./index.php"> Home</a> ><a href="./'.$primaryCategory.'.php"> '.$ntab.'</a> > <a href="./'.$urlSecondaryCategory.'.php?ntab='.$ntab.'"> '.$categoria.'</a> > '.$title;
     }
     //se l' utente è connesso
     if(isset( $_SESSION["sessionUserId"])){

@@ -24,14 +24,12 @@ function withoutAjax($contentActualPage,$lista){
     return $contentActualPage;
 }
 
-function buildChartContent($chartProducts,$countProductsUser){
+function buildChartContent($chartProducts,$countProductsUser,$contentActualPage){
+
     if($countProductsUser==0){
-        $contentActualPage="Il carrello è  vuoto";
+        $contentActualPage=$contentActualPage."Il carrello è  vuoto";
     }else{
-        $contentActualPage='
-        <div class="titlePage">
-            <h1>Carrello</h1>
-        </div>';
+        
         //CODICE SPARTANO NON TOCCARE
         //--------------------------------------------
         $paginadaricordare=$_SERVER["REQUEST_URI"];//-
@@ -71,11 +69,16 @@ function buildChartContent($chartProducts,$countProductsUser){
     } 
     return $contentActualPage;
 }
+ $contentActualPage='
+        <div class="titlePage">
+            <h1>Carrello</h1>
+        </div>';
 
+        
 if(!isset($_SESSION["sessionUserId"])){
-    echo("devi loggare per accedere al tuo carrello mona");
-    $contentActualPage=null;
-}else{
+    $contentActualPage=$contentActualPage.'devi loggare per accedere al tuo carrello mona';
+}
+else{
     $userName=$_SESSION["sessionUserId"];
     $userHasProducts =  mysqli_query($conn,"SELECT Id_p From Carrello WHERE Username='".$userName."' ");
     $countProductsUser=mysqli_num_rows($userHasProducts);
@@ -85,7 +88,7 @@ if(!isset($_SESSION["sessionUserId"])){
                                         UNION
                                         SELECT * FROM Casse ca,Carrello c WHERE c.Username='".$userName."' and ca.Id_p=c.Id_p");
     
-    $contentActualPage=buildChartContent($chartProducts,$countProductsUser);
+    $contentActualPage=buildChartContent($chartProducts,$countProductsUser,$contentActualPage);
    
 }
 BuildPage("Carrello",$contentActualPage);	//funzione di buildpage dentro al file function  

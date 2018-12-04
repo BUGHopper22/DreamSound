@@ -9,12 +9,13 @@ COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
 -aggiungere javascript
 -freccia per tornare su dalle pagine
 -pagina d' errore del server, non disponibile db->ritona alla home(dal file connessione.php)
--aggiungere titolo alle pagine interne.
 -pagina di stampa.
 - aggiungere alt a TUTTE le immagini.
 - sistemare ill carrello in caso ci sia il carrello vuoto.
 -isset su storico vuoto da errore!!!!!!!
 -rendere accessibile carrello e storico prodotti dal profilo utente in quanto non accessibile da dropdown.
+-ritorno alla pagina
+-frecce che indicano il dropdown del menu
 
 //scritto da Nicole
 -gestione erroe 404

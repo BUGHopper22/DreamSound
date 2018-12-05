@@ -7,4 +7,5 @@ Autori:
 * Giovanni Vidotto
 * Alberto Bacco
 * Nicole Davanzo
-* boh
+* Alessio Brunetta
+* Marco Baggio

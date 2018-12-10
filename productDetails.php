@@ -35,9 +35,7 @@
                 <div class="productPrice">
                     <h3>Pezzo: '.$prezzo.'€</h3>
                 </div>
-                <a class="button" href="">
-                    <p>Aggiungi al carrello</p>
-                </a>
+                <a class="button" href="">Aggiungi al carrello</a>
             </div>
         </div>
     </div>';

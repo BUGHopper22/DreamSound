@@ -17,15 +17,15 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2em;
-}
-
-h4 {
     font-size: 1.1em;
 }
 
+h4 {
+    font-size: 1em;
+}
+
 p {
-    font-size: 1em;    
+    font-size: 0.9em;    
 }
 
 .titlePage h1{
@@ -38,7 +38,7 @@ p {
 
 .button {
     padding: 0.5em 1em;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .button:hover{
@@ -224,7 +224,7 @@ header li .menuDx {
     float: none;
     display: block;
     margin-top: 1em;
-    width: 5em;
+    width: 6em;
 }
 
 .productsContainer {
@@ -247,11 +247,11 @@ header li .menuDx {
 .descriptionsContainer {
     width: 50%;
     height: auto;
-    padding: 0 0.5em 0.5em 0;
+    padding: 0 5% 2% 0;
 }
 
 .details {
-    height: auto;
+    /* height: auto; */
     margin: 0;
 }  
 
@@ -338,40 +338,46 @@ input[type=text], input[type=password] {
             Carrello
 \*------------------------------------*/
 
-#carrello {
-}
+#carrello .button {
+    float: none;
+    margin-bottom: 1em;
+} 
 
-.carrelloContainer {
-    height: auto;
-    min-height: 25em;
+#carrello .productPrice {
+    float: right;
 }
 
 #carrello h3 {
-    font-size: 1.1em;
+    margin: 0 0 0.5em 0;
 }
 
+.carrelloContainer {
+    height: 12em;
+}
 
 .carrelloImgContainer {
-    width: 50%;
+    width: 40%;
 }
 
 .carrelloImg {
-    max-height: 90%;
-    max-width: 90%;
+    height: auto;
+    width: 85%;
 }
 
 .carrelloDescriptionContainer {
-    width: 50%;
+    width: 55%;
 }
+
 .carrelloDescription {
-    margin-right: 1em; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .quantity {
     margin: 0;
-    display: block;
-    left: 0;
-    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
 }
 
 .quantity p{
@@ -382,18 +388,9 @@ input[type=text], input[type=password] {
     padding: 0 0.2em;;
 }
 
-.removeBotton p {
-    margin: 0 0 1em 0;
-}
-
-#carrello .productPrice {
-    float: none;
+.totalPriceContainer {
     display: block;
-    margin: 1em 2em 0 0;
-}
-
-.totalPrice {
-    float: none;
+    margin: 0 auto;
     text-align: center;
 }
 

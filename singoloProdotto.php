@@ -54,12 +54,12 @@ require "./database/connessione.php";
                 $countCheck=mysqli_num_rows($checkIfYetInChart);
             
                 if($countCheck>0){
-                    $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php"><p>già nel carrello</p></a>';
+                    $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php">Già nel carrello</a>';
                 }else{
-                    $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'"><p>aggiungi al carrello</p></a>';
+                    $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'">Aggiungi al carrello</a>';
                 }
             }else{//non sono loggato
-                $contentActualPage=$contentActualPage.'<a class="button" href="./login.php"><p>logga per acquistare</p></a>';
+                $contentActualPage=$contentActualPage.'<a class="button" href="./login.php">Logga per acquistare</a>';
             }
             
             

@@ -11,17 +11,25 @@ function sumPriceChart($chartProducts){
 }
 
 function withAjax($contentActualPage,$lista){
+<<<<<<< HEAD
     echo ("P ");
+=======
+>>>>>>> 73540c1add969fde3488acffb588e4d012112015
     if($lista["Quantita"]>1){
         $contentActualPage=$contentActualPage.'
         <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
     }
     $contentActualPage=$contentActualPage.'
     <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1"> <p>+</p> </a>';
+<<<<<<< HEAD
     return $contentActualPage;
+=======
+    return $contentActualPage;   
+>>>>>>> 73540c1add969fde3488acffb588e4d012112015
 }
 
 function withoutAjax($contentActualPage,$lista){
+    echo("sssss");
     if($lista["Quantita"]>1){
         $contentActualPage=$contentActualPage.'
         <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
@@ -34,7 +42,11 @@ function withoutAjax($contentActualPage,$lista){
 function buildChartContent($chartProducts,$countProductsUser,$contentActualPage){
      
     if($countProductsUser==0){
-        $contentActualPage=$contentActualPage."Il carrello è  vuoto";
+        $contentActualPage=$contentActualPage.'
+        <div class="carrelloVuoto">
+            <h3>Il carrello è vuoto</h3>
+            <p>Il tuo carrello è vuoto. Per aggiungere articoli al tuo carrello naviga su DreamSound.it, quando trovi un articolo che ti interessa, clicca su "Aggiungi al carrello". </p>
+        </div>';
     }else{
         
         //CODICE SPARTANO NON TOCCARE
@@ -54,25 +66,33 @@ function buildChartContent($chartProducts,$countProductsUser,$contentActualPage)
                     <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p>';
                     
                     // $contentActualPage=$contentActualPage.'<script>';
+<<<<<<< HEAD
                     $contentActualPage=withAjax($contentActualPage,$lista);
                     // $contentActualPage=$contentActualPage.'</script>';
 
                     // $contentActualPage=$contentActualPage.'<noscript>';
                     // $contentActualPage=withoutAjax($contentActualPage,$lista);
+=======
+                    // $contentActualPage=withAjax($contentActualPage,$lista);
+                    // $contentActualPage=$contentActualPage.'</script>';
+
+                    // $contentActualPage=$contentActualPage.'<noscript>';
+                    $contentActualPage=withoutAjax($contentActualPage,$lista);
+>>>>>>> 73540c1add969fde3488acffb588e4d012112015
                     // $contentActualPage=$contentActualPage.'</noscript>';
 
 
                     $contentActualPage=$contentActualPage.
                     '</div>
-                    <div class="productPrice">'.$lista["Prezzo"].'€</div>
-                    <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'"><p>Rimuovi</p></a>
+                    <div class="productPrice"><h4>'.$lista["Prezzo"].'€</h4></div>
+                    <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'">Rimuovi</a>
                 </div>
             </div>';
         }
         $contentActualPage=$contentActualPage.'
         <div class="totalPriceContainer">
             <h3>Totale: '.sumPriceChart($chartProducts).'</h3>
-            <a class="button" href="php/carrello/buyProducts.php"><p>Acquista</p></a>
+            <a class="button" href="php/carrello/buyProducts.php">Acquista</a>
         </div>';
     } 
     return $contentActualPage;
@@ -85,7 +105,7 @@ function buildChartContent($chartProducts,$countProductsUser,$contentActualPage)
 
         
 if(!isset($_SESSION["sessionUserId"])){
-    $contentActualPage=$contentActualPage.'devi loggare per accedere al tuo carrello mona';
+    $contentActualPage=$contentActualPage.'<div class="carrelloVuoto"><p>Devi loggare per accedere al tuo carrello mona</p></div>';
 }
 else{
     $userName=$_SESSION["sessionUserId"];

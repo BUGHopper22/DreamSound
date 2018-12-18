@@ -48,14 +48,14 @@ h3 {
 h4 {
     font-family: 'title';
     margin: 0;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-style: normal;
 }
 
 
 p {
     font-family: 'title';
-    font-size: 1.1em;  
+    font-size: 1.4em;  
      text-align: justify;  
 }
 
@@ -91,8 +91,6 @@ a p {
     background-color:#5a9697; 
     color:white;
 }
-
-
 
 
 /*------------------------------------*\
@@ -453,23 +451,20 @@ header li.menuDx{
     bottom: 0;
     display: inline-block;
     position: absolute;
-    font-size: 1em;
+    /* font-size: 1em; */
 }
 
 .productsContainer{
     width: 100%;
     height: 20em;
+    overflow: hidden;
     box-shadow: 0px 4px 2px #8080807A;
     padding-bottom: 1em;
 }
 
-
 .imgsContainer {
-    height: 100%;
     width: 35%;
-    vertical-align: middle;
-    float: left;
-    overflow: hidden;
+    display: inline-block;
 }
 
 .productsImg {
@@ -485,7 +480,7 @@ header li.menuDx{
     width: 60%;
     height: 20em;
     float: right;
-    padding-right: 2em;
+    padding-right: 5%;
 }
 
 .details {
@@ -510,23 +505,21 @@ header li.menuDx{
     margin-top: 2em;
     width: 100%;
     height: 28em;
+    overflow: hidden;
 }
 
 #productContainer .button {
     right: 0;
     bottom: 0;
-    padding: 0 0.5em;
     width: auto;
     display: inline-block;
     position: absolute;
-    font-size: 1em;
+    /* font-size: 1em; */
 }
 
 .imgContainer {
-    /* height: 100%; */
     width: 40%;
-    float: left;
-    height: 28em;
+    display: inline-block;
 }
 
 .productImg {
@@ -552,13 +545,97 @@ header li.menuDx{
     width: 100%;
     display: inline-block;
     position: relative;
-
     padding-top: 2em;
 }
 
 .productPrice {
     position: relative;
     display: inline-block;
+}
+
+
+/*------------------------------------*\
+               Carrello
+\*------------------------------------*/
+
+#carrello {
+    margin: 0;
+    padding: 0;
+    min-height: 70vh;
+}
+
+.carrelloVuoto {
+    margin: 5% 8%;
+}
+
+.carrelloContainer {
+    margin: 1em 0;
+    width: 100%;
+    height: 12em;
+    overflow: hidden;
+    border-bottom: 1px solid gray;
+}
+
+.carrelloImgContainer {
+    width: 25%;
+    display: inline-block;
+}
+
+.carrelloImg {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.carrelloDescriptionContainer {
+    width: 70%;
+    margin: 0 5% 0 0;
+    float: right;
+    font-size: 1.3em;
+}
+.carrelloDescription {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.quantity {
+    margin: 0 2em 0 0;
+    display: inline-block;
+}
+
+.quantity p{
+    display: inline-block;
+    margin: 0 0.2em;
+}
+
+.quantityBotton {
+    padding: 0;
+    background-color: #01404f;
+    border: none;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#carrello .button {
+    width: 4em;
+    float: right;
+} 
+
+#carrello h3 {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.totalPriceContainer {
+    height: 5em;
+    display: inline-block;
+    padding: 1em 2em;
+    right: 1em;
 }
 
 
@@ -691,7 +768,23 @@ input[type=submit], input[type=button] {
 :-ms-input-placeholder {  
     color: white;  
 }
-  
+ 
+
+/*------------------------------------*\
+                 404
+\*------------------------------------*/
+
+#notFound {
+    min-height: 25vh;
+    background-image: url("../../img/headphones/headphones2.jpg");
+    padding: 20em 0;
+    width: 100%;
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
 
 /*------------------------------------*\
                Footer
@@ -750,9 +843,11 @@ footer li a:hover, .dropdown:hover .dropbtn {
     color:white;
 }
 
+
 /*------------------------------------*\
                About us
 \*------------------------------------*/
+
 #aboutusouter {
     height: 50vh;
     width: 100%;
@@ -836,95 +931,7 @@ footer li a:hover, .dropdown:hover .dropbtn {
     padding: 0;
 }
 
-/*------------------------------------*\
-               Carrello
-\*------------------------------------*/
 
-#carrello {
-    margin: 0;
-    padding: 0;
-    min-height: 80vh;
-}
-
-.carrelloContainer {
-    margin: 1em 0;
-    width: 100%;
-    height: 15em;
-    border-bottom: 1px solid gray;
-}
-
-
-.carrelloImgContainer {
-    width: 25%;
-    display: inline-block;
-}
-
-.carrelloImg {
-    max-height: 60%;
-    max-width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.carrelloDescriptionContainer {
-    width: 75%;
-    float: right;
-    font-size: 1.3em;
-}
-.carrelloDescription {
-    width: auto;
-    display: block;  
-    margin-right: 2em;
-}
-
-.quantity {
-    margin: 0 2em 0 0;
-    display: inline-block;
-    right: 8em;
-    position: absolute;
-}
-
-.quantity p{
-    display: inline-block;
-    margin: 0 0.2em;
-}
-
-.quantityBotton {
-    padding: 0;
-    background-color: #01404f;
-    border: none;
-    color:white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-#carrello .button {
-    padding: 0 0 0 0;
-    display: inline-block;
-    width: 4.5em;
-    bottom: 0;
-    left: 0;
-}
-
-#carrello .productPrice {
-    position: absolute;
-    right: 2em;
-    display: inline-block;
-}
-
-#carrello h3 {
-    display: inline-block;
-    margin-right: 1em;
-}
-
-.totalPriceContainer {
-    width: 100%;
-    margin-left: 70%;
-    padding: 1em 2em;
-    right: 2em;
-}
 
 
 

@@ -55,6 +55,49 @@ function isSinglePage($title,$menuPages){
     return $esci;
 }
 
+function allCategory($conn){
+    $allCategory=mysqli_query($conn,
+    "SELECT DISTINCT Categoria FROM Cuffie
+    UNION
+    SELECT DISTINCT Categoria FROM Casse
+    UNION
+    SELECT DISTINCT Categoria FROM Accessori
+    ");
+    return $allCategory;
+}
+
+function insertCategoryInSelect($contentActualPage,$allCategory){
+    foreach($allCategory as $shit){
+        $contentActualPage=$contentActualPage.
+        '<option value="'.$shit["Categoria"].'">'.$shit["Categoria"].'</option>';
+    }
+    return $contentActualPage;
+}
+
+function insertProductsInSelect($conn,$selectedCategory,$contentActualPage){
+    // echo $selectedCategory;
+    $selectedProductsFromCategory=mysqli_query($conn,
+    "SELECT Modello  FROM Cuffie WHERE Categoria='".$selectedCategory."'
+    UNION
+    SELECT Modello  FROM Casse WHERE Categoria='".$selectedCategory."'
+    UNION
+    SELECT Modello  FROM Accessori WHERE Categoria='".$selectedCategory."'
+    ");
+    foreach($selectedProductsFromCategory as $shit){
+        $contentActualPage=$contentActualPage.
+        '<option value="'.$shit["Modello"].'">'.$shit["Modello"].'</option>';
+    }
+    return $contentActualPage;
+}
+
+function queryDeleteProduct($conn,$name){
+    return;
+}
+
+function queryAddProduct($conn){
+
+}
+
 
 
 // ____SERVE PER COSTRUIRE LA PAGINA

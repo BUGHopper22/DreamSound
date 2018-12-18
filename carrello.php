@@ -11,13 +11,21 @@ function sumPriceChart($chartProducts){
 }
 
 function withAjax($contentActualPage,$lista){
+<<<<<<< HEAD
+    echo ("P ");
+=======
+>>>>>>> 73540c1add969fde3488acffb588e4d012112015
     if($lista["Quantita"]>1){
         $contentActualPage=$contentActualPage.'
         <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
     }
     $contentActualPage=$contentActualPage.'
     <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1"> <p>+</p> </a>';
+<<<<<<< HEAD
+    return $contentActualPage;
+=======
     return $contentActualPage;   
+>>>>>>> 73540c1add969fde3488acffb588e4d012112015
 }
 
 function withoutAjax($contentActualPage,$lista){
@@ -58,11 +66,19 @@ function buildChartContent($chartProducts,$countProductsUser,$contentActualPage)
                     <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p>';
                     
                     // $contentActualPage=$contentActualPage.'<script>';
+<<<<<<< HEAD
+                    $contentActualPage=withAjax($contentActualPage,$lista);
+                    // $contentActualPage=$contentActualPage.'</script>';
+
+                    // $contentActualPage=$contentActualPage.'<noscript>';
+                    // $contentActualPage=withoutAjax($contentActualPage,$lista);
+=======
                     // $contentActualPage=withAjax($contentActualPage,$lista);
                     // $contentActualPage=$contentActualPage.'</script>';
 
                     // $contentActualPage=$contentActualPage.'<noscript>';
                     $contentActualPage=withoutAjax($contentActualPage,$lista);
+>>>>>>> 73540c1add969fde3488acffb588e4d012112015
                     // $contentActualPage=$contentActualPage.'</noscript>';
 
 

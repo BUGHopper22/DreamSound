@@ -113,10 +113,18 @@ p {
 }
 
 .logo {
-    float: right;
+    display: none;
+}
+
+
+.logoMobile{
+    /* float: right; */
     position: absolute;
-    right: 4em;
+    width: 6em;
+    height: 6em;
+    right: 2em;
     top: 0;
+    display: inline-block;
 }
 
 #mobile {
@@ -161,8 +169,10 @@ header li .menuDx {
 \*------------------------------------*/
 
 #breadcrumb {
+    /* width: 100%; */
     top: 4.5em;
     font-size: 0.8em;
+    padding-left: 1em;
 }
 
 .welcomeUser {
@@ -392,6 +402,14 @@ input[type=text], input[type=password] {
     display: block;
     margin: 0 auto;
     text-align: center;
+}
+
+
+/*------------------------------------*\
+                404
+\*------------------------------------*/
+#notFound {
+    padding: 20em 0em;
 }
 
 

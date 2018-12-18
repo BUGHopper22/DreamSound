@@ -77,6 +77,7 @@ function buildChartContent($chartProducts,$countProductsUser,$contentActualPage)
         <div class="totalPriceContainer">
             <h3>Totale: '.sumPriceChart($chartProducts).'</h3>
             <a class="button" href="php/carrello/buyProducts.php">Acquista</a>
+        </div>
         </div>';
     } 
     return $contentActualPage;

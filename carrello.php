@@ -65,21 +65,21 @@ function buildChartContent($chartProducts,$countProductsUser,$contentActualPage)
                     <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
                     <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p>';
                     
-                    // $contentActualPage=$contentActualPage.'<script>';
-<<<<<<< HEAD
-                    $contentActualPage=withAjax($contentActualPage,$lista);
-                    // $contentActualPage=$contentActualPage.'</script>';
+//                     // $contentActualPage=$contentActualPage.'<script>';
 
-                    // $contentActualPage=$contentActualPage.'<noscript>';
-                    // $contentActualPage=withoutAjax($contentActualPage,$lista);
-=======
-                    // $contentActualPage=withAjax($contentActualPage,$lista);
-                    // $contentActualPage=$contentActualPage.'</script>';
+//                     $contentActualPage=withAjax($contentActualPage,$lista);
+//                     // $contentActualPage=$contentActualPage.'</script>';
 
-                    // $contentActualPage=$contentActualPage.'<noscript>';
-                    $contentActualPage=withoutAjax($contentActualPage,$lista);
->>>>>>> 73540c1add969fde3488acffb588e4d012112015
-                    // $contentActualPage=$contentActualPage.'</noscript>';
+//                     // $contentActualPage=$contentActualPage.'<noscript>';
+//                     // $contentActualPage=withoutAjax($contentActualPage,$lista);
+// =======
+//                     // $contentActualPage=withAjax($contentActualPage,$lista);
+//                     // $contentActualPage=$contentActualPage.'</script>';
+
+//                     // $contentActualPage=$contentActualPage.'<noscript>';
+//                     $contentActualPage=withoutAjax($contentActualPage,$lista);
+
+//                     // $contentActualPage=$contentActualPage.'</noscript>';
 
 
                     $contentActualPage=$contentActualPage.

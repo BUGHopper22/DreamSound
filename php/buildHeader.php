@@ -76,7 +76,8 @@ function prepareMenu($title,$menuPages){
         <span></span>
         <span></span>
         <span></span>
-        <img src=./img/icon/logo.png class="logo">';
+        <img src=./img/icon/logo2.png class="logo">
+        <img src=./img/icon/logomobile.png class="logoMobile">';
         
     $menu=$menu.'<ul id="mobile">';
     $size=count($menuPages);

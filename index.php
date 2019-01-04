@@ -32,8 +32,8 @@
                     </a>
                     <a href="">
                         <div class="product-box">
-                            <img src="./img/prodotti/bred1.jpg" alt="marshall">
-                                <h4>Bred</h4>
+                            <img src="./img/prodotti/cuffieWireless/wireless1.png" alt="airpods">
+                                <h4>AirPods</h4>
                                 <p> 
                                     Lorem ipsum dolor sit amet, consectetur 
                                     adipiscing elit. Suspendisse tincidunt 
@@ -44,7 +44,7 @@
                     </a>
                     <a href="">
                         <div class="product-box">
-                            <img src="./img/prodotti/Marshall2.jpg" alt="marshall">
+                            <img src="./img/prodotti/Marshall2.jpg" alt="beats">
                                 <h4>Beats</h4>
                                 <p> adipiscing elit. Suspendisse tincidunt 
                                     vel risus quis euismod. Aenean id tellus 
@@ -54,8 +54,8 @@
                     </a>
                     <a href="">
                         <div class="product-box">
-                            <img src="./img/prodotti/maxell.jpg" alt="marshall">
-                                <h4>Maxell</h4>
+                            <img src="./img/prodotti/accessoriCuffie/accessoriCuffie2.png" alt="ADAD-TR302">
+                                <h4>ADAD-TR302</h4>
                                 <p> Lorem ipsum dolor sit amet, consectetur 
                                     adipiscing elit. Suspendisse tincidunt 
                                     vel risus quis euismod. Aenean id tellus 

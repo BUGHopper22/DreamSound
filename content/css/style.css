@@ -111,11 +111,15 @@ a p {
 }
 
 .logo {
-    width: 3.5em;
-    height: 3.5em;
-    float: left;
-    padding-left: 1em;
+    width: 6.5em;
+    height: 6.5em;
+    left: 0;
+    /* padding-left: 1em; */
     position: absolute;
+}
+
+.logoMobile{
+    display: none;
 }
 
 
@@ -125,7 +129,7 @@ header ul {
     padding: 0;
     overflow: hidden;
     background-color:#01404f;
-    padding-left: 5em;
+    padding-left: 7em;
     padding-right: 0.5em;
 }
 
@@ -199,9 +203,10 @@ header li.menuDx{
     border-top: 0.5px solid #011722;
     color: white;
     line-height: 3em;
-    padding-left: 1em;
+    padding-left: 7em;
     position: fixed;
     z-index: 9;
+    overflow: hidden;
 }
 
 #breadcrumb a, #breadcrumb a:visited {
@@ -210,7 +215,7 @@ header li.menuDx{
 
 .welcomeUser{
     float: right;
-    margin-right: 3em;
+    margin-right: 9em;
 }
 
 
@@ -578,6 +583,7 @@ header li.menuDx{
 
 .carrelloImgContainer {
     width: 25%;
+    height: 100%;
     display: inline-block;
 }
 
@@ -592,7 +598,7 @@ header li.menuDx{
     width: 70%;
     margin: 0 5% 0 0;
     float: right;
-    font-size: 1.3em;
+    /* font-size: 1.3em; */
 }
 .carrelloDescription {
     width: auto;
@@ -633,11 +639,26 @@ header li.menuDx{
 
 .totalPriceContainer {
     height: 5em;
-    display: inline-block;
-    padding: 1em 2em;
-    right: 1em;
+    display: block;
+    /* float: right; */
+    padding: 1em 5%;
+    clear: both;
+    text-align: right;
 }
 
+/*------------------------------------*\
+        Storico ordini
+\*------------------------------------*/
+
+#storicoOrdini {
+    margin: 0;
+    padding: 0;
+    min-height: 70vh;
+}
+
+.storicoVuoto {
+    margin: 5% 8%;
+}
 
 /*------------------------------------*\
                Login
@@ -768,8 +789,31 @@ input[type=submit], input[type=button] {
 :-ms-input-placeholder {  
     color: white;  
 }
- 
 
+
+/*------------------------------------*\
+            Back to top
+\*------------------------------------*/
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 99;
+  /* border: none;  */
+  outline: none;
+  background-color: #01404f;
+  color: white; 
+  cursor: pointer; 
+  padding: 1.5em;
+  border-radius: 10px; 
+}
+
+#backToTop:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+ 
 /*------------------------------------*\
                  404
 \*------------------------------------*/
@@ -777,7 +821,7 @@ input[type=submit], input[type=button] {
 #notFound {
     min-height: 25vh;
     background-image: url("../../img/headphones/headphones2.jpg");
-    padding: 20em 0;
+    padding: 20em 2em;
     width: 100%;
     color: white;
     background-position: center;

@@ -26,12 +26,20 @@ function qtaPerPrice($lista){
 function buildHistoryContent($historyProducts,$countProductsUser){
     
     if($countProductsUser==0){
-        $contentActualPage="Non hai acquistato nulla";
+        $contentActualPage='
+        <div id="storicoOrdini">
+            <div class="titlePage">
+                <h1>Storico ordini</h1>
+            </div>
+            <div class="storicoVuoto">
+                <p>Non hai ancora acquistato nulla, cosa aspetti?</p>
+            </div>
+        </div>';
         BuildPage("Storico",$contentActualPage);
     }else{
         $contentActualPage='
         <div class="titlePage">
-            <h1>Storico</h1>
+            <h1>Storico Ordini</h1>
         </div>
         <div id="carrello">';
         //CODICE SPARTANO NON TOCCARE
@@ -58,7 +66,7 @@ function buildHistoryContent($historyProducts,$countProductsUser){
                 </div>
             </div>';
         }
-
+        // $contentActualPage=$contentActualPage.'</div>';
 
 
 

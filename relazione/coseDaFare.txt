@@ -11,7 +11,7 @@ COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
 -pagina d' errore del server, non disponibile db->ritona alla home(dal file connessione.php)
 -pagina di stampa.
 - aggiungere alt a TUTTE le immagini.
-- sistemare ill carrello in caso ci sia il carrello vuoto.
+- sistemare ill carrello in caso ci sia il carrello vuoto.//
 -isset su storico vuoto da errore!!!!!!!
 -rendere accessibile carrello e storico prodotti dal profilo utente in quanto non accessibile da dropdown.
 -ritorno alla pagina

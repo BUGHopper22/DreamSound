@@ -13,12 +13,6 @@
 #011722;    BLU SCURO
 */
 
-
-.active{
-    border-bottom:5px solid #5a9697;
-}
-
-
 /*------------------------------------*\
                GENERAL
 \*------------------------------------*/
@@ -26,27 +20,76 @@
 body {
     width:100%;
     margin: 0;
-    padding: 5.5em 0 0 0;
+    padding: 6.5em 0 0 0;
+    overflow-x: hidden;
     min-height:100%;
     font-family: 'title';
 }
 
 h1 {
     font-family: 'title';
-    font-size: 40px;
+    font-size: 2.5em;
     text-align: center;
 }
 
 h2 {
     font-family: 'title';
-    font-size: 30px;
+    font-size: 2.2em;
     font-weight: bold;
 }
 
 h3 {
+    font-family: 'title';
     margin: 0;
-    font-size: 20px;
+    font-size: 1.7em;
     font-style: normal;
+}
+
+h4 {
+    font-family: 'title';
+    margin: 0;
+    font-size: 1.4em;
+    font-style: normal;
+}
+
+
+p {
+    font-family: 'title';
+    font-size: 1.4em;  
+     text-align: justify;  
+}
+
+a p {
+    text-align: center;
+}
+
+.titlePage h1{
+    margin: 0px auto;
+    padding: 0.5em 0;
+    text-align: center; 
+    background-color: #011722;
+    color: white;
+}
+
+.button {
+    background-color: #01404f;
+    border: none;
+    color:white;
+    width: 8.5em;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    /* text-decoration: none; */
+    padding: 0.5em 0.5em;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-family:'title';
+}
+
+.button:hover{
+    background-color:#5a9697; 
+    color:white;
 }
 
 
@@ -57,10 +100,10 @@ h3 {
 #navbar-container{
     position: fixed;
     width:100%;
-    height: 3.9em;
+    height: 3.5em;
     top:0px;
     left:0px;
-    z-index: 999;
+    z-index: 10;
 }
 
 #navbar-container input{
@@ -68,12 +111,15 @@ h3 {
 }
 
 .logo {
-    width: 3.5em;
-    height: 3.5em;
-    float: left;
-    padding-left: 1em;
-    display: inline-block;
+    width: 6.5em;
+    height: 6.5em;
+    left: 0;
+    /* padding-left: 1em; */
     position: absolute;
+}
+
+.logoMobile{
+    display: none;
 }
 
 
@@ -83,7 +129,7 @@ header ul {
     padding: 0;
     overflow: hidden;
     background-color:#01404f;
-    padding-left: 5em;
+    padding-left: 7em;
     padding-right: 0.5em;
 }
 
@@ -98,7 +144,7 @@ header li a, .dropbtn {
     color: white;
     text-align: center;
     padding: 1.2em 1.4em;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 header li a:hover, .dropdown:hover .dropbtn {
@@ -118,15 +164,15 @@ header li.menuDx{
     display: none;
     position:absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    /* min-width: 6em; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 10;
 }
 
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+    padding: 1em 1em;
+    /* text-decoration: none; */
     display: block;
     text-align: left;
     overflow: auto;
@@ -140,6 +186,11 @@ header li.menuDx{
     display: block;
 }
 
+.active{
+    box-shadow:0 -5px #5a9697 inset;
+}
+
+
 /*------------------------------------*\
                Breadcrumb
 \*------------------------------------*/
@@ -147,127 +198,114 @@ header li.menuDx{
 #breadcrumb {
     height: 3em;
     width: 100%;
-    top: 3.9em;
+    top: 3.5em;
     background-color:#011722;
     border-top: 0.5px solid #011722;
-    /* border-bottom: 1px solid gray; */
     color: white;
     line-height: 3em;
-    padding-left: 1em;
+    padding-left: 7em;
     position: fixed;
-    z-index: 900;
+    z-index: 9;
+    overflow: hidden;
+}
+
+#breadcrumb a, #breadcrumb a:visited {
+    color: white;
 }
 
 .welcomeUser{
     float: right;
-    margin-right: 3em;
+    margin-right: 9em;
 }
-
 
 
 /*------------------------------------*\
-Contenitore prodotti e Contenitore home
+ Contenitore prodotti e Contenitore home
 \*------------------------------------*/
 
-#outer {
-    height: 90vh;
-    width: 100%;
+#category {
+    padding: 0;
     margin: 0;
+}
+
+.outer {
+    padding: 10em 5%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; 
+    
 }
 
 .inner {
-    padding: 10% 10% 10% 10%;
-    vertical-align: middle;
-    width: 30%;
+    width: 40%;
+    background-color: rgba(0,0,0,0.6);
+    padding: 2%;
+    
 }
 
 .dx{
-    float: right;
+    margin-left:46%;
 }
 
-.inner p {
-    font-size: 25px;
+.inner p, .inner h1, .inner h2{
+    margin-top:0;
     text-align: center;
     color:white;
 }
 
-/* Immagine home */
+.inner p {
+    font-size: 1.7em;
+}
+
 .outer-home{
     background-image: url("../../img/headphones/headphones3.jpg");
 }
 
-/* Immagine cuffie in-ear */
 .outer-cuffieInEar{
     background-image: url("../../img/prodotti/cuffieInear/presentation.png");
 }
 
-/* Immagine cuffie on-ear */
 .outer-cuffieOnEar{
     background-image: url("../../img/prodotti/cuffieOnear/presentation.png");
 }
 
-/* immagine cuffie wireless */
 .outer-cuffieWireless{
     background-image: url("../../img/prodotti/cuffieWireless/presentation.png");
 }
-/*Immagine altoparlanti*/
+
 .outer-altoparlanti{
     background-image: url("../../img/prodotti/casseAltoparlanti/inizio.jpg");
 }
-/*Immagine casse bluetooth*/
+
 .outer-casseBluetooth{
     background-image: url("../../img/prodotti/casseBluetooth/inizio.jpg");
 }
-/*Immagine accessori cuffie*/
+
 .outer-accessoricuffie{
     background-image: url("../../img/prodotti/accessoriCuffie/inizio.jpg");
 }
-/*Immagine accessori casse*/
+
 .outer-accessoricasse{
     background-image: url("../../img/prodotti/accessoriCasse/inizio.jpg");
 }
+
 
 /*------------------------------------*\
                Home
 \*------------------------------------*/
 
-.button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #01404f;
-    border: none;
-    color:white;
-    text-align: center;
-    text-decoration: none;
-    padding: 19px 27px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 10%;
-    font-family:'title';
+#home {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.button:hover{
-    background-color:#5a9697; 
-    color:white;
-}
-
-.inner h2{
-    text-align: center; 
-    font-size: 45px;
-    color:white; 
-}
-
-/* ___PIU VENDUTI___ */
-
-.content{
+.content {
     position: relative;
     height: 90%;
     width: 100%;
-    margin-top: 0px;
+    margin-top: 0;
     background-color: white;
     background-position: center;
     background-repeat: no-repeat; 
@@ -275,77 +313,63 @@ Contenitore prodotti e Contenitore home
         
 }
 
-.data-template{
+.data-template {
     position:relative;
     width:100%;
 }
 
-.data-template h2{
-    margin: 0px auto;
-    padding: 42px 0px;
+.data-template h2{ 
+    margin: 0 auto;
+    padding: 1em 0;
     text-align: center; 
-    font-size: 45px;
     color:#01404f;; 
 }
 
-.outer{
-    display:table;
+.vetrina {
     align-items:center;
     position:relative;
-     width: 80%;
-     margin-left:10%;
-     margin-right:10%;
-     margin: 0 auto;
-     margin-bottom:80px;
-     background-color:white;
-     overflow:hidden;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+    background-color: white;
+    overflow: hidden;
      
 }
 
 .data-template {
     width: 100%;
-      margin-top: 0px;
+    margin-top: 0;
 }
 
 .product-box {
     position:relative;
     width:25%;
-    height:100%;
     float:left;
-    /* ___non sono sicuro sia il modo giusto di farlo
-        serve per rendere i box tutti della stessa altezza */
-    /* margin-top: -9999px;
-	margin-bottom: -9999px;
-	padding-top: 9999px;
-	padding-bottom: 9999px; */
-  }
+}
 
-  /* .product-box:hover{
-    background-color: #8ed8cc;
-  } */
-
-  .product-box h4{
-    font-size: 1.3em;
+.product-box h4{
     text-align: center;
     color:black;
-    margin: 20px 5px 5px 5px;
+    margin: 1em 0.5em;
+}
 
-  }
-  .product-box p{
-    max-width:200px;
+.product-box p{
+    /* max-width:30em; */
     font-size: 0.8em;
     text-align: center;
-    color:black;
-    margin: 8% 15%;
+    color: black;
+    margin: 1em 1.5em;
 }
 
 .product-box img{
-    position:relative;
+    position: relative;
     width: 80%;
     height: 80%;
     margin: 0 auto;
-    display:block;
-    padding: 5%;
+    display: block;
+    padding: 0.7em 0 0.3em 0;
     border-radius: 50%; 
 }
 
@@ -353,7 +377,7 @@ Contenitore prodotti e Contenitore home
 .icon-wrapper{
     position:relative;
     width:80%;
-    height:400px;
+    height:30em;
     padding: 5% 10%;
     background-color:#8ed8cc;
 }
@@ -394,8 +418,6 @@ Contenitore prodotti e Contenitore home
     background-repeat:no-repeat;
     width:70px;
     height: 70px;
-
-   
 }
 
 #shipping-icon{ 
@@ -408,33 +430,50 @@ Contenitore prodotti e Contenitore home
 #color-personalizer{background-image: url("../../img/icon/svgIcon/headSetW.png");
     /* background-color:red; */
 }
-#supervisioned{background-image: url("../../img/icon/svgIcon/headSetW.png");
+#supervisioned{
+    background-image: url("../../img/icon/svgIcon/headSetW.png");
     background-repeat:no-repeat;
     /* background-color:red; */
 }
+
 
 /*------------------------------------*\
             Tutti i Prodotti
 \*------------------------------------*/
 
-#productsContainer{
+#productsListContainer {
+    margin:0;
+    padding:0;
+}
+
+#productsListContainer p {
+    margin: 0;
+    padding: 0;
+}
+
+#productsListContainer .button {
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    position: absolute;
+    /* font-size: 1em; */
+}
+
+.productsContainer{
     width: 100%;
-    height: 35vh;
-    min-height: 245px;
-    box-shadow: 0px 4px 2px #8080807A;
-    margin-bottom: 1em;
-}
-
-.imgsContainer{
-    margin: 0px 0 1em 0;
-    height: 100%;
-    width: 35%;
-    vertical-align: middle;
-    float: left;
+    height: 20em;
     overflow: hidden;
+    box-shadow: 0px 4px 2px #8080807A;
+    padding-bottom: 1em;
 }
 
-.productsImg{
+.imgsContainer {
+    width: 35%;
+    display: inline-block;
+}
+
+.productsImg {
+    margin-top: 2em;
     max-height: 80%;
     max-width: 80%;
     margin-left: auto;
@@ -442,63 +481,50 @@ Contenitore prodotti e Contenitore home
     display: block;
 }
 
-.products {
-    width: 65%;
+.descriptionsContainer {
+    width: 60%;
+    height: 20em;
     float: right;
+    padding-right: 5%;
 }
 
-.products p {
-    font-size: 20px;
-    color:black;
-    text-align: justify;
-    margin: 0 4em 0 0;
-    padding: 0;
-    
-}
-.detailsContainer{
-    width: 65%;
+.details {
+    margin-top: 2em;
+    width: 100%;
     display: inline-block;
     position: relative;
 }
 
 .productsPrice {
-    height: 5vh;
     position: relative;
     display: inline-block;
     margin-top: 1em;
 }
 
-.details {
-    height: auto;
-    position: relative;
-    float: right;
-    margin: 1em 4em 0 0;
-    padding: 0 1em 0 1em;
-    background-color: #01404f;
-    border: none;
-    color:white;
-    text-align: center;
-    font-size: 16px;
-    text-decoration: none;
-    vertical-align: center;
-}
 
 /*------------------------------------*\
                Prodotto
 \*------------------------------------*/
 
 #productContainer {
+    margin-top: 2em;
     width: 100%;
-    height: 70vh;
-    min-height: 500px;
-    margin-bottom: 1em;
-    padding-top: 1em;
+    height: 28em;
+    overflow: hidden;
+}
+
+#productContainer .button {
+    right: 0;
+    bottom: 0;
+    width: auto;
+    display: inline-block;
+    position: absolute;
+    /* font-size: 1em; */
 }
 
 .imgContainer {
-    height: 100%;
     width: 40%;
-    float: left;
+    display: inline-block;
 }
 
 .productImg {
@@ -509,63 +535,146 @@ Contenitore prodotti e Contenitore home
     display: block;
 }
 
-.product {
-    width: 60%;
+.descriptionContainer {
+    width: 55%;
+    height: 28em;
     float: right;
+    padding-right: 2em;
 }
 
-.product h2 {
-    font-size: 25px;
-    text-align: center;
-    margin-top: 2em;
-}
-
-.product p {
-    font-size: 20px;
-    color:black;
-    text-align: justify;
-    margin-right: 2em;
+.product {
+    width: 100%;
 }
 
 .buyContainer {
-    width: 60%;
-    /* height: 10vh; */
+    width: 100%;
     display: inline-block;
     position: relative;
     padding-top: 2em;
 }
 
 .productPrice {
-    height: 5vh;
     position: relative;
     display: inline-block;
 }
 
-.compra {
-    height: auto;
-    position: relative;
+
+/*------------------------------------*\
+               Carrello
+\*------------------------------------*/
+
+#carrello {
+    margin: 0;
+    padding: 0;
+    min-height: 70vh;
+}
+
+.carrelloVuoto {
+    margin: 5% 8%;
+}
+
+.carrelloContainer {
+    margin: 1em 0;
+    width: 100%;
+    height: 12em;
+    overflow: hidden;
+    border-bottom: 1px solid gray;
+}
+
+.carrelloImgContainer {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+}
+
+.carrelloImg {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.carrelloDescriptionContainer {
+    width: 70%;
+    margin: 0 5% 0 0;
     float: right;
-    margin-right: 3em;
-    padding: 0 1em 0 1em;
+    /* font-size: 1.3em; */
+}
+.carrelloDescription {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.quantity {
+    margin: 0 2em 0 0;
+    display: inline-block;
+}
+
+.quantity p{
+    display: inline-block;
+    margin: 0 0.2em;
+}
+
+.quantityBotton {
+    padding: 0;
     background-color: #01404f;
     border: none;
     color:white;
     text-align: center;
-    font-size: 16px;
     text-decoration: none;
+    display: inline-block;
 }
 
+#carrello .button {
+    width: 4em;
+    float: right;
+} 
+
+#carrello h3 {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.totalPriceContainer {
+    height: 5em;
+    display: block;
+    /* float: right; */
+    padding: 1em 5%;
+    clear: both;
+    text-align: right;
+}
+
+/*------------------------------------*\
+        Storico ordini
+\*------------------------------------*/
+
+#storicoOrdini {
+    margin: 0;
+    padding: 0;
+    min-height: 70vh;
+}
+
+.storicoVuoto {
+    margin: 5% 8%;
+}
 
 /*------------------------------------*\
                Login
 \*------------------------------------*/
 
 #formContainer {
-    margin-top:3em;
-    margin:0px;
-    border:0px;
+    margin-top: 3em;
+    margin: 0;
+    border: 0;
     width:100%;
-    height: auto;
+    height: 46em;
+    /* min-height: 681px; */
+    background-image: url("../../img/headphones/headphones7.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #formContainer h2 {
@@ -579,19 +688,23 @@ Contenitore prodotti e Contenitore home
 }
 
 .loginContainer {
-    margin-top: 3em;
-    width:50%;
+    width: 50%;
     float: left;
+    /* background-color: rgba(255,255,255,0.5); */
 }
 
 .registerContainer {
-    margin-top: 3em;
-    width:50%;
+    color: white;
+    width: 50%;
+    height: 46em;
     float: left;
+    background-color: rgba(0,0,0,0.6);
 }
 
 .formCenter {
     text-align: center;
+    z-index: 5;
+    padding-bottom: 3em;
 }
   
 .formBtn {
@@ -614,7 +727,7 @@ Contenitore prodotti e Contenitore home
 
 .form {
     display: block;
-    width: 300px;
+    width: 25em;
     background-color: #F3EDD3;
     padding:  0;
     text-align: center;
@@ -622,9 +735,9 @@ Contenitore prodotti e Contenitore home
   
 .form .form-title {
     text-align: center;
-    padding: 5px;
+    padding: 0.5em;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 1em;
 }
   
 .form label {
@@ -639,9 +752,9 @@ input[type=text], input[type=password], input[type=email] {
     display: inline-block;
     color: black;
     padding: 1em;
-    width: 300px;
+    width: 25em;
     box-sizing: border-box;
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.3);
     border: none;
     border-radius: 0.5em;
     transition:background-color 0.5s ease;
@@ -654,9 +767,9 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
 input[type=submit], input[type=button] {
     color: white;
     display: block;
-    margin-top:15px;
+    margin-top:1em;
     border: none;
-    padding: 5px;
+    padding: 0.5em;
     font-size: 1.1em;
     cursor: pointer;
 }
@@ -676,7 +789,46 @@ input[type=submit], input[type=button] {
 :-ms-input-placeholder {  
     color: white;  
 }
-  
+
+
+/*------------------------------------*\
+            Back to top
+\*------------------------------------*/
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 99;
+  /* border: none;  */
+  outline: none;
+  background-color: #01404f;
+  color: white; 
+  cursor: pointer; 
+  padding: 1.5em;
+  border-radius: 10px; 
+}
+
+#backToTop:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+ 
+/*------------------------------------*\
+                 404
+\*------------------------------------*/
+
+#notFound {
+    min-height: 25vh;
+    background-image: url("../../img/headphones/headphones2.jpg");
+    padding: 20em 2em;
+    width: 100%;
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
 
 /*------------------------------------*\
                Footer
@@ -686,7 +838,7 @@ input[type=submit], input[type=button] {
     width: 100%;
     background-color: #01404f;
     height: 13em;
-    /* margin-top: 1em; */
+    padding-top: 1em;
 }
 
 footer {
@@ -700,7 +852,7 @@ footer {
 footer li {
     font-size: 1.2em;
     font-weight: bold;
-    display: inline;
+    /* display: inline; */
     color: white;
     text-align: center;
     float: left;
@@ -735,9 +887,11 @@ footer li a:hover, .dropdown:hover .dropbtn {
     color:white;
 }
 
+
 /*------------------------------------*\
                About us
 \*------------------------------------*/
+
 #aboutusouter {
     height: 50vh;
     width: 100%;
@@ -747,12 +901,12 @@ footer li a:hover, .dropdown:hover .dropbtn {
     background-size: cover; 
 }
 
-#productsContainer{
+#aboutusContainer{
     width: 100%;
-    height: 60vh;
+    height: 55vh;
     min-height: 245px;
     box-shadow: 0px 4px 2px #8080807A;
-    margin-bottom: 1em;
+   
 }
 
 .imgsContainer{
@@ -765,104 +919,63 @@ footer li a:hover, .dropdown:hover .dropbtn {
 }
 
 
-.productsImg{
+.storysImg{
     max-height: 80%;
     max-width: 80%;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-.products {
+.storys {
     width: 65%;
     float: right;
 }
 
 
-.products p {
+.storys p {
     font-size: 20px;
     color:black;
-    text-align: justify;
-    margin: 4em 4em 0 0;
+    text-align: right;
+    margin: 3em 4em 0 4em;
     padding: 0;
 }
 .aboutusouter-aboutus{
     background-image: url("../../img/aboutus/inizio.jpg");
 }
 
-
-/*------------------------------------*\
-               Carrello
-\*------------------------------------*/
-
-#carrello {
-    margin: 1em 0;
-    width: 100%;
-    height: 18vh;
+.imgs2Container{
+    margin: 0 0 1em 0;
+    height: 100%;
+    width: 35%;
+    vertical-align: middle;
+    float: right;
+    overflow: hidden;
 }
 
-.carrelloImgContainer {
-    width: 25%;
-    display: inline-block;
-}
 
-.carrelloImg {
-    max-height: 40%;
-    max-width: 40%;
+.storys2Img{
+    max-height: 90%;
+    max-width: 90%;
+    margin: 2em 0 3em 0;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
-
-.carrelloDescriptionContainer {
-    width: 75%;
-    float: right;
-    font-size: 1.3em;
+.storys2 {
+    width: 65%;
+    float: left;
 }
-.carrelloDescription {
-    width: auto;
-    display: inline-block;  
-}
-
-.quantity {
-    margin: 1em;
-    display: inline-block;
-    right: 8em;
-    position: absolute;
-}
-
-.quantity p{
-    display: inline-block;
-    margin: 0 0.2em;
-}
-
-.quantityBotton {
+.storys2 p {
+    font-size: 20px;
+    color:black;
+    text-align: left;
+    margin: 2em 4em 4em 4em;
     padding: 0;
-    background-color: #01404f;
-    border: none;
-    color:white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
 }
 
-#carrello .productPrice {
-    float: right;
-    display: inline-block;
-    margin: 1em 2em 0 0;
-    position: relative;
-}
 
-.totalPriceContainer {
-    width: 100%;
-    height: 8vh;
-}
 
-.totalPrice {
-    float: right;
-    margin: 0 1.6em;
-    font-size: 1.5em;
-}
 
 

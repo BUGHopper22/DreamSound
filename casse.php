@@ -1,32 +1,31 @@
 <?php
     $contentActualPage='
-    <!-- IMMAGINE  CUFFIE IN-EAR -->
-    <div id="outer" class="outer-altoparlanti"> <!-- La classe outer gestisce l immagine di sfondo -->
-        <div class="inner">
-            <h2>Casse Altoparlanti</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Suspendisse tincidunt
-                vel risus quis euismod. Aenean id tellus
-                ut risus luctus mattis a nec mauris. .
-            </p>
-            <a href="./casseAltoparlanti.php?ntab=Casse">
-                <button class="button" type="submit">Tutti i prodotti</button>
-            </a>
-        </div>
+    <div class="titlePage">
+        <h1>Casse</h1>
     </div>
+    <div id="category">
+        <div class="outer outer-altoparlanti">
+            <div class="inner">
+                <h2>Casse Altoparlanti</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Suspendisse tincidunt
+                    vel risus quis euismod. Aenean id tellus
+                    ut risus luctus mattis a nec mauris. .
+                </p>
+                <a class="button" href="./casseAltoparlanti.php?ntab=Casse">Tutti i prodotti</a>
+            </div>
+        </div>
 
-    <!-- IMMAGINE CUFFIE ON-EAR -->
-    <div id="outer" class="outer-casseBluetooth"> <!-- La classe outer gestisce l immagine di sfondo -->
-        <div class="inner dx">
-            <h2>Casse Bluetooth</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Suspendisse tincidunt
-                vel risus quis euismod. Aenean id tellus
-                ut risus luctus mattis a nec mauris. .
-            </p>
-            <a href="./casseBluetooth.php?ntab=Casse">
-                <button class="button" type="submit">Tutti i prodotti</button>
-            </a>
+        <div class="outer outer-casseBluetooth">
+            <div class="inner dx">
+                <h2>Casse Bluetooth</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Suspendisse tincidunt
+                    vel risus quis euismod. Aenean id tellus
+                    ut risus luctus mattis a nec mauris. .
+                </p>
+                <a class="button" href="./casseBluetooth.php?ntab=Casse">Tutti i prodotti</a>
+            </div>
         </div>
     </div>';
     require_once('php/functions.php');	//è un include di function

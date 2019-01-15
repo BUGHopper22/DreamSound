@@ -1,8 +1,10 @@
 <?php
     $contentActualPage='
-    <body>
-        <!-- IMMAGINE  CUFFIE IN-EAR -->
-        <div id="outer" class="outer-accessoricuffie">
+    <div class="titlePage">
+        <h1>Accessori</h1>
+    </div>
+    <div id="category">
+        <div class="outer outer-accessoricuffie">
             <div class="inner">
                 <h2>Accessori per Cuffie</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur
@@ -10,14 +12,11 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a href="./accessoriCuffie.php?ntab=Accessori">
-                    <button class="button" type="submit">Tutti i prodotti</button>
-                </a>
+                <a class="button" href="./accessoriCuffie.php?ntab=Accessori">Tutti i prodotti</a>
             </div>
         </div>
 
-        <!-- IMMAGINE CUFFIE ON-EAR -->
-        <div id="outer" class="outer-accessoricasse">
+        <div class="outer outer-accessoricasse">
             <div class="inner dx">
                 <h2>Accessori per Casse</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur
@@ -25,12 +24,10 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a href="./accessoriCasse.php?ntab=Accessori">
-                    <button class="button" type="submit">Tutti i prodotti</button>
-                </a>
+                <a class="button" href="./accessoriCasse.php?ntab=Accessori">Tutti i prodotti</a>
             </div>
         </div>
-    </body>';
+    </div>';
     require_once('php/functions.php');	//è un include di function
     BuildPage("Accessori",$contentActualPage);	//funzione di buildpage dentro al file function
 ?>

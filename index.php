@@ -7,108 +7,96 @@
         }
     }
     $contentActualPage='
-    <!-- CONTENITORE PRODOTTI CON IMMAGINE HOME -->
-    <div id="outer" class="outer-home">
-        <div class="inner">
-            <h2>Without music, life would be a mistake.</h2>
-            <p>La musica esprime ciò che non può essere espresso a parole e ciò che non può rimanere in silenzio.</p>
-            <button class="button">Acquista marshall</button>
+    <div id="home">
+        <div class="outer outer-home">
+            <div class="inner">
+                <h1>Without music, life would be a mistake.</h1>
+                <p>La musica esprime ciò che non può essere espresso a parole e ciò che non può rimanere in silenzio.</p>
+                <a class="button">Acquista marshall</a>
+            </div>
         </div>
-    </div>
 
-    <!-- DIV PRINCIPALE -->
-    <div class="content">
+        <div class="content">
             <div class="data-template">
-                <h2>I più venduti</h2>
-                <div class="outer">
+                <h2>In Vetrina</h2>
+                <div class="vetrina">
                     <a href="">
-                        <div class="product-box first-prod">
+                        <div class="product-box">
                             <img src="./img/prodotti/Marshall1.jpg" alt="marshall">
-                            <div class="tit-desc-box">
                                 <h4>Marshall</h4>
                                 <p> Lorem ipsum dolor sit amet, consectetur 
                                     adipiscing elit. Suspendisse tincidunt 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>  
                         </div>
                     </a>
                     <a href="">
-                        <div class="product-box central-prod">
-                            <img src="./img/prodotti/bred1.jpg" alt="marshall">
-                            <div class="tit-desc-box">    
-                                <h4>Bred</h4>
+                        <div class="product-box">
+                            <img src="./img/prodotti/cuffieWireless/wireless1.png" alt="airpods">
+                                <h4>AirPods</h4>
                                 <p> 
                                     Lorem ipsum dolor sit amet, consectetur 
                                     adipiscing elit. Suspendisse tincidunt 
                                     vel risus quis euismod. Aenean id tellus 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>
                         </div>
                     </a>
                     <a href="">
-                        <div class="product-box central-prod">
-                            <img src="./img/prodotti/Marshall2.jpg" alt="marshall">
-                            <div class="tit-desc-box">
+                        <div class="product-box">
+                            <img src="./img/prodotti/Marshall2.jpg" alt="beats">
                                 <h4>Beats</h4>
                                 <p> adipiscing elit. Suspendisse tincidunt 
                                     vel risus quis euismod. Aenean id tellus 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>
                         </div>
                     </a>
                     <a href="">
-                        <div class="product-box central-prod">
-                            <img src="./img/prodotti/maxell.jpg" alt="marshall">
-                            <div class="tit-desc-box">
-                                <h4>Maxell</h4>
+                        <div class="product-box">
+                            <img src="./img/prodotti/accessoriCuffie/accessoriCuffie2.png" alt="ADAD-TR302">
+                                <h4>ADAD-TR302</h4>
                                 <p> Lorem ipsum dolor sit amet, consectetur 
                                     adipiscing elit. Suspendisse tincidunt 
                                     vel risus quis euismod. Aenean id tellus 
                                     ut risus luctus mattis a nec mauris.
                                 </p>
-                            </div>
                         </div>
                     </a>
                 </div>
             </div>
 
-    <!--         
-            <div class="icon-wrapper">
-                <div class="icon-row">
-                    <div class="icon-col">
-                        <div class="icon" id="shipping-icon"></div>
-                        <p> Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Suspendisse tincidunt 
-                                vel risus quis euismod. Aenean id tellus 
-                                ut risus luctus mattis a nec mauris.
-
-                        </p>
+        <!--         
+                <div class="icon-wrapper">
+                    <div class="icon-row">
+                        <div class="icon-col">
+                            <div class="icon" id="shipping-icon"></div>
+                            <p> Lorem ipsum dolor sit amet, consectetur 
+                                    adipiscing elit. Suspendisse tincidunt 
+                                    vel risus quis euismod. Aenean id tellus 
+                                    ut risus luctus mattis a nec mauris.
+                            </p>
+                        </div>
+                        <div class="icon-col">
+                            <div class="icon" id="color-personalizer"></div>
+                            <p> Lorem ipsum dolor sit amet, consectetur 
+                                    adipiscing elit. Suspendisse tincidunt 
+                                    vel risus quis euismod. Aenean id tellus 
+                                    ut risus luctus mattis a nec mauris.
+                            </p>
+                        </div>
+                        <div class="icon-col">
+                            <div class="icon" id="supervisioned"></div>
+                            <p> Lorem ipsum dolor sit amet, consectetur 
+                                    adipiscing elit. Suspendisse tincidunt 
+                                    vel risus quis euismod. Aenean id tellus 
+                                    ut risus luctus mattis a nec mauris.
+                            </p>
+                        </div>
                     </div>
-                    <div class="icon-col">
-                        <div class="icon" id="color-personalizer"></div>
-                        <p> Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Suspendisse tincidunt 
-                                vel risus quis euismod. Aenean id tellus 
-                                ut risus luctus mattis a nec mauris.
-
-                        </p>
-                    </div>
-                    <div class="icon-col">
-                        <div class="icon" id="supervisioned"></div>
-                        <p> Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Suspendisse tincidunt 
-                                vel risus quis euismod. Aenean id tellus 
-                                ut risus luctus mattis a nec mauris.
-
-                        </p>
-                    </div>
-                </div>
-            </div> -->
-            
-            
+                </div> -->
+                
+        </div>
     </div>
 
 

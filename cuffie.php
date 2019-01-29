@@ -12,7 +12,7 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a class="button" href="./cuffieInEar.php?ntab=Cuffie">Tutti i prodotti</a>
+                <a class="button" href="./cuffieInEar.php?ntab=Cuffie" title=”Cuffie IN-EAR”>Tutti i prodotti</a>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a class="button" href="./cuffieOnEar.php?ntab=Cuffie">Tutti i prodotti</a>
+                <a class="button" href="./cuffieOnEar.php?ntab=Cuffie" title=”Cuffie ON-EAR”>Tutti i prodotti</a>
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a class="button" href="./cuffieWireless.php?ntab=Cuffie">Tutti i prodotti</a>
+                <a class="button" href="./cuffieWireless.php?ntab=Cuffie" title=”Cuffie Wireless”>Tutti i prodotti</a>
             </div>
         </div>
     </div>';

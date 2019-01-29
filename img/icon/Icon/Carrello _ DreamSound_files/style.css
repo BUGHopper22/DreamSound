@@ -59,19 +59,6 @@ p {
      text-align: justify;  
 }
 
-a {
-    font-size: 1.2em;
-    color: white;
-}
-
-/* a:link {
-    color: white;
-} */
-
-a:visited {
-    color: green;
-}
-
 a p {
     text-align: center;
 }
@@ -95,7 +82,7 @@ a p {
     border-radius: 3px;
     /* text-decoration: none; */
     padding: 0.5em 0.5em;
-    /* font-size: 1.2em; */
+    font-size: 1.2em;
     cursor: pointer;
     font-family:'title';
 }
@@ -152,30 +139,29 @@ header li {
 }
 
 
-header li a { /*.dropbtn*/
+header li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 1.2em 2em 1.2em 0.5em;
+    padding: 1.2em 1.4em;
     /* text-decoration: none; */
 }
 
-header li a:hover, .dropDown:hover { /*.dropbtn*/
+header li a:hover, .dropdown:hover .dropbtn {
     background-color:#5a9697; 
     color:white;
 }
 
-header li.dropDown {
+header li.dropdown {
     display: inline-block;
 }
 
-.menuDx{
+header li.menuDx{
     float:right;
 }
 
 .dropdown-content {
     display: none;
-    /* visibility: hidden; */
     position:absolute;
     background-color: #f9f9f9;
     /* min-width: 6em; */
@@ -197,24 +183,12 @@ header li.dropDown {
 }
 
 .dropDown:hover .dropdown-content {
-    /* visibility: visible; */
     display: block;
-}
-
-
-
-.arrow {
-    display: inline-block;
-    top: 1.7em;
-    margin-left: -30px;
-    position: absolute;
 }
 
 .active{
     box-shadow:0 -5px #5a9697 inset;
 }
-
-
 
 
 /*------------------------------------*\
@@ -820,13 +794,14 @@ input[type=submit], input[type=button] {
 /*------------------------------------*\
             Back to top
 \*------------------------------------*/
-/* 
+
 #backToTop {
-  display: block;
+  display: none;
   position: fixed;
   bottom: 2em;
   right: 2em;
   z-index: 99;
+  /* border: none;  */
   outline: none;
   background-color: #01404f;
   color: white; 
@@ -836,24 +811,7 @@ input[type=submit], input[type=button] {
 }
 
 #backToTop:hover {
-  background-color: #555; 
-} */
-
-#backToTop {
-    display: block;
-    position: fixed;
-    bottom: 2em;
-    right: 2em;
-    z-index: 99;
-    outline: none;
-    background-color: #01404f;
-    color: white; 
-    cursor: pointer; 
-    padding: 1em;
-    border-radius: 10px; 
-}
-#backToTop:hover {
-    background-color: #7dbbf1;
+  background-color: #555; /* Add a dark-grey background on hover */
 }
  
 /*------------------------------------*\
@@ -879,28 +837,55 @@ input[type=submit], input[type=button] {
 #wrapper {
     width: 100%;
     background-color: #01404f;
-    height: 10em;
+    height: 13em;
     padding-top: 1em;
 }
 
 footer {
     padding: 1em 0.5em 1em 0.5em;
-    text-align: center;
-    color: white; 
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
 }
-/* 
+
+footer li {
+    font-size: 1.2em;
+    font-weight: bold;
+    /* display: inline; */
+    color: white;
+    text-align: center;
+    float: left;
+    position: relative;
+    /* text-decoration: none; */
+}
+
 footer a {
     display: block;
     color: white;
-    
+    text-align: left;
     padding: 1em 0.5em 0 0.5em;
     text-decoration: none;
-} */
-
-footer p {
-    text-align: center;
 }
 
+footer ul {
+    list-style-type: none;
+    /* margin: 0 auto; */
+    overflow: hidden;
+    list-style:none;
+    position:relative;
+    left:50%;
+}
+
+.sublist {
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+footer li a:hover, .dropdown:hover .dropbtn {
+    background-color:#5a9697; 
+    color:white;
+}
 
 
 /*------------------------------------*\
@@ -989,6 +974,7 @@ footer p {
     margin: 2em 4em 4em 4em;
     padding: 0;
 }
+
 
 
 

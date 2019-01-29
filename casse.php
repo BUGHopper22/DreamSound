@@ -12,7 +12,7 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a class="button" href="./casseAltoparlanti.php?ntab=Casse">Tutti i prodotti</a>
+                <a class="button" href="./casseAltoparlanti.php?ntab=Casse" title=”Casse Altoparlanti”>Tutti i prodotti</a>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a class="button" href="./casseBluetooth.php?ntab=Casse">Tutti i prodotti</a>
+                <a class="button" href="./casseBluetooth.php?ntab=Casse" title=”Casse Bluetooth”>Tutti i prodotti</a>
             </div>
         </div>
     </div>';

@@ -69,14 +69,14 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage){
         $breadcrumb=$breadcrumb.'
         <div class="welcomeUser">
             <div class="showWelcome">
-            benvenuto '.$_SESSION["sessionUserId"].', <a href="./index.php?logout=1"> logout</a>
+            benvenuto '.$_SESSION["sessionUserId"].', <a href="./index.php?logout=1"> Logout</a>
             </div>
         </div>';
     }else{
         $breadcrumb=$breadcrumb.'
         <div class="welcomeUser">
             <div class="showWelcome">
-            <a href="./login.php"> login</a>
+            <a href="./login.php"> Login</a>
             </div>
         </div>';
     }

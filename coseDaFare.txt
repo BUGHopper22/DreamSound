@@ -20,6 +20,7 @@ COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
 -ogni form non puo avere il tag input interno direttamente. Aggiungere un livello di div intemedio.
 -cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
 -acquista su carrello da cambiare indirizzo
+
 //scritto da Nicole
 -gestione erroe 404
 -il logo deve essere piu in evidenza di cosi
@@ -30,3 +31,17 @@ COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
 -suddivisione dei ruoli
 
 //scritto da Giovanni
+- usare total validator
+- js solo per controllo inserimento dati form
+OK - footer: si puo mettere quello che si vuole
+OK - cambio colore link visitati
+OK - freccia su in css
+OK - frecce menu dropdown
+Ok - dropdown visibile su mobile
+- dividere codice html da php
+- tabindex nell'ordine giusto nelle sotto pagine (login...)
+OK - aggiunta tag title ai link uguali (tutti i prodotti...)
+- link pagina amministratore visibile solo dopo login amministratore
+
+Note relazione: 
+- Anche impostando i tabindex i link dropdown sono irragiungibili sia tramite proprieta display che visibility (chiedere a jolly)

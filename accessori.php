@@ -12,7 +12,7 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a class="button" href="./accessoriCuffie.php?ntab=Accessori">Tutti i prodotti</a>
+                <a class="button" href="./accessoriCuffie.php?ntab=Accessori" title=”Accessori per Cuffie”>Tutti i prodotti</a>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
                     vel risus quis euismod. Aenean id tellus
                     ut risus luctus mattis a nec mauris. .
                 </p>
-                <a class="button" href="./accessoriCasse.php?ntab=Accessori">Tutti i prodotti</a>
+                <a class="button" href="./accessoriCasse.php?ntab=Accessori" title=”Accessori per Casse”>Tutti i prodotti</a>
             </div>
         </div>
     </div>';

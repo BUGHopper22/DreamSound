@@ -95,7 +95,7 @@ function prepareMenu($title,$menuPages){
         }
         if($menuPages[$i]->getType()=='dropDown'){//sse dropdown
             $name=$menuPages[$i]->getName();
-            $menu=$menu.'<div class="dropdown-content">';
+            $menu=$menu.'<img class="arrow" src="./img/icon/arrowDown.png"><div class="dropdown-content">';
             $numInternalPages=internalPagesCount($i+1,$menuPages,$size);//ritorna il numero delle sottopagine
             while($numInternalPages!=0){
                 $i++;

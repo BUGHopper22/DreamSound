@@ -201,13 +201,16 @@ header li.dropDown {
     display: block;
 }
 
-
-
 .arrow {
     display: inline-block;
     top: 1.7em;
-    margin-left: -30px;
+    margin-left: -34px;
+    margin-top: 2px;
     position: absolute;
+}
+
+.arrow:hover {
+    transform: rotate(180deg);
 }
 
 .active{
@@ -584,6 +587,54 @@ header li.dropDown {
     display: inline-block;
 }
 
+/*------------------------------------*\
+               Profilo
+\*------------------------------------*/
+
+#profile {
+    margin: 0;
+    padding: 5% 0;
+    min-height: 65vh;
+    background-image: url("../../img/headphones/headphones5.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.personalData {
+    margin: 5% 15%;
+}
+
+.buttonContainer {
+    margin-top: 5%;
+    width: 49%;
+    display: inline-block;
+}
+
+/*------------------------------------*\
+            Amministratore
+\*------------------------------------*/
+
+#amministratore {
+    margin: 0;
+    padding: 10% 0 0 0;
+    min-height: 70vh;
+    background-image: url("../../img/headphones/headphones4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#amministratore .buttonContainer {
+    margin-top: 5%;
+    width: 33%;
+    display: inline-block;
+}
+
+#amministratore h2 {
+    text-align: center;
+}
 
 /*------------------------------------*\
                Carrello
@@ -673,13 +724,13 @@ header li.dropDown {
 }
 
 /*------------------------------------*\
-        Storico ordini
+            Storico ordini
 \*------------------------------------*/
 
 #storicoOrdini {
     margin: 0;
     padding: 0;
-    min-height: 70vh;
+    min-height: 60vh;
 }
 
 .storicoVuoto {
@@ -695,9 +746,9 @@ header li.dropDown {
     margin: 0;
     border: 0;
     width:100%;
-    height: 46em;
+    height: 48em;
     /* min-height: 681px; */
-    background-image: url("../../img/headphones/headphones7.jpg");
+    background-image: url("../../img/headphones/headphones1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -722,7 +773,7 @@ header li.dropDown {
 .registerContainer {
     color: white;
     width: 50%;
-    height: 46em;
+    height: 48em;
     float: left;
     background-color: rgba(0,0,0,0.6);
 }
@@ -879,12 +930,12 @@ input[type=submit], input[type=button] {
 #wrapper {
     width: 100%;
     background-color: #01404f;
-    height: 10em;
+    height: 15em;
     padding-top: 1em;
 }
 
 footer {
-    padding: 1em 0.5em 1em 0.5em;
+    padding: 1em 0.5em;
     text-align: center;
     color: white; 
 }

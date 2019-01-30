@@ -2,19 +2,19 @@ COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
 //scritto da Alberto
 -pagina amministratore
 -sistemare home page (immagini prodotto aggiungere link)
--footer pagina login
+OK -footer pagina login
 -pagina login cambiare sfondo
 -login con successo ti rimanda alla home
 -logo
 -aggiungere funzionalita aggiuntie sul footer
 -omologars sito su w3school(total validator) per tutte le pagine (consigliano un altro validatore piu serio)
 -aggiungere javascript
--freccia per tornare su dalle pagine
+OK -freccia per tornare su dalle pagine
 -pagina d' errore del server, non disponibile db->ritona alla home(dal file connessione.php)
 -pagina di stampa.
 - aggiungere alt a TUTTE le immagini.
 -isset su storico vuoto da errore!!!!!!!
--rendere accessibile carrello e storico prodotti dal profilo utente in quanto non accessibile da dropdown.
+OK -rendere accessibile carrello e storico prodotti dal profilo utente in quanto non accessibile da dropdown.
 -ritorno alla pagina
 -frecce che indicano il dropdown del menu rotazione in js.
 -ogni form non puo avere il tag input interno direttamente. Aggiungere un livello di div intemedio.
@@ -37,11 +37,14 @@ OK - footer: si puo mettere quello che si vuole
 OK - cambio colore link visitati
 OK - freccia su in css
 OK - frecce menu dropdown
-Ok - dropdown visibile su mobile
-- dividere codice html da php
+OK - dropdown visibile su mobile
+OK - dividere codice html da php
 - tabindex nell'ordine giusto nelle sotto pagine (login...)
 OK - aggiunta tag title ai link uguali (tutti i prodotti...)
 - link pagina amministratore visibile solo dopo login amministratore
+- possibilitá di accedere alla pagina profilo solo dopo login
+- aggiunta informazioni personali pagina profilo
+
 
 Note relazione: 
 - Anche impostando i tabindex i link dropdown sono irragiungibili sia tramite proprieta display che visibility (chiedere a jolly)

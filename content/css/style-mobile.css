@@ -443,7 +443,7 @@ input[type=text], input[type=password] {
 \*------------------------------------*/
 
 #wrapper {
-    height: 7em;
+    height: auto;
 }
 
 footer {

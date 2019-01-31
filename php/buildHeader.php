@@ -43,8 +43,8 @@ function createNavArray(){
         new menuElement('Accessori',            'accessori',        'dropDown',         ''),
         new menuElement('Accessori Cuffie',     'accessoriCuffie',  'dropdown-content', ''),
         new menuElement('Accessori Casse',      'accessoriCasse',   'dropdown-content', ''),
-        new menuElement('About us',             'aboutUs',          '',                 ''),
-        new menuElement('Profilo',              'profilo',          'dropDown',         'menuDx'),
+        new menuElement('Contatti',             'contatti',          '',                 ''),
+        new menuElement('Profilo',              'profilo',          'dropDown',         ' menuDx'),
         new menuElement('Carrello',             'carrello',         'dropdown-content',  ''),
         new menuElement('Storico ordini',       'storicoOrdini',    'dropdown-content',  ''),
         // new menuElement('Login',                'login',            '',                 'menuDx'),
@@ -71,49 +71,60 @@ function internalPagesCount($i,$menuPages,$size){
 //POST: ritorna il numero di voci del sottomenu 
 
 function prepareMenu($title,$menuPages){
-    $menu='<nav id="navbar-container" role="navigation">
-    <input type="checkbox">
-        <span></span>
-        <span></span>
-        <span></span>
-        <img src=./img/icon/logo2.png class="logo">';
+    $menu='<div id="navbar-container" role="navigation">
+                <input type="checkbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                <img src=./img/icon/logo2.png class="logo" alt="Logo DreamSound">
+                <img src=./img/icon/logomobile.png class="logoMobile" alt="Logo DreamSound">';
         //<img src=./img/icon/logomobile.png class="logoMobile">; Ho commentato perchè sballava tutto, riflettere se da rimettere
         
-    $menu=$menu.'<ul id="mobile">';
+    $menu=$menu.'
+                <ul class="mobile">';
     $size=count($menuPages);
     $i=0;
     while($i<$size){
         //si potrebbe fare con find actual page
         if($menuPages[$i]->getName()==$title){//active
             
-            $menu=$menu.'<li class="active '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().' ">
-                                                            <a class="dropbtn">'.$menuPages[$i]->getName().'</a>';
+            $menu=$menu.'
+                    <li class="active '.$menuPages[$i]->getType().''.$menuPages[$i]->getClasse().'">
+                        <a class="dropbtn">'.$menuPages[$i]->getName().'</a>';
         }
         else{//notActive
-            $menu=$menu.'<li class="notActive '.$menuPages[$i]->getType().' '.$menuPages[$i]->getClasse().'">
-                        <a class="dropbtn" href="'.$menuPages[$i]->getUrl().'.php">'.$menuPages[$i]->getName().'</a>';
+            $menu=$menu.'
+                    <li class="notActive '.$menuPages[$i]->getType().''.$menuPages[$i]->getClasse().'">
+                        <a href="'.$menuPages[$i]->getUrl().'.php">'.$menuPages[$i]->getName().'</a>';
         }
         if($menuPages[$i]->getType()=='dropDown'){//sse dropdown
             $name=$menuPages[$i]->getName();
-            $menu=$menu.'<img class="arrow" src="./img/icon/arrowDown.png"><div class="dropdown-content">';
+            $menu=$menu.'
+                            <img class="arrow" src="./img/icon/arrowDown.png" aria-hidden="true" alt="freccia dropdown">
+                            <div class="dropdown-content">';
             $numInternalPages=internalPagesCount($i+1,$menuPages,$size);//ritorna il numero delle sottopagine
             while($numInternalPages!=0){
                 $i++;
-                $menu=$menu.'<a ';
+                $menu=$menu.'
+                                <a ';
                 if($menuPages[$i]->getName()!=$title){
                     
-                    $menu=$menu.' href='.$menuPages[$i]->getUrl().'.php?ntab='.$name;
+                    $menu=$menu.'href='.$menuPages[$i]->getUrl().'.php?ntab='.$name;
                 }
                 $menu=$menu.'>'.$menuPages[$i]->getName().'</a>';
                 $numInternalPages--;
             }
-            $menu=$menu.'</div>';
+            $menu=$menu.'
+                            </div>';
         }
-        $menu=$menu.'</li>';
+        $menu=$menu.'
+                    </li>';
         $i++;
     }
-    $menu=$menu.'</ul>';
-    $menu=$menu.'</nav>';
+    $menu=$menu.'
+                </ul>';
+    $menu=$menu.'
+            </div>';
     return $menu;
 }
 ?>

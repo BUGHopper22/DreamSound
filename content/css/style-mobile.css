@@ -1,5 +1,3 @@
-@media only screen and (max-width: 767px) {
-
 /*------------------------------------*\
                 General
 \*------------------------------------*/
@@ -58,7 +56,6 @@ a {
 #navbar-container {
     display: block;
     z-index: 10;
-    -webkit-user-select: none;
     user-select: none;  
     background-color:#01404f;
     padding: 1em 0;
@@ -74,7 +71,6 @@ a {
     cursor: pointer;
     opacity: 0;
     z-index: 2;
-    -webkit-touch-callout: none;
 }
 
 #navbar-container span {
@@ -121,18 +117,17 @@ a {
     display: none;
 }
 
-
 .logoMobile{
     /* float: right; */
     position: absolute;
     width: 6em;
     height: 6em;
-    right: 2em;
+    right: 0em;
     top: 0;
     display: inline-block;
 }
 
-#mobile {
+.mobile {
     position: absolute;
     top: 0;
     left: 0;
@@ -145,7 +140,7 @@ a {
     transform: translate(-100%, 0);
 }
 
-#mobile li {
+.mobile li {
     /* padding: 10px 0; */
     font-size: 1.1em;
     /* width: auto; */
@@ -333,6 +328,18 @@ header ul {
     height: auto;
 }
 
+/*------------------------------------*\
+                Contatti
+\*------------------------------------*/
+
+.svgContainer p {
+    padding: 0 2em;
+}
+
+.svg {
+    max-height: 25%;
+}
+
 
 /*------------------------------------*\
             Login Register
@@ -429,6 +436,14 @@ input[type=text], input[type=password] {
     text-align: center;
 }
 
+/*------------------------------------*\
+            Amministratore
+\*------------------------------------*/
+
+#amministratore .buttonContainer {
+    width: 100%;
+}
+
 
 /*------------------------------------*\
                 404
@@ -464,6 +479,4 @@ footer ul {
 
 .sublist {
     display: none;
-}
-
 }

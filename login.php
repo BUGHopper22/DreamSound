@@ -108,7 +108,7 @@ if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) 
     <div id="formContainer">
         <div class="loginContainer">
             <h2>Accedi</h2>
-            <br></br>
+            <br>
             '.$loginError.'
             <form  class="formCenter" method="post">
                 <p>Username:</p>
@@ -120,7 +120,7 @@ if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) 
         </div>
         <div class="registerContainer">
             <h2>Registrati</h2>
-            <br></br>
+            <br>
             '.$registerError.'
             <form class="formCenter" method="post">
                 <p>nome:</p>

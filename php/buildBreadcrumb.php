@@ -80,6 +80,7 @@ function prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage){
             </div>
         </div>';
     }
+    $breadcrumb=$breadcrumb.'</div>';
     return $breadcrumb;            
 }
 ?>

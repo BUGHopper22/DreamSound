@@ -17,6 +17,10 @@
                GENERAL
 \*------------------------------------*/
 
+html {
+    overflow-x: hidden; 
+}
+
 body {
     width:100%;
     margin: 0;
@@ -64,12 +68,8 @@ a {
     color: white;
 }
 
-/* a:link {
-    color: white;
-} */
-
 a:visited {
-    color: green;
+    color: #a983ce;
 }
 
 a p {
@@ -93,9 +93,7 @@ a p {
     display: block;
     text-align: center;
     border-radius: 3px;
-    /* text-decoration: none; */
     padding: 0.5em 0.5em;
-    /* font-size: 1.2em; */
     cursor: pointer;
     font-family:'title';
 }
@@ -127,7 +125,6 @@ a p {
     width: 6.5em;
     height: 6.5em;
     left: 0;
-    /* padding-left: 1em; */
     position: absolute;
 }
 
@@ -156,7 +153,7 @@ header li a { /*.dropbtn*/
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 1.2em 2em 1.2em 0.5em;
+    padding: 1.2em 0.5em 1.2em 0.9em;
     /* text-decoration: none; */
 }
 
@@ -202,22 +199,20 @@ header li.dropDown {
 }
 
 .arrow {
-    display: inline-block;
     top: 1.7em;
-    margin-left: -34px;
-    margin-top: 2px;
-    position: absolute;
+    padding-right: 0.5em;
 }
 
-.arrow:hover {
+.dropDown:hover .arrow {
+    padding-left: 0.5em;
+    padding-right: 0;
     transform: rotate(180deg);
+    
 }
 
 .active{
     box-shadow:0 -5px #5a9697 inset;
 }
-
-
 
 
 /*------------------------------------*\
@@ -229,7 +224,6 @@ header li.dropDown {
     width: 100%;
     top: 3.5em;
     background-color:#011722;
-    border-top: 0.5px solid #011722;
     color: white;
     line-height: 3em;
     padding-left: 7em;
@@ -238,8 +232,12 @@ header li.dropDown {
     overflow: hidden;
 }
 
-#breadcrumb a, #breadcrumb a:visited {
+#breadcrumb a, #breadcrumb {
     color: white;
+}
+
+#breadcrumb a:visited {
+    color: #a983ce;
 }
 
 .welcomeUser{
@@ -263,6 +261,7 @@ header li.dropDown {
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; 
+    background-attachment: fixed;
     
 }
 
@@ -503,8 +502,8 @@ header li.dropDown {
 
 .productsImg {
     margin-top: 2em;
-    max-height: 80%;
-    max-width: 80%;
+    max-height: 60%;
+    max-width: 60%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -586,6 +585,95 @@ header li.dropDown {
     position: relative;
     display: inline-block;
 }
+
+
+/*------------------------------------*\
+               Contatti
+\*------------------------------------*/
+
+#contact {
+    margin: 0;
+    padding: 0;
+}
+
+#contact h2 {
+    text-align: center;
+    margin: 0;
+    padding: 1em 0;
+}
+.svgsContainer {
+    background-image: url("../../img/aboutus/inizio.jpg");
+    height: 50em;
+    width: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;
+}
+
+.svgContainer {
+    width: 50%;
+    height: 18em;
+    margin: 2em 0;
+    color: white;
+    float: left;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.svgContainer p {
+    padding: 0 4em;
+}
+
+.svg {
+    max-height: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 2em 0;
+}
+
+.storiesContainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 2em;
+    border-bottom: 1px solid gray;
+}
+
+.storiesImgContainer {
+    width: 40%;
+    display: inline-block;
+}
+
+.storiesImg {
+    margin-top: 2em;
+    max-height: 60%;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.storiesCont {
+    width: 55%;
+    padding-right: 5%;
+    float: right;
+}
+
+.stories{
+    height: 100%;
+    vertical-align: middle;
+    margin-top: 2em;
+    width: 100%;
+    display: inline-block;
+}
+.sx {
+    float: left;
+    padding-right: 0;
+    padding-left: 5%;
+}
+
 
 /*------------------------------------*\
                Profilo
@@ -850,45 +938,11 @@ input[type=submit], input[type=button] {
     font-size: 1.1em;
     cursor: pointer;
 }
-  
-::-webkit-input-placeholder {
-    color: white;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-    color: white;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-    color: white;  
-}
-
-:-ms-input-placeholder {  
-    color: white;  
-}
 
 
 /*------------------------------------*\
             Back to top
 \*------------------------------------*/
-/* 
-#backToTop {
-  display: block;
-  position: fixed;
-  bottom: 2em;
-  right: 2em;
-  z-index: 99;
-  outline: none;
-  background-color: #01404f;
-  color: white; 
-  cursor: pointer; 
-  padding: 1.5em;
-  border-radius: 10px; 
-}
-
-#backToTop:hover {
-  background-color: #555; 
-} */
 
 #backToTop {
     display: block;
@@ -900,13 +954,22 @@ input[type=submit], input[type=button] {
     background-color: #01404f;
     color: white; 
     cursor: pointer; 
-    padding: 1em;
-    border-radius: 10px; 
+    padding: 0.5em;
+    border: 1px solid white;
+    border-radius: 5px; 
 }
+
 #backToTop:hover {
     background-color: #7dbbf1;
 }
- 
+
+.arrowUp {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+
 /*------------------------------------*\
                  404
 \*------------------------------------*/
@@ -939,107 +1002,12 @@ footer {
     text-align: center;
     color: white; 
 }
-/* 
-footer a {
-    display: block;
-    color: white;
-    
-    padding: 1em 0.5em 0 0.5em;
-    text-decoration: none;
-} */
 
 footer p {
     text-align: center;
 }
 
 
-
-/*------------------------------------*\
-               About us
-\*------------------------------------*/
-
-#aboutusouter {
-    height: 50vh;
-    width: 100%;
-    margin: 0;
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover; 
-}
-
-#aboutusContainer{
-    width: 100%;
-    height: 55vh;
-    min-height: 245px;
-    box-shadow: 0px 4px 2px #8080807A;
-   
-}
-
-.imgsContainer{
-    margin: 0 0 1em 0;
-    height: 100%;
-    width: 35%;
-    vertical-align: middle;
-    float: left;
-    overflow: hidden;
-}
-
-
-.storysImg{
-    max-height: 80%;
-    max-width: 80%;
-    margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.storys {
-    width: 65%;
-    float: right;
-}
-
-
-.storys p {
-    font-size: 20px;
-    color:black;
-    text-align: right;
-    margin: 3em 4em 0 4em;
-    padding: 0;
-}
-.aboutusouter-aboutus{
-    background-image: url("../../img/aboutus/inizio.jpg");
-}
-
-.imgs2Container{
-    margin: 0 0 1em 0;
-    height: 100%;
-    width: 35%;
-    vertical-align: middle;
-    float: right;
-    overflow: hidden;
-}
-
-
-.storys2Img{
-    max-height: 90%;
-    max-width: 90%;
-    margin: 2em 0 3em 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-.storys2 {
-    width: 65%;
-    float: left;
-}
-.storys2 p {
-    font-size: 20px;
-    color:black;
-    text-align: left;
-    margin: 2em 4em 4em 4em;
-    padding: 0;
-}
 
 
 

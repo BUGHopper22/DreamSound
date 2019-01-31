@@ -1,0 +1,77 @@
+
+/*------------------------------------*\
+               NAVBAR
+\*------------------------------------*/
+
+#navbar-container {
+    display: none;
+}
+
+
+
+/*------------------------------------*\
+               Breadcrumb
+\*------------------------------------*/
+
+#breadcrumb {
+    display: none;
+}
+
+
+/*------------------------------------*\
+ Contenitore prodotti e Contenitore home
+\*------------------------------------*/
+
+.outer {
+    padding: 0 5%;
+}
+
+.inner {
+    width: 90%;
+    padding: 0;
+}
+
+.dx {
+    margin: 0;
+}
+
+/*------------------------------------*\
+               Contatti
+\*------------------------------------*/
+
+.svgContainer {
+    width: 100%;
+    height: 8em;
+}
+
+.svg {
+    max-height: 15%;
+}
+
+.storiesImgContainer {
+    display: none;
+}
+
+.storiesCont {
+    width: 100%;
+    padding: 0;
+    float: none;
+}
+
+
+/*------------------------------------*\
+               Carrello
+\*------------------------------------*/
+
+.carrelloImg {
+    height: 80%;
+}
+
+
+/*------------------------------------*\
+               Footer
+\*------------------------------------*/
+
+#wrapper {
+    display: none;
+}

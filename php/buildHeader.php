@@ -100,7 +100,7 @@ function prepareMenu($title,$menuPages){
         if($menuPages[$i]->getType()=='dropDown'){//sse dropdown
             $name=$menuPages[$i]->getName();
             $menu=$menu.'
-                            <img class="arrow" src="./img/icon/arrowDown.png" aria-hidden="true" alt="freccia dropdown">
+                            <img class="arrow" src="./img/icon/arrowDown2.png" aria-hidden="true" alt="freccia dropdown">
                             <div class="dropdown-content">';
             $numInternalPages=internalPagesCount($i+1,$menuPages,$size);//ritorna il numero delle sottopagine
             while($numInternalPages!=0){

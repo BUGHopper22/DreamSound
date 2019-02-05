@@ -36,16 +36,19 @@ $contentActualPage='
         <p>Descrizione:</p>
         <input type="text" name="descrizione" placeholder="inserisci una descrizione" >
         
-        <input class="formBtn" type="submit" value="Aggiungi">
+        <input class="formBtn" type="submit" name="submit" value="Aggiungi">
     </form>';
+    
     if(isset($_POST["submit"])){
-        $modello=$_POST["Nome"];
-        $marca=$_POST["Nome"];
-        $prezzo=$_POST["Nome"];
-        $urlImg=$_POST["Nome"];
-        $descrizione=$_POST["Nome"];
-        queryDeleteProduct($conn,$selectedProduct);
-        echo ("query della delete non definita perche altrimenti elimino tutti i prodotti nel provarla");
+        echo("hai cliccato su submit");
+        $categoria=$_POST["categoria"];
+        $modello=$_POST["modello"];
+        $marca=$_POST["marca"];
+        $prezzo=$_POST["prezzo"];
+        $urlImg=$_POST["urlImg"];
+        $descrizione=$_POST["descrizione"];
+        $messaggio=queryAddProduct($conn,$categoria,$modello,$marca,$prezzo,$urlImg,$descrizione);
+        echo($messaggio);
     }
 
 

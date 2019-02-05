@@ -1,5 +1,6 @@
 <?php 
  session_start();
+ 
  require_once "buildHeader.php";
  require_once "buildBreadcrumb.php";
  require_once "buildDropdownPages.php";
@@ -77,7 +78,7 @@ function insertCategoryInSelect($contentActualPage,$allCategory){
 function insertProductsInSelect($conn,$selectedCategory,$contentActualPage){
     // echo $selectedCategory;
     $selectedProductsFromCategory=mysqli_query($conn,
-    "SELECT Modello  FROM Cuffie WHERE Categoria='".$selectedCategory."'
+    "SELECT Modello  FROM Cuffie WHERE Categoria='".$selectedCategory."' 
     UNION
     SELECT Modello  FROM Casse WHERE Categoria='".$selectedCategory."'
     UNION
@@ -90,24 +91,87 @@ function insertProductsInSelect($conn,$selectedCategory,$contentActualPage){
     return $contentActualPage;
 }
 
-function queryDeleteProduct($conn,$name){
-    return;
+function queryDeleteProduct($conn,$categoria,$selectedProduct){
+    if($categoria=="Cuffie in ear" || $categoria=="Cuffie on ear" || $categoria=="Cuffie wireless")
+        $table="cuffie";
+    if($categoria=="Casse Altoparlanti" || $categoria=="Casse Bluetooth")
+        $table="Casse";
+    if($categoria=="Accessori Cuffie" || $categoria=="Accessori Casse")
+        $table="Accessori";
+    echo($table);
+//     UPDATE Customers
+// SET ContactName='Alfred Schmidt', City='Frankfurt'
+// WHERE CustomerID=1;
+
+    $delete = "UPDATE `{$table}` SET Visibile='0' WHERE Modello='".$selectedProduct."' ";
+    $result = $conn->query($delete);
+
+    if ($result) {
+        $messaggio="Prodotto reso non visibile, non si può più comprare";
+    } else {
+        $messaggio="C'è stato un errore";
+    }
+    // $messaggio=" ermano";
+    return $messaggio;
+  
+    
 }
 
-function queryAddProduct($conn){
+function queryAddProduct($conn,$categoria,$modello,$marca,$prezzo,$urlImg,$descrizione){
+    
+    echo($categoria);
+    echo($modello);
+    echo($marca);
+    echo($prezzo);
+    echo($urlImg);
+    echo($descrizione);
 
+
+
+    if($categoria=="Cuffie in ear" || $categoria=="Cuffie on ear" || $categoria=="Cuffie wireless")
+        $table="cuffie";
+    if($categoria=="Casse Altoparlanti" || $categoria=="Casse Bluetooth")
+        $table="Casse";
+    if($categoria=="Accessori Cuffie" || $categoria=="Accessori Casse")
+        $table="Accessori";
+    echo($table);
+    
+    $insert = "INSERT INTO id_prodotti VALUE ()";
+    $result = $conn->query($insert);
+
+    $popId = "SELECT MAX(Id_prodotto) as Id_prodotto FROM id_prodotti";
+    $result = $conn->query($popId);
+    $arrayId =mysqli_fetch_row($result);
+    print_r($arrayId);
+    
+    $idToInsert = $arrayId[0];
+
+    //QUERY
+    $insert = "INSERT INTO `{$table}` (Id_p,Categoria,Prezzo,Marca,Modello,Url_Immagine,Descrizione)
+    VALUES ('".$idToInsert."','".$categoria."', '".$prezzo."', '".$marca."','".$modello."','".$urlImg."','".$descrizione."')";
+
+    $result = $conn->query($insert);
+    
+    if ($result) {
+        $messaggio="Prodotto inserito con successo";
+    } else {
+        $messaggio="C'è stato un errore";
+    }
+    // $messaggio=" ermano";
+    return $messaggio;
 }
 
 
 
 // ____SERVE PER COSTRUIRE LA PAGINA
 function BuildPage($title,$contentActualPage) {
-    $page=file_get_contents('./content/structure.html');//carica la struttura con head e body
+    //carica la struttura con head e body
+    $page=file_get_contents('./content/structure.html');
     $page=str_replace('{title}',$title,$page);
     
     $menuPages=createNavArray();//crea array con le pagine
 
-    //Crea html menu
+    //HEADER
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
     
@@ -125,15 +189,16 @@ function BuildPage($title,$contentActualPage) {
         $contentActualPage=insertProductList($titleTable,$title);
     }
     $page=str_replace('{content}',$contentActualPage,$page);
-    //Aggiunta footer alla pagina
-    $footer=file_get_contents('content/footer.html');
+    
+    //FOOTER
+    //se loggato con utente amministratore => vede footerAmm.html altrimente footer.html
+    if(isset($_SESSION["sessionAmm"]) and $_SESSION["sessionAmm"]=='1')
+        $footer=file_get_contents('content/footerAmm.html');
+    else
+        $footer=file_get_contents('content/footer.html');
     $page=str_replace('{footer}',$footer,$page);
-    // if(isset( $_SESSION["sessionUserId"])){
-    //     echo("PECASDVAERBYRETTJETUYWHTAEGRFRAGSTRBH");
-    //     $page=$page."ciao ".$_SESSION["sessionUserId"];
-    // }
-
-    //Breadcrumb
+ 
+    //BREADCRUMB (deve essere messo alla fine)
     $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage);
     $page=str_replace('{breadcrumb}',$breadcrumb,$page);
     

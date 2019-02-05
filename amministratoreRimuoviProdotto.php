@@ -29,22 +29,26 @@ require_once('./database/connessione.php');
     
 
     if(isset($_POST["categoria"])){
-        $selectedCategory=$_POST["categoriaN"];
+        $_SESSION["categoriaN"]=$_POST["categoriaN"];
+        echo  $_SESSION["categoriaN"];
+        if(isset($_POST["categoriaN"]))echo("categoria ok");
         $contentActualPage.=
         'cerca per nome
         <form method="post">
             <select name="Nome">';
-                $contentActualPage=insertProductsInSelect($conn,$selectedCategory,$contentActualPage);
+
+                $contentActualPage=insertProductsInSelect($conn,$_SESSION["categoriaN"],$contentActualPage);
                 $contentActualPage.=
             '</select>
             <br><br>
             <input type="submit" name="elimina" value="elimina">
         </form>';
     }
+
     if(isset($_POST["elimina"])){
         $selectedProduct=$_POST["Nome"];
-        queryDeleteProduct($conn,$selectedProduct);
-        echo ("query della delete non definita perche altrimenti elimino tutti i prodotti nel provarla");
+        $messaggio=queryDeleteProduct($conn, $_SESSION["categoriaN"],$selectedProduct);
+        echo ($messaggio);
     }
 
     BuildPage("Rimuovi prodotto",$contentActualPage);

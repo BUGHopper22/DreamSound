@@ -14,7 +14,8 @@ Username char(16) NOT NULL primary key,
 Email varchar(50) NOT NULL,
 Password varchar(100) NOT NULL,
 Nome varchar(50) NOT NULL,
-Cognome varchar(50) NOT NULL
+Cognome varchar(50) NOT NULL,
+Amministratore boolean DEFAULT '0'
 ) ENGINE=InnoDB;
 
 CREATE TABLE Id_prodotti
@@ -31,6 +32,7 @@ Marca char(20) NOT NULL,
 Modello char(20) NOT NULL,
 Url_immagine char(50) NOT NULL,
 Descrizione varchar(255) NOT NULL,
+Visibile boolean DEFAULT '1',
 FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto)
 ON DELETE CASCADE
 ON UPDATE NO ACTION
@@ -45,6 +47,7 @@ Marca char(20) NOT NULL,
 Modello char(20) NOT NULL,
 Url_immagine char(50) NOT NULL,
 Descrizione varchar(255) NOT NULL,
+Visibile boolean DEFAULT '1',
 FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto)
 ON DELETE CASCADE
 ON UPDATE NO ACTION
@@ -59,6 +62,7 @@ Marca char(20) NOT NULL,
 Modello char(20) NOT NULL,
 Url_immagine char(50) NOT NULL,
 Descrizione varchar(500) NOT NULL,
+Visibile boolean DEFAULT '1',
 FOREIGN KEY (Id_p) REFERENCES Id_prodotti(Id_prodotto)
 ON DELETE CASCADE
 ON UPDATE NO ACTION
@@ -86,7 +90,7 @@ ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 INSERT INTO Id_prodotti (Id_prodotto)
-VALUES ('1'),('2'),('3'),('4'),('5'),('6'),('7'),('8'),('9'), ('10'), ('11'), ('12'), ('13'), ('14'), ('15'), ('16'), ('17'), ('18'), ('19'), ('20'), ('21');
+VALUES ('1'),('2'),('3'),('4'),('5'),('6'),('7'),('8'),('9'), ('10'), ('11'), ('12'), ('13'), ('14'), ('15'), ('16'), ('17'), ('18'), ('19'), ('20'), ('21'),('22'),('23');
 
 INSERT INTO Cuffie (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione) VALUES 
 ('1','Cuffie in ear','20','BlitzWolf','BW-ES2','/cuffieInEar/inear1.png','Design accattivante e suono penetrante sono gli elementi che distinguono le BlitzWolf BW-ES2 da tutte le altre cuffie in-ear nel mercato.'),
@@ -99,6 +103,9 @@ INSERT INTO Cuffie (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descr
 ('8','Cuffie wireless','17','Mpow','Swift','/cuffieWireless/wireless2.png','Disegno classico ed ergonomico con tecnologia bluetooth adatto a tutte le persone che vogliono allenarsi senza pensare ai fili di troppo.'),
 ('9','Cuffie wireless','50','Muzili','X9-lan','/cuffieWireless/wireless3.png','Cuffie bluetooth sportive con touch control. Questo auricolare Muzili è dotato di una scatola di ricarica intelligente, facile da caricare');
 
+INSERT INTO Cuffie (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione,Visibile) VALUES
+('22','Cuffie in ear','20','BlitzWolf','cagata2','/cuffieInEar/inear1.png','Design accattivante e suono penetrante sono gli elementi che distinguono le BlitzWolf BW-ES2 da tutte le altre cuffie in-ear nel mercato.','0'),
+('23','Cuffie in ear','30','Apple','cagata1','/cuffieInEar/inear2.png','Il design confortevole di Apple offre una qualità del suono ad alte prestazionicon bassi profondi estremamente dinamici.','0');
 
 INSERT INTO Casse (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, Descrizione) VALUES 
 ('10','Casse Altoparlanti','129','Edifier','R1280DB','/casseAltoparlanti/altoparlanti1.png','Set di altoparlanti 2.0 di alta qualità e potenza dal suono impressionante, inclusi di telecomando a raggi infrarossi'),
@@ -116,6 +123,7 @@ INSERT INTO Accessori (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, De
 ('20','Accessori Casse','34','Duronic','SPS1022','/accessoriCasse/accessoriCasse2.png','Due piedistalli per casse acustiche, base di appoggio 12*12. Il prodotto ha una altezza di 40cm per permettervi di posizionare le vostre casse ad un altezza ottimale.'),
 ('21','Accessori Casse','10','Khanka','UK-T-JBL-02','/accessoriCasse/accessoriCasse3.png','Custodia per casse bluetooth JBL, pratica e imbottita per mantenere la propria cassa e gli accessori sicuri, protetti e organizzati');
 
-INSERT INTO Utente (Username, Email, Password, Nome, Cognome) VALUES
-('alberto', 'alberto@alberto.alberto','177dacb14b34103960ec27ba29bd686b','Alberto','Alberto'),
-('alessio', 'alessio@alessio.alessio','d2462e55381a20059ed811cefd42493e','Alessio','Alessio');
+-- Questi sono gli amministratori
+INSERT INTO Utente (Username, Email, Password, Nome, Cognome, Amministratore) VALUES
+('alberto', 'alberto@alberto.alberto','177dacb14b34103960ec27ba29bd686b','Alberto','Alberto','1'),
+('alessio', 'alessio@alessio.alessio','d2462e55381a20059ed811cefd42493e','Alessio','Alessio','1');

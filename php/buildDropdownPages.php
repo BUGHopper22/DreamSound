@@ -2,7 +2,7 @@
 /*ritorna un array associato con tutti i prodotti da inserire nella pagina titlePage*/
 function insertProductList($titleTable,$category){
     require "./database/connessione.php";
-    $result = $conn->query("SELECT * FROM `{$titleTable}` WHERE categoria='$category'");
+    $result = $conn->query("SELECT * FROM `{$titleTable}` WHERE categoria='$category' AND Visibile='1'");
     // $resultSql = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
     $htmlProduct='

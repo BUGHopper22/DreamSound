@@ -2,13 +2,6 @@
 require_once "./database/connessione.php";
 require_once "php/functions.php";	//è un include di function
 
-// $nomeReload
-// $surnameReload
-// $userIdReload
-// $emailReload
-// $registerError
-// $loginError
-
 function insertVoidValue($contentActualPage){
     $contentActualPage=str_replace('{nomeReload}','',$contentActualPage);
     $contentActualPage=str_replace('{surnameReload}','',$contentActualPage);
@@ -18,7 +11,7 @@ function insertVoidValue($contentActualPage){
 }
 
     
-//ENTRA SSE HO CLICCATO IL TASTO REGISTRAZIONE
+//ENTRA SSE HO CLICCATO IL TASTO REGISTRAZIONE (Dopo  averlo cliccato)
 if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) && isset($_POST['email']) && isset($_POST['psw1']) && isset($_POST['psw2'])){
     
     $name=$_POST['name'];
@@ -27,19 +20,22 @@ if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) 
     $email=$_POST['email'];
     $psw1=$_POST['psw1'];
     $psw2=$_POST['psw2'];
-    
-    $resultUserId= mysqli_query($conn,"SELECT * FROM Utente WHERE Username='".$userId."'");// query di controllo per checcare se userId è già presente nel DB
+
+    //QUERY PER CHECK PREVENTIVO
+    // query di controllo per checcare se userId è già presente nel DB
+    $resultUserId= mysqli_query($conn,"SELECT * FROM Utente WHERE Username='".$userId."'");
     $contaResultUserId=mysqli_num_rows($resultUserId);
-    $resultEmail= mysqli_query($conn,"SELECT * FROM Utente WHERE Email='".$email."'"); // query di controllo per checcare se email è già presente nel DB
+    // query di controllo per checcare se email è già presente nel DB
+    $resultEmail= mysqli_query($conn,"SELECT * FROM Utente WHERE Email='".$email."'"); 
     $contaResultEmail=mysqli_num_rows($resultEmail);
     
     $checkName= strlen($name);
     $checkSurname= strlen($surname);
     $checkUserId= strlen($userId);
     $checkPsw= strlen($psw1);
-    
+    //REGISTRAZIONE HA SUCCESSO
     if($contaResultUserId==0 && $contaResultEmail==0 && $checkName>0 && $checkSurname>0 
-                                        && $checkUserId>4 && $checkPsw>5 &&  $psw1==$psw2){//registrazione avvenuta con successo
+                                        && $checkUserId>4 && $checkPsw>5 &&  $psw1==$psw2){
         $insert="INSERT INTO Utente(Username,Email,Password,Nome,Cognome) VALUES('".$userId."','".$email."','".md5($psw1)."','".$name."','".$surname."')";
         $result = $conn->query($insert);
         if($result){
@@ -52,7 +48,8 @@ if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) 
         }else{
             echo 'queri andata malissimo magari erreori di server o boh';
         }
-    }else{//errore di input per la registrazione
+    //REGISTRAZIONE SENZA SUCCESSO => CERCO L'ERRORE
+    }else{
         $findError=0;//findError==0 => ancora nessun nessun errore trovato, findError==1 è stato trovato l'errore di input
         //voglio vedere gli errori uno alla volta =>registerError
         if($checkName==NULL && $findError==0)       {$registerError="inserisci un nome";$findError=1;}
@@ -63,24 +60,31 @@ if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) 
         if($checkPsw<6 && $findError==0)            {$registerError="devi inserire una password,";$findError=1;}
         if($psw1!=$psw2)                            {$registerError="hai inserito due password diverse";$findError=1;}
         //esempio di sostituzione value="{nomeReload}"
-
         $nomeReload=$name;
         $surnameReload=$surname;
         $userIdReload=$userId;
         $emailReload=$registerError;
         $loginError="";
     }
-}else if(isset($_POST['loginUsername']) && isset($_POST['loginPassword'])){//ENTRA SSE HO CLICCATO IL TASTO LOGIN
+//ENTRA SSE HO CLICCATO IL TASTO LOGIN (DOPO averlo cliccato)
+}else if(isset($_POST['loginUsername']) && isset($_POST['loginPassword'])){
     $userId=$_POST['loginUsername'];
     $userPassword=$_POST['loginPassword'];
 
     $resultUserId= mysqli_query($conn,"SELECT * FROM Utente WHERE Username='".$userId."' AND Password='".md5($userPassword)."' ");
     $contaResultUserId=mysqli_num_rows($resultUserId);
-
-    if($contaResultUserId==1){//login ok
+    //SE TROVATO IL NOME SUL DB
+    if($contaResultUserId==1){
         $_SESSION["sessionUserId"]=$userId;
+
+        $array=mysqli_fetch_array($resultUserId);
+        $amministratore=$array["Amministratore"];
+        $_SESSION["sessionAmm"]=$amministratore;
+        
         $loginError="login avvenuta con successo";
-    }else{//login andato male
+    }
+    //NOME LOGIN NON PRESENTE NEL DB
+    else{
         $loginError="nome utente o password errati";
     }
     $nomeReload="";
@@ -88,7 +92,9 @@ if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) 
     $userIdReload="";
     $emailReload="";
     $registerError="";
-}else{//ENTRA SSE NON HO CLICCATO NESSUN TASTO
+}
+//ENTRA SSE NON HO CLICCATO NESSUN TASTO
+else{
     $nomeReload="";
     $surnameReload="";
     $userIdReload="";

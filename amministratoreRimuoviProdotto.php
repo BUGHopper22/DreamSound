@@ -24,7 +24,7 @@ require_once('./database/connessione.php');
             $contentActualPage.=
         '</select>
         <br><br>
-        <input type="submit" name="categoria" value="cerca">
+        <input class="formBtn" type="submit" name="categoria" value="cerca">
     </form>';
     
 
@@ -41,7 +41,7 @@ require_once('./database/connessione.php');
                 $contentActualPage.=
             '</select>
             <br><br>
-            <input type="submit" name="elimina" value="elimina">
+            <input class="formBtn" type="submit" name="elimina" value="elimina">
         </form>';
     }
 

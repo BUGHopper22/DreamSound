@@ -11,8 +11,8 @@
 // }
 
 /*L' idea si basa sul fatto che se una pagina ha l ' attributo type==dropDown-content
-    allora è una pagina di prodotti=> andrò a creare dinamicamente i prodotti della pagina.
-    Ritorna true sse sono su una pagina prodotti*/ 
+    allora è una pagina di prodotti(subcategory), (potrò successivamente creare dinamicamente i prodotti della pagina)
+    Ritorna true sse sono su una pagina subcategory*/ 
 function isProductPage($title,$menuPages){
     $esci=FALSE;
     $size=count($menuPages);
@@ -27,12 +27,11 @@ function isProductPage($title,$menuPages){
     return $esci;
 }
 
-
+// ritorna true sse sono su una pagina di tipo dropDown, cioè su una pagina category
 function isCategoryPage($title,$menuPages){
     $esci=FALSE;
     $size=count($menuPages);
     $scorri=0;
-    // echo ($esci==FALSE); 
     while($scorri<$size and $esci==FALSE){
         if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()=='dropDown'){
             $esci=TRUE;
@@ -42,11 +41,11 @@ function isCategoryPage($title,$menuPages){
     return $esci;
 }
 
+// ritorna true sse non è una pagina category ne subcategory
 function isSinglePage($title,$menuPages){
     $esci=FALSE;
     $size=count($menuPages);
     $scorri=0;
-    // echo ($esci==FALSE); 
     while($scorri<$size and $esci==FALSE){
         if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()!='dropDown' and $menuPages[$scorri]->getType()!='dropdown-content'){
             $esci=TRUE;
@@ -55,7 +54,7 @@ function isSinglePage($title,$menuPages){
     }
     return $esci;
 }
-
+// ritorna tutte le subcategory
 function allCategory($conn){
     $allCategory=mysqli_query($conn,
     "SELECT DISTINCT Categoria FROM Cuffie
@@ -66,7 +65,7 @@ function allCategory($conn){
     ");
     return $allCategory;
 }
-
+//ritorna tutte le subcategory nel tag option(per le form)
 function insertCategoryInSelect($contentActualPage,$allCategory){
     foreach($allCategory as $shit){
         $contentActualPage=$contentActualPage.
@@ -74,9 +73,8 @@ function insertCategoryInSelect($contentActualPage,$allCategory){
     }
     return $contentActualPage;
 }
-
+// ritorna tutti i modelli della subcategory con i tag option(per le form)
 function insertProductsInSelect($conn,$selectedCategory,$contentActualPage){
-    // echo $selectedCategory;
     $selectedProductsFromCategory=mysqli_query($conn,
     "SELECT Modello  FROM Cuffie WHERE Categoria='".$selectedCategory."' 
     UNION
@@ -91,73 +89,59 @@ function insertProductsInSelect($conn,$selectedCategory,$contentActualPage){
     return $contentActualPage;
 }
 
-function queryDeleteProduct($conn,$categoria,$selectedProduct){
-    if($categoria=="Cuffie in ear" || $categoria=="Cuffie on ear" || $categoria=="Cuffie wireless")
-        $table="cuffie";
-    if($categoria=="Casse Altoparlanti" || $categoria=="Casse Bluetooth")
-        $table="Casse";
-    if($categoria=="Accessori Cuffie" || $categoria=="Accessori Casse")
-        $table="Accessori";
-    echo($table);
-//     UPDATE Customers
-// SET ContactName='Alfred Schmidt', City='Frankfurt'
-// WHERE CustomerID=1;
 
+// ricava il nome della tabella a cui appartiene la sottocategoria(es. input:cuffie on ear, output:cuffie)
+function SelectTableNameFromSubcategory($conn,$subcategory){
+    if($subcategory=="Cuffie in ear" || $subcategory=="Cuffie on ear" || $subcategory=="Cuffie wireless")
+        $tableName="Cuffie";
+    if($subcategory=="Casse Altoparlanti" || $subcategory=="Casse Bluetooth")
+        $tableName="Casse";
+    if($subcategory=="Accessori Cuffie" || $subcategory=="Accessori Casse")
+        $tableName="Accessori";
+    return $tableName;
+}
+//modifica il $attributo di $modello con il valore &value
+function queryModifyProduct($conn,$subcategory,$modello,$attribute,$value){
+    $table= SelectTableNameFromSubcategory($conn,$subcategory);
+    $modify="UPDATE `{$table}` SET ".$attribute."='".$value."' WHERE Modello='".$modello."' ";
+    $result = $conn->query($modify);
+    if ($result)
+        $messaggio="Prodotto modificato";
+    else
+        $messaggio="C'è stato un errore";
+    return $messaggio;
+}
+// Rende il prodotto con modello==$selectedProduct non visibile, significa che non verrà più venduto 
+// ma sarà ancora visibile nello sotrico degli utenti
+function queryDeleteProduct($conn,$subcategory,$selectedProduct){
+    $table= SelectTableNameFromSubcategory($conn,$subcategory);
     $delete = "UPDATE `{$table}` SET Visibile='0' WHERE Modello='".$selectedProduct."' ";
     $result = $conn->query($delete);
-
-    if ($result) {
+    if ($result)
         $messaggio="Prodotto reso non visibile, non si può più comprare";
-    } else {
+    else
         $messaggio="C'è stato un errore";
-    }
-    // $messaggio=" ermano";
     return $messaggio;
-  
-    
 }
-
-function queryAddProduct($conn,$categoria,$modello,$marca,$prezzo,$urlImg,$descrizione){
-    
-    echo($categoria);
-    echo($modello);
-    echo($marca);
-    echo($prezzo);
-    echo($urlImg);
-    echo($descrizione);
-
-
-
-    if($categoria=="Cuffie in ear" || $categoria=="Cuffie on ear" || $categoria=="Cuffie wireless")
-        $table="cuffie";
-    if($categoria=="Casse Altoparlanti" || $categoria=="Casse Bluetooth")
-        $table="Casse";
-    if($categoria=="Accessori Cuffie" || $categoria=="Accessori Casse")
-        $table="Accessori";
-    echo($table);
-    
+// aggiunge un nuovo prodotto nel DB
+function queryAddProduct($conn,$subcategory,$modello,$marca,$prezzo,$urlImg,$descrizione){
+    $table= SelectTableNameFromSubcategory($conn,$subcategory);
+    //inserimento nuovo id
     $insert = "INSERT INTO id_prodotti VALUE ()";
     $result = $conn->query($insert);
-
+    // il nuovo idValue viene messo in $idToInsert
     $popId = "SELECT MAX(Id_prodotto) as Id_prodotto FROM id_prodotti";
     $result = $conn->query($popId);
     $arrayId =mysqli_fetch_row($result);
-    print_r($arrayId);
-    
     $idToInsert = $arrayId[0];
-
-    //QUERY
+    //inserisce il nuovo prodotto nella tabella corretta
     $insert = "INSERT INTO `{$table}` (Id_p,Categoria,Prezzo,Marca,Modello,Url_Immagine,Descrizione)
     VALUES ('".$idToInsert."','".$categoria."', '".$prezzo."', '".$marca."','".$modello."','".$urlImg."','".$descrizione."')";
-
     $result = $conn->query($insert);
-    
-    if ($result) {
+    if ($result)
         $messaggio="Prodotto inserito con successo";
-    } else {
+    else
         $messaggio="C'è stato un errore";
-    }
-    // $messaggio=" ermano";
     return $messaggio;
 }
 

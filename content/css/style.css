@@ -939,6 +939,13 @@ input[type=submit], input[type=button] {
     cursor: pointer;
 }
 
+/*------------------------------------*\
+        Pagine amministratore
+\*------------------------------------*/
+.AmmCenter{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*------------------------------------*\
             Back to top

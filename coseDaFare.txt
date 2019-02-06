@@ -23,6 +23,7 @@ OK -frecce che indicano il dropdown del menu rotazione in js.
 -fixare bug pagina casse che visualizza gli accessori
 -logo cliccabile che porta alla home
 -file htaccess da modificare alla consegna il link assoluto
+
 //scritto da Nicole
 -gestione erroe 404
 -il logo deve essere piu in evidenza di cosi
@@ -43,8 +44,8 @@ OK - dropdown visibile su mobile
 OK - dividere codice html da php
 - tabindex nell'ordine giusto nelle sotto pagine (login...)
 OK - aggiunta tag title ai link uguali (tutti i prodotti...)
-- link pagina amministratore visibile solo dopo login amministratore
-- possibilitá di accedere alla pagina profilo/storico aquisti/carrello solo dopo login
+OK- link pagina amministratore visibile solo dopo login amministratore
+OK manca profilo - possibilitá di accedere alla pagina profilo/storico aquisti/carrello solo dopo login
 - aggiunta informazioni personali pagina profilo
 OK - rifare pagina aboutus
 - togliee sfondo immagine pacco pagina contatti

@@ -2,36 +2,12 @@
 require_once('php/functions.php');
 require_once ('./database/connessione.php');       
 
-function sumPriceChart($chartProducts){
-    $tot=0;
-    foreach($chartProducts as $lista){
-        $tot=$tot+($lista["Prezzo"]*$lista["Quantita"]);
-    }
-    return $tot;
-}
 
-function withAjax($contentActualPage,$lista){
-    if($lista["Quantita"]>1){
-        $contentActualPage=$contentActualPage.'
-        <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
-    }
-    $contentActualPage=$contentActualPage.'
-    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1"> <p>+</p> </a>';
-    return $contentActualPage;
-    return $contentActualPage;   
-}
 
-function withoutAjax($contentActualPage,$lista){
-    echo("sssss");
-    if($lista["Quantita"]>1){
-        $contentActualPage=$contentActualPage.'
-        <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
-    }
-    $contentActualPage=$contentActualPage.'
-    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1"> <p>+</p> </a>';
-    return $contentActualPage;
-}
 
+
+
+// costruisce la pagina carrello
 function buildChartContent($chartProducts,$countProductsUser,$contentActualPage){
      
     if($countProductsUser==0){
@@ -47,44 +23,11 @@ function buildChartContent($chartProducts,$countProductsUser,$contentActualPage)
         $paginadaricordare=$_SERVER["REQUEST_URI"];//-
         $_SESSION["PAGINA"]=$paginadaricordare;    //-
         //----
-        foreach($chartProducts as $lista){
-            $contentActualPage=$contentActualPage.'
-            <div class="carrelloContainer">
-                <div class="carrelloImgContainer">
-                    <img class="carrelloImg" src="./img/prodotti'.$lista["Url_immagine"].'" alt="prodotto1">
-                </div>
-                <div class="carrelloDescriptionContainer">
-                    <h3>'.$lista["Modello"].'</h3>
-                    <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
-                    <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p>';
-                    
-//                     // $contentActualPage=$contentActualPage.'<script>';
-
-//                     $contentActualPage=withAjax($contentActualPage,$lista);
-//                     // $contentActualPage=$contentActualPage.'</script>';
-
-//                     // $contentActualPage=$contentActualPage.'<noscript>';
-//                     // $contentActualPage=withoutAjax($contentActualPage,$lista);
-// =======
-//                     // $contentActualPage=withAjax($contentActualPage,$lista);
-//                     // $contentActualPage=$contentActualPage.'</script>';
-
-//                     // $contentActualPage=$contentActualPage.'<noscript>';
-//                     $contentActualPage=withoutAjax($contentActualPage,$lista);
-
-//                     // $contentActualPage=$contentActualPage.'</noscript>';
-
-
-                    $contentActualPage=$contentActualPage.
-                    '</div>
-                    <div class="productPrice"><h4>'.$lista["Prezzo"].'€</h4></div>
-                    <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'">Rimuovi</a>
-                </div>
-            </div>';
-        }
-        $contentActualPage=$contentActualPage.'
+        
+        $contentActualPage=insertProductInChart($contentActualPage,$chartProducts);
+        $contentActualPage.='
         <div class="totalPriceContainer">
-            <h3>Totale: '.sumPriceChart($chartProducts).'</h3>
+            <h3>Totale: '.sumPriceChart($chartProducts).'€</h3>
             <a class="button" href="php/carrello/buyProducts.php">Acquista</a>
         </div>
         </div>';
@@ -117,6 +60,8 @@ else{
 }
 $contentActualPage=$contentActualPage.'
     </div>';
+
+
 BuildPage("Carrello",$contentActualPage);	//funzione di buildpage dentro al file function  
 
 

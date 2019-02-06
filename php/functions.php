@@ -54,6 +54,161 @@ function isSinglePage($title,$menuPages){
     }
     return $esci;
 }
+
+
+// ___________________PAGINA CARRELLO_________________________
+// inserisce su contentActualPage tutti i tag per vedere i prodotti sul carrello dell'utente
+function insertProductInChart($contentActualPage,$chartProducts){
+    foreach($chartProducts as $lista){
+        $contentActualPage=$contentActualPage.'
+        <div class="carrelloContainer">
+            <div class="carrelloImgContainer">
+                <img class="carrelloImg" src="./img/prodotti'.$lista["Url_immagine"].'" alt="prodotto1">
+            </div>
+            <div class="carrelloDescriptionContainer">
+                <h3>'.$lista["Modello"].'</h3>
+                <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
+                <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p></div>
+                <div class="productPrice"><h4>'.$lista["Prezzo"].'€</h4></div>
+                <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'">Rimuovi</a>
+            </div>
+        </div>';
+    }
+    return $contentActualPage;
+}
+// restituisce il totale in euro della somma di tutti i prodotti nel carrello
+function sumPriceChart($chartProducts){
+    $tot=0;
+    foreach($chartProducts as $lista){
+        $tot=$tot+($lista["Prezzo"]*$lista["Quantita"]);
+    }
+    return $tot;
+}
+// funzioni non ancora utilizzate
+// function withAjax($contentActualPage,$lista){
+//     if($lista["Quantita"]>1){
+//         $contentActualPage=$contentActualPage.'
+//         <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
+//     }
+//     $contentActualPage=$contentActualPage.'
+//     <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1"> <p>+</p> </a>';
+//     return $contentActualPage;  
+// }
+
+// function withoutAjax($contentActualPage,$lista){
+//     echo("sssss");
+//     if($lista["Quantita"]>1){
+//         $contentActualPage=$contentActualPage.'
+//         <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1"> <p>-</p> </a>';
+//     }
+//     $contentActualPage=$contentActualPage.'
+//     <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1"> <p>+</p> </a>';
+//     return $contentActualPage;
+// }
+
+// ___________________PAGINA LOGIN_________________________
+// sostituisce le stringhe con valori vuoti, se ci saranno errori un altra funzione inserira i valori d'errore
+function insertVoidValue($contentActualPage){
+    $contentActualPage=str_replace('{nomeReload}','',$contentActualPage);
+    $contentActualPage=str_replace('{surnameReload}','',$contentActualPage);
+    $contentActualPage=str_replace('{userIdReload}','',$contentActualPage);
+    $contentActualPage=str_replace('{emailReload}','',$contentActualPage);
+    return $contentActualPage;
+}
+// controlla errori sulla login
+function checkLoginDbAndError($conn){
+    //ENTRA SSE HO CLICCATO IL TASTO LOGIN (DOPO averlo cliccato)
+    if(isset($_POST['loginUsername']) && isset($_POST['loginPassword'])){
+        $userId=$_POST['loginUsername'];
+        $userPassword=$_POST['loginPassword'];
+
+        $resultUserId= mysqli_query($conn,"SELECT * FROM Utente WHERE Username='".$userId."' AND Password='".md5($userPassword)."' ");
+        $contaResultUserId=mysqli_num_rows($resultUserId);
+        //SE TROVATO IL NOME SUL DB
+        if($contaResultUserId==1){
+            $_SESSION["sessionUserId"]=$userId;
+
+            $array=mysqli_fetch_array($resultUserId);
+            // 1 se è amministratore, 0 altrimenti
+            $amministratore=$array["Amministratore"];
+            $_SESSION["sessionAmm"]=$amministratore;
+            
+            $loginError='sei loggato,torna alla <a class="" href="index.php">home</a>';
+        }
+        //NOME LOGIN NON PRESENTE NEL DB
+        else{
+            $loginError="nome utente o password errati";
+        }
+    }
+    //ENTRA SSE NON HO CLICCATO NESSUN TASTO
+    else
+        $loginError="";
+    return $loginError;
+}
+// ___________________PAGINA STORICO_________________________
+
+// trova i prodotti che sono nello storico di $userName
+function findHistoryProducts($conn,$userName){
+    $historyProducts= mysqli_query($conn,
+    "SELECT * FROM Accessori a,Storico s WHERE s.Username='".$userName."' and a.Id_p=s.Id_p
+    UNION
+    SELECT * FROM Cuffie cu,Storico s WHERE s.Username='".$userName."' and cu.Id_p=s.Id_p
+    UNION
+    SELECT * FROM Casse ca,Storico s WHERE s.Username='".$userName."' and ca.Id_p=s.Id_p");
+    return $historyProducts;
+}
+// ritorna il prezzo del prodotto*quantità
+function qtaPerPrice($lista){
+    return $lista["Quantita"]*$lista["Prezzo"];
+}
+// costruisce la pagina storico sse l'utente è loggato
+function buildHistoryContent($historyProducts,$countProductsUser){
+    // se non hai comprato ancora nessun prodotto
+    if($countProductsUser==0){
+        $contentActualPage='
+        <div id="storicoOrdini">
+            <div class="titlePage">
+                <h1>Storico ordini</h1>
+            </div>
+            <div class="storicoVuoto">
+                <p>Non hai ancora acquistato nulla, cosa aspetti?</p>
+            </div>
+        </div>';
+        // BuildPage("Storico",$contentActualPage);
+    }else{
+        $contentActualPage='
+        <div class="titlePage">
+            <h1>Storico Ordini</h1>
+        </div>
+        <div id="carrello">';
+        //CODICE SPARTANO NON TOCCARE
+        //--------------------------------------------
+        $paginadaricordare=$_SERVER["REQUEST_URI"];//-
+        $_SESSION["PAGINA"]=$paginadaricordare;    //-
+        //----
+        foreach($historyProducts as $lista){
+            $contentActualPage=$contentActualPage.'
+            <div class="carrelloContainer">
+                <div class="carrelloImgContainer">
+                    <img class="carrelloImg" src="./img/prodotti'.$lista["Url_immagine"].'" alt="prodotto1">
+                </div>
+                <div class="carrelloDescriptionContainer">
+                    <h3>'.$lista["Modello"].'</h3>
+                    <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
+                    <div>
+                        <p>Data: '.$lista["Data_acquisto"].'</p>
+                    </div>
+                    <div class="quantity">
+                        <p>Quantita: '.$lista["Quantita"].'</p>
+                    </div>
+                    <div class="productPrice">'.qtaPerPrice($lista).' euro</div>
+                </div>
+            </div>';
+        }
+    }
+    return $contentActualPage;
+}
+// _________________________QUERY
 // ritorna tutte le subcategory
 function allCategory($conn){
     $allCategory=mysqli_query($conn,

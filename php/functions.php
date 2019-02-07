@@ -328,7 +328,6 @@ function BuildPage($title,$contentActualPage) {
         $contentActualPage=insertProductList($titleTable,$title);
     }
     $page=str_replace('{content}',$contentActualPage,$page);
-    
     //FOOTER
     //se loggato con utente amministratore => vede footerAmm.html altrimente footer.html
     if(isset($_SESSION["sessionAmm"]) and $_SESSION["sessionAmm"]=='1')

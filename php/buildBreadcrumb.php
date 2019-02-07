@@ -1,5 +1,22 @@
 <?php
-//ATTENZIONE MANCA IL CASO DEL SINGOLO PRODOTTO!!!!!!!!!!!!!!!! RICORDATI
+
+// function breadcrumbHtml($contentActualPage){
+//     $contentActualPage.='
+//     <div id="breadcrumb"><a href="./index.php"> {BreadcrumbContent}
+//         <div class="welcomeUser">
+//             <div class="showWelcome">
+//                 <a href="./login.php"> Login</a>
+//             </div>
+//         </div>
+//     </div>';
+// }
+
+// function breadcrumbLinkSubstitution(){
+
+// }
+
+
+// ATTENZIONE MANCA ILgit CASO DEL SINGOLO PRODOTTO!!!!!!!!!!!!!!!! RICORDATI
 function prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage){
     $breadcrumb='<div id="breadcrumb">';
     if($title=="Home"){

@@ -430,6 +430,7 @@ header li.dropDown {
     position:relative;
     width:25%;
     float:left;
+    min-height: 450px;
 }
 
 .product-box h4{
@@ -444,6 +445,7 @@ header li.dropDown {
     text-align: center;
     color: black;
     margin: 1em 1.5em;
+    min-height: 100px;
 }
 
 .product-box img{
@@ -540,6 +542,11 @@ header li.dropDown {
     display: inline-block;
     position: absolute;
     /* font-size: 1em; */
+}
+
+.bottomZero{
+    bottom: 0px;
+    position: relative;
 }
 
 .productsContainer{
@@ -713,7 +720,7 @@ header li.dropDown {
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding-bottom: 2em;
+    /* padding-bottom: 2em;  */
    
     color: white;
 }
@@ -723,7 +730,7 @@ header li.dropDown {
     display: inline-block;
 }
 
-.storiesImg {
+.storiesImg, .storiesImg2 {
     margin: 2em;
     max-height: 50%;
     max-width: 50%;
@@ -737,12 +744,25 @@ header li.dropDown {
     padding-right: 5%;
     float: right;
 }
+
+#black{
+    background-color: #011722;;
+}
+
+.storiesCont2 {
+    width: 55%;
+    padding-left: 5%;
+    float: right;
+    
+}
+
 .storiesContainer1{
     background-color: #01404f;;
     width: 80%;
     padding-left:10%;
     padding-right:10%;
     padding-bottom: 3em;
+    min-height: 300px;
 }
 
 .storiesContainer1 h2{
@@ -752,6 +772,11 @@ header li.dropDown {
 .storiesContainer2{
     background-color: #011722;
     color: white;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3em;
+    height: auto;
 }
 /* 
 .stories{

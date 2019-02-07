@@ -250,6 +250,7 @@ header li.dropDown {
  Contenitore prodotti e Contenitore home
 \*------------------------------------*/
 
+
 #category {
     padding: 0;
     margin: 0;
@@ -322,6 +323,70 @@ header li.dropDown {
 /*------------------------------------*\
                Home
 \*------------------------------------*/
+.homeWrapperIcon {
+    align-items:center;
+    position:relative;
+    width: 100%;
+    /* padding-left: 10%;
+    padding-right: 10%; */
+    margin: 0 auto;
+    background-color: #011722; 
+    overflow: hidden;
+     text-align: center;
+}
+
+.HomeWrapperMiddle{
+    align-items: center;
+    position: relative;
+    width: 80%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 auto;
+    background-color: #011722;
+    overflow: hidden;
+    text-align: center;
+}
+.svgContainerH{
+    position:relative;
+    width: 33%;
+    height: 15em;
+    margin: 2em 0;
+    color: white;
+    float: left;
+    text-align: center;
+    font-family: 'title';
+}
+
+.alignTextIcon{
+    text-align: center;
+}
+
+.anteFooterHome{
+    background-image: url("../../img/headphones/headphones6.jpg");
+    height: 20em;
+    width: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;
+}
+
+
+.vetrina{
+    align-items:center;
+    position:relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+    background-color: white;
+    overflow: hidden;
+}
+
 
 #home {
     width: 100%;
@@ -353,18 +418,8 @@ header li.dropDown {
     color:#01404f;; 
 }
 
-.vetrina {
-    align-items:center;
-    position:relative;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin: 0 auto;
-    margin-bottom: 4em;
-    background-color: white;
-    overflow: hidden;
-     
-}
+
+
 
 .data-template {
     width: 100%;
@@ -599,57 +654,79 @@ header li.dropDown {
 #contact h2 {
     text-align: center;
     margin: 0;
-    padding: 1em 0;
+    padding: 2em 0 0 0;
 }
 .svgsContainer {
-    background-image: url("../../img/aboutus/inizio.jpg");
-    height: 50em;
+    background-image: url("../../img/aboutus/slider5.jpeg");
+    height: 20em;
     width: 100%;
     margin: 0;
+    
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed;
 }
 
-.svgContainer {
+.svgContainer{
     width: 50%;
     height: 18em;
     margin: 2em 0;
-    color: white;
+    color: black;
     float: left;
-    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    /* background-color: rgba(0,0,0,0.6); */
 }
 
 .svgContainer p {
+    font-size: 1.2em;
     padding: 0 4em;
+    text-align: center;
 }
 
+
+
 .svg {
-    max-height: 35%;
+    /* background-color: #011722;
+    border-radius: 50%; */
+    max-height: 50%;
     margin-left: auto;
     margin-right: auto;
     display: block;
     padding: 2em 0;
 }
 
-.storiesContainer {
+
+.contactIconContainer {
+    padding-left:10%;
+    padding-right:10%;
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 2em;
+    background-color:white;
+    background-image: url("../../img/headphones/headphones23.png");
+}
+
+.storiesContainer{
+    
     width: 100%;
     height: auto;
     overflow: hidden;
     padding-bottom: 2em;
-    border-bottom: 1px solid gray;
+   
+    color: white;
 }
 
-.storiesImgContainer {
+.storiesImgContainer{
     width: 40%;
     display: inline-block;
 }
 
 .storiesImg {
-    margin-top: 2em;
-    max-height: 60%;
-    max-width: 60%;
+    margin: 2em;
+    max-height: 50%;
+    max-width: 50%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -660,14 +737,30 @@ header li.dropDown {
     padding-right: 5%;
     float: right;
 }
+.storiesContainer1{
+    background-color: #01404f;;
+    width: 80%;
+    padding-left:10%;
+    padding-right:10%;
+    padding-bottom: 3em;
+}
 
+.storiesContainer1 h2{
+    padding: 2em 0 0 0;
+}
+
+.storiesContainer2{
+    background-color: #011722;
+    color: white;
+}
+/* 
 .stories{
     height: 100%;
     vertical-align: middle;
     margin-top: 2em;
     width: 100%;
     display: inline-block;
-}
+} */
 .sx {
     float: left;
     padding-right: 0;
@@ -964,20 +1057,22 @@ input[type=submit], input[type=button] {
     right: 2em;
     z-index: 99;
     outline: none;
-    background-color: #01404f;
+    background-color:#011722 ;
     color: white; 
     cursor: pointer; 
     padding: 0.5em;
-    border: 1px solid white;
-    border-radius: 5px; 
+     
+    border-radius: 50%;
 }
 
+
 #backToTop:hover {
-    background-color: #7dbbf1;
+    background-color:#01404f;
+    border: 1px solid white;
 }
 
 .arrowUp {
-    display: inline-block;
+    /* display: inline-block; */
     width: 100%;
     vertical-align: middle;
 }

@@ -6,7 +6,7 @@
 - Pagine amministratore (aggiungi, rimuovi, modifica) bisogna almeno staccare bottone da footer
 - Quando ti registri esce una scritta ma non si collega direttamente al profilo
 - manca la quantità nel carello
-- quando aggiungi, rimuovi prodotto la scritta viene visualizzata male e con errori
+- quando aggiungi, rimuovi prodotto la scritta viene visualizzata male e con errori (solo nella visione web, in mobile funziona)
 - staccare bottone da footer dopo aver modificato un prodotto
 - non va la freccia per ritornare all'inizio della pagina
 - non si riesce ad accedere alla pagina login dal mobile manca collegamento

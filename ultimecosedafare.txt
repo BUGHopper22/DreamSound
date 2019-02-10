@@ -1,0 +1,16 @@
+- per usabilità bisogna aggiungere sottolineatura nei pulsanti registrati ed accedi
+- cambiare colore box per inserimento dati accedi e registrati
+- problema colore bradcrump-> se vado in pagina categorie e poi vado alla pagina delle sottocategorie attraverso il menu a tendina non cambia il colore della categoria 
+- colore breacrump hom edovrebbe essere sempre viola
+- non si vede footer pagine singoli prodotti (solo nella visione web, in mobile funziona)
+- Pagine amministratore (aggiungi, rimuovi, modifica) bisogna almeno staccare bottone da footer
+- Quando ti registri esce una scritta ma non si collega direttamente al profilo
+- manca la quantità nel carello
+- quando aggiungi, rimuovi prodotto la scritta viene visualizzata male e con errori
+- staccare bottone da footer dopo aver modificato un prodotto
+- non va la freccia per ritornare all'inizio della pagina
+- non si riesce ad accedere alla pagina login dal mobile manca collegamento
+- sistemare mobile pagina contatti
+- se non si accede la pagina profilo è comunque visibile
+- inserire link pagina profilo
+- inserire link e prezzo prodotti in vetrina

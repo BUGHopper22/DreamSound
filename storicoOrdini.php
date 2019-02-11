@@ -18,7 +18,7 @@ else{
             <h1>Storico ordini</h1>
         </div>
         <div class="storicoVuoto">
-            <p>Non sei loggato, cosa aspetti?</p>
+            <p>Non sei loggato, cosa aspetti? <a href="./login.php">login</a></p>
         </div>
     </div>';
 }

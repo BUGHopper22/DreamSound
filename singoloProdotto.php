@@ -1,17 +1,11 @@
 <?php
 require "./database/connessione.php";
-    require_once('php/functions.php');
-    // echo $_REQUEST["idProdotto"];
-    // echo $_REQUEST["titleTable"];
+require_once('php/functions.php');
     if(isset($_REQUEST["idProdotto"]) && isset($_REQUEST["titleTable"])){
         $idProdotto=$_REQUEST["idProdotto"];
         $titleTable=$_REQUEST["titleTable"];
         $result = $conn->query("SELECT * FROM `{$titleTable}` WHERE Id_p='".$idProdotto."' ");
     }
-    // echo var_dump($result);
-    
-    // echo $idProdotto;
-    // echo $titleTable;
     $count = mysqli_num_rows($result);
     // echo $count;
 
@@ -54,7 +48,7 @@ require "./database/connessione.php";
                 $countCheck=mysqli_num_rows($checkIfYetInChart);
             
                 if($countCheck>0){
-                    $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php">Già nel carrello</a>';
+                    $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php">Vai al carrello</a>';
                 }else{
                     $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'">Aggiungi al carrello</a>';
                 }
@@ -64,7 +58,7 @@ require "./database/connessione.php";
             
             
             
-    $contentActualPage=$contentActualPage.'</div></div>';
+    $contentActualPage=$contentActualPage.'</div></div></div>';
 
     BuildPage($modello,$contentActualPage);	//funzione di buildpage dentro al file function
 ?>

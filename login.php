@@ -29,11 +29,11 @@ $contentActualPage='
             <div class="insideForm">
                 <p>'.$loginError.'</p>
                 <p>Username:</p>
-                <input type="text" name="loginUsername" placeholder="inserisci il username">
+                <input type="text" name="loginUsername" placeholder="inserisci username">
                 <p>Password:</p>
-                <input type="password" name="loginPassword" placeholder="inserisci il password">
+                <input type="password" name="loginPassword" placeholder="inserisci password">
                 <input  class="formBtn" type="submit" value="Accedi">
-                <p>sei nuovo su Dreamsound? <a class="" href="register.php">registrati</a></p>
+                <p>Sei nuovo su Dreamsound? <a class="" href="register.php">Registrati</a></p>
             </div>
             
         </form>

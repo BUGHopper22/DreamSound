@@ -1,56 +1,73 @@
 ﻿COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
-//scritto da Alberto
+//FATTE
 OK-pagina amministratore
--sistemare home page (immagini prodotto aggiungere link)
+OK -sistemare home page (immagini prodotto aggiungere link) -> aggiungere prezzi
 OK -footer pagina login
 OK -pagina login cambiare sfondo
 OK -login con successo ti rimanda alla home
 OK-logo
 OK -aggiungere funzionalita aggiuntie sul footer
 OK -omologars sito su w3school(total validator) per tutte le pagine (consigliano un altro validatore piu serio)
--aggiungere javascript
 OK -freccia per tornare su dalle pagine
--pagina d' errore del server, non disponibile db->ritona alla home(dal file connessione.php)
+OK -pagina d' errore del server, non disponibile db->ritona alla home(dal file connessione.php)
 OK -pagina di stampa.
-- aggiungere alt a TUTTE le immagini.
 OK-isset su storico vuoto da errore!!!!!!!
 OK -rendere accessibile carrello e storico prodotti dal profilo utente in quanto non accessibile da dropdown.
--ritorno alla pagina
 OK -frecce che indicano il dropdown del menu rotazione in js.
--ogni form non puo avere il tag input interno direttamente. Aggiungere un livello di div intemedio.
--cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
--OK acquista su carrello da cambiare indirizzo
--fixare bug pagina casse che visualizza gli accessori
--logo cliccabile che porta alla home
--file htaccess da modificare alla consegna il link assoluto
-
-//scritto da Nicole
--gestione erroe 404
--il logo deve essere piu in evidenza di cosi
+OK -fixare bug pagina casse che visualizza gli accessori
+OK -logo cliccabile che porta alla home
+OK -gestione erroe 404
+OK -il logo deve essere piu in evidenza di cosi
 OK -aggiungere pagina contatti(mettere i contatti anche sul foote)
--relazione-> sezione che parla dei browser supportati
-	->target di utenza del sito
-	->attenzione che dev essere coerent con il progetto
--suddivisione dei ruoli
-
-//scritto da Giovanni
 OK - usare total validator
-- js solo per controllo inserimento dati form
 OK - footer: si puo mettere quello che si vuole
 OK - cambio colore link visitati
 OK - freccia su in css
 OK - frecce menu dropdown
 OK - dropdown visibile su mobile
 OK - dividere codice html da php
-- tabindex nell'ordine giusto nelle sotto pagine (login...)
 OK - aggiunta tag title ai link uguali (tutti i prodotti...)
 OK- link pagina amministratore visibile solo dopo login amministratore
 OK manca profilo - possibilitá di accedere alla pagina profilo/storico aquisti/carrello solo dopo login
-- aggiunta informazioni personali pagina profilo
 OK - rifare pagina aboutus
-- togliee sfondo immagine pacco pagina contatti
+OK -footer della pagina prodotti non va
+OK -breadcrumb login
+OK - togliee sfondo immagine pacco pagina contatti
+OK -pagina profilo da non loggato, segna non loggato.
+
+//DA FARE
+-file htaccess da modificare alla consegna il link assoluto
+-aggiungere javascript
+-ritorno alla pagina
+-cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
+- aggiungere alt a TUTTE le immagini.
+-controlli di consistenza form su amministratore aggiungi rimuovi modificare
+-controllare botToTop se va senza js.
+
+DA RIVEDERE - acquista su carrello da cambiare indirizzo
+NON LO FACCIAMO -ogni form non puo avere il tag input interno direttamente. Aggiungere un livello di div intemedio.
+
 - form descrizione da cambiare
 - validare nuovamente il codice una volta finito tutto
+-sistemare form login che diventa nero e non si vede cosa si scrive
+-aggiungere freccette nel carrello della quantita, dove sono finite?
+- aggiunta informazioni personali pagina profilo
+- tabindex nell'ordine giusto nelle sotto pagine (login...)
+- js solo per controllo inserimento dati form
+
+
+
+
+
+-relazione-> sezione che parla dei browser supportati
+	->target di utenza del sito
+	->attenzione che dev essere coerent con il progetto
+-suddivisione dei ruoli
+-rifare descrizione pagine categoria
+
+//scritto da Giovanni
+
+
 
 
 Note relazione: 

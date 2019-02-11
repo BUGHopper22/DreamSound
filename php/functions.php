@@ -1,18 +1,16 @@
 <?php 
  session_start();
  
- require_once "buildHeader.php";
- require_once "buildBreadcrumb.php";
- require_once "buildDropdownPages.php";
+ require_once("buildHeader.php");
+ require_once("buildBreadcrumb.php");
+ require_once("buildDropdownPages.php");
+ require_once('./database/connessione.php');
 
 
-// function sumTotChart($chartProducts){
-
-// }
 
 /*L' idea si basa sul fatto che se una pagina ha l ' attributo type==dropDown-content
     allora è una pagina di prodotti(subcategory), (potrò successivamente creare dinamicamente i prodotti della pagina)
-    Ritorna true sse sono su una pagina subcategory*/ 
+    Ritorna true sse sono su una pagina LISTA PRODOTTI*/ 
 function isProductPage($title,$menuPages){
     $esci=FALSE;
     $size=count($menuPages);
@@ -36,8 +34,10 @@ function isCategoryPage($title,$menuPages){
         if($title==$menuPages[$scorri]->getName() and $menuPages[$scorri]->getType()=='dropDown'){
             $esci=TRUE;
         }
+        
         $scorri++;
     }
+   
     return $esci;
 }
 
@@ -55,6 +55,117 @@ function isSinglePage($title,$menuPages){
     return $esci;
 }
 
+// ___________________BREADCRUMB_________________________
+function SelectFirstLevelPageFromSecond($subcategory){
+    $firstLevel="";
+    if($subcategory=="Cuffie in ear" || $subcategory=="Cuffie on ear" || $subcategory=="Cuffie wireless")
+        $firstLevel="Cuffie";
+    if($subcategory=="Casse Altoparlanti" || $subcategory=="Casse Bluetooth")
+        $firstLevel="Casse";
+    if($subcategory=="Accessori Cuffie" || $subcategory=="Accessori Casse")
+        $firstLevel="Accessori";
+    if($subcategory=="Carrello" || $subcategory=="Storico ordini")
+        $firstLevel="Profilo";
+    return $firstLevel;
+}
+
+function isSecondLevelPage($title,$menuPages){
+    $esci=FALSE;
+    $size=count($menuPages);
+    $scorri=0;
+    while($scorri<$size and $esci==FALSE){
+        if($title==$menuPages[$scorri]->getName() && $menuPages[$scorri]->getType()=='dropdown-content'){
+            $esci=TRUE;
+        }
+        $scorri++;
+    }
+    return $esci;
+}
+
+function SelectSecondLevelPageFromProduct($conn,$title){
+    // PROBLEMI DI CONNESSIONE, FUNZIONA SOLO COSI PURTROPPO
+    $host = "localhost";
+	// username dell'utente in connessione
+	$user = "root";
+	// password dell'utente
+	$password = "";
+	// nome del database
+	$db = "dreamsound";
+	# stringa di connessione al DBMS
+	// istanza dell'oggetto della classe MySQLi
+	$conn = new mysqli($host, $user, $password, $db);
+	//$_SESSION["connS"]=$conn;
+    $stri="SELECT Categoria FROM cuffie WHERE Modello='".$title."' 
+    UNION
+    SELECT Categoria FROM accessori WHERE Modello='".$title."'
+    UNION
+    SELECT Categoria FROM casse WHERE Modello='".$title."' ";
+    $tableNeeds=mysqli_query($conn,$stri);
+    $subcategoryAr=mysqli_fetch_array($tableNeeds);
+    $subcategory=$subcategoryAr["Categoria"];
+    return $subcategory;
+}
+
+function breadcrumbHtml(){
+    $bread='
+    <div id="breadcrumb"> {BreadcrumbLink}';
+    
+    if(isset( $_SESSION["sessionUserId"])){
+        $bread.='
+        <div class="welcomeUser">
+            <div class="showWelcome">
+            benvenuto '.$_SESSION["sessionUserId"].', <a href="./index.php?logout=1"> Logout</a>
+            </div>
+        </div>';
+    }else{
+        $bread.='
+        <div class="welcomeUser">
+            <div class="showWelcome">
+            <a href="./login.php"> Login</a>
+            </div>
+        </div>';
+    }
+    $bread.='</div>';
+    return $bread;
+}
+function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$menuPages){
+    
+    $substitution="";
+    if($title=="Home" || $title=="404")
+       $substitution.='Home';
+    else if($isCategoryPage || $title=="Login" || $title=="Register" || $title=="Amministratore" || $title=="Contatti"){
+        $substitution.='<a href="./index.php"> Home</a> > '.$title;
+    }
+    else if($isSecondLevelPage){
+        //ritorna la categoria corrispondente alla subcategory(title)
+        $category=SelectFirstLevelPageFromSecond($title);
+        $substitution.='<a href="./index.php">Home</a> > <a href="./'.$category.'.php"> '.$category.'</a> > '.$title;
+    }
+    // ATTENZIONE NEL CASO ELSE VANNO TUTTTE LE PAGINE DEL SINGOLO PRODOTTO, SE SI AGGIUNGONO ALTRE PAGINE POTREBBERO FINIRE QUI ERRONEAMENTE
+    else{
+        $subcategory=SelectSecondLevelPageFromProduct($_SESSION["connS"],$title);
+        $category=SelectFirstLevelPageFromSecond($subcategory);
+
+        // PROBLEMI A TROVARE URL => USO MENUPAGES 
+        $rememberUrl="";
+        $esci=FALSE;
+        $size=count($menuPages);
+        $scorri=0;
+        while($scorri<$size and $esci==FALSE){
+            if($subcategory==$menuPages[$scorri]->getName()){
+                $rememberUrl=$menuPages[$scorri]->getUrl();
+                $esci=TRUE;
+            }
+            $scorri++;
+        }
+
+        $substitution.='<a href="./index.php"> Home</a> > 
+        <a href="./'.$category.'.php"> '.$category.'</a> > 
+        <a href="./'.$rememberUrl.'.php?ntab='.$category.'"> '.$subcategory.'</a> > '.$title;
+    }
+// manca parte se utente è connesso
+    return $substitution;
+}
 
 // ___________________PAGINA CARRELLO_________________________
 // inserisce su contentActualPage tutti i tag per vedere i prodotti sul carrello dell'utente
@@ -133,11 +244,11 @@ function checkLoginDbAndError($conn){
             $amministratore=$array["Amministratore"];
             $_SESSION["sessionAmm"]=$amministratore;
             
-            $loginError='sei loggato,torna alla <a class="" href="index.php">home</a>';
+            $loginError='Sei loggato,torna alla <a class="" href="index.php">home</a>';
         }
         //NOME LOGIN NON PRESENTE NEL DB
         else{
-            $loginError="nome utente o password errati";
+            $loginError="Nome utente o password errati";
         }
     }
     //ENTRA SSE NON HO CLICCATO NESSUN TASTO
@@ -314,12 +425,12 @@ function BuildPage($title,$contentActualPage) {
     $header=PrepareMenu($title,$menuPages);
     $page=str_replace('{header}',$header,$page);
     
-    //$isProductPage determina se è una pagina prodotti o no
-    $isProductPage=isProductPage($title,$menuPages);
-    $isCategoryPage=isCategoryPage($title,$menuPages);
+    $isProductPage=isProductPage($title,$menuPages);//è una pagina di secondo livello? (SOLO PRODOTTI)
+    $isCategoryPage=isCategoryPage($title,$menuPages);//è una pagina prodotti di primo livello? (SOLO PRODOTTI)
     $isSinglePage=isSinglePage($title,$menuPages);
 
     //se è una pagina prodotti => vado ad inserire dinamicamente tutti i prodotti dal DB
+    //COSTRUZIONE PAGINA DI SECONDO LIVELLO (SOLO SE PAGINA DI SECONDO LIVELLO PER I PRODOTTI)
     if($isProductPage){
         //ntab -> vedi creazione menu url.
         if(isset($_REQUEST["ntab"])){
@@ -336,10 +447,18 @@ function BuildPage($title,$contentActualPage) {
         $footer=file_get_contents('content/footer.html');
     $page=str_replace('{footer}',$footer,$page);
  
-    //BREADCRUMB (deve essere messo alla fine)
-    $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage);
+
+    //BREADCRUMB (deve essere messo alla fine) CORRETTO
+    // $breadcrumb=prepareBreadcrumb($title,$isProductPage,$isCategoryPage,$isSinglePage);
+    // $page=str_replace('{breadcrumb}',$breadcrumb,$page);
+
+    // breadcrumb ridefinito
+    $breadcrumb=breadcrumbHtml();
     $page=str_replace('{breadcrumb}',$breadcrumb,$page);
-    
+    $isSecondLevelPage=isSecondLevelPage($title,$menuPages);
+    $substitution=breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$menuPages);
+    $page=str_replace('{BreadcrumbLink}',$substitution,$page);
+
     echo $page;
 }
 

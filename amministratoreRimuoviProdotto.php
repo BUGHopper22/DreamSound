@@ -16,7 +16,7 @@ require_once('./database/connessione.php');
         <h1>Rimuovi prodotto</h1>
     </div>
 <div id="administratorPage">
-    cerca per categoria categoria
+    cerca per categoria
     <form method="post" >
         <select name="categoriaN" >';
         $allCategory=allCategory($conn);

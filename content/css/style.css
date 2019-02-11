@@ -226,7 +226,7 @@ header li.dropDown {
     background-color:#011722;
     color: white;
     line-height: 3em;
-    padding-left: 7em;
+    padding-left: 8em;
     position: fixed;
     z-index: 9;
     overflow: hidden;
@@ -441,11 +441,11 @@ header li.dropDown {
 
 .product-box p{
     /* max-width:30em; */
-    font-size: 0.8em;
+    font-size: 1.2em;
     text-align: center;
     color: black;
     margin: 1em 1.5em;
-    min-height: 100px;
+    /* min-height: 100px; */
 }
 
 .product-box img{
@@ -599,7 +599,7 @@ header li.dropDown {
 #productContainer {
     margin-top: 2em;
     width: 100%;
-    height: 28em;
+    min-height: 33em;
     overflow: hidden;
 }
 
@@ -854,6 +854,7 @@ header li.dropDown {
 
 .carrelloVuoto {
     margin: 5% 8%;
+    min-height: 25em;
 }
 
 .carrelloContainer {

@@ -71,12 +71,18 @@ function internalPagesCount($i,$menuPages,$size){
 //POST: ritorna il numero di voci del sottomenu 
 
 function prepareMenu($title,$menuPages){
+    if($title=="Home"){
+        $linkLogo="";
+    }else{
+        $linkLogo="./index.php";
+    }
+    
     $menu='<div id="navbar-container" role="navigation">
                 <input type="checkbox">
                     <span></span>
                     <span></span>
                     <span></span>
-                <img src=./img/icon/logo2.png class="logo" alt="Logo DreamSound">
+                <a href="'.$linkLogo.'"><img src=./img/icon/logo2.png class="logo" alt="Logo DreamSound"></a>
                 <img src=./img/icon/logomobile.png class="logoMobile" alt="Logo DreamSound">';
         //<img src=./img/icon/logomobile.png class="logoMobile">; Ho commentato perchè sballava tutto, riflettere se da rimettere
         

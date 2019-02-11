@@ -11,6 +11,17 @@
         </div>';
     }else{
         $contentActualPage=file_get_contents('content/profilo.html');
+        //sostituzione dati inline per velocità:
+        $result= mysqli_query($conn,"SELECT Nome,Cognome,Email FROM Utente WHERE Username='".$_SESSION["sessionUserId"]."' ");
+        $result=mysqli_fetch_array($result);
+        $name=$result["Nome"];
+        $surname=$result["Cognome"];
+        $email=$result["Email"];
+        
+        $contentActualPage=str_replace('{name}',$name,$contentActualPage);
+        $contentActualPage=str_replace('{surname}',$surname,$contentActualPage);
+        $contentActualPage=str_replace('{username}',$_SESSION["sessionUserId"],$contentActualPage);
+        $contentActualPage=str_replace('{email}',$email,$contentActualPage);
     }
     BuildPage("Profilo",$contentActualPage);	//funzione di buildpage dentro al file function
 ?>

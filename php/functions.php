@@ -85,16 +85,11 @@ function isSecondLevelPage($title,$menuPages){
 function SelectSecondLevelPageFromProduct($conn,$title){
     // PROBLEMI DI CONNESSIONE, FUNZIONA SOLO COSI PURTROPPO
     $host = "localhost";
-	// username dell'utente in connessione
 	$user = "root";
-	// password dell'utente
 	$password = "";
-	// nome del database
 	$db = "dreamsound";
-	# stringa di connessione al DBMS
-	// istanza dell'oggetto della classe MySQLi
-	$conn = new mysqli($host, $user, $password, $db);
-	//$_SESSION["connS"]=$conn;
+    $conn = new mysqli($host, $user, $password, $db);
+    
     $stri="SELECT Categoria FROM cuffie WHERE Modello='".$title."' 
     UNION
     SELECT Categoria FROM accessori WHERE Modello='".$title."'

@@ -1,5 +1,5 @@
 ﻿COSE DA FARE PRIMA DI CONSEGNARE IL PROGETTO:
-//FATTE
+//______FATTE
 OK-pagina amministratore
 OK -sistemare home page (immagini prodotto aggiungere link) -> aggiungere prezzi
 OK -footer pagina login
@@ -34,42 +34,38 @@ OK -footer della pagina prodotti non va
 OK -breadcrumb login
 OK - togliee sfondo immagine pacco pagina contatti
 OK -pagina profilo da non loggato, segna non loggato.
+OK -aggiunta informazioni personali pagina profilo
+OK - tabindex nell'ordine giusto nelle sotto pagine (login...)
 
-//DA FARE
+//______DA FARE
+
+- (LUNGO)	js solo per controllo inserimento dati form
+- (BREVE)	cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
+- (BREVE)	aggiungere alt a TUTTE le immagini.(NON METTERE DOVE NON è PRESENTE IL LINK)
+- (LUNGO)	controlli di consistenza form su amministratore aggiungi rimuovi modificare
+- (BREVE)	controllare botToTop se va senza js.
+- (BREVE-LUNGO)form descrizione da cambiare
+- (BREVE)	sistemare form login che diventa nero e non si vede cosa si scrive
+- (LUNGO)	aggiungere freccette nel carrello della quantita, dove sono finite?
+- (BREVE-LUNGO)controllare se dopo le modifiche fatte da hopper il css di smartphone e stampa sono ancora consistenti
+- (BREVE)	login con form nere quando inserisci i dati da sistemare
+
+//______DA FARE ALLA FINE
 -file htaccess da modificare alla consegna il link assoluto
--aggiungere javascript
--ritorno alla pagina
--cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
-- aggiungere alt a TUTTE le immagini.
--controlli di consistenza form su amministratore aggiungi rimuovi modificare
--controllare botToTop se va senza js.
+- validare nuovamente il codice una volta finito tutto
 
+//______DA FARE SE PROPRIO C E TEMPO
 DA RIVEDERE - acquista su carrello da cambiare indirizzo
 NON LO FACCIAMO -ogni form non puo avere il tag input interno direttamente. Aggiungere un livello di div intemedio.
 
-- form descrizione da cambiare
-- validare nuovamente il codice una volta finito tutto
--sistemare form login che diventa nero e non si vede cosa si scrive
--aggiungere freccette nel carrello della quantita, dove sono finite?
-- aggiunta informazioni personali pagina profilo
-- tabindex nell'ordine giusto nelle sotto pagine (login...)
-- js solo per controllo inserimento dati form
 
-
-
-
+//______RELAZIONE
 
 -relazione-> sezione che parla dei browser supportati
 	->target di utenza del sito
 	->attenzione che dev essere coerent con il progetto
 -suddivisione dei ruoli
 -rifare descrizione pagine categoria
-
-//scritto da Giovanni
-
-
-
-
 Note relazione: 
 - Anche impostando i tabindex i link dropdown sono irragiungibili sia tramite proprieta display che visibility (chiedere a jolly)
 - usato il tag html aria-hidden="true" sulle frecce dropdown per nasconderler dallo screenreader

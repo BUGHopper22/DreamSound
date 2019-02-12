@@ -49,7 +49,7 @@ OK - tabindex nell'ordine giusto nelle sotto pagine (login...)
 - (LUNGO)	aggiungere freccette nel carrello della quantita, dove sono finite?
 - (BREVE-LUNGO)controllare se dopo le modifiche fatte da hopper il css di smartphone e stampa sono ancora consistenti
 - (BREVE)	login con form nere quando inserisci i dati da sistemare
-- (CORTO)	pagina contatti da inserie testo oggi e storia.
+- (CORTO)	pagina contatti descrizione da centrare.
 - (LUNGO) 	relazione da fare.
 
 //______DA FARE ALLA FINE

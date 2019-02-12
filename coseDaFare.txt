@@ -45,25 +45,28 @@ OK - (LUNGO)	aggiungere freccette nel carrello della quantita, dove sono finite?
 OK - (BREVE)	aggiungere alt a TUTTE le immagini.(NON METTERE DOVE NON è PRESENTE IL LINK)
 OK - manca login sulla visualizzazione smartphone
 OK - G(CORTO)	pagina contatti descrizione da centrare.
+OK - (LUNGO) 	aggiungere icon
+OK - (BREVE)	controllare botToTop se va senza js.
 
 //______DA FARE
 
 - (LUNGO)	js solo per controllo inserimento dati form
 - (LUNGO)	controlli di consistenza form su amministratore aggiungi rimuovi modificare
-- (BREVE)	controllare botToTop se va senza js.
 - (BREVE-LUNGO)form descrizione da cambiare
 - (IMPOSSIBILE)	freccette quantita refresh pagina
 - (BREVE-LUNGO)controllare se dopo le modifiche fatte da hopper il css di smartphone e stampa sono ancora consistenti
 - (LUNGO) 	relazione da fare.
-- (LUNGO) 	aggiungere icon
+
 
 //______DA FARE ALLA FINE
 -file htaccess da modificare alla consegna il link assoluto
 - validare nuovamente il codice una volta finito tutto
+-rimuovere file di git nascosti per problemi memoria
 
 //______DA FARE SE PROPRIO C E TEMPO
 DA RIVEDERE - acquista su carrello da cambiare indirizzo
 NON LO FACCIAMO -ogni form non puo avere il tag input interno direttamente. Aggiungere un livello di div intemedio.
+
 
 
 //______RELAZIONE

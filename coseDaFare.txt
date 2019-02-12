@@ -59,6 +59,7 @@ OK - cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
 //______DA FARE ALLA FINE
 -file htaccess da modificare alla consegna il link assoluto
 - validare nuovamente il codice una volta finito tutto
+- aggiungere link assoluti ai prodotti della homepage
 
 //______DA FARE SE PROPRIO C E TEMPO
 DA RIVEDERE - acquista su carrello da cambiare indirizzo

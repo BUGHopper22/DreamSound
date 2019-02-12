@@ -178,7 +178,21 @@ function insertProductInChart($contentActualPage,$chartProducts){
             <div class="carrelloDescriptionContainer">
                 <h3>'.$lista["Modello"].'</h3>
                 <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
-                <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p></div>
+                <div class="quantity">';
+                $contentActualPage.='<p>Quantita: </p>';
+                    if($lista["Quantita"]>1){
+                        $contentActualPage=$contentActualPage.'
+                        <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1">
+                            <p>-</p>
+                        </a>';
+                    }
+                    $contentActualPage.='
+                    <p>'.$lista["Quantita"].'</p>
+                    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1">
+                        <p>+</p>
+                    </a>
+                </div>';
+                $contentActualPage=$contentActualPage.'
                 <div class="productPrice"><h4>'.$lista["Prezzo"].'€</h4></div>
                 <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'">Rimuovi</a>
             </div>

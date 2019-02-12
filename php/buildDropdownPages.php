@@ -14,7 +14,7 @@ function insertProductList($titleTable,$category){
         $htmlProduct=$htmlProduct.'
         <div class="productsContainer">
             <div class="imgsContainer">
-                <img class="productsImg" src="./img/prodotti'.$listProduct["Url_immagine"].'" alt="prodotto1" >
+                <img class="productsImg" src="./img/prodotti'.$listProduct["Url_immagine"].'" alt="'.$listProduct["Modello"].'" >
             </div>
         
             <div class="descriptionsContainer">

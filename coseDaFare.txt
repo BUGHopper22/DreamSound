@@ -36,11 +36,12 @@ OK - togliee sfondo immagine pacco pagina contatti
 OK -pagina profilo da non loggato, segna non loggato.
 OK -aggiunta informazioni personali pagina profilo
 OK - tabindex nell'ordine giusto nelle sotto pagine (login...)
+OK - cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
 
 //______DA FARE
 
 - (LUNGO)	js solo per controllo inserimento dati form
-- (BREVE)	cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
+
 - (BREVE)	aggiungere alt a TUTTE le immagini.(NON METTERE DOVE NON è PRESENTE IL LINK)
 - (LUNGO)	controlli di consistenza form su amministratore aggiungi rimuovi modificare
 - (BREVE)	controllare botToTop se va senza js.
@@ -48,8 +49,8 @@ OK - tabindex nell'ordine giusto nelle sotto pagine (login...)
 - (BREVE)	sistemare form login che diventa nero e non si vede cosa si scrive
 - (LUNGO)	aggiungere freccette nel carrello della quantita, dove sono finite?
 - (BREVE-LUNGO)controllare se dopo le modifiche fatte da hopper il css di smartphone e stampa sono ancora consistenti
-- (BREVE)	login con form nere quando inserisci i dati da sistemare
-- (CORTO)	pagina contatti descrizione da centrare.
+- G(BREVE)	login con form nere quando inserisci i dati da sistemare
+- G(CORTO)	pagina contatti descrizione da centrare.
 - (LUNGO) 	relazione da fare.
 
 //______DA FARE ALLA FINE

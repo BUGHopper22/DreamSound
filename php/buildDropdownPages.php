@@ -25,7 +25,7 @@ function insertProductList($titleTable,$category){
                         <h4>Pezzo: '.$listProduct['Prezzo'].'€</h4>
                     </div>
                     <a class="button" href="./singoloProdotto.php?idProdotto='.$listProduct['Id_p'].'&titleTable='.$titleTable.'&categoria='.$category.'">
-                        Piu\' dettagli
+                        vai a '.$listProduct['Modello'].'
                     </a>
                 </div>
             </div>

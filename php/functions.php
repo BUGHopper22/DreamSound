@@ -137,6 +137,9 @@ function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$m
         $category=SelectFirstLevelPageFromSecond($title);
         $substitution.='<a href="./index.php">Home</a> > <a href="./'.$category.'.php"> '.$category.'</a> > '.$title;
     }
+    else if($title=="Rimuovi prodotto" || $title=="Modifica prodotto" || $title=="Aggiungi prodotto"){
+        $substitution.='<a href="./index.php">Home</a> > <a href="./Amministratore.php"> Amministratore</a> > '.$title;
+    }
     // ATTENZIONE NEL CASO ELSE VANNO TUTTTE LE PAGINE DEL SINGOLO PRODOTTO, SE SI AGGIUNGONO ALTRE PAGINE POTREBBERO FINIRE QUI ERRONEAMENTE
     else{
         $subcategory=SelectSecondLevelPageFromProduct($conn,$title);

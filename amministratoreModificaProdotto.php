@@ -14,29 +14,31 @@ require_once('./database/connessione.php');
         <h1>Modifica prodotto</h1>
     </div>
     
-    <div class="AmmCenter">';
+    <div id="administratorPage">
+         <div class="adminContainer">';
     // <p>categoria</p>;
 
     // <!-- SCELTA DELLA CATEGORIA -->
     if(!isset($_POST["categoria"]) and !isset($_POST["nome"]) and !isset($_POST["attributo"]) and !isset($_POST["modify"])){
         $contentActualPage.='
-        <p>cerca categoria</p>
-        <form method="post">
-            <select name="categoria">';
-                $allCategory=allCategory($conn);
-                $contentActualPage=insertCategoryInSelect($contentActualPage,$allCategory);
-                $contentActualPage=$contentActualPage.
-            '</select>
-            <br><br>
-            <input class="formBtn" type="submit" value="cerca">
-        </form>';
+            <p>Cerca categoria</p>
+            <form method="post">
+                <select name="categoria">';
+                    $allCategory=allCategory($conn);
+                    $contentActualPage=insertCategoryInSelect($contentActualPage,$allCategory);
+                    $contentActualPage=$contentActualPage.
+                '</select>
+                <br><br>
+                <input class="formBtn" type="submit" value="cerca">
+            </form>
+     ';
     }
     // SCELTA DEL  MODELLO
     if(isset($_POST["categoria"]) and !isset($_POST["nome"])){
         $_SESSION["categoria"]=$_POST["categoria"];
         // $selectedCategory=$_POST["categoriaN"];
-        $contentActualPage.='<p> 1. categoria scelta: "'.$_SESSION["categoria"].'"</p>
-        <p> cerca per nome </p>
+        $contentActualPage.='<p> 1. Categoria scelta: "'.$_SESSION["categoria"].'"</p>
+        <p>Cerca per nome </p>
         <form method="post">
             <select name="nome">';
                 $contentActualPage=insertProductsInSelect($conn,$_SESSION["categoria"],$contentActualPage);
@@ -51,9 +53,9 @@ require_once('./database/connessione.php');
         $_SESSION["modello"]=$_POST["nome"];
         $contentActualPage.='
         <div class="modifyProductsList">
-            <p> 1. categoria scelta: "'.$_SESSION["categoria"].'"</p>
-            <p> 2. modello scelto: "'.$_SESSION["modello"].'"</p>
-            <p> 3. modifica campo: </p>
+            <p> 1. Categoria scelta: "'.$_SESSION["categoria"].'"</p>
+            <p> 2. Modello scelto: "'.$_SESSION["modello"].'"</p>
+            <p> 3. Modifica campo: </p>
             <form class="formAdmin" method="post">
                 <select name="attributo">
                     <option value="Modello">modello</option>
@@ -73,12 +75,12 @@ require_once('./database/connessione.php');
         $_SESSION["attributo"]=$_POST["attributo"];
         $contentActualPage.='
         <div class="modifyProductsList">
-            <p> 1. categoria scelta: "'.$_SESSION["categoria"].'"</p>
-            <p> 2. modello scelto: "'.$_SESSION["modello"].'"</p>
-            <p> 3. attenzione, stai per andare a modificare l\'attributo "'.$_SESSION["attributo"].'" del prodotto "'.$_SESSION["modello"].'"</p>';
+            <p> 1. Categoria scelta: "'.$_SESSION["categoria"].'"</p>
+            <p> 2. Modello scelto: "'.$_SESSION["modello"].'"</p>
+            <p> 3. Attenzione, stai per andare a modificare l\'attributo "'.$_SESSION["attributo"].'" del prodotto "'.$_SESSION["modello"].'"</p>';
             if($_SESSION["attributo"]=="Visibile"){
                 $contentActualPage.='
-                <p> 4. modifica il campo </p>
+                <p> 4. Modifica il campo </p>
                 <form class="formAdmin" method="post">
                     <select name="modify">
                         <option value="1"> true </option>
@@ -89,7 +91,7 @@ require_once('./database/connessione.php');
                 </form>';
             }else{
                 $contentActualPage.='
-                <p> 4. inserisci qui la modifica </p>
+                <p> 4. Inserisci qui la modifica </p>
                 <form class="formAdmin" method="post">
                     <input type="text" name="modify">
                     <br><br>
@@ -105,11 +107,12 @@ require_once('./database/connessione.php');
         $contentActualPage.=
         '<p>"'.$messaggio.'"</p>
         <a class="button" href="./amministratore.php">
-            torna alla pagina amministratore
+            Torna alla pagina amministratore
         </a>';
     }
     
-    $contentActualPage.='</div>';
+    $contentActualPage.='</div>
+    </div>';
 
 BuildPage("Modifica prodotto",$contentActualPage);
 ?>

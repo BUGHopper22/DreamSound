@@ -15,28 +15,29 @@ require_once('./database/connessione.php');
     '<div class="titlePage">
         <h1>Rimuovi prodotto</h1>
     </div>
-<div id="administratorPage">
-    cerca per categoria
-    <form method="post" >
-        <select name="categoriaN" >';
-        $allCategory=allCategory($conn);
-            $contentActualPage=insertCategoryInSelect($contentActualPage,$allCategory);
-            $contentActualPage.=
-        '</select>
-        <br><br>
-        <input class="formBtn" type="submit" name="categoria" value="cerca">
-    </form>';
+    <div id="administratorPage">
+        <div class="adminContainer">
+            <p>Cerca per categoria</p>
+            <form method="post" >
+                <select name="categoriaN" >';
+                $allCategory=allCategory($conn);
+                    $contentActualPage=insertCategoryInSelect($contentActualPage,$allCategory);
+                    $contentActualPage.=
+                '</select>
+                <br><br>
+                <input class="formBtn" type="submit" name="categoria" value="cerca">
+            </form>
+            ';
     
 
     if(isset($_POST["categoria"])){
         $_SESSION["categoriaN"]=$_POST["categoriaN"];
         echo  $_SESSION["categoriaN"];
-        if(isset($_POST["categoriaN"]))echo("categoria ok");
+        if(isset($_POST["categoriaN"]));
         $contentActualPage.=
-        'cerca per nome
+        '<p>Cerca per nome</p>
         <form method="post">
             <select name="Nome">';
-
                 $contentActualPage=insertProductsInSelect($conn,$_SESSION["categoriaN"],$contentActualPage);
                 $contentActualPage.=
             '</select>
@@ -50,6 +51,8 @@ require_once('./database/connessione.php');
         $messaggio=queryDeleteProduct($conn, $_SESSION["categoriaN"],$selectedProduct);
         echo ($messaggio);
     }
-
+    $contentActualPage.='
+        </div>   
+    </div>';
     BuildPage("Rimuovi prodotto",$contentActualPage);
     ?>

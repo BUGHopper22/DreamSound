@@ -31,7 +31,7 @@ if(!isset($_SESSION["sessionUserId"])){
                     <input type="text" name="loginUsername" placeholder="inserisci username">
                     <p>Password:</p>
                     <input type="password" name="loginPassword" placeholder="inserisci password">
-                    <input  class="formBtn" type="submit" value="Accedi">
+                    <input  class="formBtn distanceBtn" type="submit" value="Accedi">
                     <p>Sei nuovo su Dreamsound? <a class="" href="register.php">Registrati</a></p>
                 </div>
                 

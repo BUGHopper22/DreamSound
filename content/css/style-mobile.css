@@ -195,7 +195,7 @@ header ul {
     padding-left: 1em;
 }
 
-.welcomeUser {
+.nomeUtente {
     display: none;
 }
 
@@ -333,7 +333,7 @@ header ul {
 \*------------------------------------*/
 
 .svgContainer p {
-    padding: 0 2em;
+    padding: 0 1.5em;
 }
 
 .svg {
@@ -346,7 +346,7 @@ header ul {
 \*------------------------------------*/
 
 #formContainer {
-    margin-top:2em;
+    /* margin-top:2em; */
     height: 62em;
 }
 

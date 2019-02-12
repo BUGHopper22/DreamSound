@@ -105,7 +105,10 @@ function breadcrumbHtml(){
         $bread.='
         <div class="welcomeUser">
             <div class="showWelcome">
-            benvenuto '.$_SESSION["sessionUserId"].', <a href="./index.php?logout=1"> Logout</a>
+                <div class="nomeUtente">
+                    <p>Benvenuto '.$_SESSION["sessionUserId"].', 
+                </p></div>
+                <a href="./index.php?logout=1"> Logout</a>
             </div>
         </div>';
     }else{

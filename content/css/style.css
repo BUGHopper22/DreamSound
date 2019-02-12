@@ -188,6 +188,11 @@ header li.dropDown {
     text-align: left;
     overflow: auto;
 }
+
+.dropdown-content a:visited {
+    color: #a983ce;
+}
+
 		
 .dropdown-content a:hover {
     background-color: #5a9697;
@@ -239,11 +244,21 @@ header li.dropDown {
 #breadcrumb a:visited {
     color: #a983ce;
 }
+.nomeUtente {
+    float: left;
+    font-size: 1.2em;
+}
+
+.nomeUtente p {
+    margin: 0;
+    padding-right: 0.5em;
+}
 
 .welcomeUser{
     float: right;
     margin-right: 9em;
 }
+
 
 
 /*------------------------------------*\
@@ -846,6 +861,17 @@ header li.dropDown {
 }
 
 /*------------------------------------*\
+  Aggunta rimozione modifica prodotti
+\*------------------------------------*/
+#administratorPage {
+    min-height: 70vh;
+}
+
+.adminContainer {
+   padding-left: 10%; 
+}
+
+/*------------------------------------*\
                Carrello
 \*------------------------------------*/
 
@@ -1004,7 +1030,7 @@ header li.dropDown {
     height: 2em;
     position: relative;
     padding: 0 1em 0 1em;
-    margin-top: 1em;
+    /* margin-top: 1em; */
     background-color: #01404f;
     border: none;
     color:white;
@@ -1016,6 +1042,10 @@ header li.dropDown {
     /* margin-left: auto; */
     margin-right: auto;
  
+}
+
+.distanceBtn {
+    margin-top: 1em;
 }
 
 .form {
@@ -1042,13 +1072,14 @@ header li.dropDown {
 }
   
 input[type=text], input[type=password], input[type=email] {
-    display: inline-block;
+    display: block;
     color: black;
     padding: 0.7em;
-    width: 100%;
+    width: 20em;
     box-sizing: border-box;
     background-color: white;
-    border: none;
+    border: 1px solid gray;
+    /* border: none; */
     /* border-radius: 0.5em; */
     transition:background-color 0.5s ease;
 }
@@ -1060,7 +1091,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
 input[type=submit], input[type=button] {
     color: white;
     display: block;
-    margin-top:1em;
+    /* margin-top:1em; */
     border: none;
     /* padding: 0.5em; */
     font-size: 1.1em;

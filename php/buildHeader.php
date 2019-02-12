@@ -81,7 +81,8 @@ function prepareMenu($title,$menuPages){
                 <input type="checkbox">
                     <span></span>
                     <span></span>
-                    <span></span>'.$linkLogo;
+                    <span></span>
+                    '.$linkLogo;
                 
                 $menu.='<img src=./img/icon/logomobile.png class="logoMobile" alt="Logo DreamSound">';
         //<img src=./img/icon/logomobile.png class="logoMobile">; Ho commentato perchè sballava tutto, riflettere se da rimettere

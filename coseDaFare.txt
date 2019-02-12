@@ -37,6 +37,7 @@ OK -pagina profilo da non loggato, segna non loggato.
 OK -aggiunta informazioni personali pagina profilo
 OK - tabindex nell'ordine giusto nelle sotto pagine (login...)
 OK - cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
+OK -breadcrumb rimozione aggiunta amministratore ha dei problemi
 
 //______DA FARE
 
@@ -53,13 +54,12 @@ OK - cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
 - G(BREVE)	login con form nere quando inserisci i dati da sistemare
 - G(CORTO)	pagina contatti descrizione da centrare.
 - (LUNGO) 	relazione da fare.
--breadcrumb rimozione aggiunta amministratore ha dei problemi
+
 - manca login sulla visualizzazione smartphone
 
 //______DA FARE ALLA FINE
 -file htaccess da modificare alla consegna il link assoluto
 - validare nuovamente il codice una volta finito tutto
-- aggiungere link assoluti ai prodotti della homepage
 
 //______DA FARE SE PROPRIO C E TEMPO
 DA RIVEDERE - acquista su carrello da cambiare indirizzo

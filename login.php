@@ -26,7 +26,7 @@ if(!isset($_SESSION["sessionUserId"])){
             
             <form  class="formCenter" method="post">
                 <div class="insideForm">
-                    <p>'.$loginError.'</p>
+                    <p class="backgroundRed">'.$loginError.'</p>
                     <p>Username:</p>
                     <input type="text" name="loginUsername" placeholder="inserisci username">
                     <p>Password:</p>

@@ -37,7 +37,7 @@ $contentActualPage='
         <input type="text" name="descrizione" placeholder="inserisci una descrizione" >
         
         <input class="formBtn" type="submit" name="submit" value="Aggiungi">
-    </form>';
+    </form></div>';
     
     if(isset($_POST["submit"])){
         echo("hai cliccato su submit");

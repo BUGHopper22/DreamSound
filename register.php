@@ -76,7 +76,7 @@ $contentActualPage='
         <br>
         <form class="formCenter" method="post">
             <div class="insideForm">
-                <p>'.$registerError.'</p>
+                <p class="backgroundRed">'.$registerError.'</p>
                 <p>nome*:</p>
                 <input type="text" name="name" placeholder="inserisci il nome" value="'.$nomeReload.'">
                 <p>cognome*:</p>

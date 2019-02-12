@@ -72,18 +72,18 @@ function internalPagesCount($i,$menuPages,$size){
 
 function prepareMenu($title,$menuPages){
     if($title=="Home"){
-        $linkLogo="";
+        $linkLogo='<a><img src=./img/icon/logo2.png class="logo" alt="Logo DreamSound"></a>';
     }else{
-        $linkLogo="./index.php";
+        $linkLogo='<a href="./index.php"><img src=./img/icon/logo2.png class="logo" alt="Logo DreamSound"></a>';
     }
     
     $menu='<div id="navbar-container" role="navigation">
                 <input type="checkbox">
                     <span></span>
                     <span></span>
-                    <span></span>
-                <a href="'.$linkLogo.'"><img src=./img/icon/logo2.png class="logo" alt="Logo DreamSound"></a>
-                <img src=./img/icon/logomobile.png class="logoMobile" alt="Logo DreamSound">';
+                    <span></span>'.$linkLogo;
+                
+                $menu.='<img src=./img/icon/logomobile.png class="logoMobile" alt="Logo DreamSound">';
         //<img src=./img/icon/logomobile.png class="logoMobile">; Ho commentato perchè sballava tutto, riflettere se da rimettere
         
     $menu=$menu.'

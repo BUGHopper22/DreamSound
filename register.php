@@ -77,19 +77,21 @@ $contentActualPage='
         <form class="formCenter" method="post">
             <div class="insideForm">
                 <p>'.$registerError.'</p>
-                <p>nome:</p>
+                <p>nome*:</p>
                 <input type="text" name="name" placeholder="inserisci il nome" value="'.$nomeReload.'">
-                <p>cognome:</p>
+                <p>cognome*:</p>
                 <input type="text" name="surname" placeholder="inserisci il cognome" value="'.$surnameReload.'">
-                <p>username:</p>
+                <p>username*:</p>
                 <input type="text" name="userId" placeholder="inserisci il nome utente" value="'.$userIdReload.'">
-                <p>email:</p>
+                <p>email*:</p>
                 <input type="email" name="email" placeholder="inserisci email" value="'.$emailReload.'">
-                <p>Scegli la tua password:</p>
+                <p>Scegli la tua password*:</p>
                 <input type="password" name="psw1" placeholder="inserisci password">
-                <p>Conferma la password:</p>
+                <p>Conferma la password*:</p>
                 <input type="password" name="psw2" placeholder="inserisci password" >
+               
                 <input  class="formBtn" type="submit" value="Registrati">
+                <p>* sono campi obbligatori</p>
             </div>
         </form>
     </div>

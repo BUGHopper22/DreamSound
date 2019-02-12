@@ -84,11 +84,7 @@ function isSecondLevelPage($title,$menuPages){
 
 function SelectSecondLevelPageFromProduct($conn,$title){
     // PROBLEMI DI CONNESSIONE, FUNZIONA SOLO COSI PURTROPPO
-    $host = "localhost";
-	$user = "root";
-	$password = "";
-	$db = "dreamsound";
-    $conn = new mysqli($host, $user, $password, $db);
+    
     
     $stri="SELECT Categoria FROM cuffie WHERE Modello='".$title."' 
     UNION
@@ -124,7 +120,12 @@ function breadcrumbHtml(){
     return $bread;
 }
 function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$menuPages){
-    
+    $host = "localhost";
+	$user = "root";
+	$password = "";
+	$db = "dreamsound";
+    $conn = new mysqli($host, $user, $password, $db);
+
     $substitution="";
     if($title=="Home" || $title=="404")
        $substitution.='Home';
@@ -138,7 +139,7 @@ function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$m
     }
     // ATTENZIONE NEL CASO ELSE VANNO TUTTTE LE PAGINE DEL SINGOLO PRODOTTO, SE SI AGGIUNGONO ALTRE PAGINE POTREBBERO FINIRE QUI ERRONEAMENTE
     else{
-        $subcategory=SelectSecondLevelPageFromProduct($_SESSION["connS"],$title);
+        $subcategory=SelectSecondLevelPageFromProduct($conn,$title);
         $category=SelectFirstLevelPageFromSecond($subcategory);
 
         // PROBLEMI A TROVARE URL => USO MENUPAGES 

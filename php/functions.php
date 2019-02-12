@@ -137,6 +137,9 @@ function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$m
         $category=SelectFirstLevelPageFromSecond($title);
         $substitution.='<a href="./index.php">Home</a> > <a href="./'.$category.'.php"> '.$category.'</a> > '.$title;
     }
+    else if($title=="Rimuovi prodotto" || $title=="Modifica prodotto" || $title=="Aggiungi prodotto"){
+        $substitution.='<a href="./index.php">Home</a> > <a href="./Amministratore.php"> Amministratore</a> > '.$title;
+    }
     // ATTENZIONE NEL CASO ELSE VANNO TUTTTE LE PAGINE DEL SINGOLO PRODOTTO, SE SI AGGIUNGONO ALTRE PAGINE POTREBBERO FINIRE QUI ERRONEAMENTE
     else{
         $subcategory=SelectSecondLevelPageFromProduct($conn,$title);
@@ -175,7 +178,21 @@ function insertProductInChart($contentActualPage,$chartProducts){
             <div class="carrelloDescriptionContainer">
                 <h3>'.$lista["Modello"].'</h3>
                 <p class="carrelloDescription">'.$lista["Descrizione"].'</p>
-                <div class="quantity"> <p>Quantita: '.$lista["Quantita"].'</p></div>
+                <div class="quantity">';
+                $contentActualPage.='<p>Quantita: </p>';
+                    if($lista["Quantita"]>1){
+                        $contentActualPage=$contentActualPage.'
+                        <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1">
+                            <p>-</p>
+                        </a>';
+                    }
+                    $contentActualPage.='
+                    <p>'.$lista["Quantita"].'</p>
+                    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1">
+                        <p>+</p>
+                    </a>
+                </div>';
+                $contentActualPage=$contentActualPage.'
                 <div class="productPrice"><h4>'.$lista["Prezzo"].'€</h4></div>
                 <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'">Rimuovi</a>
             </div>

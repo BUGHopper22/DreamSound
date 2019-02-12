@@ -41,7 +41,6 @@ OK - cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
 //______DA FARE
 
 - (LUNGO)	js solo per controllo inserimento dati form
-
 - (BREVE)	aggiungere alt a TUTTE le immagini.(NON METTERE DOVE NON è PRESENTE IL LINK)
 - (LUNGO)	controlli di consistenza form su amministratore aggiungi rimuovi modificare
 - (BREVE)	controllare botToTop se va senza js.
@@ -52,6 +51,8 @@ OK - cambiate link tutti i prodotti e sostituirlo con un nome adeguato.
 - G(BREVE)	login con form nere quando inserisci i dati da sistemare
 - G(CORTO)	pagina contatti descrizione da centrare.
 - (LUNGO) 	relazione da fare.
+-breadcrumb rimozione aggiunta amministratore ha dei problemi
+- manca login sulla visualizzazione smartphone
 
 //______DA FARE ALLA FINE
 -file htaccess da modificare alla consegna il link assoluto

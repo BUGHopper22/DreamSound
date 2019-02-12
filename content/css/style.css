@@ -716,12 +716,10 @@ header li.dropDown {
 }
 
 .storiesContainer{
-    
     width: 100%;
     height: auto;
     overflow: hidden;
     /* padding-bottom: 2em;  */
-   
     color: white;
 }
 
@@ -730,7 +728,7 @@ header li.dropDown {
     display: inline-block;
 }
 
-.storiesImg, .storiesImg2 {
+.storiesImg {
     margin: 2em;
     max-height: 50%;
     max-width: 50%;
@@ -745,31 +743,36 @@ header li.dropDown {
     float: right;
 }
 
-#black{
-    background-color: #011722;;
+.black{
+    background-color: #011722;
 }
-
+/* 
 .storiesCont2 {
     width: 55%;
     padding-left: 5%;
     float: right;
     
-}
+} */
 
-.storiesContainer1{
-    background-color: #01404f;;
+.storiesContainer{
+    background-color: #01404f;
     width: 80%;
     padding-left:10%;
     padding-right:10%;
     padding-bottom: 3em;
     min-height: 300px;
+    color: white;
 }
 
-.storiesContainer1 h2{
+.black{
+    background-color: #011722;
+}
+
+.storiesContainer h2{
     padding: 2em 0 0 0;
 }
 
-.storiesContainer2{
+/* .storiesContainer2{
     background-color: #011722;
     color: white;
     width: 80%;
@@ -777,7 +780,7 @@ header li.dropDown {
     padding-right: 10%;
     padding-bottom: 3em;
     height: auto;
-}
+} */
 /* 
 .stories{
     height: 100%;
@@ -786,11 +789,11 @@ header li.dropDown {
     width: 100%;
     display: inline-block;
 } */
-.sx {
+/* .sx {
     float: left;
     padding-right: 0;
     padding-left: 5%;
-}
+} */
 
 
 /*------------------------------------*\
@@ -1042,16 +1045,16 @@ input[type=text], input[type=password], input[type=email] {
     display: inline-block;
     color: black;
     padding: 0.7em;
-    width: 25em;
+    width: 100%;
     box-sizing: border-box;
-    /* background-color: rgba(0,0,0,0.3); */
+    background-color: white;
     border: none;
     /* border-radius: 0.5em; */
     transition:background-color 0.5s ease;
 }
   
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
-    background-color: rgba(0,0,0,0.45);
+    background-color: white;
 }
   
 input[type=submit], input[type=button] {

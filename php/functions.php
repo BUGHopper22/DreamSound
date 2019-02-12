@@ -2,7 +2,6 @@
  session_start();
  
  require_once("buildHeader.php");
- require_once("buildBreadcrumb.php");
  require_once("buildDropdownPages.php");
  require_once('./database/connessione.php');
 

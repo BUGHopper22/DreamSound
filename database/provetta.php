@@ -1,4 +1,3 @@
 <?php 
-	
 	$mivedi='TI VEDO';
 ?>

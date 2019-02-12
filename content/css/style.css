@@ -196,6 +196,7 @@ header li.dropDown {
 		
 .dropdown-content a:hover {
     background-color: #5a9697;
+    color: white;
 }
 
 .dropDown:hover .dropdown-content {
@@ -347,7 +348,7 @@ header li.dropDown {
     margin: 0 auto;
     background-color: #011722; 
     overflow: hidden;
-     text-align: center;
+    text-align: center;
 }
 
 .HomeWrapperMiddle{
@@ -544,6 +545,7 @@ header li.dropDown {
 #productsListContainer {
     margin:0;
     padding:0;
+    min-height: 60em;
 }
 
 #productsListContainer p {
@@ -566,7 +568,7 @@ header li.dropDown {
 
 .productsContainer{
     width: 100%;
-    height: 20em;
+    height: auto;
     overflow: hidden;
     box-shadow: 0px 4px 2px #8080807A;
     padding-bottom: 1em;
@@ -579,8 +581,8 @@ header li.dropDown {
 
 .productsImg {
     margin-top: 2em;
-    max-height: 60%;
-    max-width: 60%;
+    max-height: 40%;
+    max-width: 40%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -588,7 +590,7 @@ header li.dropDown {
 
 .descriptionsContainer {
     width: 60%;
-    height: 20em;
+    height: auto;
     float: right;
     padding-right: 5%;
 }

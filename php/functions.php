@@ -85,11 +85,11 @@ function SelectSecondLevelPageFromProduct($conn,$title){
     // PROBLEMI DI CONNESSIONE, FUNZIONA SOLO COSI PURTROPPO
     
     
-    $stri="SELECT Categoria FROM cuffie WHERE Modello='".$title."' 
+    $stri="SELECT Categoria FROM Cuffie WHERE Modello='".$title."' 
     UNION
-    SELECT Categoria FROM accessori WHERE Modello='".$title."'
+    SELECT Categoria FROM Accessori WHERE Modello='".$title."'
     UNION
-    SELECT Categoria FROM casse WHERE Modello='".$title."' ";
+    SELECT Categoria FROM Casse WHERE Modello='".$title."' ";
     $tableNeeds=mysqli_query($conn,$stri);
     $subcategoryAr=mysqli_fetch_array($tableNeeds);
     $subcategory=$subcategoryAr["Categoria"];

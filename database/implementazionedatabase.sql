@@ -126,4 +126,5 @@ INSERT INTO Accessori (Id_p, Categoria, Prezzo, Marca, Modello, Url_immagine, De
 -- Questi sono gli amministratori
 INSERT INTO Utente (Username, Email, Password, Nome, Cognome, Amministratore) VALUES
 ('alberto', 'alberto@alberto.alberto','177dacb14b34103960ec27ba29bd686b','Alberto','Alberto','1'),
-('alessio', 'alessio@alessio.alessio','d2462e55381a20059ed811cefd42493e','Alessio','Alessio','1');
+('admin', 'admin@admin.admin','f6fdffe48c908deb0f4c3bd36c032e72','admin','admin','1'),
+('useruser', 'user@user.user','5cc32e366c87c4cb49e4309b75f57d64','user','user','0');

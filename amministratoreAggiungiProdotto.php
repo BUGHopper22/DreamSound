@@ -17,7 +17,7 @@ if(isset($_SESSION["sessionUserId"])){
         <p class="backgroundRed">'.$messaggio.'</p>
             <form class="formAdmin" method="post">
                 <p>Categoria:</p>
-                <select name="categoria" >';
+                <select name="categoria">';
                     $allCategory=allCategory($conn);
                     $contentActualPage=insertCategoryInSelect($contentActualPage,$allCategory);
                     $contentActualPage.=

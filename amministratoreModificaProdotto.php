@@ -4,9 +4,8 @@ require_once('./database/connessione.php');
 
 
 
-// if(sei amministratore)
-
-//_____________________________________MODIFICA PRODOTTO
+// sse sei amministratore
+if(isset($_SESSION["sessionUserId"])){
     $contentActualPage=
     '<div class="titlePage">
         <h1>Modifica prodotto</h1>
@@ -68,7 +67,7 @@ require_once('./database/connessione.php');
             </form>
         </div>';
     }
-// MODIFICA VERA E PROPRIA
+    // MODIFICA VERA E PROPRIA
     if(isset($_POST["attributo"])){
         $_SESSION["attributo"]=$_POST["attributo"];
         $contentActualPage.='
@@ -103,7 +102,7 @@ require_once('./database/connessione.php');
         $_SESSION["value"]=$_POST["modify"];
         $messaggio=queryModifyProduct($conn,$_SESSION["categoria"],$_SESSION["modello"],$_SESSION["attributo"],$_SESSION["value"]);
         $contentActualPage.=
-        '<p>"'.$messaggio.'"</p>
+        '<p class="backgroundRed">"'.$messaggio.'"</p>
         <a class="button" href="./amministratore.php">
             Torna alla pagina amministratore
         </a>';
@@ -111,6 +110,17 @@ require_once('./database/connessione.php');
     
     $contentActualPage.='</div>
     </div>';
+}
+// sse non sei amministratore
+else{
+    $contentActualPage='
+    <div class="titlePage">
+        <h1>Rimuovi prodotto</h1>
+    </div>
+    <div id="administratorPage">
+        <p>Non sei un amministratore</p>
+    </div>';
+}
 
 BuildPage("Modifica prodotto",$contentActualPage);
 ?>

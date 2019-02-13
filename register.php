@@ -43,9 +43,9 @@ if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['userId']) 
             $userIdReload="";
             $emailReload="";
             $loginError="";
-            $registerError='la query è andata a buon fine deve stampare utente registrato';
+            $registerError='sei stato registrato correttamente';
         }else{
-            echo 'queri andata malissimo magari erreori di server o boh';
+            echo 'errore server';
         }
     //REGISTRAZIONE SENZA SUCCESSO => CERCO L'ERRORE
     }else{

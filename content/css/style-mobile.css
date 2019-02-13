@@ -177,6 +177,7 @@ header ul {
 }
 
 .dropdown-content a {
+    color: black;
     padding: 0.5em 0;
     text-align: center;
     font-size: 0.7em;

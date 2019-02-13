@@ -181,7 +181,7 @@ header li.dropDown {
 }
 
 .dropdown-content a {
-    color: black;
+    color: white;
     padding: 1em 1em;
     /* text-decoration: none; */
     display: block;
@@ -197,6 +197,9 @@ header li.dropDown {
 .dropdown-content a:hover {
     background-color: #5a9697;
     color: white;
+}
+.dropdown-content a:hover˜.active{
+    background-color: black;
 }
 
 .dropDown:hover .dropdown-content {
@@ -219,6 +222,8 @@ header li.dropDown {
 .active{
     box-shadow:0 -5px #5a9697 inset;
 }
+
+
 
 
 /*------------------------------------*\

@@ -2,16 +2,6 @@
 require_once "./database/connessione.php";
 require_once "php/functions.php";	//è un include di function
 
-
-
-    
-
-
-
-
-
-
-
 $loginError=checkLoginDbAndError($conn);
 
 if(!isset($_SESSION["sessionUserId"])){

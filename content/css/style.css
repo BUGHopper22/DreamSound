@@ -106,9 +106,7 @@ a p {
 /* messaggi generali */
 .backgroundRed { 
     background-color: red;
-    display: block;
-    float: left;
-    clear: both;
+    display: inline;
     color: white;
 }
 
@@ -1043,13 +1041,6 @@ footer {
 
 footer p {
     text-align: center;
-}
-
-
-
-.backgroundRed{
-    background-color: red;
-    display:block;
 }
 
 

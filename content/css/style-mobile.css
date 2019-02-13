@@ -39,7 +39,7 @@ a {
 }
 
 .button {
-    padding: 0.5em 1em;
+    /* padding: 0.5em 1em; */
     font-size: 0.9em;
 }
 
@@ -210,6 +210,7 @@ header ul {
 
 .outer {
     padding: 8em 0;
+     background-attachment: scroll;
 }
 
 .inner {

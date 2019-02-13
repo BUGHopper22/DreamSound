@@ -308,55 +308,58 @@ header li.dropDown {
     font-size: 1.7em;
 }
 
-.outer-home{
+.outer-home {
     background-image: url("../../img/headphones/headphones3.jpg");
 }
 
-.outer-cuffieInEar{
+.outer-cuffieInEar {
     background-image: url("../../img/prodotti/cuffieInear/presentation.png");
 }
 
-.outer-cuffieOnEar{
+.outer-cuffieOnEar {
     background-image: url("../../img/prodotti/cuffieOnear/presentation.png");
 }
 
-.outer-cuffieWireless{
+.outer-cuffieWireless {
     background-image: url("../../img/prodotti/cuffieWireless/presentation.png");
 }
 
-.outer-altoparlanti{
-    background-image: url("../../img/prodotti/casseAltoparlanti/inizio.jpg");
+.outer-altoparlanti { 
+    background-image: url("../../img/prodotti/casseAltoparlanti/presentation.jpg");
 }
 
-.outer-casseBluetooth{
-    background-image: url("../../img/prodotti/casseBluetooth/inizio.jpg");
+.outer-casseBluetooth {
+    background-image: url("../../img/prodotti/casseBluetooth/presentation.jpg");
 }
 
-.outer-accessoricuffie{
-    background-image: url("../../img/prodotti/accessoriCuffie/inizio.jpg");
+.outer-accessoricuffie {
+    background-image: url("../../img/prodotti/accessoriCuffie/presentation.jpg");
 }
 
-.outer-accessoricasse{
-    background-image: url("../../img/prodotti/accessoriCasse/inizio.jpg");
+.outer-accessoricasse {
+    background-image: url("../../img/prodotti/accessoriCasse/presentation.jpg");
+}
+
+.outer-contatti {
+    background-image: url("../../img/aboutus/slider5.jpeg");    
 }
 
 
 /*------------------------------------*\
                Home
 \*------------------------------------*/
+
 .homeWrapperIcon {
     align-items:center;
     position:relative;
     width: 100%;
-    /* padding-left: 10%;
-    padding-right: 10%; */
     margin: 0 auto;
     background-color: #011722; 
     overflow: hidden;
     text-align: center;
 }
 
-.HomeWrapperMiddle{
+.HomeWrapperMiddle {
     align-items: center;
     position: relative;
     width: 80%;
@@ -369,7 +372,8 @@ header li.dropDown {
     overflow: hidden;
     text-align: center;
 }
-.svgContainerH{
+
+.svgContainerH {
     position:relative;
     width: 33%;
     height: 15em;
@@ -380,23 +384,11 @@ header li.dropDown {
     font-family: 'title';
 }
 
-.alignTextIcon{
+.alignTextIcon {
     text-align: center;
 }
 
-.anteFooterHome{
-    background-image: url("../../img/headphones/headphones6.jpg");
-    height: 20em;
-    width: 100%;
-    margin: 0;
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-attachment: fixed;
-}
-
-
-.vetrina{
+.vetrina {
     align-items:center;
     position:relative;
     width: 80%;
@@ -432,15 +424,12 @@ header li.dropDown {
     width:100%;
 }
 
-.data-template h2{ 
+.data-template h2 { 
     margin: 0 auto;
     padding: 1em 0;
     text-align: center; 
     color:#01404f;; 
 }
-
-
-
 
 .data-template {
     width: 100%;
@@ -454,13 +443,13 @@ header li.dropDown {
     min-height: 450px;
 }
 
-.product-box h4{
+.product-box h4 {
     text-align: center;
     color:black;
     margin: 1em 0.5em;
 }
 
-.product-box p{
+.product-box p {
     /* max-width:30em; */
     font-size: 1.2em;
     text-align: center;
@@ -505,8 +494,6 @@ header li.dropDown {
     font-size: 1em;
     /* background-color: red; */
     /* margin: 5px; */
-    
-
 }
 
 .icon{
@@ -526,14 +513,14 @@ header li.dropDown {
     height: 70px;
 }
 
-#shipping-icon{ 
+#shipping-icon { 
     position:relative;
-
     background-image: url("../../img/icon/svgIcon/headSetW.png");
    
     /* background-color:red; */
 }
-#color-personalizer{background-image: url("../../img/icon/svgIcon/headSetW.png");
+#color-personalizer {
+    background-image: url("../../img/icon/svgIcon/headSetW.png");
     /* background-color:red; */
 }
 #supervisioned{
@@ -684,17 +671,6 @@ header li.dropDown {
     text-align: center;
     margin: 0;
     padding: 2em 0 0 0;
-}
-.svgsContainer {
-    background-image: url("../../img/aboutus/slider5.jpeg");
-    height: 20em;
-    width: 100%;
-    margin: 0;
-    
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-attachment: fixed;
 }
 
 .svgContainer{

@@ -93,7 +93,6 @@ function SelectSecondLevelPageFromProduct($conn,$title){
     $tableNeeds=mysqli_query($conn,$stri);
     $subcategoryAr=mysqli_fetch_array($tableNeeds);
     $subcategory=$subcategoryAr["Categoria"];
-    echo($subcategory);
     return $subcategory;
 }
 
@@ -125,9 +124,12 @@ function breadcrumbHtml(){
 function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$menuPages){
     //no way, non c è altro modo per vedere $conn
     $host = "localhost";
-	$user = "root";
-	$password = "";
-	$db = "dreamsound";
+	// username dell'utente in connessione
+	$user = "albacco";
+	// password dell'utente
+	$password = "phee2phoNa5waeRa";
+	// nome del database
+	$db = "albacco";
     $conn = new mysqli($host, $user, $password, $db);
 
     $substitution="";

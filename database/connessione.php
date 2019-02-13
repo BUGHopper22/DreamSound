@@ -5,11 +5,11 @@
 	*/
 	# blocco dei parametri di connessione
 	// nome di host
-	$host = "tecweb1819.studenti.math.unipd.it/albacco";
+	$host = "localhost";
 	// username dell'utente in connessione
 	$user = "root";
 	// password dell'utente
-	$password = "phee2phoNa5waeRa";
+	$password = "";
 	// nome del database
 	$db = "dreamsound";
 	# stringa di connessione al DBMS

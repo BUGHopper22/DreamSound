@@ -152,11 +152,9 @@ header ul {
     padding-right: 0.5em;
 }
 
-
 header li {
     float: left;
 }
-
 
 header li a { /*.dropbtn*/
     display: inline-block;
@@ -198,7 +196,6 @@ header li.dropDown {
 .dropdown-content a:visited {
     color: #a983ce;
 }
-
 		
 .dropdown-content a:hover {
     background-color: #5a9697;
@@ -340,7 +337,7 @@ header li.dropDown {
 }
 
 .outer-contatti {
-    background-image: url("../../img/aboutus/slider5.jpeg");    
+    background-image: url("../../img/aboutus/presentation.jpeg");    
 }
 
 

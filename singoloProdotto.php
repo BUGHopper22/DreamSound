@@ -28,10 +28,12 @@ require_once('php/functions.php');
         </div>
         <div class="descriptionContainer">
         <div class="product">
+            <h4>
+                Marca: '.$marca.'</h4>
             <p>
-                Marca: '.$marca.'<br>
                 Descrizione: '.$descrizione.'<br>
             </p>
+            
         </div>
         <div class="buyContainer">
             <div class="productPrice">

@@ -10,7 +10,9 @@ function insertProductList($titleTable,$category){
         <h1>'.$category.'</h1>
     </div>
     <div id="productsListContainer">';
+    $cont=0;
     foreach($result as $listProduct){
+        $cont=$cont+1;
         $htmlProduct=$htmlProduct.'
         <div class="productsContainer">
             <div class="imgsContainer">
@@ -24,8 +26,8 @@ function insertProductList($titleTable,$category){
                     <div class="productsPrice">
                         <h4>Pezzo: '.$listProduct['Prezzo'].'€</h4>
                     </div>
-                    <a class="button" href="./singoloProdotto.php?idProdotto='.$listProduct['Id_p'].'&titleTable='.$titleTable.'&categoria='.$category.'">
-                        vai a '.$listProduct['Modello'].'
+                    <a class="button" href="./singoloProdotto.php?idProdotto='.$listProduct['Id_p'].'&titleTable='.$titleTable.'&categoria='.$category.'" title="'.$listProduct['Modello'].'" tabindex="'.$cont.'">
+                        <p>Piú dettagli</p>
                     </a>
                 </div>
             </div>

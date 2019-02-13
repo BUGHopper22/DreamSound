@@ -28,11 +28,11 @@ if(!isset($_SESSION["sessionUserId"])){
                 <div class="insideForm">
                     <p class="backgroundRed">'.$loginError.'</p>
                     <p>Username:</p>
-                    <input type="text" name="loginUsername" placeholder="inserisci username">
+                    <input type="text" name="loginUsername" placeholder="inserisci username" tabindex="1">
                     <p>Password:</p>
-                    <input type="password" name="loginPassword" placeholder="inserisci password">
-                    <input  class="formBtn distanceBtn" type="submit" value="Accedi">
-                    <p>Sei nuovo su Dreamsound? <a class="" href="register.php">Registrati</a></p>
+                    <input type="password" name="loginPassword" placeholder="inserisci password" tabindex="2">
+                    <input  class="formBtn distanceBtn" type="submit" value="Accedi" tabindex="3">
+                    <p>Sei nuovo su Dreamsound? <a class="" href="register.php" tabindex="4">Registrati</a></p>
                 </div>
                 
             </form>

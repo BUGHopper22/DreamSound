@@ -48,12 +48,12 @@ require_once('php/functions.php');
                 $countCheck=mysqli_num_rows($checkIfYetInChart);
             
                 if($countCheck>0){
-                    $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php">Vai al carrello</a>';
+                    $contentActualPage=$contentActualPage.'<a class="button" href="./carrello.php" tabindex="1">Vai al carrello</a>';
                 }else{
-                    $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'">Aggiungi al carrello</a>';
+                    $contentActualPage=$contentActualPage.'<a class="button" href="./php/carrello/addChart.php?idProdotto='.$idProdotto.'" tabindex="1">Aggiungi al carrello</a>';
                 }
             }else{//non sono loggato
-                $contentActualPage=$contentActualPage.'<a class="button" href="./login.php">Logga per acquistare</a>';
+                $contentActualPage=$contentActualPage.'<a class="button" href="./login.php" tabindex="1">Logga per acquistare</a>';
             }
             
             

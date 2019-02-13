@@ -170,7 +170,7 @@ function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$m
 
 // ___________________PAGINA CARRELLO_________________________
 // inserisce su contentActualPage tutti i tag per vedere i prodotti sul carrello dell'utente
-function insertProductInChart($contentActualPage,$chartProducts){
+function insertProductInChart($contentActualPage,$chartProducts,$cont){
     foreach($chartProducts as $lista){
         $contentActualPage=$contentActualPage.'
         <div class="carrelloContainer">
@@ -184,21 +184,22 @@ function insertProductInChart($contentActualPage,$chartProducts){
                 $contentActualPage.='<p>Quantita: </p>';
                     if($lista["Quantita"]>1){
                         $contentActualPage=$contentActualPage.'
-                        <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1">
+                        <a class="quantityBotton" alt="rimuovi una quantitá" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=-1" tabindex="';$cont=$cont+1; $contentActualPage.=$cont.'">
                             <p>-</p>
                         </a>';
                     }
                     $contentActualPage.='
                     <p>'.$lista["Quantita"].'</p>
-                    <a class="quantityBotton" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1">
+                    <a class="quantityBotton" alt="aggiungi una quantitá" href="php/carrello/quantityProduct.php?idProdotto='.$lista["Id_p"].'&type=1" tabindex="';$cont=$cont+1; $contentActualPage.=$cont.'">
                         <p>+</p>
                     </a>
                 </div>';
                 $contentActualPage=$contentActualPage.'
                 <div class="productPrice"><h4>'.$lista["Prezzo"].'€</h4></div>
-                <a class="button" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'">Rimuovi</a>
+                <a class="button" alt="rimuovi il prodotto" href="php/carrello/removeProduct.php?idProdotto='.$lista["Id_p"].'" tabindex="';$cont=$cont+1; $contentActualPage.=$cont.'">Rimuovi</a>
             </div>
         </div>';
+        $cont=$cont+1;
     }
     return $contentActualPage;
 }

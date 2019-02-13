@@ -78,19 +78,19 @@ $contentActualPage='
             <div class="insideForm">
                 <p class="backgroundRed">'.$registerError.'</p>
                 <p>Nome*:</p>
-                <input type="text" name="name" placeholder="inserisci il nome" value="'.$nomeReload.'">
+                <input type="text" name="name" placeholder="inserisci il nome" value="'.$nomeReload.'" tabindex="1">
                 <p>Cognome*:</p>
-                <input type="text" name="surname" placeholder="inserisci il cognome" value="'.$surnameReload.'">
+                <input type="text" name="surname" placeholder="inserisci il cognome" value="'.$surnameReload.'" tabindex="2">
                 <p>Username*:</p>
-                <input type="text" name="userId" placeholder="inserisci il nome utente" value="'.$userIdReload.'">
+                <input type="text" name="userId" placeholder="inserisci il nome utente" value="'.$userIdReload.'" tabindex="3">
                 <p>Email*:</p>
-                <input type="email" name="email" placeholder="inserisci email" value="'.$emailReload.'">
+                <input type="email" name="email" placeholder="inserisci email" value="'.$emailReload.'" tabindex="4">
                 <p>Scegli la tua password*:</p>
-                <input type="password" name="psw1" placeholder="inserisci password">
+                <input type="password" name="psw1" placeholder="inserisci password" tabindex="4">
                 <p>Conferma la password*:</p>
-                <input type="password" name="psw2" placeholder="inserisci password" >
+                <input type="password" name="psw2" placeholder="inserisci password"  tabindex="5">
                
-                <input  class="formBtn distanceBtn" type="submit" value="Registrati">
+                <input  class="formBtn distanceBtn" type="submit" value="Registrati" tabindex="6">
                 <p>* sono campi obbligatori</p>
             </div>
         </form>

@@ -133,7 +133,7 @@ a {
     left: 0;
     /* margin: -100px 0 0 -50px;
     padding: 50px; */
-    padding-top: 1.5em;
+    padding-top: 1em;
     background: white;
     width: 100%;
     text-align: center;
@@ -142,7 +142,7 @@ a {
 
 .mobile li {
     /* padding: 10px 0; */
-    font-size: 1.1em;
+    font-size: 1.3em;
     /* width: auto; */
     padding: 0.5em 0;
     border-bottom: 1px solid gray;
@@ -179,7 +179,7 @@ header ul {
 .dropdown-content a {
     padding: 0.5em 0;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 
 .arrow {
@@ -447,10 +447,27 @@ input[type=text], input[type=password] {
     width: 100%;
 }
 
+/*------------------------------------*\
+               About Us
+\*------------------------------------*/
+
+.storiesImgContainer {
+    display: none;
+}
+
+.storiesCont {
+    width: 90%;
+}
+
+/*------------------------------------*\
+               About Us
+\*------------------------------------*/
+
 
 /*------------------------------------*\
                 404
 \*------------------------------------*/
+
 #notFound {
     padding: 20em 0em;
 }

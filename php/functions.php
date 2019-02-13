@@ -140,7 +140,7 @@ function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$m
         $substitution.='<a href="./index.php">Home</a> > <a href="./'.$category.'.php"> '.$category.'</a> > '.$title;
     }
     else if($title=="Rimuovi prodotto" || $title=="Modifica prodotto" || $title=="Aggiungi prodotto"){
-        $substitution.='<a href="./index.php">Home</a> > <a href="./Amministratore.php"> Amministratore</a> > '.$title;
+        $substitution.='<a href="./index.php">Home</a> > <a href="./amministratore.php"> Amministratore</a> > '.$title;
     }
     // ATTENZIONE NEL CASO ELSE VANNO TUTTTE LE PAGINE DEL SINGOLO PRODOTTO, SE SI AGGIUNGONO ALTRE PAGINE POTREBBERO FINIRE QUI ERRONEAMENTE
     else{
@@ -395,6 +395,7 @@ function queryModifyProduct($conn,$subcategory,$modello,$attribute,$value){
 }
 // Rende il prodotto con modello==$selectedProduct non visibile, significa che non verrà più venduto 
 // ma sarà ancora visibile nello sotrico degli utenti
+
 function queryDeleteProduct($conn,$subcategory,$selectedProduct){
     $table= SelectTableNameFromSubcategory($conn,$subcategory);
     $delete = "UPDATE `{$table}` SET Visibile='0' WHERE Modello='".$selectedProduct."' ";
@@ -409,21 +410,37 @@ function queryDeleteProduct($conn,$subcategory,$selectedProduct){
 function queryAddProduct($conn,$subcategory,$modello,$marca,$prezzo,$urlImg,$descrizione){
     $table= SelectTableNameFromSubcategory($conn,$subcategory);
     //inserimento nuovo id
-    $insert = "INSERT INTO id_prodotti VALUE ()";
+    $insert = "INSERT INTO Id_prodotti VALUE ()";
     $result = $conn->query($insert);
     // il nuovo idValue viene messo in $idToInsert
-    $popId = "SELECT MAX(Id_prodotto) as Id_prodotto FROM id_prodotti";
+    $popId = "SELECT MAX(Id_prodotto) as Id_prodotto FROM Id_prodotti";
     $result = $conn->query($popId);
     $arrayId =mysqli_fetch_row($result);
     $idToInsert = $arrayId[0];
     //inserisce il nuovo prodotto nella tabella corretta
     $insert = "INSERT INTO `{$table}` (Id_p,Categoria,Prezzo,Marca,Modello,Url_Immagine,Descrizione)
-    VALUES ('".$idToInsert."','".$categoria."', '".$prezzo."', '".$marca."','".$modello."','".$urlImg."','".$descrizione."')";
+    VALUES ('".$idToInsert."','".$subcategory."', '".$prezzo."', '".$marca."','".$modello."','".$urlImg."','".$descrizione."')";
     $result = $conn->query($insert);
     if ($result)
         $messaggio="Prodotto inserito con successo";
     else
         $messaggio="C'è stato un errore";
+    return $messaggio;
+}
+// ritorna il messaggio da stampare se ha successo o errore e chiama la function della query
+function checkSubmitClickedDoQueryAdd($conn){
+    if(isset($_POST["submit"])){
+        $messaggio="hai cliccato su submit";
+        $categoria=$_POST["categoria"];
+        $modello=$_POST["modello"];
+        $marca=$_POST["marca"];
+        $prezzo=$_POST["prezzo"];
+        $urlImg=$_POST["urlImg"];
+        $descrizione=$_POST["descrizione"];
+        $messaggio=queryAddProduct($conn,$categoria,$modello,$marca,$prezzo,$urlImg,$descrizione);
+    }else{
+        $messaggio="";
+    }
     return $messaggio;
 }
 

@@ -427,8 +427,13 @@ function queryAddProduct($conn,$subcategory,$modello,$marca,$prezzo,$urlImg,$des
         $messaggio="C'è stato un errore";
     return $messaggio;
 }
+
+//______________________AMMINISTRATORE__________________________
+
+//_____AGGIUNGI PRODOTTO
 // ritorna il messaggio da stampare se ha successo o errore e chiama la function della query
 function checkSubmitClickedDoQueryAdd($conn){
+    $messaggio="";
     if(isset($_POST["submit"])){
         $messaggio="hai cliccato su submit";
         $categoria=$_POST["categoria"];
@@ -438,12 +443,22 @@ function checkSubmitClickedDoQueryAdd($conn){
         $urlImg=$_POST["urlImg"];
         $descrizione=$_POST["descrizione"];
         $messaggio=queryAddProduct($conn,$categoria,$modello,$marca,$prezzo,$urlImg,$descrizione);
-    }else{
-        $messaggio="";
     }
     return $messaggio;
 }
 
+//_____RIMUOVI PRODOTTO
+// ritorna il messaggio da stampare se ha successo o errore e chiama la function della query
+function checkSubmitClickedDoQueryRemove($conn){
+    // sse è stato cliccato il submit di nome
+    $messaggio="";
+    if(isset($_POST["elimina"])){
+        $selectedProduct=$_POST["Nome"];
+        $messaggio=queryDeleteProduct($conn,$_SESSION["categoriaN"],$selectedProduct);
+        
+    }
+    return $messaggio;
+}
 
 
 // ____SERVE PER COSTRUIRE LA PAGINA

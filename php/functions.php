@@ -418,7 +418,7 @@ function queryAddProduct($conn,$subcategory,$modello,$marca,$prezzo,$urlImg,$des
     $idToInsert = $arrayId[0];
     //inserisce il nuovo prodotto nella tabella corretta
     $insert = "INSERT INTO `{$table}` (Id_p,Categoria,Prezzo,Marca,Modello,Url_Immagine,Descrizione)
-    VALUES ('".$idToInsert."','".$categoria."', '".$prezzo."', '".$marca."','".$modello."','".$urlImg."','".$descrizione."')";
+    VALUES ('".$idToInsert."','".$subcategory."', '".$prezzo."', '".$marca."','".$modello."','".$urlImg."','".$descrizione."')";
     $result = $conn->query($insert);
     if ($result)
         $messaggio="Prodotto inserito con successo";

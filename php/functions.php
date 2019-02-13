@@ -260,7 +260,7 @@ function checkLoginDbAndError($conn){
             $amministratore=$array["Amministratore"];
             $_SESSION["sessionAmm"]=$amministratore;
             
-            $loginError='Sei loggato,torna alla <a class="" href="index.php">home</a>';
+            $loginError='Sei loggato, torna alla <a href="index.php" tabindex="1">home</a>';
         }
         //NOME LOGIN NON PRESENTE NEL DB
         else{

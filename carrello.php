@@ -9,7 +9,6 @@ require_once ('./database/connessione.php');
 
 // costruisce la pagina carrello
 function buildChartContent($chartProducts,$countProductsUser,$contentActualPage){
-    $cont=0;
     if($countProductsUser==0){
         $contentActualPage=$contentActualPage.'
         <div class="carrelloVuoto">
@@ -24,11 +23,11 @@ function buildChartContent($chartProducts,$countProductsUser,$contentActualPage)
         $_SESSION["PAGINA"]=$paginadaricordare;    //-
         //----
         
-        $contentActualPage=insertProductInChart($contentActualPage,$chartProducts,$cont);
+        $contentActualPage=insertProductInChart($contentActualPage,$chartProducts);
         $contentActualPage.='
         <div class="totalPriceContainer">
             <h3>Totale: '.sumPriceChart($chartProducts).'€</h3>
-            <a class="button" href="php/carrello/buyProducts.php" tabindex="'.$cont.'">Acquista</a>
+            <a class="button" href="php/carrello/buyProducts.php" tabindex="1">Acquista</a>
         </div>
         </div>';
     } 

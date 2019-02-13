@@ -170,7 +170,8 @@ function breadcrumbLinkSubstitution($title,$isSecondLevelPage,$isCategoryPage,$m
 
 // ___________________PAGINA CARRELLO_________________________
 // inserisce su contentActualPage tutti i tag per vedere i prodotti sul carrello dell'utente
-function insertProductInChart($contentActualPage,$chartProducts,$cont){
+function insertProductInChart($contentActualPage,$chartProducts){
+    $cont=1;
     foreach($chartProducts as $lista){
         $contentActualPage=$contentActualPage.'
         <div class="carrelloContainer">
@@ -201,6 +202,7 @@ function insertProductInChart($contentActualPage,$chartProducts,$cont){
         </div>';
         $cont=$cont+1;
     }
+
     return $contentActualPage;
 }
 // restituisce il totale in euro della somma di tutti i prodotti nel carrello

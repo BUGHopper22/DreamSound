@@ -2,26 +2,10 @@
 require_once('php/functions.php');
 require_once('./database/connessione.php');
 
-
-
-function checkSubmitClickedDoQueryAdd($conn){
-    if(isset($_POST["submit"])){
-        $messaggio="hai cliccato su submit";
-        $categoria=$_POST["categoria"];
-        $modello=$_POST["modello"];
-        $marca=$_POST["marca"];
-        $prezzo=$_POST["prezzo"];
-        $urlImg=$_POST["urlImg"];
-        $descrizione=$_POST["descrizione"];
-        $messaggio=queryAddProduct($conn,$categoria,$modello,$marca,$prezzo,$urlImg,$descrizione);
-    }else{
-        $messaggio="";
-    }
-    return $messaggio;
-}
-
-// if(sei amministratore)
+//controlla se è stato cliccato il submit ritorna il messaggio da stampare, query che aggiunge il prodotto
 $messaggio=checkSubmitClickedDoQueryAdd($conn);
+
+// se sei amministratore
 if(isset($_SESSION["sessionUserId"])){
     $contentActualPage='
     <div class="titlePage">
@@ -54,9 +38,8 @@ if(isset($_SESSION["sessionUserId"])){
             </form>
         </div>
     </div>';   
-
-
-}//non sei amministratore
+}
+//non sei amministratore
 else{
     $contentActualPage='
     <div class="titlePage">

@@ -9,7 +9,7 @@
 	// username dell'utente in connessione
 	$user = "root";
 	// password dell'utente
-	$password = "";
+	$password = "phee2phoNa5waeRa";
 	// nome del database
 	$db = "dreamsound";
 	# stringa di connessione al DBMS

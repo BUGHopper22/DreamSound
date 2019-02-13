@@ -469,7 +469,6 @@ header li.dropDown {
 #productsListContainer {
     margin:0;
     padding:0;
-    min-height: 60em;
 }
 
 #productsListContainer p {

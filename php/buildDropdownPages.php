@@ -18,7 +18,6 @@ function insertProductList($titleTable,$category){
             <div class="imgsContainer">
                 <img class="productsImg" src="./img/prodotti'.$listProduct["Url_immagine"].'" alt="'.$listProduct["Modello"].'" >
             </div>
-        
             <div class="descriptionsContainer">
                 <h2>'.$listProduct['Modello'].'</h2>
                 <p>'.$listProduct['Descrizione'].'</p>

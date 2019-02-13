@@ -98,9 +98,18 @@ a p {
     font-family:'title';
 }
 
-.button:hover{
+.button:hover {
     background-color:#5a9697; 
     color:white;
+}
+
+/* messaggi generali */
+.backgroundRed { 
+    background-color: red;
+    display: block;
+    float: left;
+    clear: both;
+    color: white;
 }
 
 
@@ -108,7 +117,7 @@ a p {
                NAVBAR
 \*------------------------------------*/
 
-#navbar-container{
+#navbar-container {
     position: fixed;
     width:100%;
     height: 3.5em;
@@ -117,7 +126,7 @@ a p {
     z-index: 10;
 }
 
-#navbar-container input{
+#navbar-container input {
     display: none;
 }
 
@@ -128,7 +137,7 @@ a p {
     position: absolute;
 }
 
-.logoMobile{
+.logoMobile {
     display: none;
 }
 
@@ -166,16 +175,14 @@ header li.dropDown {
     display: inline-block;
 }
 
-.menuDx{
+.menuDx {
     float:right;
 }
 
 .dropdown-content {
     display: none;
-    /* visibility: hidden; */
     position:absolute;
     background-color: #01404f;
-    /* min-width: 6em; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
 }
@@ -183,7 +190,6 @@ header li.dropDown {
 .dropdown-content a {
     color: white;
     padding: 1em 1em;
-    /* text-decoration: none; */
     display: block;
     text-align: left;
     overflow: auto;
@@ -198,12 +204,8 @@ header li.dropDown {
     background-color: #5a9697;
     color: white;
 }
-.dropdown-content a:hover˜.active{
-    background-color: black;
-}
 
 .dropDown:hover .dropdown-content {
-    /* visibility: visible; */
     display: block;
 }
 
@@ -219,11 +221,9 @@ header li.dropDown {
     
 }
 
-.active{
+.active {
     box-shadow:0 -5px #5a9697 inset;
 }
-
-
 
 
 /*------------------------------------*\
@@ -266,7 +266,6 @@ header li.dropDown {
 }
 
 
-
 /*------------------------------------*\
  Contenitore prodotti e Contenitore home
 \*------------------------------------*/
@@ -294,11 +293,11 @@ header li.dropDown {
     
 }
 
-.dx{
+.dx {
     margin-left:46%;
 }
 
-.inner p, .inner h1, .inner h2{
+.inner p, .inner h1, .inner h2 {
     margin-top:0;
     text-align: center;
     color:white;
@@ -440,7 +439,6 @@ header li.dropDown {
     position:relative;
     width:25%;
     float:left;
-    min-height: 450px;
 }
 
 .product-box h4 {
@@ -450,12 +448,10 @@ header li.dropDown {
 }
 
 .product-box p {
-    /* max-width:30em; */
     font-size: 1.2em;
     text-align: center;
     color: black;
     margin: 1em 1.5em;
-    /* min-height: 100px; */
 }
 
 .product-box img{
@@ -466,67 +462,6 @@ header li.dropDown {
     display: block;
     padding: 0.7em 0 0.3em 0;
     border-radius: 50%; 
-}
-
-/* ___ICON___ */
-.icon-wrapper{
-    position:relative;
-    width:80%;
-    height:30em;
-    padding: 5% 10%;
-    background-color:#8ed8cc;
-}
-
-.icon-row{
-    position:relative;
-    width:100%;
-    height:100%;
-    margin:0px;
-    padding:0px;
-}
-
-.icon-col{
-    position:relative;
-    float:left;
-    width:25%;
-    height:100%;
-    margin:4.1%;
-    font-size: 1em;
-    /* background-color: red; */
-    /* margin: 5px; */
-}
-
-.icon{
-    display: block;
-    margin:0 auto;
-    width:100px;
-    height: 100px;
-    position:relative;
-    
-    width:100%;
-    /* margin:70%; */
-    /* border-radius:50%; */
-    
-    background-size: 70px;
-    background-repeat:no-repeat;
-    width:70px;
-    height: 70px;
-}
-
-#shipping-icon { 
-    position:relative;
-    background-image: url("../../img/icon/svgIcon/headSetW.png");
-   
-    /* background-color:red; */
-}
-#color-personalizer {
-    background-image: url("../../img/icon/svgIcon/headSetW.png");
-    /* background-color:red; */
-}
-#supervisioned{
-    background-image: url("../../img/icon/svgIcon/headSetW.png");
-    background-repeat:no-repeat;
-    /* background-color:red; */
 }
 
 
@@ -550,7 +485,6 @@ header li.dropDown {
     bottom: 0;
     display: inline-block;
     position: absolute;
-    /* font-size: 1em; */
 }
 
 .bottomZero{
@@ -618,7 +552,6 @@ header li.dropDown {
     width: auto;
     display: inline-block;
     position: absolute;
-    /* font-size: 1em; */
 }
 
 .imgContainer {
@@ -680,7 +613,6 @@ header li.dropDown {
     color: black;
     float: left;
     text-align: center;
-    /* background-color: rgba(0,0,0,0.6); */
 }
 
 .svgContainer p {
@@ -689,18 +621,13 @@ header li.dropDown {
     text-align: center;
 }
 
-
-
 .svg {
-    /* background-color: #011722;
-    border-radius: 50%; */
     max-height: 50%;
     margin-left: auto;
     margin-right: auto;
     display: block;
     padding: 2em 0;
 }
-
 
 .contactIconContainer {
     padding-left:10%;
@@ -717,7 +644,6 @@ header li.dropDown {
     width: 100%;
     height: auto;
     overflow: hidden;
-    /* padding-bottom: 2em;  */
     color: white;
 }
 
@@ -744,13 +670,6 @@ header li.dropDown {
 .black{
     background-color: #011722;
 }
-/* 
-.storiesCont2 {
-    width: 55%;
-    padding-left: 5%;
-    float: right;
-    
-} */
 
 .storiesContainer{
     background-color: #01404f;
@@ -770,29 +689,6 @@ header li.dropDown {
     padding: 2em 0 0 0;
 }
 
-/* .storiesContainer2{
-    background-color: #011722;
-    color: white;
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 3em;
-    height: auto;
-} */
-/* 
-.stories{
-    height: 100%;
-    vertical-align: middle;
-    margin-top: 2em;
-    width: 100%;
-    display: inline-block;
-} */
-/* .sx {
-    float: left;
-    padding-right: 0;
-    padding-left: 5%;
-} */
-
 
 /*------------------------------------*\
                Profilo
@@ -806,7 +702,6 @@ header li.dropDown {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 .personalData {
@@ -818,6 +713,7 @@ header li.dropDown {
     width: 49%;
     display: inline-block;
 }
+
 
 /*------------------------------------*\
             Amministratore
@@ -843,9 +739,11 @@ header li.dropDown {
     text-align: center;
 }
 
+
 /*------------------------------------*\
   Aggunta rimozione modifica prodotti
 \*------------------------------------*/
+
 #administratorPage {
     min-height: 70vh;
 }
@@ -853,6 +751,7 @@ header li.dropDown {
 .adminContainer {
    padding-left: 10%; 
 }
+
 
 /*------------------------------------*\
                Carrello
@@ -894,7 +793,6 @@ header li.dropDown {
     width: 70%;
     margin: 0 5% 0 0;
     float: right;
-    /* font-size: 1.3em; */
 }
 .carrelloDescription {
     width: auto;
@@ -936,11 +834,11 @@ header li.dropDown {
 .totalPriceContainer {
     height: 5em;
     display: block;
-    /* float: right; */
     padding: 1em 5%;
     clear: both;
     text-align: right;
 }
+
 
 /*------------------------------------*\
             Storico ordini
@@ -956,6 +854,7 @@ header li.dropDown {
     margin: 5% 8%;
 }
 
+
 /*------------------------------------*\
                Login
 \*------------------------------------*/
@@ -970,7 +869,6 @@ header li.dropDown {
     margin: 0;
     border: 0;
     width:100%;
-    /* height: 48em; */
     min-height: 800px;
     background-image: url("../../img/headphones/headphones1.jpg");
     background-position: center;
@@ -985,14 +883,12 @@ header li.dropDown {
 
 #formContainer p {
     margin: 0.5em 0 0.5em 0;
-    /* text-align: center; */
 }
 
 .loginContainer {
     color: white;
     width: 50%;
     float: left;
-    /* background-color: rgba(255,255,255,0.5); */
 }
 
 .registerContainer {
@@ -1013,18 +909,15 @@ header li.dropDown {
     height: 2em;
     position: relative;
     padding: 0 1em 0 1em;
-    /* margin-top: 1em; */
     background-color: #01404f;
     border: none;
     color:white;
     font-family: 'title';
     text-align: center;
     font-size: 16px;
-    text-decoration: none;
     display: block;
-    /* margin-left: auto; */
     margin-right: auto;
- 
+    cursor: pointer; 
 }
 
 .distanceBtn {
@@ -1062,8 +955,6 @@ input[type=text], input[type=password], input[type=email] {
     box-sizing: border-box;
     background-color: white;
     border: 1px solid gray;
-    /* border: none; */
-    /* border-radius: 0.5em; */
     transition:background-color 0.5s ease;
 }
   
@@ -1074,20 +965,21 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
 input[type=submit], input[type=button] {
     color: white;
     display: block;
-    /* margin-top:1em; */
     border: none;
-    /* padding: 0.5em; */
     font-size: 1.1em;
     cursor: pointer;
 }
 
+
 /*------------------------------------*\
         Pagine amministratore
 \*------------------------------------*/
+
 .AmmCenter{
     margin-left: auto;
     margin-right: auto;
 }
+
 
 /*------------------------------------*\
             Back to top
@@ -1115,7 +1007,6 @@ input[type=submit], input[type=button] {
 }
 
 .arrowUp {
-    /* display: inline-block; */
     width: 100%;
     vertical-align: middle;
 }
@@ -1156,13 +1047,6 @@ footer {
 
 footer p {
     text-align: center;
-}
-
-
-
-.backgroundRed{
-    background-color: red;
-    /* color:red; */
 }
 
 
